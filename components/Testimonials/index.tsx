@@ -5,28 +5,28 @@ import SingleTestimonial from "./SingleTestimonial";
 const testimonialData: Testimonial[] = [
   {
     id: 1,
-    name: "Musharof Chy",
-    designation: "Founder @TailGrids",
+    name: "Charles Lyons",
+    designation: "Founder @DailyDashboard",
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
-    image: "/images/testimonials/auth-01.png",
+      "As an entrepreneur without much money trying to get a minimum viable product into existence, Elco Development has been the perfect partner. Austin built the entire project for less than a big firm would have charged for a few planning meetings. I'm not a programmer, and I send Austin some simple mock-ups of what I want, and a few days later, there it is working on my site. It's completely straightforward. I strongly recommend Elco to any entrepreneur. My project would still be just an idea if I had not found Austin.",
+    image: "",
     star: 5,
   },
   {
     id: 2,
-    name: "Devid Weilium",
-    designation: "Founder @UIdeck",
+    name: "Titus Cara",
+    designation: "Founder @UnbiasedBreak",
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
+      "Austin and his development team have transformed my app idea into a tangible reality. Having had no prior experience in app development, Austin has established himself as indispensable in steering me through the nuances of this complex process. If you seek someone capable of bringing life into your app concept, look no further than Austin. He consistently upholds principles of honesty, fairness, and transparency in our interactions. Collaborating with Austin is comparable to experiencing the professionalism and expertise of a major corporation, combined with the personalized approach of a small business.",
     image: "/images/testimonials/auth-02.png",
     star: 5,
   },
   {
     id: 3,
-    name: "Lethium Frenci",
-    designation: "Founder @Lineicons",
+    name: "William Mattison",
+    designation: "Founder @GOATTutors",
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
+      "Austin, with Elco Dev, is an absolutely stellar developer and collaborator. We've worked together for 3 months so far, and he is capable of anything needed for any project, as he has proven in building our site. Obstacles present themselves often with any project, and we have reached solutions together, which he is able to move on without a problem. For example, rather than integrating Zoom for the video conferencing element of our site, he decide it would save money over time to build our own conferencing software, which he did from scratch. With my mind on things other than the product, I was grateful that he was able to have the vision of the company in mind and the willingness to take care of business. What an asset to any startup!",
     image: "/images/testimonials/auth-03.png",
     star: 5,
   },
