@@ -78,50 +78,55 @@ const Team = () => {
         </div>
       ))}
       <style jsx>{`
-  .team-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 20px;
-    text-align: center;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 50px;
-  }
-  .team-member {
-    width: calc(33.333% - 60px); /* Adjusted width to fit 3 items per row, accounting for gap */
-    margin: 10px;
-    padding: 20px;
-    border: 1px solid rgba(254, 254, 254, 0.32);
-    border-radius: 8px;
-    box-sizing: border-box; /* Ensures padding is included in the width */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .team-member h2, .team-member h4 {
-    margin: 0 0 10px 0;
-    font-size: 22px;
-  }
-  h2 {
-    color: #ccc;
-  }
+                .team-container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-around;
+                    gap: 20px;
+                    text-align: center;
+                    margin: 50px;
+                }
+                .team-member {
+                    width: calc(33.333% - 60px); /* Adjusted width for desktop */
+                    margin: 10px;
+                    padding: 20px;
+                    border: 1px solid rgba(254, 254, 254, 0.32);
+                    border-radius: 8px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                .team-member h2, .team-member h4, .team-member p {
+                    margin: 0 0 10px 0;
+                }
+                h2 {
+                    color: #ccc;
+                    font-size: 22px;
+                }
+                h4, .team-member p {
+                    color: #6d7787;
+                    font-size: 15px;
+                }
+                .team-member a {
+                    display: inline-block;
+                    margin-right: 10px;
+                    text-decoration: none;
+                    color: #0070f3;
+                }
 
-  h4 {
-    color: #6d7787
-  }
-  .team-member p {
-    margin: 0 0 20px 0;
-    font-size: 15px;
-    color: #6d7787
-  }
-  .team-member a {
-    display: inline-block;
-    margin-right: 10px;
-    text-decoration: none;
-    color: #0070f3;
-  }
-`}</style>
+                /* Responsive adjustments */
+                @media (max-width: 768px) {
+                    .team-member {
+                        width: calc(50% - 40px); /* 2 items per row on tablets and below */
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .team-member {
+                        width: calc(100% - 20px); /* 1 item per row on small devices */
+                    }
+                }
+            `}</style>
     </div>
   );
 };
