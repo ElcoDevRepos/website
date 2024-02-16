@@ -12,7 +12,7 @@ const Pricing = () => {
       <div className="container">
         <SectionTitle
           title="Simple and Affordable Pricing"
-          paragraph="The first step is to meet and determine a project budget. We will always stick to that budget and work with you along the way. Once your product is deployed, we offer a stress free maintenance package."
+          paragraph="The first step is to meet and determine a project budget. We will always stick to that budget and work with you along the way. Once your product is deployed, we offer a stress free maintenance package listed below."
           center
           width="665px"
         />
