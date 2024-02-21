@@ -39,6 +39,7 @@ const Footer = () => {
                   <a
                     href="https://www.linkedin.com/company/elco-dev"
                     target="_blank"
+                    rel="noreferrer"
                     aria-label="social-link"
                     className="dark:text-body-color-dark text-body-color duration-300 hover:text-primary dark:hover:text-primary"
                   >
