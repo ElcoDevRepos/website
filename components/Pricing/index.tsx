@@ -11,8 +11,24 @@ const Pricing = () => {
     <section id="pricing" className="relative z-10 py-16 md:py-20 lg:py-28">
       <div className="container">
         <SectionTitle
-          title="Simple and Affordable Pricing"
-          paragraph="The first step is to meet and determine a project budget. We will always stick to that budget and work with you along the way. Once your product is deployed, we offer a stress free maintenance package listed below."
+            title="Project Planning"
+            paragraph="Want a new piece of custom software? Contact Us!"
+            center
+            width="665px"
+          />
+
+        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-1 lg:grid-cols-1" style={{width: "50%", display: 'block', margin: 'auto', paddingBottom: "50px"}}>
+        <PricingBox 
+          packageName="Custom"
+          price=""
+          duration=""
+          subtitle="Contact us to set a project budget!"
+        >
+        </PricingBox>
+        </div>
+        <SectionTitle
+          title="Post-Release Maintenance"
+          paragraph="Once your product is deployed, we offer a stress free maintenance package listed below."
           center
           width="665px"
         />
@@ -60,7 +76,7 @@ const Pricing = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-2" style={{paddingBottom: "50px"}}>
           <PricingBox
             packageName="Basic"
             price={isMonthly ? "649" : "6,599"}
@@ -69,7 +85,7 @@ const Pricing = () => {
           >
             <OfferList text="All Meetings and Planning Covered" status="active" />
             <OfferList text="Email Support" status="active" />
-            <OfferList text="5 Monthly Hours of Fixes" status="active" />
+            <OfferList text={(isMonthly ? "5" : "60") + "  Hours of Fixes"} status="active" />
             <OfferList text="24/7 On Call Support" status="inactive" />
             <OfferList text="Access to Slack" status="inactive" />
           </PricingBox>
@@ -81,7 +97,97 @@ const Pricing = () => {
           >
             <OfferList text="All Meetings and Planning Covered" status="active" />
             <OfferList text="Email Support" status="active" />
-            <OfferList text="12 Monthly Hours of Fixes" status="active" />
+            <OfferList text={(isMonthly ? "10" : "120") + " Hours of Fixes"} status="active" />
+            <OfferList text="24/7 On Call Support" status="active" />
+            <OfferList text="Access to Slack" status="active" />
+          </PricingBox>
+        </div>
+
+        <SectionTitle
+          title="Website Hosting"
+          paragraph="Looking for a brand new blog or shop but want to design it yourself? We offer hosting packages for you to build your own website. We also can design it for you if you want!"
+          center
+          width="665px"
+        />
+
+        <div className="w-full">
+          <div
+            className="wow fadeInUp mb-8 flex justify-center md:mb-12 lg:mb-16"
+            data-wow-delay=".1s"
+          >
+            <span
+              onClick={() => setIsMonthly(true)}
+              className={`${
+                isMonthly
+                  ? "pointer-events-none text-primary"
+                  : "text-dark dark:text-white"
+              } mr-4 cursor-pointer text-base font-semibold`}
+            >
+              Monthly
+            </span>
+            <div
+              onClick={() => setIsMonthly(!isMonthly)}
+              className="flex cursor-pointer items-center"
+            >
+              <div className="relative">
+                <div className="h-5 w-14 rounded-full bg-[#1D2144] shadow-inner"></div>
+                <div
+                  className={`${
+                    isMonthly ? "" : "translate-x-full"
+                  } shadow-switch-1 absolute left-0 top-[-4px] flex h-7 w-7 items-center justify-center rounded-full bg-primary transition`}
+                >
+                  <span className="active h-4 w-4 rounded-full bg-white"></span>
+                </div>
+              </div>
+            </div>
+            <span
+              onClick={() => setIsMonthly(false)}
+              className={`${
+                isMonthly
+                  ? "text-dark dark:text-white"
+                  : "pointer-events-none text-primary"
+              } ml-4 cursor-pointer text-base font-semibold`}
+            >
+              Yearly
+            </span>
+          </div>
+        </div>
+        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-2" style={{paddingBottom: "50px"}}>
+          <PricingBox
+            packageName="Wordpress Hosting"
+            price={isMonthly ? "99" : "999"}
+            duration={isMonthly ? "mo" : "yr"}
+            subtitle=""
+          >
+            <OfferList text="Default Wordpress site setup" status="active" />
+            <OfferList text="Custom Domain" status="active" />
+            <OfferList text="Unlimited Storage" status="active" />
+            <OfferList text="Email Support" status="inactive" />
+            <OfferList text="Design Services" status="inactive" />
+            <OfferList text="Custom domain email address" status="inactive" />
+          </PricingBox>
+          <PricingBox
+            packageName="Full Wordpress Coverage"
+            price={isMonthly ? "249" : "2,599"}
+            duration={isMonthly ? "mo" : "yr"}
+            subtitle=""
+          >
+            <OfferList text="Default Wordpress site setup" status="active" />
+            <OfferList text="Custom Domain" status="active" />
+            <OfferList text="Unlimited Storage" status="active" />
+            <OfferList text="Email Support" status="active" />
+            <OfferList text="Design Services" status="active" />
+            <OfferList text="Custom domain email address" status="active" />
+          </PricingBox>
+          <PricingBox
+            packageName="Custom Site Hosting"
+            price={isMonthly ? "99" : "999"}
+            duration={isMonthly ? "mo" : "yr"}
+            subtitle="Have a custom site built by us or someone else? We can host it for you!"
+          >
+            <OfferList text="Site monitoring" status="active" />
+            <OfferList text="Custom Domain" status="active" />
+            <OfferList text="Email Support" status="active" />
             <OfferList text="24/7 On Call Support" status="active" />
             <OfferList text="Access to Slack" status="active" />
           </PricingBox>
