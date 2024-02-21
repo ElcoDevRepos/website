@@ -157,7 +157,7 @@ const Pricing = () => {
             packageName="Wordpress Hosting"
             price={isMonthly ? "99" : "999"}
             duration={isMonthly ? "mo" : "yr"}
-            subtitle=""
+            subtitle="Want just a standard wordpress site setup for you? We can do that!"
           >
             <OfferList text="Default Wordpress site setup" status="active" />
             <OfferList text="Custom Domain" status="active" />
@@ -170,7 +170,7 @@ const Pricing = () => {
             packageName="Full Wordpress Coverage"
             price={isMonthly ? "249" : "2,599"}
             duration={isMonthly ? "mo" : "yr"}
-            subtitle=""
+            subtitle="Want the full wordpress experience with added in-house design services? We can do that too!"
           >
             <OfferList text="Default Wordpress site setup" status="active" />
             <OfferList text="Custom Domain" status="active" />
@@ -183,7 +183,7 @@ const Pricing = () => {
             packageName="Custom Site Hosting"
             price={isMonthly ? "99" : "999"}
             duration={isMonthly ? "mo" : "yr"}
-            subtitle="Have a custom site built by us or someone else? We can host it for you!"
+            subtitle="Have a custom site built by us or someone else? We can host it!"
           >
             <OfferList text="Site monitoring" status="active" />
             <OfferList text="Custom Domain" status="active" />
