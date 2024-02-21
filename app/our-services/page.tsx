@@ -9,7 +9,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Our Services",
-  description: "Read more about us and our team",
+  description: "Read more about what we offer at Elco.",
   // other metadata
 };
 
@@ -17,8 +17,8 @@ const OurTeamPage = () => {
   return (
     <>
       <Breadcrumb
-        pageName="Our Team"
-        description="Learn a little more about who works at Elco"
+        pageName="Our Services"
+        description="Read more about what we offer at Elco."
       />
       <Pricing />
     </>
