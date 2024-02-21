@@ -88,6 +88,7 @@ const Pricing = () => {
             <OfferList text={(isMonthly ? "5" : "60") + "  Hours of Fixes"} status="active" />
             <OfferList text="24/7 On Call Support" status="inactive" />
             <OfferList text="Access to Slack" status="inactive" />
+            <OfferList text="Access to Project Planning Board" status="inactive" />
           </PricingBox>
           <PricingBox
             packageName="Full Coverage"
@@ -100,6 +101,7 @@ const Pricing = () => {
             <OfferList text={(isMonthly ? "10" : "120") + " Hours of Fixes"} status="active" />
             <OfferList text="24/7 On Call Support" status="active" />
             <OfferList text="Access to Slack" status="active" />
+            <OfferList text="Access to Project Planning Board" status="active" />
           </PricingBox>
         </div>
 
