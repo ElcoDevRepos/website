@@ -5,9 +5,11 @@ const PricingBox = (props: {
   duration: string;
   packageName: string;
   subtitle: string;
+  isContact: boolean;
+  url?: string;
   children?: React.ReactNode;
 }) => {
-  const { price, duration, packageName, subtitle, children } = props;
+  const { price, duration, packageName, subtitle, children, isContact, url } = props;
 
   return (
     <div className="w-full">
@@ -31,10 +33,10 @@ const PricingBox = (props: {
         <p className="mb-7 text-base text-body-color">{subtitle}</p>
         <div className="mb-8 border-b border-body-color border-opacity-10 pb-8 dark:border-white dark:border-opacity-10">
         <Link
-                    href="/contact"
+                    href={isContact ? '/contact' : url}
                     className="rounded-sm bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
                   >
-                    Contact 
+                    {isContact ? 'Contact' : 'Subscribe'} 
                   </Link>
         </div>
         <div>{children}</div>

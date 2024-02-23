@@ -17,12 +17,13 @@ const Pricing = () => {
             width="665px"
           />
 
-        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-1 lg:grid-cols-1" style={{width: "50%", display: 'block', margin: 'auto', paddingBottom: "50px"}}>
+        <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-1 lg:grid-cols-1" style={{width: "70%", display: 'block', margin: 'auto', paddingBottom: "50px"}}>
         <PricingBox 
           packageName="Custom"
           price=""
           duration=""
           subtitle="Contact us to set a project budget!"
+          isContact={true}
         >
         </PricingBox>
         </div>
@@ -82,6 +83,8 @@ const Pricing = () => {
             price={isMonthly ? "649" : "6,599"}
             duration={isMonthly ? "mo" : "yr"}
             subtitle=""
+            isContact={false}
+            url={isMonthly ? "https://buy.stripe.com/00geVNdDKgnf8ogdQR" : "https://buy.stripe.com/5kA7tlczG7QJbAscMO"}
           >
             <OfferList text="All Meetings and Planning Covered" status="active" />
             <OfferList text="Email Support" status="active" />
@@ -95,6 +98,9 @@ const Pricing = () => {
             price={isMonthly ? "999" : "10,199"}
             duration={isMonthly ? "mo" : "yr"}
             subtitle=""
+            isContact={false}
+            url={isMonthly ? "https://buy.stripe.com/28o9Bt43agnf7kc003" : "https://buy.stripe.com/7sI4h98jq8UNawo28c"}
+
           >
             <OfferList text="All Meetings and Planning Covered" status="active" />
             <OfferList text="Email Support" status="active" />
@@ -160,6 +166,8 @@ const Pricing = () => {
             price={isMonthly ? "99" : "999"}
             duration={isMonthly ? "mo" : "yr"}
             subtitle="Want just a standard wordpress site setup for you? We can do that!"
+            isContact={false}
+            url={isMonthly ? "https://buy.stripe.com/aEUaFxdDKef7cEw7sx" : "https://buy.stripe.com/00gaFx7fm6MFcEw3ci"}
           >
             <OfferList text="Default Wordpress site setup" status="active" />
             <OfferList text="Custom Domain" status="active" />
@@ -173,6 +181,8 @@ const Pricing = () => {
             price={isMonthly ? "249" : "2,599"}
             duration={isMonthly ? "mo" : "yr"}
             subtitle="Want the full wordpress experience with added in-house design services? We can do that too!"
+            isContact={false}
+            url={isMonthly ? "https://buy.stripe.com/9AQfZR9nu2wpdIA14b" : "https://buy.stripe.com/28o6ph43a2wpcEw7sA"}
           >
             <OfferList text="Default Wordpress site setup" status="active" />
             <OfferList text="Custom Domain" status="active" />
@@ -186,6 +196,8 @@ const Pricing = () => {
             price={isMonthly ? "99" : "999"}
             duration={isMonthly ? "mo" : "yr"}
             subtitle="Have a custom site built by us or someone else? We can host it!"
+            isContact={false}
+            url={isMonthly ? "https://buy.stripe.com/8wM14X43ab2VawocMV" : "https://buy.stripe.com/8wM4h91V2ef7bAs9AK"}
           >
             <OfferList text="Site monitoring" status="active" />
             <OfferList text="Custom Domain" status="active" />
