@@ -22,7 +22,7 @@ const Pricing = () => {
           packageName="Custom"
           price=""
           duration=""
-          subtitle="Contact us to set a project budget!"
+          subtitle="All projects are custom and require different amounts of time and resources. Contact us for a quote!"
           isContact={true}
         >
         </PricingBox>
