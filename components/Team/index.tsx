@@ -44,14 +44,14 @@ const Team = () => {
           image: "/images/team/david.webp"
 
         },
-        {
-            name: "Robert Herron",
-            role: "SENIOR DEVELOPER",
-            bio: "",
-            // No social links provided
-            image: "/images/team/robert.png"
+        // {
+        //     name: "Robert Herron",
+        //     role: "SENIOR DEVELOPER",
+        //     bio: "",
+        //     // No social links provided
+        //     image: "/images/team/robert.png"
   
-          }
+        //   }
       ];
       
 
