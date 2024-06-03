@@ -44,14 +44,20 @@ const Team = () => {
           image: "/images/team/david.webp"
 
         },
-        // {
-        //     name: "Robert Herron",
-        //     role: "SENIOR DEVELOPER",
-        //     bio: "",
-        //     // No social links provided
-        //     image: "/images/team/robert.png"
-  
-        //   }
+        {
+            name: "Arron  Taylor",
+            role: "JUNIOR DEVELOPER",
+            bio: "",
+            // No social links provided
+            image: "/images/team/arron.jpeg"
+          },
+          {
+            name: "Zach  Taylor",
+            role: "MID-LEVEL DEVELOPER",
+            bio: "",
+            // No social links provided
+            image: "/images/team/zach.jpeg"
+          }
       ];
       
 
