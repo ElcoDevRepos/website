@@ -24,8 +24,8 @@ const Team = () => {
           name: "Carter Williams",
           role: "JUNIOR DEVELOPER",
           bio: "Carter is currently a junior in college working toward a degree in Software. Although young, his work ethic places him highly esteemed in the development world.",
-          linkedIn: "https://www.linkedin.com/in/carter-williams", // Update with actual URL
-          github: "https://github.com/carter-williams", // Update with actual URL
+          linkedIn: "https://www.linkedin.com/in/carter-williams-17ab13254/", // Update with actual URL
+          github: "https://github.com/carterww", // Update with actual URL
           image: "/images/team/carter.webp"
         },
         {
@@ -33,6 +33,8 @@ const Team = () => {
           role: "JUNIOR DEVELOPER",
           bio: "Olof is passionate about software development with a keen interest in open-source projects. He is always eager to learn new technologies and contribute to team success.",
           // No social links provided
+          linkedIn: "https://www.linkedin.com/in/olof-holmstrom-b19690192/",
+          github: "https://github.com/olofholm",
           image: "/images/team/olof.webp"
 
         },
@@ -41,14 +43,18 @@ const Team = () => {
           role: "JUNIOR DEVELOPER",
           bio: "David is dedicated to learning and growing as a developer. With a strong foundation in web development, he's excited to tackle challenging projects and collaborate with his teammates.",
           // No social links provided
+          linkedIn: "https://www.linkedin.com/in/david-qiu-38225a248/",
+          github: "https://github.com/D4vid134",
           image: "/images/team/david.webp"
 
         },
         {
             name: "Arron  Taylor",
-            role: "JUNIOR DEVELOPER",
+            role: "MID-LEVEL DEVELOPER",
             bio: "",
             // No social links provided
+            linkedIn: "https://www.linkedin.com/in/arron-t-037577164/",
+            github: "https://github.com/arron-taylor",
             image: "/images/team/arron.jpeg"
           },
           {
