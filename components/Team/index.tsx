@@ -51,7 +51,7 @@ const Team = () => {
         {
             name: "Arron  Taylor",
             role: "MID-LEVEL DEVELOPER",
-            bio: "",
+            bio: "Arron has been tinkering with computers since he was 13 years old and has a deep passion for software development. With three years of professional experience, he has honed his skills in various programming languages and frameworks. Arron is known for his dedication, focus, and obsession with user experience, viewing web design as a form of art. He enjoys taking on numerous projects, showcasing his innovative thinking and enthusiasm. Outside of coding, Arron loves photography, writing, and spending time with his wife and cat.",
             // No social links provided
             linkedIn: "https://www.linkedin.com/in/arron-t-037577164/",
             github: "https://github.com/arron-taylor",
