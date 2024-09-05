@@ -78,7 +78,7 @@ const HeroAreaHomeThree = () => {
             <div className="col-xl-12">
               <div className="tp-hero-3__content">
                 <h3 className="tp-hero-3__title tp-char-animation">
-                  Creative{" "}
+                  A Creative{" "}
                   <span>
                   <video
                       id="myVideo"
