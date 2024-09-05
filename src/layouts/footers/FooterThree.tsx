@@ -34,9 +34,8 @@ const footer_content: DataType = {
   subtitle: "Contact Us",
   title: "Let's work Together",
   links: [
-    { title: "About", link: "/about" },
-    { title: "Works", link: "/portfolio" },
-    { title: "Services", link: "/service" },
+    { title: "Contact", link: "/contact" },
+    { title: "Portfolio", link: "/portfolio" },
   ],
   sm_info: <>Small town feel, big time software. <br /> We are here to help.</>,
   company_name: "Elco Dev",

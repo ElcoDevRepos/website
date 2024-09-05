@@ -80,7 +80,15 @@ const HeroAreaHomeThree = () => {
                 <h3 className="tp-hero-3__title tp-char-animation">
                   Creative{" "}
                   <span>
-                    
+                  <video
+                      id="myVideo"
+                      autoPlay
+                      loop
+                      playsInline
+                      muted
+                      src="https://template.wphix.com/video/diego-video.mp4"
+                    >
+                    </video>
                   </span> <br />
                   Web Agency
                 </h3>
