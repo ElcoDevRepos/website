@@ -15,6 +15,7 @@ interface DataType {
   link: string;
   img_dropdown?: boolean;
   has_dropdown?: boolean;
+  isExternalLink?: boolean;
   sub_menus?: {
     link: string;
     title: string;
@@ -33,6 +34,13 @@ const menu_data: DataType[] = [
     title: "Home",
     link: "/",
     img_dropdown: false,
+  },
+  {
+    id: 2,
+    title: "Shop",
+    link: "https://shop.elcodev.com",
+    has_dropdown: false,
+    isExternalLink: true
   },
   // {
   //   id: 2,

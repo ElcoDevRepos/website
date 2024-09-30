@@ -10,7 +10,7 @@ const NavMenu = () => {
       <ul>
         {menu_data.map((item, index) => (
           <li className={`${item.has_dropdown || item.img_dropdown ? 'has-dropdown' : ''}`} key={index}>
-            <Link href={item.link}>{item.title}</Link>
+            <Link href={item.link} target={item.isExternalLink ? "_blank" : ""}>{item.title}</Link>
             {item.img_dropdown &&
               <div className="tp-submenu submenu has-homemenu">
                 <div className="row gx-6 row-cols-1 row-cols-md-2 row-cols-lg-4">

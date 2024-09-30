@@ -70,7 +70,7 @@ const MobileMenus = () => {
             {item.img_dropdown &&
               <li className={`has-dropdown active`}
               >
-                <Link href={item.link} className={`${navTitle === item.title ? "expanded" : ""}`}> {item.title}
+                <Link href={item.link}  target={item.isExternalLink ? "_blank" : "" } className={`${navTitle === item.title ? "expanded" : ""}`}> {item.title}
                   <button className={`dropdown-toggle-btn ${navTitle === item.title ? "dropdown-opened" : ""}`}
                     onClick={() => openMobileMenu(item.title)}
                   >
