@@ -11,7 +11,7 @@ import project_img_4 from "@/assets/img/portfolio/3/portfolio-4.jpg";
 
 
 type DataType = StaticImageData[];
-const project_imgs: any = [{src: project_img_1, link: 'https://penaltyverdict.com'},{src: project_img_3, link: 'https://canvenient.com'},{src: project_img_2, link: 'https://thinminthealth.com'}];
+const project_imgs: any = [{src: project_img_1, link: 'https://penaltyverdict.com'},{src: project_img_3, link: 'https://thinminthealth.com'},{src: project_img_2, link: 'https://canvenient.com'}];
 
 const ProjectAreaHomeThree = () => {
 
