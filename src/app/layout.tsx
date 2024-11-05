@@ -1,5 +1,6 @@
 import "../styles/index.scss";
 import ThemeProvider from "@/components/provider/ThemeProvider";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 export default function RootLayout({
   children,
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body suppressHydrationWarning={true} className="scroll-smooth">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
+      <GoogleAnalytics gaId="G-NZY90G4L7Y" />
     </html>
   );
 }
