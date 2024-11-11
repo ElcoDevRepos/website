@@ -95,8 +95,8 @@ const HeroAreaHomeThree = () => {
               </div>
               <div className="tp-hero-3__btn-box tp_wrap_anim d-flex align-items-center justify-content-start justify-content-md-center">
                 <div className="tp-btn-bounce-3">
-                  <Link className="tp-btn-blue" href="/portfolio">
-                    <span className="text"> View Our Work</span>
+                  <Link className="tp-btn-blue" href="/contact">
+                    <span className="text"> Free Consultation</span>
 
                     <span className="icon">
                       <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
