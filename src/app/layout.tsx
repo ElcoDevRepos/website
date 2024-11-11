@@ -18,7 +18,7 @@ export default function RootLayout({
       <body suppressHydrationWarning={true} className="scroll-smooth">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
-      <GoogleAnalytics gaId="G-NZY90G4L7Y" />
+      <GoogleAnalytics gaId="G-HMTR3GHTDW" />
     </html>
   );
 }
