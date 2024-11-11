@@ -36,7 +36,7 @@ const service_content: DataType = {
       id: 1,
       icon: <StrategyIcno />,
       title: <>Design <br /> Strategy</>,
-      sm_des: <>We communicate clearly  <br /> and beautiful visual design.</>,
+      sm_des: <>We communicate clearly  <br /> and provide beautiful visual designs.</>,
       tag_1: "UI/UX Audit",
       tag_2: "Workshops",
     },
