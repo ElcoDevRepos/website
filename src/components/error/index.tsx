@@ -4,6 +4,7 @@ import Breadcrumb from './Breadcrumb';
 import HeaderOne from '@/layouts/headers/HeaderOne';
 import FooterFour from '@/layouts/footers/FooterFour';
 import HeaderThree from '@/layouts/headers/HeaderThree';
+import FooterThree from '@/layouts/footers/FooterThree';
 
 const Error = () => {
   return (
@@ -26,7 +27,7 @@ const Error = () => {
           </div>
         </section>
       </main>
-      <FooterFour />
+      <FooterThree />
     </>
   );
 };
