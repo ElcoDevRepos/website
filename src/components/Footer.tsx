@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaTwitter, FaInstagram, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-import logo2 from '../assets/logo-2.png';
+import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -18,7 +17,7 @@ const Footer: React.FC = () => {
             className="space-y-4"
           >
             <img
-              src={logo2}
+              src="./logo-2.png"
               alt="Elco Dev"
               className="h-16 w-auto mb-4 filter brightness-0 invert"
             />
