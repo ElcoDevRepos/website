@@ -34,7 +34,7 @@ const reviews = [
   },
   {
     quote: "As an entrepreneur without much money trying to get a minimum viable product into existence, Elco Development has been the perfect partner. Austin built the entire project for less than a big firm would have charged for a few planning meetings. I'm not a programmer, and I send Austin some simple mock-ups of what I want, and a few days later, there it is working on my site. It's completely straightforward. I strongly recommend Elco to any entrepreneur. My project would still be just an idea if I had not found Austin.",
-    author: "RCV123 Admin",
+    author: "Charles Lyons",
     company: "Daily Dashboard"
   },
   {
