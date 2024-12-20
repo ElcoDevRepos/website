@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-5xl font-bold text-gray-900 mb-6">
-                Expert Web & Mobile Development
+                Expert Full Stack Web & Mobile Development
               </h1>
               <p className="text-xl text-gray-600 mb-8">
               We specialize in helping visionaries develop user-centric applications - from technical founders to entrepreneurs with the next million-dollar idea.
