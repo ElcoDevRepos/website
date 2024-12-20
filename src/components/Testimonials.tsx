@@ -8,11 +8,6 @@ const reviews = [
     company: "Renew Music"
   },
   {
-    quote: "My boss found Elco & Austin through a freelancing website. The company that I work for was in search for a CRM database to help with our expanding work load. Austin has been building this from the ground up and we have been nothing but pleased with the progress. Austin is also available to talk if there is an issue or if we have a new idea. We are very excited to continue to work with him and grow this soon to be CRM tool.",
-    author: "Marla Nesbella",
-    company: "Laurel Medical"
-  },
-  {
     quote: "Austin is a great developer. Highly recommend.",
     author: "Collin Goodwin",
     company: "Saucer"
@@ -26,6 +21,11 @@ const reviews = [
     quote: "These guys know code! I've had the opportunity to work with multiple company's over the years and Elco Dev is hands down the best. They treat every project as if it's there own no matter how big or small.",
     author: "Mike Nelson",
     company: "Ladder Suite"
+  },
+  {
+    quote: "My boss found Elco & Austin through a freelancing website. The company that I work for was in search for a CRM database to help with our expanding work load. Austin has been building this from the ground up and we have been nothing but pleased with the progress. Austin is also available to talk if there is an issue or if we have a new idea. We are very excited to continue to work with him and grow this soon to be CRM tool.",
+    author: "Marla Nesbella",
+    company: "Laurel Medical"
   },
   {
     quote: "Austin and his development team have transformed my app idea into a tangible reality. Having had no prior experience in app development, Austin has established himself as indispensable in steering me through the nuances of this complex process. If you seek someone capable of bringing life into your app concept, look no further than Austin. He consistently upholds principles of honesty, fairness, and transparency in our interactions. Collaborating with Austin is comparable to experiencing the professionalism and expertise of a major corporation, combined with the personalized approach of a small business.",
