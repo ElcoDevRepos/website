@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
                 Expert Web & Mobile Development
               </h1>
               <p className="text-xl text-gray-600 mb-8">
-                We specialize in helping non-technical entrepreneurs develop user-centric applications to showcase their million-dollar ideas.
+              We specialize in helping visionaries develop user-centric applications - from technical founders to entrepreneurs with the next million-dollar idea.
               </p>
               <button onClick={() => window.location.href = '#contact'} className="px-8 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-300 font-medium text-lg shadow-lg hover:shadow-xl">
                 Schedule a FREE Consultation
