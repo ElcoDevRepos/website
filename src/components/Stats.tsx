@@ -43,7 +43,7 @@ const Stats: React.FC = () => {
             suffix="%"
           />
           <StatItem 
-            value={8} 
+            value={10} 
             label="Years Experience"
             suffix="+"
           />
