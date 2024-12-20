@@ -1,0 +1,9 @@
+{
+  "name": "screenshot-capture",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "playwright": "^1.40.1",
+    "sharp": "^0.33.1"
+  }
+}

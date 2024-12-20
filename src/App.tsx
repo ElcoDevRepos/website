@@ -9,6 +9,7 @@ import Navigation from './components/Navigation';
 import Pricing from './components/Pricing';
 import Stats from './components/Stats';
 import Footer from './components/Footer';
+import Portfolio from './components/Portfolio';
 
 const App: React.FC = () => {
   return (
@@ -18,6 +19,7 @@ const App: React.FC = () => {
         <Hero />
         <Stats />
         <Services />
+        <Portfolio />
         <About />
         <Pricing />
         <Testimonials />
