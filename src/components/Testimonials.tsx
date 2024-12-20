@@ -58,7 +58,7 @@ const Testimonials: React.FC = () => {
   return (
     <section id="testimonials" className="py-20 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">What Our Clients Say</h2>
+        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">What Our Clients Say</h2>
         
         <div className="relative w-full overflow-hidden">
           <div className="flex animate-scroll">
