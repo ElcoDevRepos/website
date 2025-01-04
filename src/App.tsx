@@ -10,10 +10,20 @@ import Pricing from './components/Pricing';
 import Stats from './components/Stats';
 import Footer from './components/Footer';
 import Portfolio from './components/Portfolio';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import PrivacyPolicy from './components/PrivacyPolicy';
 
 const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-[#0A0A0A]">
+  <Router>
+      <Routes>
+        {/* Define the route for your privacy policy */}
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        {/* Add your other routes here */}
+        <Route
+          path="/"
+          element={
+              <div className="min-h-screen bg-[#0A0A0A]">
       <Navigation />
       <main className="py-0">
         <Hero />
@@ -28,6 +38,11 @@ const App: React.FC = () => {
       </main>
       <Footer />
     </div>
+          }
+        />
+      </Routes>
+    </Router>
+  
   );
 };
 
