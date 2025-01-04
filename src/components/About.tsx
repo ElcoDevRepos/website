@@ -56,7 +56,7 @@ const About: React.FC = () => {
     {
       name: "Devin Kelly",
       role: "Software Engineer",
-      image: "./devin.png"
+      image: "./IMG_4705.jpeg"
     },
     {
       name: "Joey Fenoglio",
