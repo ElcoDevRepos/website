@@ -36,7 +36,7 @@ const About: React.FC = () => {
     {
       name: "Austin Hunter",
       role: "Founder, Lead Developer",
-      image: "./austin.png"
+      image: "./IMG_8051_jpg.jpeg"
     },
     {
       name: "Ashley Hunter",
@@ -56,7 +56,7 @@ const About: React.FC = () => {
     {
       name: "Devin Kelly",
       role: "Software Engineer",
-      image: "./devin.png"
+      image: "./IMG_4705.jpeg"
     },
     {
       name: "Joey Fenoglio",
