@@ -15,7 +15,7 @@ import PrivacyPolicy from './components/PrivacyPolicy';
 
 const App: React.FC = () => {
   return (
-  <Router>
+    <Router>
       <Routes>
         {/* Redirect /our-team to home */}
         <Route path="/our-team" element={<Navigate to="/" replace />} />
@@ -27,26 +27,26 @@ const App: React.FC = () => {
         <Route
           path="/"
           element={
-              <div className="min-h-screen bg-[#0A0A0A]">
-      <Navigation />
-      <main className="py-0">
-        <Hero />
-        <Stats />
-        <Services />
-        <Portfolio />
-        <About />
-        <Pricing />
-        <Testimonials />
-        <CTA />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+            <div className="min-h-screen bg-[#0A0A0A]">
+              <Navigation />
+              <main className="py-0">
+                <Hero />
+                <Stats />
+                <Services />
+                <Portfolio />
+                <About />
+                <Pricing />
+                <Testimonials />
+                <CTA />
+                <Contact />
+              </main>
+              <Footer />
+            </div>
           }
         />
       </Routes>
     </Router>
-  
+
   );
 };
 
