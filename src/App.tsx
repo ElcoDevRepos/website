@@ -10,13 +10,17 @@ import Pricing from './components/Pricing';
 import Stats from './components/Stats';
 import Footer from './components/Footer';
 import Portfolio from './components/Portfolio';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import PrivacyPolicy from './components/PrivacyPolicy';
 
 const App: React.FC = () => {
   return (
   <Router>
       <Routes>
+        {/* Redirect /our-team to home */}
+        <Route path="/our-team" element={<Navigate to="/" replace />} />
+        {/* Redirect /contact to home */}
+        <Route path="/contact" element={<Navigate to="/" replace />} />
         {/* Define the route for your privacy policy */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         {/* Add your other routes here */}
