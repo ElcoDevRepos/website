@@ -21,6 +21,7 @@ const App: React.FC = () => {
         <Route path="/our-team" element={<Navigate to="/" replace />} />
         {/* Redirect /contact to home */}
         <Route path="/contact" element={<Navigate to="/" replace />} />
+        <Route path="/portfolio" element={<Navigate to="/" replace />} />
         {/* Define the route for your privacy policy */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         {/* Add your other routes here */}

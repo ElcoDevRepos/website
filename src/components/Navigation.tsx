@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { track } from '@vercel/analytics';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,6 +11,10 @@ const Navigation: React.FC = () => {
       element.scrollIntoView({ behavior: 'smooth' });
       setIsOpen(false);
     }
+  };
+
+  const handleLinkClick = (url: string) => {
+    track( url );
   };
 
   return (
@@ -29,31 +34,46 @@ const Navigation: React.FC = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <button
-                onClick={() => scrollToSection('home')}
+                onClick={() =>{
+                  scrollToSection('home')
+                  handleLinkClick('/');
+                }}
                 className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
               >
                 Home
               </button>
               <button
-                onClick={() => scrollToSection('about')}
+                onClick={() => {
+                  scrollToSection('about');
+                  handleLinkClick('/about');
+                }}
                 className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
               >
                 About
               </button>
               <button
-                onClick={() => scrollToSection('pricing')}
+                onClick={() => {
+                  scrollToSection('pricing');
+                  handleLinkClick('/pricing');
+                }}
                 className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
               >
                 Pricing
               </button>
               <button
-                onClick={() => scrollToSection('testimonials')}
+                onClick={() => {
+                  scrollToSection('testimonials');
+                  handleLinkClick('/testimonials');
+                }}
                 className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
               >
                 Testimonials
               </button>
               <button
-                onClick={() => scrollToSection('contact')}
+                onClick={() => {
+                  scrollToSection('contact');
+                  handleLinkClick('/contact');
+                }}
                 className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300"
               >
                 Get Started
