@@ -51,7 +51,7 @@ const Navigation: React.FC = () => {
               >
                 About
               </button>
-              /*<button
+              {/*<button
                 onClick={() => {
                   scrollToSection('pricing');
                   handleLinkClick('/pricing');
@@ -59,7 +59,7 @@ const Navigation: React.FC = () => {
                 className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
               >
                 Pricing
-              </button>*/
+              </button>*/}
               <button
                 onClick={() => {
                   scrollToSection('testimonials');
@@ -144,12 +144,12 @@ const Navigation: React.FC = () => {
           >
             About
           </button>
-          /*<button
+         { /*<button
             onClick={() => scrollToSection('pricing')}
             className="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left"
           >
             Pricing
-          </button>*/
+          </button>*/}
           <button
             onClick={() => scrollToSection('testimonials')}
             className="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left"
