@@ -121,7 +121,7 @@ ${newData.message}`;
           >
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-4">
               <a
-                href="tel:+1234567890" // Replace with your actual phone number
+                href="tel:+16155879346" // Replace with your actual phone number
                 className="inline-flex items-center justify-center px-8 py-4 bg-gray-700 text-white rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:bg-gray-800 group"
               >
                 <svg
@@ -141,7 +141,7 @@ ${newData.message}`;
                 Call Now
               </a>
               <a
-                href="mailto:your.email@example.com" // Replace with your actual email
+                href="mailto:austin@elcodev.com" // Replace with your actual email
                 className="inline-flex items-center justify-center px-8 py-4 bg-gray-600 text-white rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-xl hover:bg-gray-700 group"
               >
                 <svg
