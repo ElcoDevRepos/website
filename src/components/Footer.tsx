@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -50,11 +50,11 @@ const Footer: React.FC = () => {
                   Services
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="#pricing" className="text-gray-300 hover:text-white transition-colors">
                   Pricing
                 </a>
-              </li>
+              </li> */}
               <li>
                 <a href="#contact" className="text-gray-300 hover:text-white transition-colors">
                   Contact
@@ -71,13 +71,17 @@ const Footer: React.FC = () => {
             className="space-y-4"
           >
             <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
-            <div className="flex items-center space-x-2 text-gray-300">
+            <div className="flex items-center space-x-2 text-gray-300" style={{ cursor: 'pointer' }} onClick={() => window.open('mailto:austin@elcodev.com', '_blank')}>
               <FaEnvelope className="text-blue-400" />
               <span>austin@elcodev.com</span>
             </div>
             <div className="flex items-center space-x-2 text-gray-300">
               <FaMapMarkerAlt className="text-blue-400" />
               <span>Nashville, TN</span>
+            </div>
+            <div className="flex items-center space-x-2 text-gray-300" style={{ cursor: 'pointer' }} onClick={() => window.open('tel:6157848066', '_blank')}>
+              <FaPhone className="text-blue-400" />
+              <span>615-784-8066</span>
             </div>
             <div className="flex space-x-4 mt-6">
               <a
@@ -107,7 +111,7 @@ const Footer: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400"
         >
-          <p> {currentYear} Elco Dev. All rights reserved.</p>
+          <p> {currentYear} Elco Dev, LLC. All rights reserved.</p>
         </motion.div>
       </div>
     </footer>
