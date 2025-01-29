@@ -4,17 +4,8 @@ import { motion } from 'framer-motion';
 const About: React.FC = () => {
   const features = [
     {
-      title: "Expert Development",
-      description: "Our team brings years of experience in building scalable web and mobile applications using cutting-edge technologies.",
-      icon: (
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-        </svg>
-      )
-    },
-    {
-      title: "User-Centric Design",
-      description: "We create intuitive interfaces that delight users while driving business growth through exceptional user experiences.",
+      title: "Family-First Approach",
+      description: "As a family-owned business, we understand the importance of trust and treating every client like they're part of our extended family.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -22,11 +13,20 @@ const About: React.FC = () => {
       )
     },
     {
-      title: "Agile Methodology",
-      description: "We employ agile practices to ensure rapid development cycles and continuous delivery of value to our clients.",
+      title: "Small-Town Values",
+      description: "We bring small-town hospitality to the digital world, ensuring personal attention and genuine care for every project we undertake.",
       icon: (
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+      )
+    },
+    {
+      title: "Equal Partnership",
+      description: "Whether you're a startup or an established business, you'll receive the same dedicated attention and exceptional service from our team.",
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
         </svg>
       )
     }
@@ -97,16 +97,16 @@ const About: React.FC = () => {
           variants={containerVariants}
           className="max-w-6xl mx-auto"
         >
-          {/* Features Section */}
+          {/* Values Section */}
           <div className="mb-32">
             {/* Header */}
             <div className="text-center mb-16">
               <motion.div variants={itemVariants}>
                 <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                  Why Choose Elco Dev?
+                  More Than Just an Agency
                 </h2>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                  We transform ideas into powerful digital solutions, helping businesses thrive in the modern digital landscape.
+                  We're a family-owned business bringing small-town values and personal attention to every digital project we touch.
                 </p>
               </motion.div>
             </div>
@@ -149,7 +149,7 @@ const About: React.FC = () => {
                   Meet Our Team
                 </h2>
                 <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                  A talented group of professionals dedicated to bringing your vision to life.
+                  Meet the faces behind your next project - a close-knit team that treats every client's vision as our own.
                 </p>
               </motion.div>
             </div>
@@ -189,10 +189,13 @@ const About: React.FC = () => {
             className="text-center mt-16"
           >
             <p className="text-lg text-gray-600 mb-6">
-              Ready to bring your vision to life?
+              Let's work together to bring your vision to life - you'll be treated like family every step of the way.
             </p>
-            <button onClick={() => window.location.href = '#contact'} className="px-8 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-300 font-medium text-lg shadow-lg hover:shadow-xl">
-              Start Your Project
+            <button 
+              onClick={() => window.location.href = '#contact'} 
+              className="px-8 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors duration-300 font-medium text-lg shadow-lg hover:shadow-xl"
+            >
+              Start a Conversation
             </button>
           </motion.div>
         </motion.div>
