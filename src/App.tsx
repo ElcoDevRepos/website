@@ -6,7 +6,7 @@ import CTA from './components/CTA';
 import Contact from './components/Contact';
 import Testimonials from './components/Testimonials';
 import Navigation from './components/Navigation';
-import Pricing from './components/Pricing';
+//import Pricing from './components/Pricing';
 import Stats from './components/Stats';
 import Footer from './components/Footer';
 import Portfolio from './components/Portfolio';
@@ -36,7 +36,7 @@ const App: React.FC = () => {
                 <Services />
                 <Portfolio />
                 <About />
-                <Pricing />
+              { /*<Pricing />*/}
                 <Testimonials />
                 <CTA />
                 <Contact />
