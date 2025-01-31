@@ -1,9 +1,24 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isPartnersPage = location.pathname === '/partners';
+
+  const handleNavigation = (sectionId: string) => {
+    if (isPartnersPage) {
+      navigate(`/#${sectionId}`);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <footer className="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-16">
@@ -36,19 +51,28 @@ const Footer: React.FC = () => {
             <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <a href="#home" className="text-gray-300 hover:text-white transition-colors">
+                <button
+                  onClick={() => handleNavigation('home')}
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Home
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#about" className="text-gray-300 hover:text-white transition-colors">
+                <button
+                  onClick={() => handleNavigation('about')}
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   About Us
-                </a>
+                </button>
               </li>
               <li>
-                <a href="#services" className="text-gray-300 hover:text-white transition-colors">
+                <button
+                  onClick={() => handleNavigation('services')}
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Services
-                </a>
+                </button>
               </li>
               {/* <li>
                 <a href="#pricing" className="text-gray-300 hover:text-white transition-colors">
@@ -56,9 +80,12 @@ const Footer: React.FC = () => {
                 </a>
               </li> */}
               <li>
-                <a href="#contact" className="text-gray-300 hover:text-white transition-colors">
+                <button
+                  onClick={() => handleNavigation('contact')}
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Contact
-                </a>
+                </button>
               </li>
             </ul>
           </motion.div>
@@ -111,7 +138,7 @@ const Footer: React.FC = () => {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400"
         >
-          <p> {currentYear} Elco Dev, LLC. All rights reserved.</p>
+          <p>© {currentYear} Elco Dev, LLC. All rights reserved.</p>
         </motion.div>
       </div>
     </footer>
