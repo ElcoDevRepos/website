@@ -1,20 +1,40 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { track } from '@vercel/analytics';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isPartnersPage = location.pathname === '/partners';
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false);
+    if (isPartnersPage) {
+      navigate(`/#${sectionId}`);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        setIsOpen(false);
+      }
     }
   };
 
   const handleLinkClick = (url: string) => {
-    track( url );
+    track(url);
+  };
+
+  const textColorClass = isPartnersPage ? 'text-white' : 'text-gray-900';
+  const hoverColorClass = isPartnersPage ? 'hover:text-blue-400' : 'hover:text-blue-600';
+  const logoSrc = isPartnersPage ? './logo-2.png' : './logo-black.png';
+
+  const handleLogoClick = () => {
+    if (isPartnersPage) {
+      navigate('/');
+    } else {
+      scrollToSection('home');
+    }
   };
 
   return (
@@ -22,10 +42,10 @@ const Navigation: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-0 cursor-pointer" onClick={handleLogoClick}>
             <img
               className="h-16 w-auto mt-2"
-              src="./logo-black.png"
+              src={logoSrc}
               alt="Elco Dev"
             />
           </div>
@@ -34,22 +54,39 @@ const Navigation: React.FC = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               <button
-                onClick={() =>{
-                  scrollToSection('home')
+                onClick={() => {
+                  if (isPartnersPage) {
+                    navigate('/');
+                  } else {
+                    scrollToSection('home');
+                  }
                   handleLinkClick('/');
                 }}
-                className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
+                className={`${textColorClass} ${hoverColorClass} px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300`}
               >
                 Home
               </button>
               <button
                 onClick={() => {
-                  scrollToSection('about');
+                  if (isPartnersPage) {
+                    navigate('/#about');
+                  } else {
+                    scrollToSection('about');
+                  }
                   handleLinkClick('/about');
                 }}
-                className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
+                className={`${textColorClass} ${hoverColorClass} px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300`}
               >
                 About
+              </button>
+              <button
+                onClick={() => {
+                  window.open('/partners', '_blank');
+                  handleLinkClick('/partners');
+                }}
+                className={`${textColorClass} ${hoverColorClass} px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300`}
+              >
+                Partners
               </button>
               {/*<button
                 onClick={() => {
@@ -62,16 +99,24 @@ const Navigation: React.FC = () => {
               </button>*/}
               <button
                 onClick={() => {
-                  scrollToSection('testimonials');
+                  if (isPartnersPage) {
+                    navigate('/#testimonials');
+                  } else {
+                    scrollToSection('testimonials');
+                  }
                   handleLinkClick('/testimonials');
                 }}
-                className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
+                className={`${textColorClass} ${hoverColorClass} px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300`}
               >
                 Testimonials
               </button>
               <button
                 onClick={() => {
-                  scrollToSection('contact');
+                  if (isPartnersPage) {
+                    navigate('/#contact');
+                  } else {
+                    scrollToSection('contact');
+                  }
                   handleLinkClick('/contact');
                 }}
                 className="bg-blue-600 text-white hover:bg-blue-700 px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300"
@@ -85,7 +130,7 @@ const Navigation: React.FC = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-900 hover:text-blue-600 focus:outline-none"
+              className={`inline-flex items-center justify-center p-2 rounded-md ${textColorClass} ${hoverColorClass} focus:outline-none`}
             >
               <span className="sr-only">Open main menu</span>
               {!isOpen ? (
@@ -131,16 +176,30 @@ const Navigation: React.FC = () => {
         animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -20 }}
         transition={{ duration: 0.2 }}
       >
-        <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg rounded-b-lg">
+        <div className={`px-2 pt-2 pb-3 space-y-1 sm:px-3 ${isPartnersPage ? 'bg-gray-800' : 'bg-white'} shadow-lg rounded-b-lg`}>
           <button
-            onClick={() => scrollToSection('home')}
-            className="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left"
+            onClick={() => {
+              if (isPartnersPage) {
+                navigate('/');
+              } else {
+                scrollToSection('home');
+              }
+              setIsOpen(false);
+            }}
+            className={`${textColorClass} ${hoverColorClass} block px-3 py-2 rounded-md text-base font-medium w-full text-left`}
           >
             Home
           </button>
           <button
-            onClick={() => scrollToSection('about')}
-            className="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left"
+            onClick={() => {
+              if (isPartnersPage) {
+                navigate('/#about');
+              } else {
+                scrollToSection('about');
+              }
+              setIsOpen(false);
+            }}
+            className={`${textColorClass} ${hoverColorClass} block px-3 py-2 rounded-md text-base font-medium w-full text-left`}
           >
             About
           </button>
@@ -151,13 +210,27 @@ const Navigation: React.FC = () => {
             Pricing
           </button>*/}
           <button
-            onClick={() => scrollToSection('testimonials')}
-            className="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left"
+            onClick={() => {
+              if (isPartnersPage) {
+                navigate('/#testimonials');
+              } else {
+                scrollToSection('testimonials');
+              }
+              setIsOpen(false);
+            }}
+            className={`${textColorClass} ${hoverColorClass} block px-3 py-2 rounded-md text-base font-medium w-full text-left`}
           >
             Testimonials
           </button>
           <button
-            onClick={() => scrollToSection('contact')}
+            onClick={() => {
+              if (isPartnersPage) {
+                navigate('/#contact');
+              } else {
+                scrollToSection('contact');
+              }
+              setIsOpen(false);
+            }}
             className="bg-blue-600 text-white hover:bg-blue-700 block px-4 py-2 rounded-full text-base font-medium w-full text-center mt-4"
           >
             Get Started

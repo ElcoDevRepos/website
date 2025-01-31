@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import Portfolio from './components/Portfolio';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import PartnersPage from './components/Partners/PartnersPage';
 
 const App: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const App: React.FC = () => {
         <Route path="/portfolio" element={<Navigate to="/" replace />} />
         {/* Define the route for your privacy policy */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/partners" element={<PartnersPage />} />
         {/* Add your other routes here */}
         <Route
           path="/"

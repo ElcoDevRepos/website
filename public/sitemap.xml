@@ -25,6 +25,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://elcodev.com/partners</loc>
+    <lastmod>2024-03-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://elcodev.com/blog</loc>
     <lastmod>2024-03-20</lastmod>
     <changefreq>weekly</changefreq>
