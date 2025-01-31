@@ -20,6 +20,10 @@ const App: React.FC = () => {
       <Routes>
         {/* Redirect /our-team to home */}
         <Route path="/our-team" element={<Navigate to="/" replace />} />
+        <Route path="/our-services" element={<Navigate to="/" replace />} />
+        <Route path="/about" element={<Navigate to="/" replace />} />
+        <Route path="/service-details" element={<Navigate to="/" replace />} />
+
         {/* Redirect /contact to home */}
         <Route path="/contact" element={<Navigate to="/" replace />} />
         <Route path="/portfolio" element={<Navigate to="/" replace />} />
