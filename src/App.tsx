@@ -30,7 +30,7 @@ const App: React.FC = () => {
         {/* Define the route for your privacy policy */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/partners" element={<PartnersPage />} />
-        {/* Add your other routes here */}
+        {/* Home route */}
         <Route
           path="/"
           element={
@@ -51,6 +51,8 @@ const App: React.FC = () => {
             </div>
           }
         />
+        {/* Catch all route - redirect to home */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
 
