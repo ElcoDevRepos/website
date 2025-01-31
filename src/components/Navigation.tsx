@@ -203,6 +203,15 @@ const Navigation: React.FC = () => {
           >
             About
           </button>
+          <button
+                onClick={() => {
+                  window.open('/partners', '_blank');
+                  handleLinkClick('/partners');
+                }}
+                className={`${textColorClass} ${hoverColorClass} px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300`}
+              >
+                Partners
+              </button>
          { /*<button
             onClick={() => scrollToSection('pricing')}
             className="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left"
