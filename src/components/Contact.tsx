@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { InlineWidget, PopupButton, PopupWidget } from 'react-calendly';
+import { InlineWidget } from 'react-calendly';
 
 const Contact: React.FC = () => {
   return (
