@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ai_contents",
+  "info": {
+    "singularName": "ai-content",
+    "pluralName": "ai-contents",
+    "displayName": "AI Content Generator"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "text",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["draft", "published"],
+      "default": "draft"
+    }
+  }
+} 

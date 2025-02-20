@@ -8,9 +8,10 @@ const Footer: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const isPartnersPage = location.pathname === '/partners';
+  const isBlogPage = location.pathname.startsWith('/blog');
 
   const handleNavigation = (sectionId: string) => {
-    if (isPartnersPage) {
+    if (isPartnersPage || isBlogPage) {
       navigate(`/#${sectionId}`);
     } else {
       const element = document.getElementById(sectionId);
@@ -32,7 +33,7 @@ const Footer: React.FC = () => {
             className="space-y-4"
           >
             <img
-              src="./logo-2.png"
+              src="/logo-2.png"
               alt="Elco Dev"
               className="h-16 w-auto mb-4 filter brightness-0 invert"
             />

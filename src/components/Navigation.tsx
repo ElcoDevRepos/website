@@ -8,9 +8,10 @@ const Navigation: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const isPartnersPage = location.pathname === '/partners';
+  const isBlogPage = location.pathname.startsWith('/blog');
 
   const scrollToSection = (sectionId: string) => {
-    if (isPartnersPage) {
+    if (isPartnersPage || isBlogPage) {
       navigate(`/#${sectionId}`);
     } else {
       const element = document.getElementById(sectionId);
@@ -27,10 +28,11 @@ const Navigation: React.FC = () => {
 
   const textColorClass = isPartnersPage ? 'text-white' : 'text-gray-900';
   const hoverColorClass = isPartnersPage ? 'hover:text-blue-400' : 'hover:text-blue-600';
-  const logoSrc = isPartnersPage ? './logo-2.png' : './logo-black.png';
+  const logoSrc = isPartnersPage ? '/logo-2.png' : '/logo-black.png';
+  const mobileMenuBgClass = isPartnersPage ? 'bg-gray-900' : 'bg-white';
 
   const handleLogoClick = () => {
-    if (isPartnersPage) {
+    if (isPartnersPage || isBlogPage) {
       navigate('/');
     } else {
       scrollToSection('home');
@@ -87,6 +89,15 @@ const Navigation: React.FC = () => {
                 className={`${textColorClass} ${hoverColorClass} px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300`}
               >
                 Partners
+              </button>
+              <button
+                onClick={() => {
+                  navigate('/blog');
+                  handleLinkClick('/blog');
+                }}
+                className={`${textColorClass} ${hoverColorClass} px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300`}
+              >
+                Blog
               </button>
               {/*<button
                 onClick={() => {
@@ -176,7 +187,7 @@ const Navigation: React.FC = () => {
         animate={{ opacity: isOpen ? 1 : 0, y: isOpen ? 0 : -20 }}
         transition={{ duration: 0.2 }}
       >
-        <div className={`px-2 pt-2 pb-3 space-y-1 sm:px-3 ${isPartnersPage ? 'bg-gray-800' : 'bg-white'} shadow-lg rounded-b-lg`}>
+        <div className={`px-2 pt-2 pb-3 space-y-1 sm:px-3 ${mobileMenuBgClass} shadow-lg rounded-b-lg`}>
           <button
             onClick={() => {
               if (isPartnersPage) {
@@ -211,6 +222,16 @@ const Navigation: React.FC = () => {
                 className={`${textColorClass} ${hoverColorClass} px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300`}
               >
                 Partners
+              </button>
+              <button
+                onClick={() => {
+                  navigate('/blog');
+                  handleLinkClick('/blog');
+                  setIsOpen(false);
+                }}
+                className={`${textColorClass} ${hoverColorClass} block px-3 py-2 rounded-md text-base font-medium w-full text-left`}
+              >
+                Blog
               </button>
          { /*<button
             onClick={() => scrollToSection('pricing')}

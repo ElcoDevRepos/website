@@ -13,6 +13,9 @@ import Portfolio from './components/Portfolio';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import PartnersPage from './components/Partners/PartnersPage';
+import BlogPage from './components/Blog/BlogPage';
+import BlogPost from './components/Blog/BlogPost';
+import BlogGenerator from './components/Blog/BlogGenerator';
 
 const App: React.FC = () => {
   return (
@@ -23,6 +26,28 @@ const App: React.FC = () => {
         <Route path="/our-services" element={<Navigate to="/" replace />} />
         <Route path="/about" element={<Navigate to="/" replace />} />
         <Route path="/service-details" element={<Navigate to="/" replace />} />
+
+        {/* Blog routes */}
+        <Route path="/blog" element={
+          <div className="min-h-screen bg-[#0A0A0A]">
+            <Navigation />
+            <BlogPage />
+            <Footer />
+          </div>
+        } />
+        <Route path="/blog/:slug" element={
+          <div className="min-h-screen bg-[#0A0A0A]">
+            <Navigation />
+            <BlogPost />
+            <Footer />
+          </div>
+        } />
+        <Route path="/blog/generate" element={
+          <div className="min-h-screen bg-[#0A0A0A]">
+            <BlogGenerator />
+            <Footer />
+          </div>
+        } />
 
         {/* Redirect /contact to home */}
         <Route path="/contact" element={<Navigate to="/" replace />} />
