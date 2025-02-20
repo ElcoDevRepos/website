@@ -45,7 +45,7 @@ const About: React.FC = () => {
     },
     {
       name: "Carter Williams",
-      role: "Software Engineer, Lead Developer",
+      role: "Lead Developer",
       image: "./carter.png"
     },
     {
