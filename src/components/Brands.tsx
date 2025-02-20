@@ -30,7 +30,7 @@ const Brands: React.FC = () => {
     {
         name: "Laurel Medical",
         logo: '/assets/brands/laurel-medical.avif',
-        url: 'https://www.laurelmedical.com'
+        url: 'https://www.laurelmedsolutions.com/'
     },
     {
         name: "Ladder Suite",
