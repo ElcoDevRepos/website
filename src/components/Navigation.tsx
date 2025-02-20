@@ -90,7 +90,7 @@ const Navigation: React.FC = () => {
               >
                 Partners
               </button>
-              <button
+              {/* <button
                 onClick={() => {
                   navigate('/blog');
                   handleLinkClick('/blog');
@@ -98,7 +98,7 @@ const Navigation: React.FC = () => {
                 className={`${textColorClass} ${hoverColorClass} px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300`}
               >
                 Blog
-              </button>
+              </button> */}
               {/*<button
                 onClick={() => {
                   scrollToSection('pricing');
@@ -223,7 +223,7 @@ const Navigation: React.FC = () => {
               >
                 Partners
               </button>
-              <button
+              {/* <button
                 onClick={() => {
                   navigate('/blog');
                   handleLinkClick('/blog');
@@ -232,7 +232,7 @@ const Navigation: React.FC = () => {
                 className={`${textColorClass} ${hoverColorClass} block px-3 py-2 rounded-md text-base font-medium w-full text-left`}
               >
                 Blog
-              </button>
+              </button> */}
          { /*<button
             onClick={() => scrollToSection('pricing')}
             className="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left"

@@ -19,11 +19,12 @@ const stockImages = [
 // Function to redistribute post dates
 const redistributePostDates = async (strapi: any) => {
   try {
-    // Get all posts directly from database
-    const knex = strapi.db.connection;
-    const posts = await knex('posts')
-      .select('*')
-      .orderBy('published_at', 'asc');
+    // Get all posts ordered by current publishedAt
+    const posts = await strapi.entityService.findMany('api::post.post', {
+      sort: { publishedAt: 'asc' },
+      populate: '*',
+      publicationState: 'preview', // This gets both draft and published content
+    });
 
     if (posts.length === 0) return;
 
@@ -37,17 +38,13 @@ const redistributePostDates = async (strapi: any) => {
       const newDate = new Date(startDate);
       newDate.setDate(startDate.getDate() + (i * 3));
 
-      // Update both date fields directly in the database
-      await knex('posts')
-        .where({ id: post.id })
-        .update({
-          published_at: newDate,
-          updated_at: post.updated_at || new Date()
-        });
+      // Update the post with new dates
+      await strapi.entityService.update('api::post.post', post.id, {
+        data: {
+          publishedAt: newDate,
+        },
+      });
     }
-
-    // Force a refresh of the content manager
-    await strapi.service('api::post.post').find();
   } catch (error) {
     console.error('Error in redistributePostDates:', error);
     throw error;
@@ -57,39 +54,21 @@ const redistributePostDates = async (strapi: any) => {
 export default createCoreController('api::post.post', ({ strapi }) => ({
   async checkAllPosts(ctx) {
     try {
-      // Use direct database query to see everything
-      const knex = strapi.db.connection;
-      const posts = await knex('posts')
-        .select('*')
-        .orderBy('published_at', 'desc');
-
-      console.log('Raw database posts:', posts);
-
-      // Also check using entityService
+      // Get all posts including drafts
       const entries = await strapi.entityService.findMany('api::post.post', {
         sort: { publishedAt: 'desc' },
         publicationState: 'preview',
       });
 
-      console.log('Entity service posts:', entries);
-
-      // Return both results for comparison
       return {
-        dbCount: posts.length,
-        dbPosts: posts.map(post => ({
-          id: post.id,
-          title: post.title,
-          publishedAt: post.published_at,
-          createdAt: post.created_at,
-          updatedAt: post.updated_at
-        })),
-        entityCount: entries.length,
-        entityPosts: entries.map(post => ({
+        count: entries.length,
+        posts: entries.map(post => ({
           id: post.id,
           title: post.title,
           publishedAt: post.publishedAt,
           createdAt: post.createdAt,
-          updatedAt: post.updatedAt
+          updatedAt: post.updatedAt,
+          status: post.publishedAt ? 'published' : 'draft'
         }))
       };
     } catch (error) {

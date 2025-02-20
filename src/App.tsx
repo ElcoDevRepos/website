@@ -10,12 +10,13 @@ import Navigation from './components/Navigation';
 import Stats from './components/Stats';
 import Footer from './components/Footer';
 import Portfolio from './components/Portfolio';
+import Brands from './components/Brands';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import PartnersPage from './components/Partners/PartnersPage';
-import BlogPage from './components/Blog/BlogPage';
-import BlogPost from './components/Blog/BlogPost';
-import BlogGenerator from './components/Blog/BlogGenerator';
+// import BlogPage from './components/Blog/BlogPage';
+// import BlogPost from './components/Blog/BlogPost';
+// import BlogGenerator from './components/Blog/BlogGenerator';
 
 const App: React.FC = () => {
   return (
@@ -28,7 +29,7 @@ const App: React.FC = () => {
         <Route path="/service-details" element={<Navigate to="/" replace />} />
 
         {/* Blog routes */}
-        <Route path="/blog" element={
+        {/* <Route path="/blog" element={
           <div className="min-h-screen bg-[#0A0A0A]">
             <Navigation />
             <BlogPage />
@@ -47,7 +48,7 @@ const App: React.FC = () => {
             <BlogGenerator />
             <Footer />
           </div>
-        } />
+        } /> */}
 
         {/* Redirect /contact to home */}
         <Route path="/contact" element={<Navigate to="/" replace />} />
@@ -66,6 +67,7 @@ const App: React.FC = () => {
                 <Stats />
                 <Services />
                 <Portfolio />
+                <Brands />
                 <About />
               { /*<Pricing />*/}
                 <Testimonials />
