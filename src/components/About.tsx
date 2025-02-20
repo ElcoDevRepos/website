@@ -55,12 +55,12 @@ const About: React.FC = () => {
     },
     {
       name: "Devin Kelly",
-      role: "Software Engineer",
+      role: "Full Stack Developer",
       image: "./IMG_4789.png"
     },
     {
       name: "Joey Fenoglio",
-      role: "Software Engineer",
+      role: "Frontend Developer",
       image: "https://ui-avatars.com/api/?name=Joey+Fenoglio&background=0D8ABC&color=fff&size=400"
     }
   ];
