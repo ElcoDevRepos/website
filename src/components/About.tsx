@@ -50,7 +50,7 @@ const About: React.FC = () => {
     },
     {
       name: "Zach Taylor",
-      role: "Backend Developer",
+      role: "Software Engineer",
       image: "https://ui-avatars.com/api/?name=Zach+Taylor&background=0D8ABC&color=fff&size=400"
     },
     {
