@@ -2,9 +2,6 @@
   "name": "dev-agency-website",
   "version": "1.0.0",
   "private": true,
-  "workspaces": [
-    "backend"
-  ],
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@heroicons/react": "^2.1.1",
@@ -34,6 +31,7 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^5.4.0",
     "react-router-dom": "^6.21.1",
+    "react-scripts": "5.0.1",
     "tailwind-merge": "^2.5.5",
     "tailwindcss": "^3.4.0",
     "typescript": "^4.9.5",
@@ -41,20 +39,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "strapi:dev": "cd backend && npm run develop",
-    "strapi:build": "cd backend && npm run build",
-    "strapi:start": "cd backend && npm run start",
-    "heroku-postbuild": "cd backend && npm install && npm run build"
-  },
-  "cacheDirectories": [
-    "node_modules",
-    "backend/node_modules"
-  ],
-  "engines": {
-    "node": "18.x"
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "strapi": "cd backend && npm run develop",
+    "strapi:prod": "cd backend && npm run start",
+    "dev": "concurrently \"npm run start\" \"npm run strapi\""
   },
   "eslintConfig": {
     "extends": [
