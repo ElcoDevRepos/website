@@ -22,9 +22,8 @@ import FAITracker from "./FAITracker";
 const App: React.FC = () => {
 
   return (
-<div>
-    <FAITracker />
     <Router>
+    <FAITracker />
       <Routes>
         {/* Redirect /our-team to home */}
         <Route path="/our-team" element={<Navigate to="/" replace />} />
@@ -86,7 +85,6 @@ const App: React.FC = () => {
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
-</div>
   );
 };
 
