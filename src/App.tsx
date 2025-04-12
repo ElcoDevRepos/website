@@ -67,8 +67,8 @@ const App: React.FC = () => {
               <Navigation />
               <main className="py-0">
                 <Hero />
-                <Testimonials />
                 <Stats />
+                <Testimonials />
                 <Services />
                 <Portfolio />
                 <Brands />
