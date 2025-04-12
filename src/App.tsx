@@ -67,13 +67,13 @@ const App: React.FC = () => {
               <Navigation />
               <main className="py-0">
                 <Hero />
+                <Testimonials />
                 <Stats />
                 <Services />
                 <Portfolio />
                 <Brands />
                 <About />
               { /*<Pricing />*/}
-                <Testimonials />
                 <CTA />
                 <Contact />
               </main>
