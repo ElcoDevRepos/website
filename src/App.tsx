@@ -69,9 +69,9 @@ const App: React.FC = () => {
                 <Hero />
                 <Testimonials />
                 <Stats />
+                <Brands />
                 <Services />
                 <Portfolio />
-                <Brands />
                 <About />
               { /*<Pricing />*/}
                 <CTA />

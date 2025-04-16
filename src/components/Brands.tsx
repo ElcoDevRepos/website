@@ -28,9 +28,9 @@ const Brands: React.FC = () => {
         url: 'https://www.homedepot.com'
     },
     {
-        name: "Laurel Medical",
-        logo: '/assets/brands/laurel-medical.avif',
-        url: 'https://www.laurelmedsolutions.com/'
+        name: "TN State Parks",
+        logo: '/assets/brands/tsp-logo.svg',
+        url: 'https://tnstateparks.com/'
     },
     {
         name: "Ladder Suite",

@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeftIcon, ChevronRightIcon, StarIcon } from '@heroicons/react/24/solid';
 import '../styles/testimonials.css';
 
 const reviews = [
@@ -7,11 +9,7 @@ const reviews = [
     author: "Jason Robinson",
     company: "Renew Music"
   },
-  {
-    quote: "Austin is a great developer. Highly recommend.",
-    author: "Collin Goodwin",
-    company: "Saucer"
-  },
+  
   {
     quote: "I had the pleasure of collaborating with Austin on developing an app based on my UX designs. Austin's ability to overcome blockers and tackle development challenges ensured a smooth and efficient process. Not only did he execute the project quickly, but his collaborative approach made the experience enjoyable and productive. I highly recommend Austin to anyone seeking development services, his expertise and professionalism are truly commendable.",
     author: "Matt Khan",
@@ -51,50 +49,135 @@ const reviews = [
     quote: "Austin at Elco has been great to work with. He built and launched my mobile app, Bevvo, which is a mobile payment solution for the hospitality industry. Austin managed front end, back end, and database development including integrating third party applications to execute payment processing, reporting, etc. He also managed the publication process onto Apple and Google app stores while being swift in addressing any bugs that have popped up after publishing. I consider myself extremely lucky to have found Austin and I continue to enjoy working with him.",
     author: "Justin Garabed",
     company: "Bevvo"
+  },
+  {
+    quote: "Austin is a great developer. Highly recommend.",
+    author: "Collin Goodwin",
+    company: "Saucer"
   }
 ];
 
-const Testimonials: React.FC = () => {
+// Testimonial Card Component
+const TestimonialCard = ({ review, featured = false }) => {
   return (
-    <section id="testimonials" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <div className={`testimonial-card relative h-full flex flex-col p-6 md:p-8 rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 shadow-xl ${featured ? 'border border-blue-500' : ''}`}>
+      <div className="flex space-x-1 mb-4">
+        {[...Array(5)].map((_, i) => (
+          <StarIcon key={i} className="h-5 w-5 text-yellow-500" />
+        ))}
+      </div>
+      
+      <p className="text-white text-sm md:text-base italic mb-6 flex-grow">"{review.quote}"</p>
+      
+      <div className="mt-auto">
+        <p className="font-bold text-blue-400">{review.author}</p>
+        <p className="text-sm text-gray-400">{review.company}</p>
+      </div>
+    </div>
+  );
+};
+
+const Testimonials: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Function to handle window resize
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add event listener
+    window.addEventListener('resize', handleResize);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Navigation functions
+  const goToPrev = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? reviews.length - 1 : prevIndex - 1));
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex === reviews.length - 1 ? 0 : prevIndex + 1));
+  };
+
+  // Auto advance for mobile carousel
+  useEffect(() => {
+    if (isMobile) {
+      const timer = setTimeout(goToNext, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [currentIndex, isMobile]);
+
+  return (
+    <section id="testimonials" className="py-16 md:py-24 bg-gray-50">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">What Our Clients Say</h2>
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
+          <p className="max-w-2xl mx-auto text-gray-600">Trusted by entrepreneurs and businesses around the world</p>
+        </div>
         
-        <div className="relative w-full overflow-hidden">
-          <div className="flex animate-scroll">
-            {/* First set of reviews */}
-            <div className="flex space-x-8">
-              {reviews.map((review, index) => (
-                <div 
+        {/* Mobile View - Carousel */}
+        {isMobile && (
+          <div className="relative px-2">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentIndex}
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -50 }}
+                transition={{ duration: 0.3 }}
+                className="h-full"
+              >
+                <TestimonialCard review={reviews[currentIndex]} featured={true} />
+              </motion.div>
+            </AnimatePresence>
+            
+            {/* Navigation Dots */}
+            <div className="flex justify-center mt-6 space-x-2">
+              {reviews.map((_, index) => (
+                <button
                   key={index}
-                  className="w-[400px] flex-shrink-0 p-8 bg-gray-800 rounded-lg shadow-lg"
-                >
-                  <div className="h-[200px] overflow-y-auto mb-4">
-                    <p className="text-lg italic">"{review.quote}"</p>
-                  </div>
-                  <p className="font-semibold text-blue-400">- {review.author}</p>
-                  <p className="text-gray-400">{review.company}</p>
-                </div>
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-2.5 h-2.5 rounded-full ${index === currentIndex ? 'bg-blue-500' : 'bg-gray-300'}`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
               ))}
             </div>
             
-            {/* Duplicate set for seamless loop */}
-            <div className="flex space-x-8">
-              {reviews.map((review, index) => (
-                <div 
-                  key={`duplicate-${index}`}
-                  className="w-[400px] flex-shrink-0 p-8 bg-gray-800 rounded-lg shadow-lg"
-                >
-                  <div className="h-[200px] overflow-y-auto mb-4">
-                    <p className="text-lg italic">"{review.quote}"</p>
-                  </div>
-                  <p className="font-semibold text-blue-400">- {review.author}</p>
-                  <p className="text-gray-400">{review.company}</p>
-                </div>
-              ))}
-            </div>
+            {/* Navigation Arrows */}
+            <button
+              onClick={goToPrev}
+              className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1 bg-white rounded-full p-1 shadow-md"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeftIcon className="h-6 w-6 text-gray-700" />
+            </button>
+            <button
+              onClick={goToNext}
+              className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1 bg-white rounded-full p-1 shadow-md"
+              aria-label="Next testimonial"
+            >
+              <ChevronRightIcon className="h-6 w-6 text-gray-700" />
+            </button>
           </div>
-        </div>
+        )}
+        
+        {/* Desktop View - Grid */}
+        {!isMobile && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {reviews.slice(0, 6).map((review, index) => (
+              <div key={index} className="testimonial-grid-item">
+                <TestimonialCard review={review} featured={index === 0} />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
