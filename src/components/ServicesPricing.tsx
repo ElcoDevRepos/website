@@ -47,6 +47,7 @@ const ServicesPricing: React.FC = () => {
               From simple sketches to full-scale development, we'll bring your vision to life at lightning speed.
             </p>
             
+            
             {/* Quick Schedule Button */}
             <motion.div 
               variants={itemVariants}
@@ -230,8 +231,11 @@ const ServicesPricing: React.FC = () => {
                 </a>
               </div>
             </motion.div>
+            
           </div>
-
+          <p className="text-xs text-gray-400 mt-3 max-w-2xl mx-auto">
+              *14-day delivery timeframe may vary based on project scope. Booking a consultation allows us to assess your specific needs and set an accurate, expedited timeline.
+            </p>
           {/* Calendar Section - More Prominent */}
           <motion.div 
             variants={itemVariants} 
