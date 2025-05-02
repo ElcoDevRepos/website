@@ -80,11 +80,18 @@ const ServicesPricing: React.FC = () => {
                 </div>
               </div>
               <a 
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '4px'
+                }}
                 href="#contact-form"
                 className="px-6 py-3 bg-white text-blue-700 font-bold rounded-full hover:bg-gray-100 transition-colors duration-300 shadow-md"
               >
                 Book Your Spot Now
-                <p className="text-xs text-center">Spots are limited</p>
+                <p className="text-xs">Spots are limited</p>
               </a>
             </div>
           </motion.div>
