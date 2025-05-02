@@ -9,7 +9,7 @@ const Navigation: React.FC = () => {
   const navigate = useNavigate();
   const isPartnersPage = location.pathname === '/partners';
   const isBlogPage = location.pathname.startsWith('/blog');
-  const isPricingPage = location.pathname === '/pricing';
+  const isPricingPage = location.pathname === '/mvp';
 
   const scrollToSection = (sectionId: string) => {
     if (isPartnersPage || isBlogPage || isPricingPage) {

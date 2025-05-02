@@ -55,7 +55,7 @@ const App: React.FC = () => {
         } /> */}
 
         {/* Pricing Page Route */}
-        <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/mvp" element={<PricingPage />} />
 
         {/* Redirect /contact to home */}
         <Route path="/contact" element={<Navigate to="/" replace />} />
