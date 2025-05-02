@@ -9,9 +9,10 @@ const Navigation: React.FC = () => {
   const navigate = useNavigate();
   const isPartnersPage = location.pathname === '/partners';
   const isBlogPage = location.pathname.startsWith('/blog');
+  const isPricingPage = location.pathname === '/pricing';
 
   const scrollToSection = (sectionId: string) => {
-    if (isPartnersPage || isBlogPage) {
+    if (isPartnersPage || isBlogPage || isPricingPage) {
       navigate(`/#${sectionId}`);
     } else {
       const element = document.getElementById(sectionId);
@@ -26,13 +27,13 @@ const Navigation: React.FC = () => {
     track(url);
   };
 
-  const textColorClass = isPartnersPage ? 'text-white' : 'text-gray-900';
-  const hoverColorClass = isPartnersPage ? 'hover:text-blue-400' : 'hover:text-blue-600';
-  const logoSrc = isPartnersPage ? '/logo-2.png' : '/logo-black.png';
-  const mobileMenuBgClass = isPartnersPage ? 'bg-gray-900' : 'bg-white';
+  const textColorClass = isPartnersPage || isPricingPage ? 'text-white' : 'text-gray-900';
+  const hoverColorClass = isPartnersPage || isPricingPage ? 'hover:text-blue-400' : 'hover:text-blue-600';
+  const logoSrc = isPartnersPage || isPricingPage ? '/logo-2.png' : '/logo-black.png';
+  const mobileMenuBgClass = isPartnersPage || isPricingPage ? 'bg-gray-900' : 'bg-white';
 
   const handleLogoClick = () => {
-    if (isPartnersPage || isBlogPage) {
+    if (isPartnersPage || isBlogPage || isPricingPage) {
       navigate('/');
     } else {
       scrollToSection('home');
@@ -57,7 +58,7 @@ const Navigation: React.FC = () => {
             <div className="ml-10 flex items-baseline space-x-4">
               <button
                 onClick={() => {
-                  if (isPartnersPage) {
+                  if (isPartnersPage || isPricingPage) {
                     navigate('/');
                   } else {
                     scrollToSection('home');
@@ -70,7 +71,7 @@ const Navigation: React.FC = () => {
               </button>
               <button
                 onClick={() => {
-                  if (isPartnersPage) {
+                  if (isPartnersPage || isPricingPage) {
                     navigate('/#about');
                   } else {
                     scrollToSection('about');
@@ -99,18 +100,18 @@ const Navigation: React.FC = () => {
               >
                 Blog
               </button> */}
-              {/*<button
+              {/* <button
                 onClick={() => {
-                  scrollToSection('pricing');
+                  navigate('/pricing');
                   handleLinkClick('/pricing');
                 }}
-                className="text-gray-900 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300"
+                className={`${textColorClass} ${hoverColorClass} px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300`}
               >
                 Pricing
-              </button>*/}
+              </button> */}
               <button
                 onClick={() => {
-                  if (isPartnersPage) {
+                  if (isPartnersPage || isPricingPage) {
                     navigate('/#testimonials');
                   } else {
                     scrollToSection('testimonials');
@@ -123,7 +124,7 @@ const Navigation: React.FC = () => {
               </button>
               <button
                 onClick={() => {
-                  if (isPartnersPage) {
+                  if (isPartnersPage || isPricingPage) {
                     navigate('/#contact');
                   } else {
                     scrollToSection('contact');
@@ -190,7 +191,7 @@ const Navigation: React.FC = () => {
         <div className={`px-2 pt-2 pb-3 space-y-1 sm:px-3 ${mobileMenuBgClass} shadow-lg rounded-b-lg`}>
           <button
             onClick={() => {
-              if (isPartnersPage) {
+              if (isPartnersPage || isPricingPage) {
                 navigate('/');
               } else {
                 scrollToSection('home');
@@ -203,7 +204,7 @@ const Navigation: React.FC = () => {
           </button>
           <button
             onClick={() => {
-              if (isPartnersPage) {
+              if (isPartnersPage || isPricingPage) {
                 navigate('/#about');
               } else {
                 scrollToSection('about');
@@ -219,7 +220,7 @@ const Navigation: React.FC = () => {
                   window.open('/partners', '_blank');
                   handleLinkClick('/partners');
                 }}
-                className={`${textColorClass} ${hoverColorClass} px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300`}
+                className={`${textColorClass} ${hoverColorClass} block px-3 py-2 rounded-md text-base font-medium w-full text-left`}
               >
                 Partners
               </button>
@@ -233,15 +234,19 @@ const Navigation: React.FC = () => {
               >
                 Blog
               </button> */}
-         { /*<button
-            onClick={() => scrollToSection('pricing')}
-            className="text-gray-900 hover:text-blue-600 block px-3 py-2 rounded-md text-base font-medium w-full text-left"
+          {/* <button
+            onClick={() => {
+              navigate('/pricing');
+              handleLinkClick('/pricing');
+              setIsOpen(false);
+            }}
+            className={`${textColorClass} ${hoverColorClass} block px-3 py-2 rounded-md text-base font-medium w-full text-left`}
           >
             Pricing
-          </button>*/}
+          </button> */}
           <button
             onClick={() => {
-              if (isPartnersPage) {
+              if (isPartnersPage || isPricingPage) {
                 navigate('/#testimonials');
               } else {
                 scrollToSection('testimonials');
@@ -254,7 +259,7 @@ const Navigation: React.FC = () => {
           </button>
           <button
             onClick={() => {
-              if (isPartnersPage) {
+              if (isPartnersPage || isPricingPage) {
                 navigate('/#contact');
               } else {
                 scrollToSection('contact');

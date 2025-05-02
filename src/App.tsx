@@ -18,6 +18,7 @@ import PartnersPage from './components/Partners/PartnersPage';
 // import BlogPost from './components/Blog/BlogPost';
 // import BlogGenerator from './components/Blog/BlogGenerator';
 import FAITracker from "./FAITracker";
+import PricingPage from './pages/Pricing';
 
 const App: React.FC = () => {
 
@@ -52,6 +53,9 @@ const App: React.FC = () => {
             <Footer />
           </div>
         } /> */}
+
+        {/* Pricing Page Route */}
+        <Route path="/pricing" element={<PricingPage />} />
 
         {/* Redirect /contact to home */}
         <Route path="/contact" element={<Navigate to="/" replace />} />
