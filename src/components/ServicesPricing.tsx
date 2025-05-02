@@ -105,7 +105,7 @@ const ServicesPricing: React.FC = () => {
             >
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-2">Figma to Frontend</h3>
-                <div className="text-blue-500 text-3xl font-bold mb-1">$3,000</div>
+                <div className="text-blue-500 text-3xl font-bold mb-1">$3,500</div>
                 <p className="text-gray-400 mb-6">Starting price</p>
                 <div className="bg-blue-900/20 p-3 rounded-lg mb-6">
                   <p className="text-blue-300 font-medium">
