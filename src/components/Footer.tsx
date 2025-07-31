@@ -1,148 +1,163 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 import { useLocation, useNavigate } from 'react-router-dom';
+import VisitorCounter from './VisitorCounter';
 
 const Footer: React.FC = () => {
-  const currentYear = new Date().getFullYear();
   const location = useLocation();
   const navigate = useNavigate();
-  const isPartnersPage = location.pathname === '/partners';
-  const isBlogPage = location.pathname.startsWith('/blog');
-
+  
   const handleNavigation = (sectionId: string) => {
-    if (isPartnersPage || isBlogPage) {
-      navigate(`/#${sectionId}`);
-    } else {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-16">
-      <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-12">
-          {/* Company Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="space-y-4"
-          >
-            <img
-              src="/logo-2.png"
-              alt="Elco Dev"
-              className="h-16 w-auto mb-4 filter brightness-0 invert"
-            />
-            <p className="text-gray-300 max-w-sm">
-              We transform ideas into exceptional digital experiences, crafting custom solutions that drive business growth.
-            </p>
-          </motion.div>
-
-          {/* Quick Links */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="space-y-4"
-          >
-            <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-3">
-              <li>
-                <button
-                  onClick={() => handleNavigation('home')}
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  Home
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleNavigation('about')}
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  About Us
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => handleNavigation('services')}
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  Services
-                </button>
-              </li>
-              {/* <li>
-                <a href="#pricing" className="text-gray-300 hover:text-white transition-colors">
-                  Pricing
-                </a>
-              </li> */}
-              <li>
-                <button
-                  onClick={() => handleNavigation('contact')}
-                  className="text-gray-300 hover:text-white transition-colors"
-                >
-                  Contact
-                </button>
-              </li>
-            </ul>
-          </motion.div>
-
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="space-y-4"
-          >
-            <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
-            <div className="flex items-center space-x-2 text-gray-300" style={{ cursor: 'pointer' }} onClick={() => window.open('mailto:austin@elcodev.com', '_blank')}>
-              <FaEnvelope className="text-blue-400" />
-              <span>austin@elcodev.com</span>
-            </div>
-            <div className="flex items-center space-x-2 text-gray-300">
-              <FaMapMarkerAlt className="text-blue-400" />
-              <span>Nashville, TN</span>
-            </div>
-            <div className="flex items-center space-x-2 text-gray-300" style={{ cursor: 'pointer' }} onClick={() => window.open('tel:6157848066', '_blank')}>
-              <FaPhone className="text-blue-400" />
-              <span>615-784-8066</span>
-            </div>
-            <div className="flex space-x-4 mt-6">
-              <a
-                href="https://github.com/ElcoDevRepos"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors transform hover:scale-110"
-              >
-                <FaGithub size={24} />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/elco-dev"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-300 hover:text-white transition-colors transform hover:scale-110"
-              >
-                <FaLinkedin size={24} />
-              </a>
-            </div>
-          </motion.div>
+    <div className="retro-footer">
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'space-between' }}>
+        {/* Company Info */}
+        <div style={{ flex: '1', minWidth: '250px' }}>
+          <div style={{ 
+            background: '#ffff00', 
+            color: '#000', 
+            padding: '10px 15px', 
+            border: '3px solid #000',
+            fontFamily: 'Comic Neue, cursive',
+            fontWeight: 'bold',
+            fontSize: '18px',
+            boxShadow: '3px 3px 0px #000',
+            marginBottom: '15px',
+            textAlign: 'center'
+          }}>
+            🚀 ELCO DEVELOPMENT STUDIO 🚀
+          </div>
+          <p style={{ color: '#ccc', fontSize: '14px', lineHeight: '1.6' }}>
+            We transform ideas into <span className="retro-highlight">EXCEPTIONAL</span> digital experiences, 
+            crafting custom solutions that drive business growth since 2019!
+          </p>
         </div>
 
-        {/* Bottom Bar */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400"
-        >
-          <p>© {currentYear} Elco Dev, LLC. All rights reserved.</p>
-        </motion.div>
+        {/* Quick Links */}
+        <div style={{ flex: '1', minWidth: '200px' }}>
+          <h3 style={{ 
+            color: '#ffff00', 
+            fontSize: '18px', 
+            marginBottom: '15px',
+            textShadow: '2px 2px 0px #000'
+          }}>
+            🔗 QUICK LINKS 🔗
+          </h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <button
+              onClick={() => handleNavigation('home')}
+              className="retro-button"
+              style={{ fontSize: '12px', width: '100%', textAlign: 'left' }}
+            >
+              🏠 HOME
+            </button>
+            <button
+              onClick={() => handleNavigation('about')}
+              className="retro-button"
+              style={{ fontSize: '12px', width: '100%', textAlign: 'left' }}
+            >
+              ℹ️ ABOUT US
+            </button>
+            <button
+              onClick={() => handleNavigation('services')}
+              className="retro-button"
+              style={{ fontSize: '12px', width: '100%', textAlign: 'left' }}
+            >
+              💻 SERVICES
+            </button>
+            <button
+              onClick={() => handleNavigation('contact')}
+              className="retro-button"
+              style={{ fontSize: '12px', width: '100%', textAlign: 'left' }}
+            >
+              📞 CONTACT
+            </button>
+          </div>
+        </div>
+
+        {/* Contact Info */}
+        <div style={{ flex: '1', minWidth: '250px' }}>
+          <h3 style={{ 
+            color: '#ffff00', 
+            fontSize: '18px', 
+            marginBottom: '15px',
+            textShadow: '2px 2px 0px #000'
+          }}>
+            📞 GET IN TOUCH 📞
+          </h3>
+          <div style={{ 
+            background: '#000', 
+            color: '#00ff00', 
+            padding: '15px', 
+            border: '3px solid #00ff00',
+            fontFamily: 'Courier New, monospace',
+            fontSize: '12px'
+          }}>
+            <div style={{ marginBottom: '10px' }}>
+              📧 Email: austin@elcodev.com
+            </div>
+            <div style={{ marginBottom: '10px' }}>
+              📍 Location: Nashville, TN
+            </div>
+            <div style={{ marginBottom: '10px' }}>
+              📱 Phone: 615-784-8066
+            </div>
+            <div style={{ marginTop: '15px' }}>
+              <div style={{ marginBottom: '5px' }}>🌐 Social Media:</div>
+              <div style={{ display: 'flex', gap: '10px' }}>
+                <a
+                  href="https://github.com/ElcoDevRepos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ 
+                    color: '#00ff00', 
+                    textDecoration: 'none',
+                    fontSize: '16px'
+                  }}
+                >
+                  📚 GitHub
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/elco-dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ 
+                    color: '#00ff00', 
+                    textDecoration: 'none',
+                    fontSize: '16px'
+                  }}
+                >
+                  💼 LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </footer>
+
+      {/* Bottom Bar */}
+      <div style={{ 
+        borderTop: '3px solid #333', 
+        marginTop: '20px', 
+        paddingTop: '15px', 
+        textAlign: 'center',
+        color: '#ccc'
+      }}>
+        <p style={{ fontSize: '14px', marginBottom: '10px' }}>
+          © {currentYear} Elco Dev, LLC. All rights reserved.
+        </p>
+        <div style={{ fontSize: '12px', color: '#999' }}>
+          🌟 BEST VIEWED WITH INTERNET EXPLORER 6.0 | RESOLUTION: 800x600 | LAST UPDATED: 2003 🌟
+        </div>
+      </div>
+    </div>
   );
 };
 

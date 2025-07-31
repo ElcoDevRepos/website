@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 
 interface PortfolioItem {
   title: string;
@@ -93,119 +92,138 @@ const Portfolio: React.FC = () => {
   }, [activeCategory]);
   
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>) => {
-    const fallbackImage = "https://via.placeholder.com/400x300?text=Project+Image";
+    const fallbackImage = "https://via.placeholder.com/400x300/ff00ff/ffffff?text=AWESOME+PROJECT";
     const target = e.target as HTMLImageElement;
     target.src = fallbackImage;
   };
   
-  const isProjectImageAvailable = (url: string): string => {
-    // If the image path starts with http, it's likely an external URL
-    if (url.startsWith('http')) {
-      return url;
-    }
-    
-    // For local images, use the path as is, but prepare for fallback
-    return url;
-  };
-  
   return (
-    <section id="portfolio" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
-        >
-          <span className="inline-block bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full mb-4">Our Work</span>
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Project Portfolio</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            A selection of real-world applications we've built for clients across various industries
-          </p>
-        </motion.div>
+    <div id="portfolio" className="retro-section">
+      <h2 className="retro-title" style={{ textAlign: 'center', marginBottom: '30px' }}>
+        🎨 OUR AMAZING PORTFOLIO! 🎨
+      </h2>
+      
+      <p style={{ 
+        textAlign: 'center', 
+        fontSize: '18px', 
+        marginBottom: '30px',
+        color: '#333'
+      }}>
+        A selection of <span className="retro-highlight">REAL-WORLD</span> applications we've built for clients across various industries!
+      </p>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map((category, index) => (
-            <motion.button
-              key={category}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              onClick={() => setActiveCategory(category)}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
-                activeCategory === category
-                  ? 'bg-blue-600 text-white shadow-md'
-                  : 'bg-white text-gray-700 hover:bg-gray-100'
-              }`}
-            >
-              {category}
-            </motion.button>
-          ))}
-        </div>
+      {/* Category Filter */}
+      <div style={{ 
+        display: 'flex', 
+        flexWrap: 'wrap', 
+        justifyContent: 'center', 
+        gap: '10px', 
+        marginBottom: '30px' 
+      }}>
+        {categories.map((category, index) => (
+          <button
+            key={category}
+            onClick={() => setActiveCategory(category)}
+            className="retro-button"
+            style={{
+              fontSize: '14px',
+              background: activeCategory === category 
+                ? 'linear-gradient(45deg, #ff0000, #00ff00, #0000ff)' 
+                : 'linear-gradient(45deg, #ff0000, #00ff00)',
+              color: activeCategory === category ? '#fff' : '#000',
+              textShadow: activeCategory === category ? '2px 2px 0px #000' : 'none'
+            }}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
 
-        {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <AnimatePresence>
+      {/* Portfolio Table */}
+      <div className="retro-table">
+        <table style={{ width: '100%' }}>
+          <thead>
+            <tr>
+              <th style={{ background: 'linear-gradient(45deg, #ff0000, #00ff00)', color: '#000', padding: '15px', textAlign: 'center' }}>
+                🖼️ PROJECT
+              </th>
+              <th style={{ background: 'linear-gradient(45deg, #00ff00, #0000ff)', color: '#000', padding: '15px', textAlign: 'center' }}>
+                📝 DESCRIPTION
+              </th>
+              <th style={{ background: 'linear-gradient(45deg, #0000ff, #ff00ff)', color: '#000', padding: '15px', textAlign: 'center' }}>
+                💻 TECHNOLOGIES
+              </th>
+              <th style={{ background: 'linear-gradient(45deg, #ff00ff, #ffff00)', color: '#000', padding: '15px', textAlign: 'center' }}>
+                🎯 ACTION
+              </th>
+            </tr>
+          </thead>
+          <tbody>
             {displayedItems.map((item, index) => (
-              <motion.div
-                key={item.title}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4 }}
-                className="bg-white rounded-xl shadow-lg overflow-hidden group"
-              >
-                <div className="relative overflow-hidden h-52">
+              <tr key={index} style={{ background: index % 2 === 0 ? '#f0f0f0' : '#ffffff' }}>
+                <td style={{ padding: '15px', border: '2px solid #000', textAlign: 'center' }}>
                   <img
-                    src={isProjectImageAvailable(item.imageUrl)}
+                    src={item.imageUrl}
                     alt={item.title}
                     onError={handleImageError}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="retro-image"
+                    style={{ 
+                      width: '150px', 
+                      height: '100px', 
+                      objectFit: 'cover',
+                      marginBottom: '10px'
+                    }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                    <div>
-                      <p className="text-white text-xs mb-2">{item.year} • {item.scope}</p>
-                      <h3 className="text-white text-xl font-bold">{item.title}</h3>
-                    </div>
+                  <div style={{ fontWeight: 'bold', fontSize: '16px', color: '#ff0000' }}>
+                    {item.title}
                   </div>
-                </div>
-                
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-3">
-                    <h3 className="text-xl font-bold text-gray-900">{item.title}</h3>
-                    <span className="text-xs text-gray-500">{item.year}</span>
+                  <div style={{ fontSize: '12px', color: '#0000ff' }}>
+                    {item.year} • {item.category}
                   </div>
-                  
-                  <p className="text-gray-600 mb-4 line-clamp-3">{item.description}</p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-4">
+                </td>
+                <td style={{ padding: '15px', border: '2px solid #000' }}>
+                  <p className="retro-text">{item.description}</p>
+                  <div style={{ marginTop: '10px', fontSize: '12px', color: '#666' }}>
+                    <strong>Scope:</strong> {item.scope}
+                  </div>
+                </td>
+                <td style={{ padding: '15px', border: '2px solid #000' }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
                     {item.technologies.slice(0, 3).map((tech, techIndex) => (
                       <span
                         key={techIndex}
-                        className="px-2.5 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium"
+                        style={{
+                          padding: '3px 8px',
+                          background: '#ffffcc',
+                          border: '2px solid #000',
+                          fontSize: '11px',
+                          fontWeight: 'bold'
+                        }}
                       >
                         {tech}
                       </span>
                     ))}
                     {item.technologies.length > 3 && (
-                      <span className="px-2.5 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-medium">
+                      <span style={{
+                        padding: '3px 8px',
+                        background: '#ffccff',
+                        border: '2px solid #000',
+                        fontSize: '11px',
+                        fontWeight: 'bold'
+                      }}>
                         +{item.technologies.length - 3}
                       </span>
                     )}
                   </div>
-                  
-                  <div className="flex justify-between items-center">
+                </td>
+                <td style={{ padding: '15px', border: '2px solid #000', textAlign: 'center' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     <button 
                       onClick={() => setSelectedItem(item)}
-                      className="text-blue-600 text-sm font-medium hover:text-blue-800 transition-colors flex items-center"
+                      className="retro-button"
+                      style={{ fontSize: '12px' }}
                     >
-                      View Details
-                      <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                      </svg>
+                      👁️ VIEW DETAILS
                     </button>
                     
                     {item.link && (
@@ -213,126 +231,180 @@ const Portfolio: React.FC = () => {
                         href={item.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center bg-gray-100 hover:bg-gray-200 text-gray-700 p-2 rounded-full transition-colors"
+                        className="retro-button"
+                        style={{ 
+                          fontSize: '12px',
+                          background: 'linear-gradient(45deg, #00ff00, #0000ff)',
+                          color: '#fff',
+                          textShadow: '2px 2px 0px #000'
+                        }}
                       >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                        </svg>
+                        🌐 VISIT SITE
                       </a>
                     )}
                   </div>
-                </div>
-              </motion.div>
+                </td>
+              </tr>
             ))}
-          </AnimatePresence>
-        </div>
-
-        {/* Modal for detailed view */}
-        <AnimatePresence>
-          {selectedItem && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4"
-              onClick={() => setSelectedItem(null)}
-            >
-              <motion.div
-                initial={{ scale: 0.9, y: 20 }}
-                animate={{ scale: 1, y: 0 }}
-                exit={{ scale: 0.9, y: 20 }}
-                className="bg-white rounded-xl max-w-3xl w-full overflow-hidden"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <div className="relative h-64 sm:h-80">
-                  <img
-                    src={isProjectImageAvailable(selectedItem.imageUrl)}
-                    alt={selectedItem.title}
-                    onError={handleImageError}
-                    className="w-full h-full object-cover"
-                  />
-                  <button
-                    onClick={() => setSelectedItem(null)}
-                    className="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
-                  >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
-                  </button>
-                </div>
-                
-                <div className="p-6 sm:p-8">
-                  <div className="flex justify-between items-start mb-4">
-                    <div>
-                      <span className="text-sm text-blue-600 font-medium">{selectedItem.category}</span>
-                      <h3 className="text-2xl font-bold text-gray-900">{selectedItem.title}</h3>
-                    </div>
-                    <span className="text-sm text-gray-500">{selectedItem.year}</span>
-                  </div>
-                  
-                  <p className="text-gray-700 mb-6">{selectedItem.description}</p>
-                  
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-gray-900 mb-3">Project Scope</h4>
-                    <p className="text-gray-600">{selectedItem.scope}</p>
-                  </div>
-                  
-                  <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-gray-900 mb-3">Technologies Used</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedItem.technologies.map((tech, index) => (
-                        <span key={index} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  {selectedItem.link && (
-                    <a
-                      href={selectedItem.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors font-medium"
-                    >
-                      Visit Project
-                      <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                      </svg>
-                    </a>
-                  )}
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Call to action */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-16 text-center"
-        >
-          <div className="bg-white rounded-xl p-8 shadow-lg max-w-2xl mx-auto">
-            <h3 className="text-xl font-bold text-gray-900 mb-3">Looking for more examples?</h3>
-            <p className="text-gray-600 mb-6">
-              We've worked on many other projects that aren't showcased here. Contact us to discuss your specific requirements and see relevant examples.
-            </p>
-            <a 
-              href="#contact" 
-              className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors font-medium"
-            >
-              Schedule a Consultation
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-              </svg>
-            </a>
-          </div>
-        </motion.div>
+          </tbody>
+        </table>
       </div>
-    </section>
+
+      {/* Modal for detailed view */}
+      {selectedItem && (
+        <div style={{
+          position: 'fixed',
+          top: '0',
+          left: '0',
+          right: '0',
+          bottom: '0',
+          background: 'rgba(0,0,0,0.8)',
+          zIndex: '1000',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '20px'
+        }} onClick={() => setSelectedItem(null)}>
+          <div className="retro-card" style={{ 
+            maxWidth: '600px', 
+            width: '100%',
+            maxHeight: '80vh',
+            overflow: 'auto'
+          }} onClick={(e) => e.stopPropagation()}>
+            <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+              <img
+                src={selectedItem.imageUrl}
+                alt={selectedItem.title}
+                onError={handleImageError}
+                className="retro-image"
+                style={{ 
+                  width: '100%', 
+                  maxWidth: '400px', 
+                  height: '200px', 
+                  objectFit: 'cover'
+                }}
+              />
+            </div>
+            
+            <h3 style={{ 
+              color: '#ff0000', 
+              fontSize: '24px', 
+              fontWeight: 'bold',
+              textAlign: 'center',
+              marginBottom: '15px'
+            }}>
+              {selectedItem.title}
+            </h3>
+            
+            <div style={{ 
+              background: '#000', 
+              color: '#00ff00', 
+              padding: '15px', 
+              border: '3px solid #00ff00',
+              fontFamily: 'Courier New, monospace',
+              fontSize: '12px',
+              marginBottom: '15px'
+            }}>
+              <div style={{ marginBottom: '5px' }}>
+                📅 Year: {selectedItem.year}
+              </div>
+              <div style={{ marginBottom: '5px' }}>
+                🏷️ Category: {selectedItem.category}
+              </div>
+              <div>
+                🎯 Scope: {selectedItem.scope}
+              </div>
+            </div>
+            
+            <p className="retro-text" style={{ marginBottom: '15px' }}>
+              {selectedItem.description}
+            </p>
+            
+            <div style={{ marginBottom: '15px' }}>
+              <h4 style={{ color: '#0000ff', marginBottom: '10px' }}>💻 Technologies Used:</h4>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px' }}>
+                {selectedItem.technologies.map((tech, index) => (
+                  <span key={index} style={{
+                    padding: '5px 10px',
+                    background: '#ffffcc',
+                    border: '2px solid #000',
+                    fontSize: '12px',
+                    fontWeight: 'bold'
+                  }}>
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+            
+            <div style={{ textAlign: 'center' }}>
+              {selectedItem.link && (
+                <a
+                  href={selectedItem.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="retro-button"
+                  style={{
+                    fontSize: '16px',
+                    padding: '15px 30px',
+                    background: 'linear-gradient(45deg, #ff0000, #00ff00, #0000ff)',
+                    color: '#fff',
+                    textShadow: '2px 2px 0px #000'
+                  }}
+                >
+                  🚀 VISIT PROJECT! 🚀
+                </a>
+              )}
+              <button
+                onClick={() => setSelectedItem(null)}
+                className="retro-button"
+                style={{ 
+                  fontSize: '14px', 
+                  marginTop: '10px',
+                  background: '#666',
+                  color: '#fff'
+                }}
+              >
+                ✕ CLOSE
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Call to action */}
+      <div style={{ textAlign: 'center', marginTop: '30px' }}>
+        <div className="retro-card" style={{ maxWidth: '600px', margin: '0 auto' }}>
+          <h3 style={{ 
+            color: '#ff0000', 
+            fontSize: '20px', 
+            marginBottom: '15px',
+            textAlign: 'center'
+          }}>
+            🔍 Looking for more examples?
+          </h3>
+          <p style={{ marginBottom: '20px', fontSize: '16px' }}>
+            We've worked on many other <span className="retro-highlight">AMAZING</span> projects that aren't showcased here. 
+            Contact us to discuss your specific requirements and see relevant examples!
+          </p>
+          <button 
+            onClick={() => window.location.href = '#contact'}
+            className="retro-button"
+            style={{
+              fontSize: '16px',
+              padding: '15px 30px',
+              background: 'linear-gradient(45deg, #ff0000, #00ff00, #0000ff)',
+              color: '#fff',
+              textShadow: '2px 2px 0px #000'
+            }}
+          >
+            🚀 SCHEDULE A CONSULTATION! 🚀
+          </button>
+        </div>
+      </div>
+
+      
+    </div>
   );
 };
 

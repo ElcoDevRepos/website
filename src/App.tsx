@@ -19,12 +19,15 @@ import PartnersPage from './components/Partners/PartnersPage';
 // import BlogGenerator from './components/Blog/BlogGenerator';
 import FAITracker from "./FAITracker";
 import PricingPage from './pages/Pricing';
+import RadioPlayer from './components/RadioPlayer';
+import MouseTrail from './components/MouseTrail';
 
 const App: React.FC = () => {
 
   return (
     <Router>
     <FAITracker />
+    <MouseTrail />
       <Routes>
         {/* Redirect /our-team to home */}
         <Route path="/our-team" element={<Navigate to="/" replace />} />
@@ -32,27 +35,7 @@ const App: React.FC = () => {
         <Route path="/about" element={<Navigate to="/" replace />} />
         <Route path="/service-details" element={<Navigate to="/" replace />} />
 
-        {/* Blog routes */}
-        {/* <Route path="/blog" element={
-          <div className="min-h-screen bg-[#0A0A0A]">
-            <Navigation />
-            <BlogPage />
-            <Footer />
-          </div>
-        } />
-        <Route path="/blog/:slug" element={
-          <div className="min-h-screen bg-[#0A0A0A]">
-            <Navigation />
-            <BlogPost />
-            <Footer />
-          </div>
-        } />
-        <Route path="/blog/generate" element={
-          <div className="min-h-screen bg-[#0A0A0A]">
-            <BlogGenerator />
-            <Footer />
-          </div>
-        } /> */}
+
 
         {/* Pricing Page Route */}
         <Route path="/mvp" element={<PricingPage />} />
@@ -62,14 +45,20 @@ const App: React.FC = () => {
         <Route path="/portfolio" element={<Navigate to="/" replace />} />
         {/* Define the route for your privacy policy */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/partners" element={<PartnersPage />} />
+        {/* <Route path="/partners" element={<PartnersPage />} /> */}
         {/* Home route */}
         <Route
           path="/"
           element={
-            <div className="min-h-screen bg-[#0A0A0A]">
+            <div className="retro-container">
+              <div className="under-construction">
+                🚧 UNDER CONSTRUCTION - BEST VIEWED WITH INTERNET EXPLORER 6.0 🚧
+              </div>
+              <div className="retro-marquee">
+                <span>🌟 WELCOME TO OUR AWESOME WEBSITE! 🌟 LAST UPDATED: 2003 🌟</span>
+              </div>
               <Navigation />
-              <main className="py-0">
+              <main>
                 <Hero />
                 <Testimonials />
                 <Stats />
@@ -82,6 +71,10 @@ const App: React.FC = () => {
                 <Contact />
               </main>
               <Footer />
+              <div className="best-viewed">
+                Best viewed with Internet Explorer 6.0 or Netscape Navigator 7.0 at 800x600 resolution
+              </div>
+              <RadioPlayer />
             </div>
           }
         />

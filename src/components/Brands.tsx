@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 interface Brand {
   name: string;
@@ -8,15 +7,7 @@ interface Brand {
 }
 
 const Brands: React.FC = () => {
-  // TODO: Add your brand logos to the public/assets/brands directory
-  // and update this array with the correct information
   const brands: Brand[] = [
-    // Example format:
-    // { 
-    //   name: 'Company Name',
-    //   logo: '/assets/brands/company-logo.png',
-    //   url: 'https://company-website.com'
-    // },
     {
       name: 'CCS',
       logo: '/assets/brands/ccs.png',
@@ -38,50 +29,159 @@ const Brands: React.FC = () => {
         url: 'https://www.laddersuite.com'
     },
   ];
+
   // If no brands are configured, don't render the section
   if (brands.length === 0) return null;
 
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Trusted By Industry Leaders</h2>
-          <p className="text-lg text-gray-600">We work with some of the most innovative companies in the world</p>
-        </motion.div>
+    <div className="retro-section">
+      <h2 className="retro-title" style={{ textAlign: 'center', marginBottom: '30px' }}>
+        🏆 TRUSTED BY INDUSTRY LEADERS! 🏆
+      </h2>
+      
+      <p style={{ 
+        textAlign: 'center', 
+        fontSize: '18px', 
+        marginBottom: '30px',
+        color: '#333'
+      }}>
+        We work with some of the most <span className="retro-highlight">INNOVATIVE</span> companies in the world!
+      </p>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-items-center"
-        >
+      {/* Brands Table */}
+      <div className="retro-table">
+        <table style={{ width: '100%' }}>
+          <thead>
+            <tr>
+              <th style={{ background: 'linear-gradient(45deg, #ff0000, #00ff00)', color: '#000', padding: '15px', textAlign: 'center' }}>
+                🏢 COMPANY
+              </th>
+              <th style={{ background: 'linear-gradient(45deg, #00ff00, #0000ff)', color: '#000', padding: '15px', textAlign: 'center' }}>
+                🖼️ LOGO
+              </th>
+              <th style={{ background: 'linear-gradient(45deg, #0000ff, #ff00ff)', color: '#000', padding: '15px', textAlign: 'center' }}>
+                🌐 WEBSITE
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {brands.map((brand, index) => (
+              <tr key={index} style={{ background: index % 2 === 0 ? '#f0f0f0' : '#ffffff' }}>
+                <td style={{ padding: '15px', border: '2px solid #000', textAlign: 'center' }}>
+                  <div style={{ 
+                    fontWeight: 'bold', 
+                    fontSize: '18px', 
+                    color: '#ff0000',
+                    textShadow: '2px 2px 0px #000'
+                  }}>
+                    {brand.name}
+                  </div>
+                </td>
+                <td style={{ padding: '15px', border: '2px solid #000', textAlign: 'center' }}>
+                  <img
+                    src={brand.logo}
+                    alt={brand.name}
+                    className="retro-image"
+                    style={{ 
+                      maxWidth: '120px', 
+                      maxHeight: '60px', 
+                      objectFit: 'contain'
+                    }}
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = `https://via.placeholder.com/120x60/ff00ff/ffffff?text=${encodeURIComponent(brand.name)}`;
+                    }}
+                  />
+                </td>
+                <td style={{ padding: '15px', border: '2px solid #000', textAlign: 'center' }}>
+                  <a
+                    href={brand.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="retro-button"
+                    style={{ 
+                      fontSize: '12px',
+                      background: 'linear-gradient(45deg, #00ff00, #0000ff)',
+                      color: '#fff',
+                      textShadow: '2px 2px 0px #000'
+                    }}
+                  >
+                    🌐 VISIT SITE
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Brand Grid for Visual Display */}
+      {/* <div style={{ marginTop: '30px' }}>
+        <h3 style={{ 
+          color: '#ff0000', 
+          fontSize: '20px', 
+          marginBottom: '20px',
+          textAlign: 'center'
+        }}>
+          🎨 BRAND LOGOS 🎨
+        </h3>
+        
+        <div style={{ 
+          display: 'grid', 
+          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', 
+          gap: '20px'
+        }}>
           {brands.map((brand, index) => (
-            <motion.a
-              key={brand.name}
-              href={brand.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-40 h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 transform hover:scale-110"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ scale: 1.1 }}
-            >
+            <div key={index} className="retro-card" style={{ textAlign: 'center' }}>
               <img
                 src={brand.logo}
                 alt={brand.name}
-                className="max-w-full max-h-full object-contain"
+                className="retro-image"
+                style={{ 
+                  maxWidth: '150px', 
+                  maxHeight: '80px', 
+                  objectFit: 'contain',
+                  margin: '0 auto 15px auto'
+                }}
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = `https://via.placeholder.com/150x80/ff00ff/ffffff?text=${encodeURIComponent(brand.name)}`;
+                }}
               />
-            </motion.a>
+              <div style={{ 
+                fontWeight: 'bold', 
+                fontSize: '16px', 
+                color: '#0000ff',
+                marginBottom: '10px'
+              }}>
+                {brand.name}
+              </div>
+              <a
+                href={brand.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="retro-button"
+                style={{ fontSize: '12px' }}
+              >
+                🌐 VISIT WEBSITE
+              </a>
+            </div>
           ))}
-        </motion.div>
+        </div>
+      </div> */}
+
+      {/* <div style={{ textAlign: 'center', marginTop: '30px' }}>
+        <div className="retro-counter">
+          🏆 CLIENTS SERVED: 4 | 🌟 PARTNERSHIP YEARS: 5+ | 💼 INDUSTRY LEADERS: 100% 🏆
+        </div>
       </div>
-    </section>
+
+      <div style={{ textAlign: 'center', marginTop: '20px' }}>
+        <div className="hit-counter">
+          🤝 PARTNERSHIPS: 4 | 📈 GROWTH: 300% | 🎯 SUCCESS RATE: 100% 🤝
+        </div>
+      </div> */}
+    </div>
   );
 };
 

@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeftIcon, ChevronRightIcon, StarIcon } from '@heroicons/react/24/solid';
-import '../styles/testimonials.css';
 
 const reviews = [
   {
@@ -9,7 +6,6 @@ const reviews = [
     author: "Jason Robinson",
     company: "Renew Music"
   },
-  
   {
     quote: "I had the pleasure of collaborating with Austin on developing an app based on my UX designs. Austin's ability to overcome blockers and tackle development challenges ensured a smooth and efficient process. Not only did he execute the project quickly, but his collaborative approach made the experience enjoyable and productive. I highly recommend Austin to anyone seeking development services, his expertise and professionalism are truly commendable.",
     author: "Matt Khan",
@@ -57,129 +53,178 @@ const reviews = [
   }
 ];
 
-// Testimonial Card Component
-const TestimonialCard = ({ review, featured = false }) => {
-  return (
-    <div className={`testimonial-card relative h-full flex flex-col p-6 md:p-8 rounded-xl bg-gradient-to-br from-gray-900 to-gray-800 shadow-xl ${featured ? 'border border-blue-500' : ''}`}>
-      <div className="flex space-x-1 mb-4">
-        {[...Array(5)].map((_, i) => (
-          <StarIcon key={i} className="h-5 w-5 text-yellow-500" />
-        ))}
-      </div>
-      
-      <p className="text-white text-sm md:text-base italic mb-6 flex-grow">"{review.quote}"</p>
-      
-      <div className="mt-auto">
-        <p className="font-bold text-blue-400">{review.author}</p>
-        <p className="text-sm text-gray-400">{review.company}</p>
-      </div>
-    </div>
-  );
-};
-
 const Testimonials: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isMobile, setIsMobile] = useState(false);
 
-  // Function to handle window resize
+  // Auto advance testimonials
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-
-    // Set initial value
-    handleResize();
-
-    // Add event listener
-    window.addEventListener('resize', handleResize);
-    
-    // Cleanup
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  // Navigation functions
-  const goToPrev = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? reviews.length - 1 : prevIndex - 1));
-  };
-
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === reviews.length - 1 ? 0 : prevIndex + 1));
-  };
-
-  // Auto advance for mobile carousel
-  useEffect(() => {
-    if (isMobile) {
-      const timer = setTimeout(goToNext, 5000);
-      return () => clearTimeout(timer);
-    }
-  }, [currentIndex, isMobile]);
+    const timer = setTimeout(() => {
+      setCurrentIndex((prevIndex) => (prevIndex === reviews.length - 1 ? 0 : prevIndex + 1));
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, [currentIndex]);
 
   return (
-    <section id="testimonials" className="py-16 md:py-24 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">What Our Clients Say</h2>
-          <p className="max-w-2xl mx-auto text-gray-600">Trusted by entrepreneurs and businesses around the world</p>
+    <div id="testimonials" className="retro-section">
+      <h2 className="retro-title" style={{ textAlign: 'center', marginBottom: '30px' }}>
+        ⭐ WHAT OUR CLIENTS SAY! ⭐
+      </h2>
+      
+      <p style={{ 
+        textAlign: 'center', 
+        fontSize: '18px', 
+        marginBottom: '30px',
+        color: '#333'
+      }}>
+        Trusted by <span className="retro-highlight">ENTREPRENEURS</span> and businesses around the world!
+      </p>
+
+      {/* Featured Testimonial */}
+      <div style={{ marginBottom: '30px' }}>
+        <div className="retro-card" style={{ 
+          background: 'linear-gradient(135deg, #000, #333)',
+          color: '#fff',
+          border: '3px solid #ffff00',
+          textAlign: 'center'
+        }}>
+          <div style={{ 
+            background: '#ffff00', 
+            color: '#000', 
+            padding: '10px', 
+            marginBottom: '20px',
+            fontWeight: 'bold',
+            fontSize: '18px'
+          }}>
+            🌟 FEATURED TESTIMONIAL 🌟
+          </div>
+          
+          <div style={{ 
+            background: '#000', 
+            color: '#00ff00', 
+            padding: '20px', 
+            border: '3px solid #00ff00',
+            fontFamily: 'Courier New, monospace',
+            fontSize: '14px',
+            marginBottom: '20px',
+            fontStyle: 'italic'
+          }}>
+            "{reviews[currentIndex].quote}"
+          </div>
+          
+          <div style={{ 
+            background: '#ff0000', 
+            color: '#fff', 
+            padding: '10px',
+            fontWeight: 'bold'
+          }}>
+            👤 {reviews[currentIndex].author} - {reviews[currentIndex].company}
+          </div>
         </div>
-        
-        {/* Mobile View - Carousel */}
-        {isMobile && (
-          <div className="relative px-2">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentIndex}
-                initial={{ opacity: 0, x: 50 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -50 }}
-                transition={{ duration: 0.3 }}
-                className="h-full"
-              >
-                <TestimonialCard review={reviews[currentIndex]} featured={true} />
-              </motion.div>
-            </AnimatePresence>
-            
-            {/* Navigation Dots */}
-            <div className="flex justify-center mt-6 space-x-2">
-              {reviews.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-2.5 h-2.5 rounded-full ${index === currentIndex ? 'bg-blue-500' : 'bg-gray-300'}`}
-                  aria-label={`Go to testimonial ${index + 1}`}
-                />
-              ))}
-            </div>
-            
-            {/* Navigation Arrows */}
-            <button
-              onClick={goToPrev}
-              className="absolute top-1/2 left-0 -translate-y-1/2 -translate-x-1 bg-white rounded-full p-1 shadow-md"
-              aria-label="Previous testimonial"
-            >
-              <ChevronLeftIcon className="h-6 w-6 text-gray-700" />
-            </button>
-            <button
-              onClick={goToNext}
-              className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1 bg-white rounded-full p-1 shadow-md"
-              aria-label="Next testimonial"
-            >
-              <ChevronRightIcon className="h-6 w-6 text-gray-700" />
-            </button>
-          </div>
-        )}
-        
-        {/* Desktop View - Grid */}
-        {!isMobile && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-            {reviews.slice(0, 6).map((review, index) => (
-              <div key={index} className="testimonial-grid-item">
-                <TestimonialCard review={review} featured={index === 0} />
-              </div>
-            ))}
-          </div>
-        )}
       </div>
-    </section>
+
+      {/* Testimonials Table */}
+      <div className="retro-table">
+        <table style={{ width: '100%' }}>
+          <thead>
+            <tr>
+              <th style={{ background: 'linear-gradient(45deg, #ff0000, #00ff00)', color: '#000', padding: '15px', textAlign: 'center' }}>
+                💬 TESTIMONIAL
+              </th>
+              <th style={{ background: 'linear-gradient(45deg, #00ff00, #0000ff)', color: '#000', padding: '15px', textAlign: 'center' }}>
+                👤 CLIENT
+              </th>
+              <th style={{ background: 'linear-gradient(45deg, #0000ff, #ff00ff)', color: '#000', padding: '15px', textAlign: 'center' }}>
+                🏢 COMPANY
+              </th>
+              <th style={{ background: 'linear-gradient(45deg, #ff00ff, #ffff00)', color: '#000', padding: '15px', textAlign: 'center' }}>
+                ⭐ RATING
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {reviews.slice(0, 6).map((review, index) => (
+              <tr key={index} style={{ background: index % 2 === 0 ? '#f0f0f0' : '#ffffff' }}>
+                <td style={{ padding: '15px', border: '2px solid #000' }}>
+                  <div style={{ 
+                    background: '#ffffcc', 
+                    border: '2px solid #000', 
+                    padding: '10px',
+                    fontStyle: 'italic',
+                    fontSize: '12px',
+                    maxHeight: '100px',
+                    overflow: 'auto'
+                  }}>
+                    "{review.quote.substring(0, 150)}..."
+                  </div>
+                </td>
+                <td style={{ padding: '15px', border: '2px solid #000', textAlign: 'center' }}>
+                  <div style={{ fontWeight: 'bold', color: '#ff0000', fontSize: '14px' }}>
+                    {review.author}
+                  </div>
+                </td>
+                <td style={{ padding: '15px', border: '2px solid #000', textAlign: 'center' }}>
+                  <div style={{ color: '#0000ff', fontSize: '14px', fontWeight: 'bold' }}>
+                    {review.company}
+                  </div>
+                </td>
+                <td style={{ padding: '15px', border: '2px solid #000', textAlign: 'center' }}>
+                  <div style={{ fontSize: '16px' }}>
+                    ⭐⭐⭐⭐⭐
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Guestbook Style Testimonials */}
+      <div style={{ marginTop: '30px' }}>
+        <h3 style={{ 
+          color: '#ff0000', 
+          fontSize: '20px', 
+          marginBottom: '20px',
+          textAlign: 'center'
+        }}>
+          📝 GUESTBOOK ENTRIES 📝
+        </h3>
+        
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '15px' }}>
+          {reviews.slice(6, 10).map((review, index) => (
+            <div key={index} className="guestbook-entry">
+              <div style={{ 
+                background: '#000', 
+                color: '#00ff00', 
+                padding: '10px', 
+                border: '2px solid #00ff00',
+                fontFamily: 'Courier New, monospace',
+                fontSize: '11px',
+                marginBottom: '10px'
+              }}>
+                <div style={{ marginBottom: '5px' }}>
+                  👤 {review.author}
+                </div>
+                <div>
+                  🏢 {review.company}
+                </div>
+              </div>
+              <p style={{ fontSize: '12px', fontStyle: 'italic' }}>
+                "{review.quote.substring(0, 100)}..."
+              </p>
+              <div style={{ textAlign: 'right', marginTop: '10px', fontSize: '10px', color: '#666' }}>
+                ⭐⭐⭐⭐⭐
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div style={{ textAlign: 'center', marginTop: '30px' }}>
+        <div className="retro-counter">
+          ⭐ TOTAL REVIEWS: 10 | 🏆 AVERAGE RATING: 5.0 | 💯 SATISFACTION: 100% ⭐
+        </div>
+      </div>
+    </div>
   );
 };
 
