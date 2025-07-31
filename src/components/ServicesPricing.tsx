@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { InlineWidget } from 'react-calendly';
 
 const ServicesPricing: React.FC = () => {
   // Animation variants
@@ -248,15 +247,20 @@ const ServicesPricing: React.FC = () => {
                 <h3 className="text-2xl font-bold mb-6">Book Your 14-Day MVP Consultation</h3>
                 <p className="text-blue-300 font-medium mb-6">Quick, hassle-free scheduling. Pick a time that works for you:</p>
                 <div className="calendly-container" style={{ height: '580px' }}>
-                  <InlineWidget
-                    url="https://calendly.com/elco-dev/consult"
-                    styles={{ height: '100%' }}
-                    prefill={{
-                      customAnswers: {
-                        a1: 'Website Pricing Page'
-                      }
-                    }}
-                  />
+                  <a 
+                    href="https://calendly.com/elco-dev/consult"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full h-full"
+                  >
+                    <iframe 
+                      src="https://calendly.com/elco-dev/consult" 
+                      width="100%" 
+                      height="100%" 
+                      frameBorder="0" 
+                      title="Book Your 14-Day MVP Consultation"
+                    ></iframe>
+                  </a>
                 </div>
               </div>
               
