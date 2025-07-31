@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
             fontFamily: 'Courier New, monospace',
             fontSize: '14px'
           }}>
-            ⭐⭐⭐⭐⭐ "ELCO is the BEST development team ever!" - John Doe, CEO ⭐⭐⭐⭐⭐
+            ⭐⭐⭐⭐⭐ "Austin managed front end, back end, and database development including integrating third party applications to execute payment processing, reporting, etc. I consider myself extremely lucky to have found Austin." - Justin Garabed, Bevvo ⭐⭐⭐⭐⭐
           </div>
         </div>
       </div>
