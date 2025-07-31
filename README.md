@@ -19,7 +19,7 @@ A modern, responsive website built with React and TypeScript for showcasing our 
 - Framer Motion (for animations)
 
 ## Getting Started
-
+bump
 1. Install dependencies:
 ```bash
 npm install
