@@ -91,7 +91,7 @@ const RadioPlayer: React.FC = () => {
             whiteSpace: 'nowrap',
             overflow: 'hidden',
             textOverflow: 'ellipsis',
-            animation: isPlaying ? 'blink 10s infinite' : 'none'
+            animation: isPlaying ? 'none' : 'none'
           }}>
             🎵 {currentSong.title}
           </div>
