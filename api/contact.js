@@ -100,8 +100,8 @@ Source: ELCO Development Studio Contact Form
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'ELCO Development Studio <noreply@elcodevstudio.com>',
-        to: ['contact@elcodevstudio.com', 'austinhunter@elcodevstudio.com'],
+        from: 'ELCO Development Studio <noreply@elcodev.com>',
+        to: ['contact@elcodev.com', 'austin@elcodev.com'],
         subject: `🎯 New Contact Form Submission from ${name}`,
         html: htmlContent,
         text: textContent,
