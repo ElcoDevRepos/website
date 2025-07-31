@@ -1,25 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const ServicesPricing: React.FC = () => {
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.2 }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: "easeOut" }
-    }
-  };
-
   return (
     <section className="py-24 bg-[#0A0A0A] text-white relative overflow-hidden">
       {/* Background decoration */}
@@ -30,15 +11,9 @@ const ServicesPricing: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={containerVariants}
-          className="max-w-6xl mx-auto"
-        >
+        <div className="max-w-6xl mx-auto">
           {/* Header */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
+          <div className="text-center mb-16">
             <h1 className="text-5xl font-bold mb-6 leading-tight">
               Get Your MVP in <span className="text-blue-500">Just 14 Days</span>
             </h1>
@@ -48,10 +23,7 @@ const ServicesPricing: React.FC = () => {
             
             
             {/* Quick Schedule Button */}
-            <motion.div 
-              variants={itemVariants}
-              className="mt-8"
-            >
+            <div className="mt-8">
               <a 
                 href="#contact-form"
                 className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full text-lg transition-colors duration-300 shadow-lg hover:shadow-blue-500/20"
@@ -61,14 +33,11 @@ const ServicesPricing: React.FC = () => {
                 </svg>
                 Schedule a Consultation Now
               </a>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
           {/* Highlight Banner */}
-          <motion.div 
-            variants={itemVariants}
-            className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl p-6 mb-12 shadow-lg shadow-blue-900/20"
-          >
+          <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl p-6 mb-12 shadow-lg shadow-blue-900/20">
             <div className="flex flex-col md:flex-row items-center justify-between">
               <div className="flex items-center mb-4 md:mb-0">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10 text-white mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -94,13 +63,12 @@ const ServicesPricing: React.FC = () => {
                 <p className="text-xs">Spots are limited</p>
               </a>
             </div>
-          </motion.div>
+          </div>
 
           {/* Pricing Tiers */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Tier 1: Design to Frontend */}
-            <motion.div 
-              variants={itemVariants}
+            <div 
               className="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-blue-500 transition-all duration-300 shadow-xl hover:shadow-blue-900/20"
             >
               <div className="p-8">
@@ -138,11 +106,10 @@ const ServicesPricing: React.FC = () => {
                   Bring Your Design to Life
                 </a>
               </div>
-            </motion.div>
+            </div>
             
             {/* Tier 2: Full Development */}
-            <motion.div 
-              variants={itemVariants}
+            <div 
               className="bg-gray-900 rounded-2xl overflow-hidden border border-blue-500 transform md:scale-105 shadow-xl shadow-blue-900/20 relative"
             >
               <div className="absolute top-0 inset-x-0 bg-blue-600 text-white text-center py-2 text-sm font-semibold">
@@ -185,11 +152,10 @@ const ServicesPricing: React.FC = () => {
                   Start Your 14-Day MVP Journey
                 </a>
               </div>
-            </motion.div>
+            </div>
             
             {/* Tier 3: Long-term Partnership */}
-            <motion.div 
-              variants={itemVariants}
+            <div 
               className="bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 hover:border-blue-500 transition-all duration-300 shadow-xl hover:shadow-blue-900/20"
             >
               <div className="p-8">
@@ -229,15 +195,14 @@ const ServicesPricing: React.FC = () => {
                   Discuss Your Long-Term Needs
                 </a>
               </div>
-            </motion.div>
+            </div>
             
           </div>
           <p className="text-xs text-gray-400 mt-3 max-w-2xl mx-auto">
               *14-day delivery timeframe may vary based on project scope. Booking a consultation allows us to assess your specific needs and set an accurate, expedited timeline.
             </p>
           {/* Calendar Section - More Prominent */}
-          <motion.div 
-            variants={itemVariants} 
+          <div 
             className="mt-20 bg-gradient-to-br from-gray-900 to-blue-900/40 rounded-3xl shadow-xl border border-blue-500/30"
             id="contact-form"
           >
@@ -338,11 +303,10 @@ const ServicesPricing: React.FC = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
           
           {/* Final CTA */}
-          <motion.div 
-            variants={itemVariants}
+          <div 
             className="mt-12 text-center"
           >
             <h2 className="text-2xl font-bold mb-4">Ready to launch your product in record time?</h2>
@@ -356,8 +320,8 @@ const ServicesPricing: React.FC = () => {
               </svg>
               Schedule a Free Consultation
             </a>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );
