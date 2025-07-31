@@ -65,13 +65,13 @@ const Navigation: React.FC = () => {
           >
             ℹ️ ABOUT
           </button>
-          <button
+          {/* <button
             onClick={() => window.open('/partners', '_blank')}
             className="retro-button"
             style={{ fontSize: '14px', minHeight: '44px' }}
           >
             🤝 PARTNERS
-          </button>
+          </button> */}
           <button
             onClick={() => scrollToSection('testimonials')}
             className="retro-button"
@@ -146,7 +146,7 @@ const Navigation: React.FC = () => {
             >
               ℹ️ ABOUT
             </button>
-            <button
+            {/* <button
               onClick={() => window.open('/partners', '_blank')}
               className="retro-button"
               style={{ 
@@ -156,7 +156,7 @@ const Navigation: React.FC = () => {
               }}
             >
               🤝 PARTNERS
-            </button>
+            </button> */}
             <button
               onClick={() => scrollToSection('testimonials')}
               className="retro-button"
