@@ -1,5 +1,4 @@
 import React from 'react';
-import VisitorCounter from './VisitorCounter';
 
 const Hero: React.FC = () => {
   return (

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useCountUp } from '../hooks/useCountUp';
-import VisitorCounter from './VisitorCounter';
 
 interface StatItemProps {
   value: number;

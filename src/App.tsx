@@ -13,7 +13,6 @@ import Portfolio from './components/Portfolio';
 import Brands from './components/Brands';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import PrivacyPolicy from './components/PrivacyPolicy';
-import PartnersPage from './components/Partners/PartnersPage';
 // import BlogPage from './components/Blog/BlogPage';
 // import BlogPost from './components/Blog/BlogPost';
 // import BlogGenerator from './components/Blog/BlogGenerator';

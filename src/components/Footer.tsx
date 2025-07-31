@@ -1,11 +1,6 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import VisitorCounter from './VisitorCounter';
 
 const Footer: React.FC = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  
   const handleNavigation = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {

@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Navigation: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false);
+      setIsMobileMenuOpen(false);
     }
   };
 
@@ -97,7 +96,7 @@ const Navigation: React.FC = () => {
         {/* Mobile menu button */}
         <div style={{ display: 'none' }}>
           <button
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="retro-button"
             style={{ 
               fontSize: '14px', 
@@ -105,13 +104,13 @@ const Navigation: React.FC = () => {
               minWidth: '44px'
             }}
           >
-            {!isOpen ? '☰ MENU' : '✕ CLOSE'}
+            {!isMobileMenuOpen ? '☰ MENU' : '✕ CLOSE'}
           </button>
         </div>
       </div>
 
       {/* Mobile menu */}
-      {isOpen && (
+      {isMobileMenuOpen && (
         <div style={{ 
           marginTop: '10px', 
           padding: '10px', 

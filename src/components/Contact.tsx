@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import VisitorCounter from './VisitorCounter';
 import { sendEmail, generateMailtoLink, validateForm, ContactFormData } from '../utils/emailService';
 
 interface FormStatus {
@@ -29,7 +28,7 @@ const Contact: React.FC = () => {
 
     // Validate form
     const validation = validateForm(formData);
-    if (!validation.valid) {
+    if (!validation.isValid) {
       setErrors(validation.errors);
       setStatus({ type: 'error', message: '❌ Please fix the errors below ❌' });
       return;
