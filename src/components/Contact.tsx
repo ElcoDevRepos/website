@@ -96,7 +96,7 @@ const Contact: React.FC = () => {
           </div>
           
           {/* Right column - Calendly embed */}
-          <motion.div 
+          {/* <motion.div 
             className="lg:col-span-2 bg-white rounded-3xl shadow-xl p-6 md:p-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -125,7 +125,7 @@ const Contact: React.FC = () => {
                 <span className="text-sm text-gray-600">SSL Encrypted</span>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </section>

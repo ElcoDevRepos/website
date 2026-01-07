@@ -48,11 +48,11 @@ const About: React.FC = () => {
       role: "Lead Developer",
       image: "./carter.png"
     },
-    {
-      name: "Zach Taylor",
-      role: "Lead Developer",
-      image: "./zach1.png"
-    },
+    // {
+    //   name: "Zach Taylor",
+    //   role: "Lead Developer",
+    //   image: "./zach1.png"
+    // },
     {
       name: "Devin Kelly",
       role: "Full Stack Developer",
