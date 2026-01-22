@@ -1,9 +1,8 @@
 {
-  "version": 2,
-  "routes": [
+  "crons": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "path": "/api/cron/generate-blog",
+      "schedule": "0 6 * * *"
     }
   ]
 }
