@@ -70,14 +70,11 @@ export function ContactCTA() {
           >
             <Button asChild size="xl" className="group bg-white text-blue-600 hover:bg-gray-50 shadow-2xl text-lg">
               <a href="https://app.apollo.io/#/meet/austin_hunter_d4d" target="_blank" rel="noopener noreferrer">
-                <Calendar className="mr-2 h-5 w-5" />
                 Schedule Free Consultation
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
             <Button asChild size="xl" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm text-lg">
               <a href="mailto:austin@elcodev.com">
-                <Mail className="mr-2 h-5 w-5" />
                 Email Us Directly
               </a>
             </Button>

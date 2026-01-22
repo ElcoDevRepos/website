@@ -112,7 +112,6 @@ export function PortfolioPreview() {
           <Button asChild size="lg" variant="outline" className="border-2 border-purple-600 text-purple-600 hover:bg-purple-50 hover:border-purple-700">
             <Link href="/portfolio">
               View All Projects
-              <ExternalLink className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </motion.div>
