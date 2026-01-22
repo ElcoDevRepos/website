@@ -2,9 +2,9 @@ import { useEffect } from "react";
 
 const FAITracker = () => {
   useEffect(() => {
-    // Inline script for faitracker initialization
-    const faitrackerScript = document.createElement('script');
-    faitrackerScript.type = 'text/javascript';
+    // ---------- Factors.ai inline script ----------
+    const faitrackerScript = document.createElement("script");
+    faitrackerScript.type = "text/javascript";
     faitrackerScript.innerHTML = `
       window.faitracker = window.faitracker || function() {
         this.q = [];
@@ -37,9 +37,9 @@ const FAITracker = () => {
     `;
     document.head.appendChild(faitrackerScript);
 
-    // LinkedIn script
-    const linkedinScript = document.createElement('script');
-    linkedinScript.type = 'text/javascript';
+    // ---------- LinkedIn base ----------
+    const linkedinScript = document.createElement("script");
+    linkedinScript.type = "text/javascript";
     linkedinScript.innerHTML = `
       _linkedin_partner_id = "7151122";
       window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
@@ -47,8 +47,8 @@ const FAITracker = () => {
     `;
     document.head.appendChild(linkedinScript);
 
-    const linkedinScript2 = document.createElement('script');
-    linkedinScript2.type = 'text/javascript';
+    const linkedinScript2 = document.createElement("script");
+    linkedinScript2.type = "text/javascript";
     linkedinScript2.innerHTML = `
       (function(l) {
         if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
@@ -57,31 +57,50 @@ const FAITracker = () => {
         var b = document.createElement("script");
         b.type = "text/javascript";b.async = true;
         b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-        s.parentNode.insertBefore(b, s);})(window.lintrk);
+        s.parentNode.insertBefore(b, s);
+      })(window.lintrk);
     `;
     document.head.appendChild(linkedinScript2);
 
-    // External Factors.ai script
-    const factorsScript = document.createElement('script');
+    // ---------- Factors.ai external ----------
+    const factorsScript = document.createElement("script");
     factorsScript.src = "https://app.factors.ai/assets/factors.js";
     factorsScript.async = true;
     document.head.appendChild(factorsScript);
 
-    // LinkedIn noscript image
-    const linkedinImg = document.createElement('img');
+    // ---------- Apollo tracker ----------
+    const apolloScript = document.createElement("script");
+    const cacheBuster = Math.random().toString(36).substring(7);
+
+    apolloScript.src = `https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=${cacheBuster}`;
+    apolloScript.async = true;
+    apolloScript.defer = true;
+    apolloScript.onload = () => {
+      if (window.trackingFunctions?.onLoad) {
+        window.trackingFunctions.onLoad({
+          appId: "69723a7b1c8c6d00211db404",
+        });
+      }
+    };
+    document.head.appendChild(apolloScript);
+
+    // ---------- LinkedIn noscript pixel ----------
+    const linkedinImg = document.createElement("img");
     linkedinImg.height = 1;
     linkedinImg.width = 1;
-    linkedinImg.style.display = 'none';
-    linkedinImg.alt = '';
-    linkedinImg.src = 'https://px.ads.linkedin.com/collect/?pid=7151122&fmt=gif';
+    linkedinImg.style.display = "none";
+    linkedinImg.alt = "";
+    linkedinImg.src =
+      "https://px.ads.linkedin.com/collect/?pid=7151122&fmt=gif";
     document.body.appendChild(linkedinImg);
 
-    // Cleanup function
+    // ---------- Cleanup ----------
     return () => {
       document.head.removeChild(faitrackerScript);
       document.head.removeChild(linkedinScript);
       document.head.removeChild(linkedinScript2);
       document.head.removeChild(factorsScript);
+      document.head.removeChild(apolloScript);
       document.body.removeChild(linkedinImg);
     };
   }, []);
