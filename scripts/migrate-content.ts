@@ -123,7 +123,7 @@ const testimonials = [
     featured: false,
   },
   {
-    quote: "As an entrepreneur without much money trying to get a minimum viable product into existence, Elco Development has been the perfect partner. Austin built the entire project for less than a big firm would have charged for a few planning meetings.",
+    quote: "As an entrepreneur without much money trying to get a minimum viable product into existence, Elco Dev has been the perfect partner. Austin built the entire project for less than a big firm would have charged for a few planning meetings.",
     author: "Charles Lyons",
     company: "Daily Dashboard",
     rating: 5,

@@ -8,7 +8,7 @@ import { Code2, ArrowRight, CheckCircle2, Zap, Shield, Layers } from "lucide-rea
 import Image from "next/image"
 
 export const metadata = {
-  title: "Custom Web Development | Elco Development",
+  title: "Custom Web Development | Elco Dev",
   description: "Modern, scalable web applications built with cutting-edge technologies. From enterprise solutions to startup MVPs.",
 }
 

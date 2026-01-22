@@ -8,7 +8,7 @@ import { Smartphone, ArrowRight, CheckCircle2 } from "lucide-react"
 import Image from "next/image"
 
 export const metadata = {
-  title: "Mobile App Development | Elco Development",
+  title: "Mobile App Development | Elco Dev",
   description: "Native and cross-platform mobile applications for iOS and Android. Seamless user experiences across all devices.",
 }
 

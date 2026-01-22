@@ -7,7 +7,7 @@ import { Rocket, ArrowRight, Clock, DollarSign, TrendingUp } from "lucide-react"
 import Image from "next/image"
 
 export const metadata = {
-  title: "MVP Development | Elco Development - Launch in 14 Days",
+  title: "MVP Development | Elco Dev - Launch in 14 Days",
   description: "Get your MVP built and launched in just 14 days. Fast, affordable, and built to validate your business idea.",
 }
 

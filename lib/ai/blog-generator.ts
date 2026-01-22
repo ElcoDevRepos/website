@@ -143,14 +143,14 @@ Requirements:
 - Focus on providing genuine value
 - Include relevant technical details without being overly complex
 - Naturally incorporate keywords: custom software development, MVP development, software rescue
-- End with a soft call-to-action mentioning Elco Development's services
+- End with a soft call-to-action mentioning Elco Dev's services. The site is https://elcodev.com and we are Elco Dev. NOT Elco Development.
 
 Structure:
 1. Engaging introduction
 2. 3-4 main sections with practical insights
 3. Real-world examples or scenarios
 4. Conclusion with key takeaways
-5. Brief mention of how Elco Development can help
+5. Brief mention of how Elco Dev can help
 
 Write the complete blog post in markdown format:`
 

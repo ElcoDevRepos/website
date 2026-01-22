@@ -7,7 +7,7 @@ import Link from "next/link"
 import { Heart, Home, Users, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "About Us | Elco Development",
+  title: "About Us | Elco Dev",
   description: "Family-owned software development agency bringing small-town values to the digital world",
 }
 

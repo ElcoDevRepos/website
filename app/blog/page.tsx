@@ -9,7 +9,7 @@ import { formatDate } from "@/lib/utils"
 import { Calendar, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Blog | Elco Development",
+  title: "Blog | Elco Dev",
   description: "Insights on custom software development, MVP creation, and software rescue",
 }
 

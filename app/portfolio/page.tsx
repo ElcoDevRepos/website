@@ -9,7 +9,7 @@ import { ExternalLink } from "lucide-react"
 import Image from "next/image"
 
 export const metadata = {
-  title: "Portfolio | Elco Development",
+  title: "Portfolio | Elco Dev",
   description: "Real-world applications we've built for clients across various industries",
 }
 
