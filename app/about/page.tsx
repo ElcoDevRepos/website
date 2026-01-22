@@ -128,7 +128,6 @@ export default async function AboutPage() {
           <Button asChild size="lg" variant="secondary">
             <Link href="/#contact" className="group">
               Start a Conversation
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </Button>
         </div>
