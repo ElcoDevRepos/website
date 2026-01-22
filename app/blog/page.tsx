@@ -130,7 +130,7 @@ export default async function BlogPage() {
                       </div>
                       {post.tags && post.tags.length > 0 && (
                         <div className="flex flex-wrap gap-2">
-                          {post.tags.slice(0, 3).map((tag) => (
+                          {post.tags.slice(0, 3).map((tag: string) => (
                             <Badge key={tag} variant="outline" className="text-xs">
                               {tag}
                             </Badge>

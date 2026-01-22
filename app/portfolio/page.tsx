@@ -86,7 +86,7 @@ export default async function PortfolioPage() {
                     </p>
 
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.slice(0, 4).map((tech) => (
+                      {project.technologies.slice(0, 4).map((tech: string) => (
                         <Badge key={tech} variant="outline" className="text-xs border-blue-200 text-blue-700">
                           {tech}
                         </Badge>

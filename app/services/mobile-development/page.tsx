@@ -70,7 +70,7 @@ export default function MobileDevelopmentPage() {
         <div className="container mx-auto max-w-7xl px-6 md:px-8 lg:px-12 text-center">
           <h2 className="text-4xl font-bold mb-12">Platforms We Support</h2>
           <div className="flex flex-wrap gap-3 justify-center">
-            {platforms.map((platform) => (
+            {platforms.map((platform: string) => (
               <Badge key={platform} variant="secondary" className="text-base px-6 py-3">
                 {platform}
               </Badge>

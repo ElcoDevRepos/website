@@ -90,7 +90,7 @@ export function PortfolioPreview() {
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
+                    {project.technologies.map((tech: string) => (
                       <Badge key={tech} variant="outline" className="text-xs border-purple-200 text-purple-700">
                         {tech}
                       </Badge>

@@ -95,7 +95,7 @@ export default async function BlogPostPage({
           {/* Category & Tags */}
           <div className="flex flex-wrap gap-2 mb-6">
             {post.category && <Badge>{post.category}</Badge>}
-            {post.tags?.slice(0, 3).map((tag) => (
+            {post.tags?.slice(0, 3).map((tag: string) => (
               <Badge key={tag} variant="outline">{tag}</Badge>
             ))}
           </div>
@@ -160,7 +160,7 @@ export default async function BlogPostPage({
             <div className="mb-12">
               <h3 className="text-sm font-semibold text-gray-700 mb-3">TAGS:</h3>
               <div className="flex flex-wrap gap-2">
-                {post.tags.map((tag) => (
+                {post.tags.map((tag: string) => (
                   <Badge key={tag} variant="secondary">{tag}</Badge>
                 ))}
               </div>
