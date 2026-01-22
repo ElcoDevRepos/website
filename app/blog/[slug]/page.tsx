@@ -151,7 +151,7 @@ export default async function BlogPostPage({
               Whether you're building from scratch or rescuing an existing project, we're here to help.
             </p>
             <Button asChild size="lg">
-              <Link href="/#contact">Get Started Today</Link>
+              <Link href="/#contact" className="text-gray-700" >Get Started Today</Link>
             </Button>
           </div>
 

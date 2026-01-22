@@ -140,7 +140,7 @@ export default async function PortfolioPage() {
             Let's discuss your requirements and see how we can help bring your vision to life.
           </p>
           <Button asChild size="lg">
-            <Link href="/#contact">Get Started Today</Link>
+            <Link href="/#contact" className="text-gray-700" >Get Started Today</Link>
           </Button>
         </div>
       </section>
