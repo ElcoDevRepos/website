@@ -18,7 +18,7 @@ const testimonials = [
     company: "Ladder Suite",
   },
   {
-    quote: "As an entrepreneur without much money trying to get an MVP into existence, Elco Dev has been the perfect partner.",
+    quote: "As an entrepreneur without much money trying to get an MVP into existence, Elco Development has been the perfect partner.",
     author: "Charles Lyons",
     company: "Daily Dashboard",
   },

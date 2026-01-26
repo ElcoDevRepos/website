@@ -9,7 +9,7 @@ import { ExternalLink } from "lucide-react"
 import Image from "next/image"
 
 export const metadata = {
-  title: "Portfolio | Elco Dev",
+  title: "Portfolio | Elco Development",
   description: "Real-world applications we've built for clients across various industries",
 }
 
@@ -86,7 +86,7 @@ export default async function PortfolioPage() {
                     </p>
 
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {project.technologies.slice(0, 4).map((tech: string) => (
+                      {project.technologies.slice(0, 4).map((tech) => (
                         <Badge key={tech} variant="outline" className="text-xs border-blue-200 text-blue-700">
                           {tech}
                         </Badge>
@@ -140,7 +140,7 @@ export default async function PortfolioPage() {
             Let's discuss your requirements and see how we can help bring your vision to life.
           </p>
           <Button asChild size="lg">
-            <Link href="/#contact" className="text-gray-700" >Get Started Today</Link>
+            <Link href="/#contact">Get Started Today</Link>
           </Button>
         </div>
       </section>

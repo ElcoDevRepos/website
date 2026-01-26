@@ -54,7 +54,7 @@ export function Navigation() {
               </Link>
             ))}
             <Button asChild size="sm">
-              <Link href="/#contact" className="text-gray-700" >Get Started</Link>
+              <Link href="#contact">Get Started</Link>
             </Button>
           </div>
 
@@ -87,7 +87,7 @@ export function Navigation() {
                 </Link>
               ))}
               <Button asChild className="w-full">
-                <Link href="/#contact" className="text-gray-700" onClick={() => setIsMobileMenuOpen(false)}>
+                <Link href="#contact" onClick={() => setIsMobileMenuOpen(false)}>
                   Get Started
                 </Link>
               </Button>

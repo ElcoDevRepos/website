@@ -6,7 +6,7 @@ import Link from "next/link"
 import { AlertTriangle, CheckCircle, LifeBuoy, TrendingUp, Clock, Shield } from "lucide-react"
 
 export const metadata = {
-  title: "Software Rescue Services | Elco Dev",
+  title: "Software Rescue Services | Elco Development",
   description: "Stuck with an abandoned or failing project? We specialize in rescuing stalled software projects and getting them across the finish line.",
 }
 

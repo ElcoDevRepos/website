@@ -95,7 +95,7 @@ export default async function BlogPostPage({
           {/* Category & Tags */}
           <div className="flex flex-wrap gap-2 mb-6">
             {post.category && <Badge>{post.category}</Badge>}
-            {post.tags?.slice(0, 3).map((tag: string) => (
+            {post.tags?.slice(0, 3).map((tag) => (
               <Badge key={tag} variant="outline">{tag}</Badge>
             ))}
           </div>
@@ -151,7 +151,7 @@ export default async function BlogPostPage({
               Whether you're building from scratch or rescuing an existing project, we're here to help.
             </p>
             <Button asChild size="lg">
-              <Link href="/#contact" className="text-gray-700" >Get Started Today</Link>
+              <Link href="/#contact">Get Started Today</Link>
             </Button>
           </div>
 
@@ -160,7 +160,7 @@ export default async function BlogPostPage({
             <div className="mb-12">
               <h3 className="text-sm font-semibold text-gray-700 mb-3">TAGS:</h3>
               <div className="flex flex-wrap gap-2">
-                {post.tags.map((tag: string) => (
+                {post.tags.map((tag) => (
                   <Badge key={tag} variant="secondary">{tag}</Badge>
                 ))}
               </div>

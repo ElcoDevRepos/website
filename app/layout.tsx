@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elco Dev | Custom Software & Software Rescue Services",
+  title: "Elco Development | Custom Software & Software Rescue Services",
   description: "Expert custom software development and software rescue services. We build MVPs, enterprise solutions, and finish abandoned projects.",
   keywords: ["custom software development", "MVP development", "software rescue", "web development", "mobile app development"],
 };

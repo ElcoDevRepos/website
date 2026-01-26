@@ -8,7 +8,7 @@ import { Code2, ArrowRight, CheckCircle2, Zap, Shield, Layers } from "lucide-rea
 import Image from "next/image"
 
 export const metadata = {
-  title: "Custom Web Development | Elco Dev",
+  title: "Custom Web Development | Elco Development",
   description: "Modern, scalable web applications built with cutting-edge technologies. From enterprise solutions to startup MVPs.",
 }
 
@@ -99,7 +99,7 @@ export default function WebDevelopmentPage() {
             We work with modern, proven technologies to build robust web applications
           </p>
           <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
-            {technologies.map((tech: string) => (
+            {technologies.map((tech) => (
               <Badge key={tech} variant="secondary" className="text-sm px-4 py-2">
                 {tech}
               </Badge>

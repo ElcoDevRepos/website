@@ -7,7 +7,7 @@ import { Users, ArrowRight, CheckCircle2 } from "lucide-react"
 import Image from "next/image"
 
 export const metadata = {
-  title: "Staff Augmentation | Elco Dev",
+  title: "Staff Augmentation | Elco Development",
   description: "Strengthen your team with experienced developers who integrate seamlessly with your workflow.",
 }
 

@@ -110,6 +110,7 @@ export function Hero() {
               <Button asChild size="xl" className="group bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg shadow-blue-500/25 text-lg">
                 <a href="https://app.apollo.io/#/meet/austin_hunter_d4d" target="_blank" rel="noopener noreferrer">
                   Schedule Free Consultation
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
               <Button asChild size="xl" variant="outline" className="border-2 border-gray-300 hover:border-blue-600 hover:bg-blue-50 text-lg">

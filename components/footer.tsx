@@ -125,7 +125,7 @@ export function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 text-sm">
-          <p>&copy; {currentYear} Elco Dev. All rights reserved.</p>
+          <p>&copy; {currentYear} Elco Development. All rights reserved.</p>
           <div className="mt-2 space-x-4">
             <Link href="/privacy-policy" className="hover:text-white transition-colors">
               Privacy Policy

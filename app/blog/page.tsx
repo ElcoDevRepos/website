@@ -9,7 +9,7 @@ import { formatDate } from "@/lib/utils"
 import { Calendar, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "Blog | Elco Dev",
+  title: "Blog | Elco Development",
   description: "Insights on custom software development, MVP creation, and software rescue",
 }
 
@@ -130,7 +130,7 @@ export default async function BlogPage() {
                       </div>
                       {post.tags && post.tags.length > 0 && (
                         <div className="flex flex-wrap gap-2">
-                          {post.tags.slice(0, 3).map((tag: string) => (
+                          {post.tags.slice(0, 3).map((tag) => (
                             <Badge key={tag} variant="outline" className="text-xs">
                               {tag}
                             </Badge>

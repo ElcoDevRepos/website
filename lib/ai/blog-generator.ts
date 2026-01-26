@@ -1,14 +1,9 @@
 import OpenAI from 'openai'
 import { slugify } from '../utils'
 
-function getOpenAIClient() {
-  if (!process.env.OPENAI_API_KEY) {
-    throw new Error('OPENAI_API_KEY environment variable is required')
-  }
-  return new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-  })
-}
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+})
 
 // Unsplash API for fetching blog images
 const UNSPLASH_ACCESS_KEY = process.env.UNSPLASH_ACCESS_KEY || 'demo'
@@ -96,7 +91,6 @@ export function selectTopicCategory(): BlogTopicCategory {
 }
 
 export async function generateBlogTopic(category: BlogTopicCategory): Promise<string> {
-  const openai = getOpenAIClient()
   const prompt = `Generate a compelling, SEO-friendly blog post title for a software development agency blog. 
   
 Category: ${category.name}
@@ -143,14 +137,14 @@ Requirements:
 - Focus on providing genuine value
 - Include relevant technical details without being overly complex
 - Naturally incorporate keywords: custom software development, MVP development, software rescue
-- End with a soft call-to-action mentioning Elco Dev's services. The site is https://elcodev.com and we are Elco Dev. NOT Elco Development.
+- End with a soft call-to-action mentioning Elco Development's services
 
 Structure:
 1. Engaging introduction
 2. 3-4 main sections with practical insights
 3. Real-world examples or scenarios
 4. Conclusion with key takeaways
-5. Brief mention of how Elco Dev can help
+5. Brief mention of how Elco Development can help
 
 Write the complete blog post in markdown format:`
 
@@ -166,8 +160,6 @@ SEO_TITLE: [title]
 META_DESC: [description]
 TAGS: [tag1, tag2, tag3, tag4, tag5]`
 
-  const openai = getOpenAIClient()
-  
   // Generate all content in parallel (including image fetch)
   const [contentResponse, excerptResponse, seoResponse, featuredImage] = await Promise.all([
     openai.chat.completions.create({

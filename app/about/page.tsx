@@ -7,7 +7,7 @@ import Link from "next/link"
 import { Heart, Home, Users, ArrowRight } from "lucide-react"
 
 export const metadata = {
-  title: "About Us | Elco Dev",
+  title: "About Us | Elco Development",
   description: "Family-owned software development agency bringing small-town values to the digital world",
 }
 
@@ -98,7 +98,7 @@ export default async function AboutPage() {
                   ) : (
                     <div className="w-full aspect-square bg-gradient-to-br from-primary-400 to-accent-400 flex items-center justify-center">
                       <span className="text-4xl font-bold text-white">
-                        {member.name.split(' ').map((n: string) => n[0]).join('')}
+                        {member.name.split(' ').map(n => n[0]).join('')}
                       </span>
                     </div>
                   )}
@@ -128,6 +128,7 @@ export default async function AboutPage() {
           <Button asChild size="lg" variant="secondary">
             <Link href="/#contact" className="group">
               Start a Conversation
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </Button>
         </div>
