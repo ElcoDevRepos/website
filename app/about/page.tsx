@@ -98,7 +98,7 @@ export default async function AboutPage() {
                   ) : (
                     <div className="w-full aspect-square bg-gradient-to-br from-primary-400 to-accent-400 flex items-center justify-center">
                       <span className="text-4xl font-bold text-white">
-                        {member.name.split(' ').map(n => n[0]).join('')}
+                        {member.name.split(' ').map((n: string) => n[0]).join('')}
                       </span>
                     </div>
                   )}

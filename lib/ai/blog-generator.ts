@@ -1,9 +1,14 @@
 import OpenAI from 'openai'
 import { slugify } from '../utils'
 
-const openai = new OpenAI({
+function getOpenAIClient() {
+  if (!process.env.OPENAI_API_KEY) {
+    throw new Error('OPENAI_API_KEY environment variable is required')
+  }
+  return new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 })
+}
 
 // Unsplash API for fetching blog images
 const UNSPLASH_ACCESS_KEY = process.env.UNSPLASH_ACCESS_KEY || 'demo'
@@ -91,6 +96,7 @@ export function selectTopicCategory(): BlogTopicCategory {
 }
 
 export async function generateBlogTopic(category: BlogTopicCategory): Promise<string> {
+  const openai = getOpenAIClient()
   const prompt = `Generate a compelling, SEO-friendly blog post title for a software development agency blog. 
   
 Category: ${category.name}
@@ -159,6 +165,8 @@ Format your response as:
 SEO_TITLE: [title]
 META_DESC: [description]
 TAGS: [tag1, tag2, tag3, tag4, tag5]`
+
+  const openai = getOpenAIClient()
 
   // Generate all content in parallel (including image fetch)
   const [contentResponse, excerptResponse, seoResponse, featuredImage] = await Promise.all([

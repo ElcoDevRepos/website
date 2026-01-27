@@ -99,7 +99,7 @@ export default function WebDevelopmentPage() {
             We work with modern, proven technologies to build robust web applications
           </p>
           <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
-            {technologies.map((tech) => (
+            {technologies.map((tech: string) => (
               <Badge key={tech} variant="secondary" className="text-sm px-4 py-2">
                 {tech}
               </Badge>
