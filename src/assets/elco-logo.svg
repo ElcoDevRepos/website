@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="200" height="200" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <g fill="currentColor">
-        <path d="M100 0C44.8 0 0 44.8 0 100s44.8 100 100 100 100-44.8 100-100S155.2 0 100 0zm0 180c-44.2 0-80-35.8-80-80s35.8-80 80-80 80 35.8 80 80-35.8 80-80 80z"/>
-        <circle cx="65" cy="100" r="15"/>
-        <circle cx="135" cy="100" r="15"/>
-        <path d="M65 85h70v30H65z"/>
-    </g>
-</svg>

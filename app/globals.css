@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { @apply bg-paper text-ink font-sans antialiased; }
+  ::selection { background: #C6F24E; color: #0B0F1A; }
+  :focus-visible { outline: 2px solid #2451F5; outline-offset: 3px; border-radius: 6px; }
+  h1, h2, h3 { @apply font-display tracking-tight; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  [id] { scroll-margin-top: 5.5rem; }
+}
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-page px-5 sm:px-8; }
+  .eyebrow { @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-ink-muted; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-[15px] font-semibold transition-colors; }
+  .btn-primary { @apply btn bg-ink text-paper hover:bg-brand; }
+  .btn-brand { @apply btn bg-brand text-white hover:bg-brand-dark; }
+  .btn-ghost { @apply btn border border-ink/15 bg-white text-ink hover:border-ink/40; }
+  .btn-light { @apply btn bg-paper text-ink hover:bg-lime; }
+  .card { @apply rounded-3xl border border-ink/10 bg-white; }
+  .prose-lite p { @apply text-ink-soft leading-relaxed; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
