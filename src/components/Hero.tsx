@@ -2,14 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Hero: React.FC = () => {
-  // Default placeholder avatar URLs for fallback
-  const placeholderAvatars = [
-    'https://ui-avatars.com/api/?name=Cory+Johnson&background=0D8ABC&color=fff',
-    'https://ui-avatars.com/api/?name=Justin+Garabed&background=0D8ABC&color=fff',
-    'https://ui-avatars.com/api/?name=Austin+Elco&background=0D8ABC&color=fff',
-    'https://ui-avatars.com/api/?name=Collin+Goodwin&background=0D8ABC&color=fff'
-  ];
-  
   return (
     <section id="home" className="py-20 bg-gradient-to-br from-blue-50 to-white">
       <div className="container mx-auto px-4">
@@ -73,30 +65,19 @@ const Hero: React.FC = () => {
                 </button>
               </div>
               
-              <div className="mt-8 flex items-center bg-white p-3 rounded-lg shadow-sm border border-gray-100 max-w-xs">
-                <div className="flex -space-x-2">
-                  {placeholderAvatars.map((avatar, i) => (
-                    <img 
-                      key={i}
-                      src={avatar}
-                      alt={`Client ${i+1}`} 
-                      className="w-8 h-8 rounded-full border-2 border-white"
-                    />
+              {/* Real proof: apps of our own, live in the stores. */}
+              <a href="#portfolio" className="mt-8 inline-flex items-center gap-3 bg-white p-3 pr-4 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                <div className="flex -space-x-2 shrink-0">
+                  {['nicdrop', 'crohns', 'liturgical-living', 'starterset'].map((n) => (
+                    <img key={n} src={`/icons/${n}.webp`} alt="" className="w-9 h-9 rounded-lg border-2 border-white shadow-sm" />
                   ))}
                 </div>
-                <div className="ml-3">
-                  <div className="flex items-center">
-                    {[1, 2, 3, 4, 5].map(i => (
-                      <svg key={i} className="h-4 w-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 15.934l6.106 3.272-1.172-6.814 4.953-4.825-6.839-.993L10 0 6.952 6.574l-6.839.993 4.953 4.825-1.172 6.814L10 15.934z" clipRule="evenodd" />
-                      </svg>
-                    ))}
-                  </div>
-                  <div className="text-sm font-medium text-gray-700">
-                    <span className="font-bold">Rated highly</span> by our clients
-                  </div>
+                <div className="text-sm text-gray-700 leading-snug">
+                  <span className="font-bold text-gray-900">We ship our own apps too.</span>
+                  <br />
+                  See them in the App Store and Google Play →
                 </div>
-              </div>
+              </a>
             </motion.div>
           </div>
 
@@ -114,13 +95,9 @@ const Hero: React.FC = () => {
               }}
             >
               <img
-              src="./hero-image.webp"
-              alt="Web Development"
+              src="/hero-image.webp"
+              alt="Illustration of a developer building an app"
                 className="w-full h-auto rounded-lg"
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = "https://via.placeholder.com/600x400?text=Web+Development";
-                }}
               />
             </motion.div>
           </div>

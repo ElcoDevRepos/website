@@ -37,10 +37,9 @@ const Stats: React.FC = () => {
             label="Projects Completed"
             suffix="+"
           />
-          <StatItem 
-            value={100} 
-            label="Satisfied Clients"
-            suffix="%"
+          <StatItem
+            value={4}
+            label="Apps of Our Own"
           />
           <StatItem 
             value={10} 

@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { track } from '@vercel/analytics';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Navigation: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
+  // Transparent over the hero, solid once the page scrolls (otherwise the links sit on top of the content).
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
   const location = useLocation();
   const navigate = useNavigate();
   const isPartnersPage = location.pathname === '/partners';
@@ -41,7 +49,7 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className="fixed w-full z-50 bg-transparent">
+    <nav className={`fixed w-full z-50 transition-colors duration-300 ${scrolled ? (isPartnersPage || isPricingPage ? 'bg-gray-900/90 backdrop-blur shadow-sm' : 'bg-white/90 backdrop-blur shadow-sm') : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -68,6 +76,32 @@ const Navigation: React.FC = () => {
                 className={`${textColorClass} ${hoverColorClass} px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300`}
               >
                 Home
+              </button>
+              <button
+                onClick={() => {
+                  if (isPartnersPage || isPricingPage) {
+                    navigate('/#portfolio');
+                  } else {
+                    scrollToSection('portfolio');
+                  }
+                  handleLinkClick('/work');
+                }}
+                className={`${textColorClass} ${hoverColorClass} px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300`}
+              >
+                Work
+              </button>
+              <button
+                onClick={() => {
+                  if (isPartnersPage || isPricingPage) {
+                    navigate('/#services');
+                  } else {
+                    scrollToSection('services');
+                  }
+                  handleLinkClick('/services');
+                }}
+                className={`${textColorClass} ${hoverColorClass} px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300`}
+              >
+                Services
               </button>
               <button
                 onClick={() => {
@@ -201,6 +235,32 @@ const Navigation: React.FC = () => {
             className={`${textColorClass} ${hoverColorClass} block px-3 py-2 rounded-md text-base font-medium w-full text-left`}
           >
             Home
+          </button>
+          <button
+            onClick={() => {
+              if (isPartnersPage || isPricingPage) {
+                navigate('/#portfolio');
+              } else {
+                scrollToSection('portfolio');
+              }
+              setIsOpen(false);
+            }}
+            className={`${textColorClass} ${hoverColorClass} block px-3 py-2 rounded-md text-base font-medium w-full text-left`}
+          >
+            Work
+          </button>
+          <button
+            onClick={() => {
+              if (isPartnersPage || isPricingPage) {
+                navigate('/#services');
+              } else {
+                scrollToSection('services');
+              }
+              setIsOpen(false);
+            }}
+            className={`${textColorClass} ${hoverColorClass} block px-3 py-2 rounded-md text-base font-medium w-full text-left`}
+          >
+            Services
           </button>
           <button
             onClick={() => {

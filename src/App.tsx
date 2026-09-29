@@ -71,11 +71,11 @@ const App: React.FC = () => {
               <Navigation />
               <main className="py-0">
                 <Hero />
+                <Portfolio />
                 <Testimonials />
                 <Stats />
                 <Brands />
                 <Services />
-                <Portfolio />
                 <About />
               { /*<Pricing />*/}
                 <CTA />

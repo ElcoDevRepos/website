@@ -50,8 +50,8 @@ const Brands: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Trusted By Industry Leaders</h2>
-          <p className="text-lg text-gray-600">We work with some of the most innovative companies in the world</p>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Teams We've Built For</h2>
+          <p className="text-lg text-gray-600">From national brands to local businesses and startups</p>
         </motion.div>
 
         <motion.div

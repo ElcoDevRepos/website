@@ -73,7 +73,7 @@ const Contact: React.FC = () => {
                 <p className="text-gray-700 font-medium mb-3">Prefer direct contact?</p>
                 <div className="flex flex-col space-y-3">
                   <a
-                    href="tel:+16155879346"
+                    href="tel:+16157848066"
                     className="inline-flex items-center text-gray-700 hover:text-blue-600 transition-colors"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-3 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
