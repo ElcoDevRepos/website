@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const KIND = { own: "Built and run by Elco Dev", client: "Client project", build: "Product build" } as const;
+const KIND = { own: "Built and run by Elco Dev", client: "Client project", partner: "Technology partner (CTO)" } as const;
 
 export default async function ProjectPage({ params }: Props) {
   const p = projectBySlug((await params).slug);

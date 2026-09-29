@@ -6,7 +6,8 @@ export const dynamic = "force-static";
 export function GET() {
   const own = PROJECTS.filter((p) => p.kind === "own");
   const others = PROJECTS.filter((p) => p.kind !== "own");
-  const line = (p: (typeof PROJECTS)[number]) => `- [${p.name}](${SITE.url}/work/${p.slug}): ${p.summary} ${p.platforms.join(", ")}. ${p.tech.join(", ")}.${p.links.site ? ` Site: ${p.links.site}` : ""}`;
+  const role = { own: "", client: " (client project)", partner: " (Elco Dev leads technology as CTO partner)" } as const;
+  const line = (p: (typeof PROJECTS)[number]) => `- [${p.name}](${SITE.url}/work/${p.slug})${role[p.kind]}: ${p.summary} ${p.platforms.join(", ")}. ${p.tech.join(", ")}.${p.links.site ? ` Site: ${p.links.site}` : ""}`;
   const body = `# ${SITE.name}
 
 > ${SITE.description}
@@ -23,7 +24,7 @@ ${SERVICES.map((s) => `- [${s.name}](${SITE.url}/services/${s.slug}): ${s.short}
 
 ${own.map(line).join("\n")}
 
-## Client and other projects
+## Client projects and partnerships
 
 ${others.map(line).join("\n")}
 

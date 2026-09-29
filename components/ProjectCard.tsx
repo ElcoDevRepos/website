@@ -4,7 +4,7 @@ import type { Project } from "@/lib/site";
 import { PhoneFrame } from "./PhoneFrame";
 import { Tag } from "./ui";
 
-const KIND: Record<Project["kind"], string> = { own: "Our product", client: "Client project", build: "Product build" };
+const KIND: Record<Project["kind"], string> = { own: "Our product", client: "Client project", partner: "CTO partnership" };
 
 export function ProjectCard({ p, headingLevel = "h3" }: { p: Project; headingLevel?: "h2" | "h3" }) {
   const H = headingLevel;

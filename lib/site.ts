@@ -28,8 +28,8 @@ export type Links = { site?: string; appStore?: string; googlePlay?: string };
 export type Project = {
   slug: string;
   name: string;
-  /** "own": built and run by Elco Dev. "client": built for a client. */
-  kind: "own" | "client" | "build";
+  /** "own": built and run by Elco Dev. "client": built for a client. "partner": Elco Dev leads the technology as CTO. */
+  kind: "own" | "client" | "partner";
   category: "Mobile app" | "Web app & SaaS" | "API" | "Website";
   year: string;
   summary: string;
@@ -207,12 +207,12 @@ export const PROJECTS: Project[] = [
   {
     slug: "taskmerit",
     name: "TaskMerit",
-    kind: "client",
+    kind: "partner",
     category: "Web app & SaaS",
     year: "2026",
     summary: "A property-first CRM for landscaping and snow-removal companies.",
     description:
-      "TaskMerit keeps customers, properties, crews and the daily schedule in one place so the office and the field move together. It is a multi-tenant platform built around a field-service core: customer, property, service, visit, work record. Now in private beta.",
+      "TaskMerit keeps customers, properties, crews and the daily schedule in one place so the office and the field move together. Elco Dev is the technology partner: Austin Hunter serves as CTO, leading the architecture and development of a multi-tenant platform built around a field-service core (customer, property, service, visit, work record). Now in private beta.",
     highlights: [
       "Invitation-only multi-tenant workspaces with verified sign-up",
       "Real-time office workspace: customers, properties, crews and the day's schedule",
@@ -223,18 +223,18 @@ export const PROJECTS: Project[] = [
     tech: ["Next.js", "Firebase", "QuickBooks Online", "Resend"],
     links: { site: "https://taskmerit.com" },
     image: "/portfolio/taskmerit.webp",
-    seoTitle: "TaskMerit: field-service CRM built by Elco Dev",
+    seoTitle: "TaskMerit: field-service CRM, technology led by Elco Dev",
   },
   {
     slug: "bookreverb",
     name: "BookReverb",
-    kind: "build",
+    kind: "client",
     category: "Web app & SaaS",
     year: "2025",
     summary: "Connects publishers with real readers, with optional reviews.",
     description:
-      "BookReverb helps publishers reach interested readers without review swaps or chasing people in groups. Upload an advance copy once, readers opt in based on interest, and reading progress and optional review links are tracked in one dashboard.",
-    highlights: ["Publisher workflow: upload an advance copy once and set a reader bid", "Reader opt-in based on interest", "Progress and review tracking in one dashboard"],
+      "BookReverb helps publishers reach interested readers without review swaps or chasing people in groups. Upload an advance copy once, readers opt in based on interest, and reading progress and optional review links are tracked in one dashboard. Elco Dev took over the product and now leads all of its development.",
+    highlights: ["Took over an existing codebase and now owns full development", "Publisher workflow: upload an advance copy once and set a reader bid", "Reader opt-in based on interest", "Progress and review tracking in one dashboard"],
     platforms: ["Web"],
     tech: ["Next.js", "Marketplace", "Dashboards"],
     links: { site: "https://www.bookreverb.com" },
@@ -444,7 +444,8 @@ export const SERVICES: Service[] = [
     work: ["taskmerit", "equidesk", "realtime-sports-api", "clientping", "bookreverb", "laurel-crm"],
     faqs: [
       { q: "Can you build a multi-tenant SaaS?", a: "Yes. TaskMerit and EquiDesk are multi-tenant platforms with invitation sign-up, organization-scoped data and billing." },
-      { q: "Can you work on an existing codebase?", a: "Yes. We take over and extend existing products as well as build new ones." },
+      { q: "Do you partner with founders as a technical cofounder or CTO?", a: "Sometimes. On TaskMerit, Elco Dev's founder serves as CTO and leads the platform's technology as a partner in the business." },
+      { q: "Can you take over an existing codebase?", a: "Yes. We took over BookReverb and now lead all of its development, and we extend existing products as well as build new ones." },
       { q: "Do you build APIs?", a: "Yes. Realtime Sports API is a public developer API we built and run, with keys, webhooks and documentation." },
     ],
   },
