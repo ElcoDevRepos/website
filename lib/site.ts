@@ -15,7 +15,7 @@ export const SITE = {
   phone: "+1-615-784-8066",
   phoneDisplay: "(615) 784-8066",
   email: "austin@elcodev.com",
-  calendly: "https://calendly.com/elco-dev/consult",
+  calendly: "https://calendly.com/elco-dev/general-discussion",
   linkedin: "https://www.linkedin.com/company/elco-dev",
   github: "https://github.com/ElcoDevRepos",
   description:
