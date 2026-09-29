@@ -28,7 +28,7 @@ const Stats: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-wrap justify-center gap-12">
           <StatItem 
-            value={5} 
+            value={7} 
             label="Years in Business"
             suffix="+"
           />

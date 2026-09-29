@@ -32,38 +32,6 @@ const About: React.FC = () => {
     }
   ];
 
-  const team = [
-    {
-      name: "Austin Hunter",
-      role: "Founder, Lead Developer",
-      image: "./IMG_4787.png"
-    },
-    {
-      name: "Ashley Hunter",
-      role: "Founder, Office Manager",
-      image: "./ashley.png"
-    },
-    {
-      name: "Carter Williams",
-      role: "Lead Developer",
-      image: "./carter.png"
-    },
-    {
-      name: "Zach Taylor",
-      role: "Lead Developer",
-      image: "./zach1.png"
-    },
-    {
-      name: "Devin Kelly",
-      role: "Full Stack Developer",
-      image: "./IMG_4789.png"
-    },
-    {
-      name: "Joey Fenoglio",
-      role: "Frontend Developer",
-      image: "https://ui-avatars.com/api/?name=Joey+Fenoglio&background=0D8ABC&color=fff&size=400"
-    }
-  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -137,51 +105,6 @@ const About: React.FC = () => {
               ))}
             </div>
           </div>
-
-          {/* Team Section */}
-          <motion.div
-            variants={containerVariants}
-            className="pt-16 border-t border-gray-200"
-          >
-            <div className="text-center mb-16">
-              <motion.div variants={itemVariants}>
-                <h2 className="text-4xl font-bold text-gray-900 mb-4">
-                  Meet Our Team
-                </h2>
-                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                  Meet the faces behind your next project - a close-knit team that treats every client's vision as our own.
-                </p>
-              </motion.div>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              {team.map((member, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  className="group"
-                >
-                  <div className="relative overflow-hidden rounded-xl bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
-                    <div className="aspect-w-1 aspect-h-1 mx-auto">
-                      <img
-                        src={member.image}
-                        alt={member.name}
-                        className="object-cover w-full h-full group-hover:scale-105 grayscale group-hover:grayscale-0 transition duration-300"
-                      />
-                    </div>
-                    <div className="p-3 text-center">
-                      <h3 className="text-lg font-bold text-gray-900 mb-0.5">
-                        {member.name}
-                      </h3>
-                      <p className="text-blue-600 font-medium text-sm">
-                        {member.role}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
 
           {/* Call to Action */}
           <motion.div 
