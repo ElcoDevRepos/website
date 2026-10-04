@@ -30,7 +30,7 @@ export type Project = {
   name: string;
   /** "own": built and run by Elco Dev. "client": built for a client. "partner": Elco Dev leads the technology as CTO. */
   kind: "own" | "client" | "partner";
-  category: "Mobile app" | "Web app & SaaS" | "API" | "Website";
+  category: "Mobile app" | "Web app & SaaS" | "API" | "Website" | "Web game";
   year: string;
   summary: string;
   description: string;
@@ -138,11 +138,11 @@ export const PROJECTS: Project[] = [
     ],
     platforms: ["iOS", "Android"],
     tech: ["React Native", "Expo", "ML Kit", "Apple Vision", "RevenueCat"],
-    links: { site: "https://starterset.app" },
+    links: { site: "https://starterset.app", googlePlay: "https://play.google.com/store/apps/details?id=com.elcodev.starterset" },
     image: "/portfolio/starterset.webp",
     phones: ["/apps/starterset-1.webp", "/apps/starterset-2.webp", "/apps/starterset-3.webp"],
     icon: "/icons/starterset.webp",
-    note: "Launching on the App Store and Google Play",
+    note: "On Google Play now, with the iPhone version coming soon",
     seoTitle: "Starter Set: home workout coach app built by Elco Dev",
   },
   {
@@ -163,7 +163,7 @@ export const PROJECTS: Project[] = [
     platforms: ["iOS", "Android"],
     tech: ["Kotlin", "Jetpack Compose", "Native iOS", "Audio"],
     links: {
-      site: "https://liturgicalliving.app",
+      site: "https://www.elcodev.com/apps/liturgical-living",
       appStore: "https://apps.apple.com/us/app/liturgical-living/id6775888958",
       googlePlay: "https://play.google.com/store/apps/details?id=com.elcodev.lection",
     },
@@ -189,10 +189,11 @@ export const PROJECTS: Project[] = [
     ],
     platforms: ["Android"],
     tech: ["React Native", "Expo", "Firebase", "RevenueCat"],
-    links: { googlePlay: "https://play.google.com/store/apps/details?id=com.elcodev.homeshelf" },
+    links: { site: "https://www.elcodev.com/apps/homeshelf", googlePlay: "https://play.google.com/store/apps/details?id=com.elcodev.homeshelf" },
     image: "/apps/homeshelf-1.webp",
     phones: ["/apps/homeshelf-1.webp", "/apps/homeshelf-2.webp", "/apps/homeshelf-3.webp"],
     icon: "/icons/homeshelf.webp",
+    note: "On Google Play now, with the iPhone version coming soon",
     seoTitle: "Homeshelf: homeschool family library app built by Elco Dev",
   },
   {
@@ -212,10 +213,11 @@ export const PROJECTS: Project[] = [
     ],
     platforms: ["Android"],
     tech: ["React Native", "Expo", "Skia", "Firebase", "RevenueCat"],
-    links: { googlePlay: "https://play.google.com/store/apps/details?id=com.elcodev.scriptedbible" },
+    links: { site: "https://www.elcodev.com/apps/scripted", googlePlay: "https://play.google.com/store/apps/details?id=com.elcodev.scriptedbible" },
     image: "/apps/scripted-1.webp",
     phones: ["/apps/scripted-1.webp", "/apps/scripted-2.webp", "/apps/scripted-3.webp"],
     icon: "/icons/scripted.webp",
+    note: "On Google Play now, with the iPhone version coming soon",
     seoTitle: "Scripted: Bible annotation app built by Elco Dev",
   },
   {
@@ -235,12 +237,107 @@ export const PROJECTS: Project[] = [
     ],
     platforms: ["iOS", "Android"],
     tech: ["SwiftUI", "Kotlin", "Jetpack Compose", "Apple Vision", "ML Kit", "RevenueCat"],
-    links: { site: "https://elcodev-apps.vercel.app/spotted" },
+    links: { site: "https://www.elcodev.com/apps/spotted", googlePlay: "https://play.google.com/store/apps/details?id=com.elcodev.spotted" },
     image: "/apps/spotted-1.webp",
     phones: ["/apps/spotted-1.webp", "/apps/spotted-2.webp", "/apps/spotted-3.webp"],
     icon: "/icons/spotted.webp",
-    note: "Launching on the App Store and Google Play",
+    note: "On Google Play now, with the iPhone version coming soon",
     seoTitle: "Spotted: daily photo hunt app built by Elco Dev",
+  },
+  {
+    slug: "paddlerack",
+    name: "Paddle Rack",
+    kind: "own",
+    category: "Mobile app",
+    year: "2026",
+    summary: "A pickleball open-play and round-robin organizer that rotates players fairly, offline.",
+    description:
+      "Paddle Rack runs pickleball open play from one phone. Check players in, tap Go, and it picks the next four for every open court, fairly, all session long: whoever has played the fewest games goes on next and repeat partners are kept as low as the math allows. It also runs round robins, Americano, Mexicano, king of the court and ladders, works offline, and needs no account. A free web generator prints the same fair schedules.",
+    highlights: [
+      "Fair rotation you can check: games played differ by at most one, with a fairness report",
+      "Open play, round robin, Americano, Mexicano, king of the court and ladders in one app",
+      "Courtside mode: big court cards, tap-to-score, late arrivals and early leavers handled fairly",
+      "Offline, no account, no ads; Club is a one-time purchase or a low yearly plan",
+      "A shared TypeScript engine powers both the app and a free round-robin generator on the web",
+    ],
+    platforms: ["iOS", "Android"],
+    tech: ["React Native", "Expo", "TypeScript", "RevenueCat"],
+    links: { site: "https://www.elcodev.com/apps/paddlerack", googlePlay: "https://play.google.com/store/apps/details?id=com.elcodev.paddlerack" },
+    image: "/apps/paddlerack-1.webp",
+    phones: ["/apps/paddlerack-1.webp", "/apps/paddlerack-2.webp", "/apps/paddlerack-3.webp"],
+    icon: "/icons/paddlerack.webp",
+    note: "On Google Play now, with the iPhone version coming soon",
+    seoTitle: "Paddle Rack: pickleball open play and round robin organizer by Elco Dev",
+  },
+  {
+    slug: "blackout",
+    name: "Blackout Daily",
+    kind: "own",
+    category: "Mobile app",
+    year: "2026",
+    summary: "Found poetry: the same classic book page for everyone each day, blacked out into your poem.",
+    description:
+      "Blackout Daily turns blackout poetry into a small daily ritual. Every morning everyone gets the same page from a public-domain classic. Tap the words you want to keep, black out the rest with one sweep of the marker, and what is left is your poem, ready to share as a card. Poems stay on the phone; there is no account.",
+    highlights: [
+      "A new page each day from public-domain classics, typeset like a real book page",
+      "Tap or drag to keep words, then an animated marker sweep with haptics",
+      "Shareable 4:5 poem cards and reveal videos",
+      "Scan a page from your own books with on-device text recognition (Plus)",
+    ],
+    platforms: ["iOS"],
+    tech: ["SwiftUI", "Apple Vision", "RevenueCat"],
+    links: { site: "https://www.elcodev.com/apps/blackout" },
+    image: "/apps/blackout-1.webp",
+    phones: ["/apps/blackout-1.webp", "/apps/blackout-2.webp", "/apps/blackout-3.webp"],
+    icon: "/icons/blackout.webp",
+    note: "Coming soon to the App Store",
+    seoTitle: "Blackout Daily: found poetry app built by Elco Dev",
+  },
+  {
+    slug: "rhinestoned",
+    name: "Rhinestoned",
+    kind: "own",
+    category: "Mobile app",
+    year: "2026",
+    summary: "Tap anything in a photo and crust it in sparkling rhinestones.",
+    description:
+      "Rhinestoned turns any photo into instant bling. Pick a photo, tap the thing you love, and on-device object detection fills it with hundreds of rendered rhinestones that catch the light and sparkle as you tilt the phone. Draw with a gem brush, trace outlines, and export images or short sparkle videos. Photos never leave the phone.",
+    highlights: [
+      "Tap-to-bedazzle with on-device object detection (Apple Vision)",
+      "Faceted gems that sparkle with the phone's motion",
+      "Pavé, outline, gem brush and area tools with undo and redo",
+      "Image and sparkle-video export; Pro gem packs through RevenueCat",
+    ],
+    platforms: ["iOS"],
+    tech: ["SwiftUI", "Apple Vision", "Core Motion", "RevenueCat"],
+    links: { site: "https://www.elcodev.com/apps/rhinestoned" },
+    image: "/apps/rhinestoned-1.webp",
+    phones: ["/apps/rhinestoned-1.webp", "/apps/rhinestoned-2.webp", "/apps/rhinestoned-3.webp"],
+    icon: "/icons/rhinestoned.webp",
+    note: "Coming soon to the App Store",
+    seoTitle: "Rhinestoned: rhinestone photo editor app built by Elco Dev",
+  },
+  {
+    slug: "vantage",
+    name: "Vantage",
+    kind: "own",
+    category: "Web game",
+    year: "2026",
+    summary: "Nine free daily games in the browser, the same set for everyone each morning.",
+    description:
+      "play-vantage is a hub of nine free daily games, generated from the calendar date so every player gets an identical set with nothing stored on a server. Vantage itself resolves several hundred shards into a silhouette from exactly one angle; the others include Chorus, Cascade, Deal, Loop, Trace, One Shot, Stack and Fold. There is no fail state anywhere, and finishing any single game keeps your streak.",
+    highlights: [
+      "Nine daily games from one date-seeded engine: the same puzzles for everyone, no server state",
+      "3D silhouette puzzles rendered with three.js and React Three Fiber",
+      "No fail state: stopwatches against a par instead of countdowns",
+      "Static, prerendered pages for every game, with a shared streak and share card",
+    ],
+    platforms: ["Web"],
+    tech: ["React", "Vite", "three.js", "React Three Fiber", "TypeScript"],
+    links: { site: "https://www.play-vantage.app" },
+    image: "/portfolio/vantage.webp",
+    icon: "/icons/vantage.webp",
+    seoTitle: "Vantage: nine free daily browser games by Elco Dev",
   },
   {
     slug: "realtime-sports-api",
@@ -452,6 +549,8 @@ export const PROJECTS: Project[] = [
 ];
 
 export const OWN_APPS = PROJECTS.filter((p) => p.kind === "own" && p.category === "Mobile app");
+/** Everything listed under /apps: our own mobile apps plus our web game. */
+export const APP_PROJECTS = PROJECTS.filter((p) => p.kind === "own" && (p.category === "Mobile app" || p.category === "Web game"));
 export const projectBySlug = (slug: string) => PROJECTS.find((p) => p.slug === slug);
 
 export type Service = {

@@ -1,3 +1,4 @@
+import { appEntryBySlug } from "@/lib/apps";
 import { FAQS, MVP_TIERS, PROJECTS, SERVICES, SITE } from "@/lib/site";
 
 export const dynamic = "force-static";
@@ -7,7 +8,13 @@ export function GET() {
   const own = PROJECTS.filter((p) => p.kind === "own");
   const others = PROJECTS.filter((p) => p.kind !== "own");
   const role = { own: "", client: " (client project)", partner: " (Elco Dev leads technology as CTO partner)" } as const;
-  const line = (p: (typeof PROJECTS)[number]) => `- [${p.name}](${SITE.url}/work/${p.slug})${role[p.kind]}: ${p.summary} ${p.platforms.join(", ")}. ${p.tech.join(", ")}.${p.links.site ? ` Site: ${p.links.site}` : ""}`;
+  const line = (p: (typeof PROJECTS)[number]) => {
+    const app = appEntryBySlug(p.slug);
+    const url = app ? `${SITE.url}/apps/${p.slug}` : `${SITE.url}/work/${p.slug}`;
+    const site = p.links.site && p.links.site !== url ? ` Site: ${p.links.site}` : "";
+    const legal = app?.page.legal ? ` Support: ${url}/support. Privacy: ${url}/privacy.` : "";
+    return `- [${p.name}](${url})${role[p.kind]}: ${p.summary} ${p.platforms.join(", ")}. ${p.tech.join(", ")}.${site}${legal}`;
+  };
   const body = `# ${SITE.name}
 
 > ${SITE.description}
@@ -34,7 +41,10 @@ ${FAQS.map((f) => `### ${f.q}\n${f.a}`).join("\n\n")}
 
 ## Other pages
 
+- [All apps](${SITE.url}/apps)
 - [All work](${SITE.url}/work)
+- [Liturgical Living on the web](${SITE.url}/apps/liturgical-living/llms.txt): calendar, saints, novenas, prayers and apologetics
+- [Paddle Rack pickleball tools](${SITE.url}/apps/paddlerack/llms.txt): free round robin generator, schedules and guides
 - [Partner program](${SITE.url}/partners)
 - [Privacy policy](${SITE.url}/privacy-policy)
 `;

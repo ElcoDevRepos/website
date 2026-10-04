@@ -8,6 +8,7 @@ import { PhoneFrame } from "@/components/PhoneFrame";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Arrow, Breadcrumbs, StoreButtons, Tag } from "@/components/ui";
 import { breadcrumbLd, projectLd } from "@/lib/ld";
+import { appEntryBySlug } from "@/lib/apps";
 import { PROJECTS, SERVICES, projectBySlug } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -36,6 +37,8 @@ export default async function ProjectPage({ params }: Props) {
   const related = PROJECTS.filter((x) => x.slug !== p.slug && x.category === p.category).slice(0, 3);
   const service = SERVICES.find((s) => s.work.includes(p.slug));
   const isApp = p.category === "Mobile app" && p.phones?.length;
+  // Our own apps have a product page (store links, support, privacy) under /apps.
+  const appPage = appEntryBySlug(p.slug) ? `/apps/${p.slug}` : null;
 
   return (
     <>
@@ -53,7 +56,12 @@ export default async function ProjectPage({ params }: Props) {
               <p className="mt-5 text-xl leading-relaxed text-ink-soft">{p.summary}</p>
               <div className="mt-7 flex flex-wrap items-center gap-2">
                 <StoreButtons links={p.links} name={p.name} />
-                {p.links.site && (
+                {appPage && (
+                  <Link href={appPage} className="btn-ghost !py-2 text-sm">
+                    App page, support and privacy <Arrow />
+                  </Link>
+                )}
+                {p.links.site && p.links.site !== `https://www.elcodev.com${appPage}` && (
                   <a href={p.links.site} target="_blank" rel="noopener" className="btn-ghost !py-2 text-sm">
                     {p.links.site.replace(/^https:\/\/(www\.)?/, "")} <Arrow />
                   </a>

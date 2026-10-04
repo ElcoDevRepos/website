@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PROJECTS, SERVICES, SITE } from "@/lib/site";
+import { APP_PROJECTS, SERVICES, SITE } from "@/lib/site";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -29,9 +29,10 @@ export function Footer() {
         <div>
           <p className="text-sm font-semibold text-white">Our apps</p>
           <ul className="mt-4 space-y-2 text-sm">
-            {PROJECTS.filter((p) => p.kind === "own").map((p) => (
-              <li key={p.slug}><Link href={`/work/${p.slug}`} className="hover:text-white">{p.name}</Link></li>
+            {APP_PROJECTS.map((p) => (
+              <li key={p.slug}><Link href={`/apps/${p.slug}`} className="hover:text-white">{p.name}</Link></li>
             ))}
+            <li><Link href="/apps" className="hover:text-white">All apps</Link></li>
           </ul>
         </div>
         <div>

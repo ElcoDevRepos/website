@@ -78,13 +78,13 @@ export function projectLd(p: Project) {
   }
   return {
     "@context": "https://schema.org",
-    "@type": p.category === "Website" ? "WebSite" : "SoftwareApplication",
+    "@type": p.category === "Website" ? "WebSite" : p.category === "Web game" ? "WebApplication" : "SoftwareApplication",
     "@id": `${url}#app`,
     name: p.name,
     description: p.description,
     url: p.links.site ?? url,
     image: abs(p.image),
-    ...(p.category !== "Website" ? { applicationCategory: "BusinessApplication", operatingSystem: "Web" } : {}),
+    ...(p.category !== "Website" ? { applicationCategory: p.category === "Web game" ? "GameApplication" : "BusinessApplication", operatingSystem: "Web" } : {}),
     ...(p.kind === "own" ? { publisher: { "@id": ORG_ID } } : { creator }),
   };
 }
