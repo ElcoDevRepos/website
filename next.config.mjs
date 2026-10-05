@@ -25,6 +25,9 @@ const nextConfig = {
       fallback: [
         { source: "/apps/liturgical-living/:path((?!api(?:/|$)).+)", destination: "https://living-liturgically.vercel.app/:path" },
         { source: "/apps/paddlerack/:path+", destination: "https://elcodev-paddlerack.vercel.app/:path+" },
+        // Scripted's free KJV Bible (~/dev/scripted-web, Vercel project scripted-bible) serves its pages and assets at /bible/… .
+        { source: "/apps/scripted/bible", destination: "https://scripted-bible.vercel.app/bible" },
+        { source: "/apps/scripted/bible/:path+", destination: "https://scripted-bible.vercel.app/bible/:path+" },
       ],
     };
   },

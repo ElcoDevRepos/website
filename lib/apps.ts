@@ -6,7 +6,7 @@
  * - Product facts (name, summary, screenshots, store links) come from
  *   PROJECTS in lib/site.ts; this file adds what only the app page needs.
  * - `content`: apps with a large web companion (Liturgical Living, Paddle
- *   Rack). Those pages are built and deployed by the app's own Vercel project
+ *   Rack, Scripted's KJV Bible). Those pages are built and deployed by the app's own Vercel project
  *   and served at /apps/<slug>/… through the rewrites in next.config.mjs;
  *   keep `origin` in step with that file.
  * - `legal`: the privacy policy, support page and terms the App Store and
@@ -253,6 +253,17 @@ export const APP_PAGES: AppPage[] = [
   {
     slug: "scripted",
     storeName: "Scripted - Bible Annotation",
+    content: {
+      origin: "https://scripted-bible.vercel.app",
+      title: "Read the King James Bible free",
+      lead: "The complete King James Version, the same text that's free in the app: all 66 books and 1,189 chapters, with a link for every verse.",
+      sections: [
+        { label: "All 66 books", path: "/bible", blurb: "The Old and New Testaments, book by book and chapter by chapter." },
+        { label: "John 3", path: "/bible/john/3", blurb: "\"For God so loved the world…\" and the rest of the chapter." },
+        { label: "Psalm 23", path: "/bible/psalms/23", blurb: "\"The LORD is my shepherd; I shall not want.\"" },
+        { label: "Popular verses", path: "/bible#popular", blurb: "Jeremiah 29:11, Philippians 4:13 and more of the most-loved verses, each in context." },
+      ],
+    },
     legal: {
       updated: "October 4, 2026",
       contact: CONTACT,

@@ -4,7 +4,7 @@ import { PROJECTS, SERVICES, SITE } from "@/lib/site";
 
 export const dynamic = "force-static";
 
-/** The pages under /apps/liturgical-living/… and /apps/paddlerack/… come from those apps' own sites and are
+/** The pages under /apps/liturgical-living/…, /apps/paddlerack/… and /apps/scripted/bible/… come from those apps' own sites and are
  *  listed in their own sitemaps, which robots.txt points to. */
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
