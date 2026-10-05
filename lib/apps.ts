@@ -75,6 +75,9 @@ export const APP_PAGES: AppPage[] = [
       title: "Liturgical Living on the web",
       lead: "The liturgical calendar, saints, novenas, prayers and apologetics from the app, free to read in the browser, plus two daily games.",
       sections: [
+        { label: "Advent 2026", path: "/advent", blurb: "Every day of Advent, from Nov 29 to Christmas Eve, with the wreath and the O Antiphons." },
+        { label: "Novena calendar", path: "/novena-calendar", blurb: "When each novena starts this year, with a calendar you can subscribe to." },
+        { label: "All Saints & All Souls", path: "/all-saints", blurb: "Nov 1 and 2: what the days mean and how to pray for the dead." },
         { label: "Today", path: "/today", blurb: "Today's feast, season and liturgical colour." },
         { label: "Liturgical calendar", path: "/calendar", blurb: "Every day of the Church year, with US holy days." },
         { label: "Saints", path: "/saints", blurb: "Biographies for the saints of the Roman Calendar." },
