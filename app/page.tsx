@@ -36,13 +36,16 @@ export default function Home() {
               <Link href="/contact" className="btn-primary">Book a free call <Arrow /></Link>
               <Link href="/work" className="btn-ghost">See our work</Link>
             </div>
-            <Link href="#our-apps" className="mt-10 inline-flex items-center gap-4 rounded-2xl border border-ink/10 bg-white p-3 pr-5 transition-shadow hover:shadow-md">
-              <span className="flex shrink-0 -space-x-2">
-                {OWN_APPS.map((a) => (
+            <Link href="#our-apps" className="mt-10 inline-flex max-w-full items-center gap-4 rounded-2xl border border-ink/10 bg-white p-3 pr-5 transition-shadow hover:shadow-md">
+              <span className="flex shrink-0 items-center -space-x-2">
+                {OWN_APPS.slice(0, 5).map((a) => (
                   <Image key={a.slug} src={a.icon!} alt="" width={40} height={40} className="h-10 w-10 rounded-xl border-2 border-white" />
                 ))}
+                {OWN_APPS.length > 5 && (
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl border-2 border-white bg-ink text-xs font-semibold text-white">+{OWN_APPS.length - 5}</span>
+                )}
               </span>
-              <span className="text-sm leading-snug">
+              <span className="min-w-0 text-sm leading-snug">
                 <strong className="block font-semibold">{OWN_APPS.length} apps of our own</strong>
                 <span className="text-ink-muted">built and run by us, on iOS and Android</span>
               </span>

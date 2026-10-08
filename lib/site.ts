@@ -318,28 +318,6 @@ export const PROJECTS: Project[] = [
     seoTitle: "Rhinestoned: rhinestone photo editor app built by Elco Dev",
   },
   {
-    slug: "vantage",
-    name: "Vantage",
-    kind: "own",
-    category: "Web game",
-    year: "2026",
-    summary: "Nine free daily games in the browser, the same set for everyone each morning.",
-    description:
-      "play-vantage is a hub of nine free daily games, generated from the calendar date so every player gets an identical set with nothing stored on a server. Vantage itself resolves several hundred shards into a silhouette from exactly one angle; the others include Chorus, Cascade, Deal, Loop, Trace, One Shot, Stack and Fold. There is no fail state anywhere, and finishing any single game keeps your streak.",
-    highlights: [
-      "Nine daily games from one date-seeded engine: the same puzzles for everyone, no server state",
-      "3D silhouette puzzles rendered with three.js and React Three Fiber",
-      "No fail state: stopwatches against a par instead of countdowns",
-      "Static, prerendered pages for every game, with a shared streak and share card",
-    ],
-    platforms: ["Web"],
-    tech: ["React", "Vite", "three.js", "React Three Fiber", "TypeScript"],
-    links: { site: "https://www.play-vantage.app" },
-    image: "/portfolio/vantage.webp",
-    icon: "/icons/vantage.webp",
-    seoTitle: "Vantage: nine free daily browser games by Elco Dev",
-  },
-  {
     slug: "realtime-sports-api",
     name: "Realtime Sports API",
     kind: "own",

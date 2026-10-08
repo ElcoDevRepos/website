@@ -292,7 +292,6 @@ export const APP_PAGES: AppPage[] = [
       purchases: "Scripted is free with the King James Version. Other translations are sold as one-time purchases and credits; there is no subscription.",
     },
   },
-  { slug: "vantage", external: { label: "Play today's games", url: "https://www.play-vantage.app" } },
   { slug: "nicdrop", external: { label: "Visit nicdrop.app", url: "https://nicdrop.app" } },
   { slug: "starter-set", external: { label: "Visit starterset.app", url: "https://starterset.app" } },
   { slug: "crohns-food-tracker", external: { label: "Visit crohnsfoodtracker.app", url: "https://crohnsfoodtracker.app" } },

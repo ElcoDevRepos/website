@@ -12,6 +12,10 @@ const nextConfig = {
       { source: "/portfolio", destination: "/work", permanent: true },
       { source: "/blog/:path*", destination: "/", permanent: false },
       { source: "/pricing", destination: "/mvp", permanent: true },
+      // Vantage was discontinued in Oct 2026.
+      { source: "/work/vantage", destination: "/work", permanent: true },
+      { source: "/apps/vantage/:path*", destination: "/apps", permanent: true },
+      { source: "/apps/vantage", destination: "/apps", permanent: true },
       // Liturgical Living's iOS paywall falls back to this address when its Info.plist has no privacy URL.
       { source: "/liturgical-living/privacy", destination: "/apps/liturgical-living/privacy", permanent: true },
     ];
