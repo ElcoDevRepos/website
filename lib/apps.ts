@@ -56,9 +56,9 @@ const REFUNDS: Section = {
   p: "Apple handles App Store refunds at reportaproblem.apple.com; Google handles Google Play refunds through Google Play Help. We can't issue store refunds ourselves.",
 };
 
-function studioPrivacy(name: string, details: Section[]): Section[] {
+function studioPrivacy(name: string, details: Section[], opts: { usageStats?: string } = {}): Section[] {
   return [
-    { h: "The short version", list: ["No account, no sign-in, no ads, no tracking and no selling of data.", `What you make in ${name} is stored on your device. We don't run a server that receives it.`, "Purchases are processed by Apple or Google, and RevenueCat confirms them."] },
+    { h: "The short version", list: ["No account, no sign-in, no ads, no tracking and no selling of data.", `What you make in ${name} is stored on your device. We don't run a server that receives it.`, ...(opts.usageStats ? [`Anonymous usage counts (never names or anything you type) help us improve ${name}. You can turn them off in ${opts.usageStats}.`] : []), "Purchases are processed by Apple or Google, and RevenueCat confirms them."] },
     ...details,
     STORE_PURCHASES,
     { h: "Children", p: `${name} is not directed at children under 13, and we don't knowingly collect personal information from children.` },
@@ -137,14 +137,15 @@ export const APP_PAGES: AppPage[] = [
       ],
     },
     legal: {
-      updated: "October 4, 2026",
+      updated: "October 9, 2026",
       contact: CONTACT,
-      privacyIntro: "Paddle Rack is made by Elco Dev, LLC (\"we\"). It works offline with no account, and your rosters stay on your phone. This policy explains what that means.",
+      privacyIntro: "Paddle Rack is made by Elco Dev, LLC (\"we\"). It works offline with no account, and your rosters stay on your phone. The only things that leave it are anonymous usage counts, which you can turn off. This policy explains what that means.",
       privacy: studioPrivacy("Paddle Rack", [
         { h: "What the app stores", p: "Sessions, scores, standings, saved groups (player names and optional skill ratings), ladders, player stats and settings are stored on your device. There is no Paddle Rack server and no account. Player names and ratings are typed in by the organizer and never leave the phone unless the organizer shares them. Your phone's own iCloud or Google backup may include this data, under your control." },
         { h: "Things you choose to share", p: "Results cards, PDFs, CSV files, copied text and backup files are created on the device and handed to the system share sheet; you decide where they go. Importing a backup reads only the file you pick." },
-        { h: "What the app doesn't do", list: ["No accounts, sign-in or contact details.", "No analytics or crash-reporting SDKs, no advertising and no ad identifiers.", "No location, camera, microphone, contacts or photo-library access."] },
-      ]),
+        { h: "Anonymous usage statistics", p: "Paddle Rack sends small anonymous usage events, such as \"started a session\", \"entered a score\" or \"opened the Club screen\", with the format, player and court counts, the app version and platform, and a random ID created on your phone. They never include player names, ratings, scores, group or session names, or any device identifier, and they aren't linked to you, used for ads or shared. They go to our own Google Cloud Firestore database, which accepts new events and lets the app read nothing back. Turn them off any time in Settings › Privacy; the ID is shown there so you can ask us to delete its events. Google's automated test devices send nothing." },
+        { h: "What the app doesn't do", list: ["No accounts, sign-in or contact details.", "No third-party analytics or crash-reporting SDKs, no advertising and no ad identifiers.", "No location, camera, microphone, contacts or photo-library access."] },
+      ], { usageStats: "Settings › Privacy" }),
       support: [
         { h: "Get in touch", p: `Questions, bugs or ideas? Email ${CONTACT} and we'll get back to you, usually within a day or two.` },
         RESTORE,
