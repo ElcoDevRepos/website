@@ -25,6 +25,16 @@ export type AppPage = {
   content?: { origin: string; title: string; lead: string; sections: { label: string; path: string; blurb: string }[] };
   /** Where the app itself runs, for web apps and apps that keep their own domain. */
   external?: { label: string; url: string };
+  /** Marketing landing copy (features, plans, FAQ) for apps whose app page doubles as their home page. */
+  landing?: {
+    title: string;
+    meta: string;
+    hero: { kicker: string; h1: string; lead: string; secondaryCta?: { label: string; path: string }; note?: string };
+    features: { h: string; p: string }[];
+    plans?: { name: string; text: string }[];
+    faq: { q: string; a: string }[];
+    disclaimer?: string;
+  };
   legal?: {
     updated: string;
     contact: string;
@@ -160,12 +170,107 @@ export const APP_PAGES: AppPage[] = [
   {
     slug: "fairsky",
     storeName: "Fairsky: Project Weather & Radar",
+    // Copy from marketing (studio apps/fairsky/store/marketing/web/copy.json); 47 = the engine's PACKS.length.
+    landing: {
+      "title": "Fairsky: project weather and radar for home and yard",
+      "meta": "Can I stain the deck today? Fairsky answers GO, WAIT or NO for 47 activities, with the reason, the next window and full radar. No ads.",
+      "hero": {
+        "kicker": "Project weather",
+        "h1": "Can I ___ today?",
+        "lead": "Most weather apps tell you it'll be 58° and breezy. Fairsky tells you whether to stain the deck, and why: “Good from 10 to 4. Wood's dry, wind's light, and rain holds off until Monday.”",
+        "secondaryCta": {
+          "label": "See this week's verdict for your city",
+          "path": "/projects"
+        },
+        "note": "Free to download. No ads, ever. US and Canada."
+      },
+      "features": [
+        {
+          "h": "Answers first, numbers one tap away",
+          "p": "Pick what you're doing, from staining the deck, pouring concrete and spraying weeds to hanging the holiday lights, grilling out, a round of golf or the drive to work: 47 activities in all. Each gets a GO, WAIT or NO and the next good window."
+        },
+        {
+          "h": "Every verdict shows its work",
+          "p": "Tap a verdict and see the hours behind it: temperature, dew-point gap, rain chance and wind, with the hour that broke the rule. The thresholds come from product data sheets, ACI cold-weather concreting guidance and university extension advice, and each is cited. Your product's label always wins."
+        },
+        {
+          "h": "A real weather app underneath",
+          "p": "Current conditions, the next 24 hours and 7 days from National Weather Service data, animated radar, severe weather warnings in the Weather Service's own words, and (with Plus) lightning and next-hour rain."
+        },
+        {
+          "h": "The night before a freeze",
+          "p": "“Drip the faucets tonight. 17° by 5 AM.” Fairsky reminds you the evening before a hard freeze or frost, free, in the US and Canada."
+        },
+        {
+          "h": "On your home screen",
+          "p": "A verdict widget is free. Plus adds the board widget (temperature, three verdicts, the next 12 hours) and a project timer that counts down to rain-safe after you finish."
+        },
+        {
+          "h": "Built for crews too",
+          "p": "Fairsky Pro tracks up to 25 job sites, every site's verdict on one board, for painters, concrete crews, sealcoaters and lawn pros."
+        }
+      ],
+      "plans": [
+        {
+          "name": "Free",
+          "text": "The full forecast, radar, severe weather warnings, freeze reminders, 2 activities, 1 place and 1 widget. No ads, ever."
+        },
+        {
+          "name": "Plus",
+          "text": "Every activity and widget, the project timer, next-hour rain, lightning, a two-hour radar loop, heads-up alerts and up to 10 places. Yearly with a free trial, monthly, or once for life."
+        },
+        {
+          "name": "Pro",
+          "text": "Everything in Plus for up to 25 job sites."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Is Fairsky more accurate than other weather apps?",
+          "a": "We don't claim that. In the US, Fairsky uses the National Weather Service forecast, the same public data many apps start from. What's different is what we do with it: we turn the hours into a plain answer for your project and show our working."
+        },
+        {
+          "q": "Where do the thresholds come from?",
+          "a": "From published sources: paint and stain technical data sheets, ACI 306 cold-weather concreting guidance, sealcoat manufacturer instructions, and university extension advice on spray drift and lawn timing. Each verdict cites its sources in the app. If your product's label says something different, enter its numbers; the label always wins."
+        },
+        {
+          "q": "Is it too windy to spray today?",
+          "a": "Extension guidance generally favours spraying in steady winds of about 3 to 10 mph: stronger gusts carry drift, and dead calm can mean a temperature inversion that lets fine droplets hang and move. Fairsky checks the hourly wind and gusts against those bands and tells you when it settles."
+        },
+        {
+          "q": "How cold is too cold to pour concrete?",
+          "a": "ACI treats it as cold-weather concreting when the air is at or below 40°F during the protection period, and fresh concrete needs protecting from freezing for about the first 48 hours. Fairsky flags pours where the next two nights get that cold."
+        },
+        {
+          "q": "When can I stain my deck after rain?",
+          "a": "Stain makers typically ask for two to three dry days so the wood dries out, temperatures of roughly 50 to 90°F, and no rain for 24 hours after. Fairsky checks all three and names the next window that fits."
+        },
+        {
+          "q": "Does Fairsky send severe weather warnings?",
+          "a": "In the US, Fairsky shows National Weather Service warnings for your places, unaltered, with a link to weather.gov. It is not a substitute for official warnings or Wireless Emergency Alerts: keep those on and follow local officials."
+        },
+        {
+          "q": "Does it work in Canada?",
+          "a": "Yes, with forecasts in °C, freeze and frost reminders, and the latest radar image from Environment and Climate Change Canada. Animated radar, next-hour rain and the official warnings feed are US-only for now, and the app is in English."
+        },
+        {
+          "q": "Are there ads? Do you track my location?",
+          "a": "No ads, ever. Your location is used only when you tap “Use my location”; Fairsky never tracks you in the background."
+        },
+        {
+          "q": "Is it on iPhone?",
+          "a": "Fairsky launches on Google Play first; the iPhone version follows."
+        }
+      ],
+      "disclaimer": "Verdicts are guidance, not guarantees. Your product's label always wins. Fairsky is not a substitute for official warnings: follow the National Weather Service, Environment and Climate Change Canada and local officials. For warnings, go to weather.gov."
+    },
     content: {
       origin: "https://elcodev-fairsky.vercel.app",
       title: "Free project weather on the web",
       lead: "The same verdict engine as the app, free in the browser: a live 7-day GO / WAIT / NO for eight projects in 100 US metros, with each city's 1991–2020 climate averages.",
       sections: [
         { label: "All projects", path: "/projects", blurb: "Stain a deck, paint, pour concrete, spray weeds, pre-emergent, grass seed, driveway sealing and frost, by city." },
+        { label: "All 47 activities", path: "/activities", blurb: "Every activity the app gives a verdict for, from mowing to a round of golf, with the thresholds it checks and their sources." },
         { label: "Best days to stain a deck", path: "/stain-a-deck", blurb: "This week's staining windows in 100 metros, plus the months that usually work." },
         { label: "Is it too windy to spray weeds?", path: "/guides/too-windy-to-spray-weeds", blurb: "The 3–10 mph rule, inversions and heat, with sources." },
         { label: "How cold is too cold to pour concrete?", path: "/guides/too-cold-to-pour-concrete", blurb: "ACI's 40°F cold-weather line and the first 48 hours." },

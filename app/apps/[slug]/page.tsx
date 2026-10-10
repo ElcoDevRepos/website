@@ -24,7 +24,14 @@ const ownSite = (p: Project) => (p.links.site && !p.links.site.startsWith(`${SIT
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const e = appEntryBySlug((await params).slug);
   if (!e) return {};
-  const { project: p } = e;
+  const { project: p, page } = e;
+  if (page.landing)
+    return {
+      title: { absolute: page.landing.title },
+      description: page.landing.meta,
+      alternates: { canonical: appPath(p.slug) },
+      openGraph: { title: page.landing.title, description: page.landing.meta, url: appPath(p.slug), images: [{ url: p.phones?.[0] ?? p.image }] },
+    };
   const where = p.category === "Web game" ? "free in your browser" : p.platforms.filter((x) => x === "iOS" || x === "Android").join(" and ");
   return {
     title: `${p.name}: ${p.summary.replace(/\.$/, "")}`.slice(0, 70),
@@ -67,7 +74,15 @@ export default async function AppPage({ params }: Props) {
 
   return (
     <>
-      <JsonLd data={[appLd(p), breadcrumbLd(crumbs)]} />
+      <JsonLd
+        data={[
+          appLd(p),
+          breadcrumbLd(crumbs),
+          ...(page.landing
+            ? [{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: page.landing.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }]
+            : []),
+        ]}
+      />
       <article>
         <header className="wrap pt-10 sm:pt-14">
           <Breadcrumbs items={crumbs} />
@@ -78,7 +93,14 @@ export default async function AppPage({ params }: Props) {
                 <p className="eyebrow">An Elco Dev app · {platforms}</p>
               </div>
               <h1 className="mt-5 text-5xl font-extrabold leading-[1.02] sm:text-6xl">{p.name}</h1>
-              <p className="mt-5 text-xl leading-relaxed text-ink-soft">{p.summary}</p>
+              {page.landing ? (
+                <>
+                  <p className="mt-4 text-2xl font-semibold text-ink">{page.landing.hero.h1}</p>
+                  <p className="mt-4 text-xl leading-relaxed text-ink-soft">{page.landing.hero.lead}</p>
+                </>
+              ) : (
+                <p className="mt-5 text-xl leading-relaxed text-ink-soft">{p.summary}</p>
+              )}
               <div className="mt-7 flex flex-wrap items-center gap-2">
                 <StoreButtons links={p.links} name={p.name} />
                 {page.external && (
@@ -86,13 +108,20 @@ export default async function AppPage({ params }: Props) {
                     {page.external.label} <Arrow />
                   </a>
                 )}
-                {page.content && (
-                  <a href="#web" className="btn-ghost !py-2 text-sm">
-                    {page.content.title} <Arrow />
+                {page.landing?.hero.secondaryCta ? (
+                  <a href={`${base}${page.landing.hero.secondaryCta.path}`} className="btn-ghost !py-2 text-sm">
+                    {page.landing.hero.secondaryCta.label} <Arrow />
                   </a>
+                ) : (
+                  page.content && (
+                    <a href="#web" className="btn-ghost !py-2 text-sm">
+                      {page.content.title} <Arrow />
+                    </a>
+                  )
                 )}
               </div>
               {p.note && <p className="mt-3 text-sm text-ink-muted">{p.note}</p>}
+              {page.landing?.hero.note && <p className="mt-1 text-sm text-ink-muted">{page.landing.hero.note}</p>}
             </div>
             {phones.length ? (
               <div className="relative mx-auto flex h-[460px] w-full max-w-md items-start justify-center gap-4" aria-hidden="true">
@@ -137,6 +166,16 @@ export default async function AppPage({ params }: Props) {
             <h2 className="text-3xl font-bold">About {p.name}</h2>
             <p className="mt-4 text-lg leading-relaxed text-ink-soft">{p.description}</p>
             <h2 className="mt-12 text-3xl font-bold">Features</h2>
+            {page.landing ? (
+              <div className="mt-5 grid gap-6 sm:grid-cols-2">
+                {page.landing.features.map((f) => (
+                  <div key={f.h}>
+                    <h3 className="text-lg font-bold">{f.h}</h3>
+                    <p className="mt-2 leading-relaxed text-ink-soft">{f.p}</p>
+                  </div>
+                ))}
+              </div>
+            ) : (
             <ul className="mt-5 space-y-3">
               {p.highlights.map((h) => (
                 <li key={h} className="flex gap-3 text-lg text-ink-soft">
@@ -145,12 +184,40 @@ export default async function AppPage({ params }: Props) {
                 </li>
               ))}
             </ul>
+            )}
+            {page.landing?.plans && (
+              <>
+                <h2 className="mt-12 text-3xl font-bold">Plans</h2>
+                <div className="mt-5 grid gap-4 sm:grid-cols-3">
+                  {page.landing.plans.map((pl) => (
+                    <div key={pl.name} className="rounded-2xl bg-white p-5 ring-1 ring-ink/10">
+                      <h3 className="font-bold">{pl.name}</h3>
+                      <p className="mt-2 text-[15px] leading-relaxed text-ink-soft">{pl.text}</p>
+                    </div>
+                  ))}
+                </div>
+              </>
+            )}
             {phones.length > 2 && (
               <div className="mt-12 grid grid-cols-3 gap-4 sm:gap-6">
                 {phones.map((src, i) => (
                   <PhoneFrame key={src} src={src} alt={`${p.name} screenshot ${i + 1}`} sizes="(min-width: 1024px) 220px, 30vw" className="border-[4px]" />
                 ))}
               </div>
+            )}
+            {page.landing && (
+              <>
+                <h2 className="mt-12 text-3xl font-bold">Questions</h2>
+                <div className="mt-5 space-y-3">
+                  {page.landing.faq.map((f) => (
+                    <details key={f.q} className="rounded-2xl bg-white p-5 ring-1 ring-ink/10">
+                      <summary className="cursor-pointer font-semibold">{f.q}</summary>
+                      <p className="mt-3 leading-relaxed text-ink-soft">{f.a}</p>
+                    </details>
+                  ))}
+                </div>
+                {page.landing.disclaimer && <p className="mt-8 text-sm leading-relaxed text-ink-muted">{page.landing.disclaimer}</p>}
+              </>
             )}
           </div>
           <aside className="h-fit space-y-8 rounded-3xl bg-white p-8 ring-1 ring-ink/10">
