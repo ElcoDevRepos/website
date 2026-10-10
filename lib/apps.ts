@@ -185,7 +185,7 @@ export const APP_PAGES: AppPage[] = [
           {
             h: "Weather requests",
             list: [
-              "United States: the app sends a saved place's coordinates directly from your phone to the U.S. National Weather Service (api.weather.gov) for forecasts, observations and alerts. Fairsky's server isn't involved.",
+              "United States: the app asks the U.S. National Weather Service (api.weather.gov) directly from your phone, sending a saved place's coordinates rounded to about 2 km (0.02°) to look up its forecast area. Alerts are requested by NWS zone and county code, with no coordinates; storm-based warning outlines are then matched against your exact place on the phone. Fairsky's server isn't involved.",
               "Canada: the app asks Fairsky's own server (hosted on Vercel) for a MET Norway forecast, with the coordinates rounded to about 2 km (0.02°).",
               "Next-hour rain (Plus): the app sends Fairsky's server coordinates rounded the same way plus its anonymous RevenueCat ID, which confirms you have Plus, and the server asks Apple WeatherKit for the next-hour forecast.",
               "Fairsky's server keeps no record of these requests beyond short-lived caches and the standard request logs of its hosting provider.",
