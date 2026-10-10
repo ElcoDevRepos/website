@@ -169,15 +169,15 @@ export const APP_PAGES: AppPage[] = [
   },
   {
     slug: "fairsky",
-    storeName: "Fairsky: Project Weather & Radar",
+    storeName: "Fairsky: Local Weather Radar",
     // Copy from marketing (studio apps/fairsky/store/marketing/web/copy.json); 47 = the engine's PACKS.length.
     landing: {
-      "title": "Fairsky: project weather and radar for home and yard",
+      "title": "Fairsky: local weather radar that answers “Can I ___ today?”",
       "meta": "Can I stain the deck today? Fairsky answers GO, WAIT or NO for 47 activities, with the reason, the next window and full radar. No ads.",
       "hero": {
-        "kicker": "Project weather",
+        "kicker": "Local weather radar",
         "h1": "Can I ___ today?",
-        "lead": "Most weather apps tell you it'll be 58° and breezy. Fairsky tells you whether to stain the deck, and why: “Good from 10 to 4. Wood's dry, wind's light, and rain holds off until Monday.”",
+        "lead": "Most weather apps tell you it'll be 58° and breezy. Fairsky tells you whether to stain the deck, and why: “Good today from 10 AM to 4 PM. Wood's dry, wind's light, and rain holds off until Monday.”",
         "secondaryCta": {
           "label": "See this week's verdict for your city",
           "path": "/projects"
@@ -187,11 +187,11 @@ export const APP_PAGES: AppPage[] = [
       "features": [
         {
           "h": "Answers first, numbers one tap away",
-          "p": "Pick what you're doing, from staining the deck, pouring concrete and spraying weeds to hanging the holiday lights, grilling out, a round of golf or the drive to work: 47 activities in all. Each gets a GO, WAIT or NO and the next good window."
+          "p": "Pick what you're doing, from staining the deck, pouring concrete and spraying weeds to hanging the holiday lights, grilling out, a round of golf or flight weather: 47 activities in all. Each gets a GO, WAIT or NO and the next good window."
         },
         {
           "h": "Every verdict shows its work",
-          "p": "Tap a verdict and see the hours behind it: temperature, dew-point gap, rain chance and wind, with the hour that broke the rule. The thresholds come from product data sheets, ACI cold-weather concreting guidance and university extension advice, and each is cited. Your product's label always wins."
+          "p": "Tap a verdict and see the hours behind it: temperature, dew-point gap, rain chance and wind, with the hour that broke the rule. The thresholds come from product data sheets, ACI cold-weather concreting guidance and university extension advice, and each is cited. For paints, stains and lawn treatments, you can enter your product's own instructions."
         },
         {
           "h": "A real weather app underneath",
@@ -203,7 +203,7 @@ export const APP_PAGES: AppPage[] = [
         },
         {
           "h": "On your home screen",
-          "p": "A verdict widget is free. Plus adds the board widget (temperature, three verdicts, the next 12 hours) and a project timer that counts down to rain-safe after you finish."
+          "p": "A verdict widget is free. Plus adds the board widget (temperature, three verdicts, the next 12 hours) and a rain-safe timer that counts down after you stain, paint or spray."
         },
         {
           "h": "Built for crews too",
@@ -217,7 +217,7 @@ export const APP_PAGES: AppPage[] = [
         },
         {
           "name": "Plus",
-          "text": "Every activity and widget, the project timer, next-hour rain, lightning, a two-hour radar loop, heads-up alerts and up to 10 places. Yearly with a free trial, monthly, or once for life."
+          "text": "Every activity and widget, the rain-safe timer, next-hour rain, lightning, a two-hour radar loop, heads-up alerts and up to 10 places. Yearly with a free trial, monthly, or once for life."
         },
         {
           "name": "Pro",
@@ -227,7 +227,7 @@ export const APP_PAGES: AppPage[] = [
       "faq": [
         {
           "q": "Is Fairsky more accurate than other weather apps?",
-          "a": "We don't claim that. In the US, Fairsky uses the National Weather Service forecast, the same public data many apps start from. What's different is what we do with it: we turn the hours into a plain answer for your project and show our working."
+          "a": "We don't claim that. In the US, Fairsky uses the National Weather Service forecast, the same public data many apps start from. What's different is what we do with it: we turn the hours into a plain answer for what you want to do and show our working."
         },
         {
           "q": "Where do the thresholds come from?",
@@ -266,10 +266,10 @@ export const APP_PAGES: AppPage[] = [
     },
     content: {
       origin: "https://elcodev-fairsky.vercel.app",
-      title: "Free project weather on the web",
-      lead: "The same verdict engine as the app, free in the browser: a live 7-day GO / WAIT / NO for eight projects in 100 US metros, with each city's 1991–2020 climate averages.",
+      title: "Free home and yard weather on the web",
+      lead: "The same verdict engine as the app, free in the browser: a live 7-day GO / WAIT / NO for eight home and yard jobs in 100 US metros, with each city's 1991–2020 climate averages.",
       sections: [
-        { label: "All projects", path: "/projects", blurb: "Stain a deck, paint, pour concrete, spray weeds, pre-emergent, grass seed, driveway sealing and frost, by city." },
+        { label: "Home and yard, by city", path: "/projects", blurb: "Stain a deck, paint, pour concrete, spray weeds, pre-emergent, grass seed, driveway sealing and frost, by city." },
         { label: "All 47 activities", path: "/activities", blurb: "Every activity the app gives a verdict for, from mowing to a round of golf, with the thresholds it checks and their sources." },
         { label: "Best days to stain a deck", path: "/stain-a-deck", blurb: "This week's staining windows in 100 metros, plus the months that usually work." },
         { label: "Is it too windy to spray weeds?", path: "/guides/too-windy-to-spray-weeds", blurb: "The 3–10 mph rule, inversions and heat, with sources." },
@@ -286,7 +286,7 @@ export const APP_PAGES: AppPage[] = [
       privacy: studioPrivacy(
         "Fairsky",
         [
-          { h: "What stays on your device", p: "Your saved places (the name you give each one and its coordinates), your projects, any product-label numbers you enter and your settings are stored on your device. There is no Fairsky account, and we don't keep a copy." },
+          { h: "What stays on your device", p: "Your saved places (the name you give each one and its coordinates), your activities, any product instructions you enter and your settings are stored on your device. There is no Fairsky account, and we don't keep a copy." },
           {
             h: "Weather requests",
             list: [
@@ -302,10 +302,10 @@ export const APP_PAGES: AppPage[] = [
             h: "Severe-weather notifications (optional)",
             p: "If you turn alerts on, the app registers with Google Firebase Cloud Messaging and subscribes to topics named after the NWS forecast zone and county codes of your saved places (for example OHC049, a county), which describe areas, not precise locations. Fairsky's server checks NWS alerts every couple of minutes and sends a notification to the matching topics. Turning alerts off unsubscribes the app from those topics.",
           },
-          { h: "Widgets and the project timer", p: "Home-screen widgets and the project timer notification show forecast information for your places on your home or lock screen, where anyone holding your phone can see it." },
+          { h: "Widgets and the rain-safe timer", p: "Home-screen widgets and the rain-safe timer notification show forecast information for your places on your home or lock screen, where anyone holding your phone can see it." },
           {
             h: "Anonymous usage statistics",
-            p: "Fairsky sends small anonymous usage events, such as \"opened radar\" or \"added a project\", with the app version, platform and a random install ID created on your phone. They never include coordinates, place names or anything you type, and they aren't linked to you, used for ads or shared. They go to our own Google Cloud Firestore database. Turn them off any time in Settings › Privacy. Google's automated test devices (Play pre-launch reports) send nothing.",
+            p: "Fairsky sends small anonymous usage events, such as \"opened radar\" or \"added an activity\", with the app version, platform and a random install ID created on your phone. They never include coordinates, place names or anything you type, and they aren't linked to you, used for ads or shared. They go to our own Google Cloud Firestore database. Turn them off any time in Settings › Privacy. Google's automated test devices (Play pre-launch reports) send nothing.",
           },
           { h: "What the app doesn't do", list: ["No accounts, sign-in or contact details.", "No advertising, ad identifiers or third-party analytics.", "No background location, camera, microphone, contacts or photo-library access."] },
           {
@@ -319,7 +319,7 @@ export const APP_PAGES: AppPage[] = [
               "Maps: OpenFreeMap © OpenMapTiles, data © OpenStreetMap contributors.",
             ],
           },
-          { h: "Weather safety", p: "Fairsky is not a substitute for official warnings. For warnings, go to weather.gov. Project verdicts are guidance based on forecasts, which can be wrong; when your product's label says something different, the label wins." },
+          { h: "Weather safety", p: "Fairsky is not a substitute for official warnings. For warnings, go to weather.gov. Verdicts are guidance based on forecasts, which can be wrong; when your product's instructions say something different, follow them." },
         ],
         {
           usageStats: "Settings › Privacy",
@@ -329,8 +329,8 @@ export const APP_PAGES: AppPage[] = [
       ),
       support: [
         { h: "Get in touch", p: `Questions, bugs or ideas? Email ${CONTACT} and we'll get back to you, usually within a day or two.` },
-        { h: "Why does Fairsky say NO?", p: "Open the project's card and tap Why? It shows the hours Fairsky looked at, each reading (temperature, dew-point gap, humidity, rain chance, wind) marked OK, borderline or a problem, and the thresholds with their sources, such as rain-free hours before and after or the first night's low." },
-        { h: "Use my product's label", p: "Labels differ, and your label wins. For a project you can enter your product's minimum and maximum application temperature and how many rain-free hours it needs afterwards; Fairsky then uses those numbers instead of its defaults, and the Why? sheet lists your label as the source." },
+        { h: "Why does Fairsky say NO?", p: "Open the activity's card and tap Why? It shows the hours Fairsky looked at, each reading (temperature, dew-point gap, humidity, rain chance, wind) marked OK, borderline or a problem, and the thresholds with their sources, such as rain-free hours before and after or the first night's low." },
+        { h: "Match my product's instructions", p: "Labels differ. For products like stain, paint, sealer, caulk, concrete, weed spray, fertilizer and epoxy you can enter your product's minimum and maximum application temperature and how many rain-free hours it needs afterwards; Fairsky then uses those numbers instead of its defaults, and the Why? sheet lists your product as the source." },
         { h: "Alerts not arriving", list: ["Check that notifications are allowed for Fairsky in your phone's settings and that alerts are on in the app.", "On Android, set Fairsky's battery usage to Unrestricted (Settings › Apps › Fairsky › Battery) so the system doesn't delay notifications.", "At launch, severe-weather alerts cover places in the United States only.", "Fairsky is not a substitute for official warnings. For warnings, go to weather.gov, and keep your phone's Wireless Emergency Alerts turned on."] },
         { h: "Widgets", p: "Long-press an empty spot on your home screen, tap Widgets, find Fairsky and drag a widget onto the screen. Widgets update in the background; if one looks out of date, open the app once to refresh it and check that battery optimization isn't restricting Fairsky. Widgets show forecast information on your home screen, where anyone holding your phone can see it." },
         RESTORE,
@@ -338,7 +338,7 @@ export const APP_PAGES: AppPage[] = [
         REFUNDS,
       ],
       purchases:
-        "Fairsky is free with full forecasts, radar, alerts and two project verdicts. Fairsky Plus is an auto-renewing monthly or yearly subscription (7-day free trial on yearly) or a one-time lifetime purchase; Fairsky Pro for contractors is a monthly or yearly subscription.",
+        "Fairsky is free with full forecasts, radar, alerts and two activity verdicts. Fairsky Plus is an auto-renewing monthly or yearly subscription (7-day free trial on yearly) or a one-time lifetime purchase; Fairsky Pro for contractors is a monthly or yearly subscription.",
     },
   },
   {

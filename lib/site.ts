@@ -275,15 +275,15 @@ export const PROJECTS: Project[] = [
     kind: "own",
     category: "Mobile app",
     year: "2026",
-    summary: "A radar weather app whose home screen answers \"Can I ___ today?\" for home and yard projects: GO, WAIT or NO.",
+    summary: "A radar weather app whose home screen answers \"Can I ___ today?\" for 47 everyday activities: GO, WAIT or NO.",
     description:
-      "Fairsky is a full weather app with radar, alerts and a 7-day forecast, but its home screen leads with answers instead of numbers. Pick what you're doing from 47 activities (stain the deck, pour concrete, spray weeds, cover plants for frost, grill out, play a round of golf and more) and each one gets a GO, WAIT or NO verdict, the next good window and one plain line about why. Tap Why? to see the hours and the thresholds behind it, each with its source, and put in your product label's numbers when they differ.",
+      "Fairsky is a full weather app with radar, alerts and a 7-day forecast, but its home screen leads with answers instead of numbers. Pick what you're doing from 47 activities (stain the deck, pour concrete, spray weeds, cover plants for frost, grill out, play a round of golf and more) and each one gets a GO, WAIT or NO verdict, the next good window and one plain line about why. Tap Why? to see the hours and the thresholds behind it, each with its source, and, for paints, stains and lawn treatments, enter your product's own instructions.",
     highlights: [
       "Verdicts for 47 activities across yard, home, outdoor life, recreation and work, each threshold linked to its source (product data sheets, ACI, NWS, extension services)",
       "The next good window, an hour-by-hour strip and a Why? sheet that shows exactly which reading broke which rule",
       "Animated radar, lightning and NWS severe-weather alerts, with alert text shown exactly as issued",
       "No account and no ads; forecasts come straight from the National Weather Service",
-      "One shared TypeScript verdict engine runs in the app and on the free project-weather pages on the web",
+      "One shared TypeScript verdict engine runs in the app and on the free home-and-yard weather pages on the web",
     ],
     platforms: ["Android"],
     tech: ["React Native", "Expo", "TypeScript", "RevenueCat", "NWS data"],
@@ -292,7 +292,7 @@ export const PROJECTS: Project[] = [
     phones: ["/apps/fairsky-1.webp", "/apps/fairsky-2.webp", "/apps/fairsky-3.webp"],
     icon: "/icons/fairsky.webp",
     note: "Coming soon to Google Play, iPhone later",
-    seoTitle: "Fairsky: project weather and radar app built by Elco Dev",
+    seoTitle: "Fairsky: local weather radar app built by Elco Dev",
   },
   {
     slug: "blackout",
