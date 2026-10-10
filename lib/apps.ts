@@ -56,13 +56,14 @@ const REFUNDS: Section = {
   p: "Apple handles App Store refunds at reportaproblem.apple.com; Google handles Google Play refunds through Google Play Help. We can't issue store refunds ourselves.",
 };
 
-function studioPrivacy(name: string, details: Section[], opts: { usageStats?: string } = {}): Section[] {
+/** `stored` / `deleting` replace the default lines for apps that do talk to a server of ours (e.g. Fairsky's weather proxy). */
+function studioPrivacy(name: string, details: Section[], opts: { usageStats?: string; stored?: string; deleting?: string } = {}): Section[] {
   return [
-    { h: "The short version", list: ["No account, no sign-in, no ads, no tracking and no selling of data.", `What you make in ${name} is stored on your device. We don't run a server that receives it.`, ...(opts.usageStats ? [`Anonymous usage counts (never names or anything you type) help us improve ${name}. You can turn them off in ${opts.usageStats}.`] : []), "Purchases are processed by Apple or Google, and RevenueCat confirms them."] },
+    { h: "The short version", list: ["No account, no sign-in, no ads, no tracking and no selling of data.", opts.stored ?? `What you make in ${name} is stored on your device. We don't run a server that receives it.`, ...(opts.usageStats ? [`Anonymous usage counts (never names or anything you type) help us improve ${name}. You can turn them off in ${opts.usageStats}.`] : []), "Purchases are processed by Apple or Google, and RevenueCat confirms them."] },
     ...details,
     STORE_PURCHASES,
     { h: "Children", p: `${name} is not directed at children under 13, and we don't knowingly collect personal information from children.` },
-    { h: "Deleting your data", p: "Everything the app stores lives on your device; deleting the app deletes it. To ask RevenueCat to delete your purchase record, email us." },
+    { h: "Deleting your data", p: opts.deleting ?? "Everything the app stores lives on your device; deleting the app deletes it. To ask RevenueCat to delete your purchase record, email us." },
     { h: "Changes", p: "If this policy changes we'll update this page and the date above." },
   ];
 }
@@ -154,6 +155,85 @@ export const APP_PAGES: AppPage[] = [
         { h: "Moving to a new phone", p: "Export a backup file from the app's settings, then import it on the new phone." },
       ],
       purchases: "Paddle Rack is free for one court and eight players. Club is sold as a one-time purchase or as an auto-renewing yearly subscription.",
+    },
+  },
+  {
+    slug: "fairsky",
+    storeName: "Fairsky: Project Weather & Radar",
+    content: {
+      origin: "https://elcodev-fairsky.vercel.app",
+      title: "Free project weather on the web",
+      lead: "The same verdict engine as the app, free in the browser: a live 7-day GO / WAIT / NO for eight projects in 100 US metros, with each city's 1991–2020 climate averages.",
+      sections: [
+        { label: "All projects", path: "/projects", blurb: "Stain a deck, paint, pour concrete, spray weeds, pre-emergent, grass seed, driveway sealing and frost, by city." },
+        { label: "Best days to stain a deck", path: "/stain-a-deck", blurb: "This week's staining windows in 100 metros, plus the months that usually work." },
+        { label: "Is it too windy to spray weeds?", path: "/guides/too-windy-to-spray-weeds", blurb: "The 3–10 mph rule, inversions and heat, with sources." },
+        { label: "How cold is too cold to pour concrete?", path: "/guides/too-cold-to-pour-concrete", blurb: "ACI's 40°F cold-weather line and the first 48 hours." },
+        { label: "When to put down pre-emergent", path: "/guides/when-to-apply-pre-emergent", blurb: "Soil temperature and growing degree days, explained." },
+        { label: "Will my pipes freeze at 28°F?", path: "/guides/will-pipes-freeze-at-28", blurb: "Where the 20°F rule comes from and what to do first." },
+      ],
+    },
+    legal: {
+      updated: "October 9, 2026",
+      contact: CONTACT,
+      privacyIntro:
+        "Fairsky is made by Elco Dev, LLC (\"we\"). It has no account, and your saved places and settings stay on your phone. To show the weather it has to ask weather services about a place, and this policy says exactly what each request sends and to whom.",
+      privacy: studioPrivacy(
+        "Fairsky",
+        [
+          { h: "What stays on your device", p: "Your saved places (the name you give each one and its coordinates), your projects, any product-label numbers you enter and your settings are stored on your device. There is no Fairsky account, and we don't keep a copy." },
+          {
+            h: "Weather requests",
+            list: [
+              "United States: the app sends a saved place's coordinates directly from your phone to the U.S. National Weather Service (api.weather.gov) for forecasts, observations and alerts. Fairsky's server isn't involved.",
+              "Canada: the app asks Fairsky's own server (hosted on Vercel) for a MET Norway forecast, with the coordinates rounded to about 2 km (0.02°).",
+              "Next-hour rain (Plus): the app sends Fairsky's server coordinates rounded the same way plus its anonymous RevenueCat ID, which confirms you have Plus, and the server asks Apple WeatherKit for the next-hour forecast.",
+              "Fairsky's server keeps no record of these requests beyond short-lived caches and the standard request logs of its hosting provider.",
+            ],
+          },
+          { h: "Radar and maps", p: "Radar, lightning and map tiles load directly from Iowa Environmental Mesonet (Iowa State University), NOAA nowCOAST, Environment and Climate Change Canada and OpenFreeMap (OpenStreetMap data). Like any online map, those requests reveal which map area you're looking at, along with your IP address, under those services' own policies." },
+          { h: "Location (optional)", p: "Location permission is only used when you tap \"Use my location\" to add a place, and only while the app is open. Fairsky never uses background location. You can always add places by searching instead." },
+          {
+            h: "Severe-weather notifications (optional)",
+            p: "If you turn alerts on, the app registers with Google Firebase Cloud Messaging and subscribes to topics named after the NWS forecast zone and county codes of your saved places (for example OHC049, a county), which describe areas, not precise locations. Fairsky's server checks NWS alerts every couple of minutes and sends a notification to the matching topics. Turning alerts off unsubscribes the app from those topics.",
+          },
+          { h: "Widgets and the project timer", p: "Home-screen widgets and the project timer notification show forecast information for your places on your home or lock screen, where anyone holding your phone can see it." },
+          {
+            h: "Anonymous usage statistics",
+            p: "Fairsky sends small anonymous usage events, such as \"opened radar\" or \"added a project\", with the app version, platform and a random install ID created on your phone. They never include coordinates, place names or anything you type, and they aren't linked to you, used for ads or shared. They go to our own Google Cloud Firestore database. Turn them off any time in Settings › Privacy. Google's automated test devices (Play pre-launch reports) send nothing.",
+          },
+          { h: "What the app doesn't do", list: ["No accounts, sign-in or contact details.", "No advertising, ad identifiers or third-party analytics.", "No background location, camera, microphone, contacts or photo-library access."] },
+          {
+            h: "Data sources and attribution",
+            list: [
+              "Forecasts, observations and alerts (US): National Weather Service / NOAA (public domain).",
+              "Radar: Iowa Environmental Mesonet, Iowa State University; lightning and radar fallback: NOAA nowCOAST.",
+              "Canadian radar: Environment and Climate Change Canada (Open Government Licence – Canada).",
+              "Canadian forecasts: MET Norway (CC BY 4.0).",
+              "Next-hour rain: Apple Weather. Legal attribution: weatherkit.apple.com/legal-attribution.html.",
+              "Maps: OpenFreeMap © OpenMapTiles, data © OpenStreetMap contributors.",
+            ],
+          },
+          { h: "Weather safety", p: "Fairsky is not a substitute for official warnings. For warnings, go to weather.gov. Project verdicts are guidance based on forecasts, which can be wrong; when your product's label says something different, the label wins." },
+        ],
+        {
+          usageStats: "Settings › Privacy",
+          stored: "Your saved places and settings are stored on your device. Weather requests send a place's coordinates to the weather service that answers them (details below).",
+          deleting: "Your places and settings live on your device; deleting the app deletes them and ends any alert subscriptions. Fairsky's server keeps no per-user records. To ask RevenueCat to delete your purchase record, email us.",
+        },
+      ),
+      support: [
+        { h: "Get in touch", p: `Questions, bugs or ideas? Email ${CONTACT} and we'll get back to you, usually within a day or two.` },
+        { h: "Why does Fairsky say NO?", p: "Open the project's card and tap Why? It shows the hours Fairsky looked at, each reading (temperature, dew-point gap, humidity, rain chance, wind) marked OK, borderline or a problem, and the thresholds with their sources, such as rain-free hours before and after or the first night's low." },
+        { h: "Use my product's label", p: "Labels differ, and your label wins. For a project you can enter your product's minimum and maximum application temperature and how many rain-free hours it needs afterwards; Fairsky then uses those numbers instead of its defaults, and the Why? sheet lists your label as the source." },
+        { h: "Alerts not arriving", list: ["Check that notifications are allowed for Fairsky in your phone's settings and that alerts are on in the app.", "On Android, set Fairsky's battery usage to Unrestricted (Settings › Apps › Fairsky › Battery) so the system doesn't delay notifications.", "At launch, severe-weather alerts cover places in the United States only.", "Fairsky is not a substitute for official warnings. For warnings, go to weather.gov, and keep your phone's Wireless Emergency Alerts turned on."] },
+        { h: "Widgets", p: "Long-press an empty spot on your home screen, tap Widgets, find Fairsky and drag a widget onto the screen. Widgets update in the background; if one looks out of date, open the app once to refresh it and check that battery optimization isn't restricting Fairsky. Widgets show forecast information on your home screen, where anyone holding your phone can see it." },
+        RESTORE,
+        CANCEL,
+        REFUNDS,
+      ],
+      purchases:
+        "Fairsky is free with full forecasts, radar, alerts and two project verdicts. Fairsky Plus is an auto-renewing monthly or yearly subscription (7-day free trial on yearly) or a one-time lifetime purchase; Fairsky Pro for contractors is a monthly or yearly subscription.",
     },
   },
   {
