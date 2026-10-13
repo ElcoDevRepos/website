@@ -22,7 +22,7 @@ export type AppPage = {
   /** Store or brand name, when it differs from the project name. */
   storeName?: string;
   /** Large web companion served under /apps/<slug>/… from another Vercel project. */
-  content?: { origin: string; title: string; lead: string; sections: { label: string; path: string; blurb: string }[] };
+  content?: { origin: string; /** Set when the companion lives on its own domain: section links go there. */ home?: string; title: string; lead: string; sections: { label: string; path: string; blurb: string }[] };
   /** Where the app itself runs, for web apps and apps that keep their own domain. */
   external?: { label: string; url: string };
   /** Marketing landing copy (features, plans, FAQ) for apps whose app page doubles as their home page. */
@@ -83,6 +83,7 @@ export const APP_PAGES: AppPage[] = [
     slug: "liturgical-living",
     content: {
       origin: "https://living-liturgically.vercel.app",
+      home: "https://liturgicalliving.app",
       title: "Liturgical Living on the web",
       lead: "The liturgical calendar, saints, novenas, prayers and apologetics from the app, free to read in the browser, plus two daily games.",
       sections: [

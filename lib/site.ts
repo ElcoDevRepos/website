@@ -163,7 +163,7 @@ export const PROJECTS: Project[] = [
     platforms: ["iOS", "Android"],
     tech: ["Kotlin", "Jetpack Compose", "Native iOS", "Audio"],
     links: {
-      site: "https://www.elcodev.com/apps/liturgical-living",
+      site: "https://liturgicalliving.app",
       appStore: "https://apps.apple.com/us/app/liturgical-living/id6775888958",
       googlePlay: "https://play.google.com/store/apps/details?id=com.elcodev.lection",
     },

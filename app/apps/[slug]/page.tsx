@@ -66,6 +66,7 @@ export default async function AppPage({ params }: Props) {
   if (!e) notFound();
   const { project: p, page } = e;
   const base = appPath(p.slug);
+  const webBase = page.content?.home ?? base; // the web companion, which may live on its own domain
   const crumbs = [{ name: "Home", path: "/" }, { name: "Apps", path: "/apps" }, { name: p.name, path: base }];
   const phones = p.phones ?? [];
   const site = ownSite(p);
@@ -109,7 +110,7 @@ export default async function AppPage({ params }: Props) {
                   </a>
                 )}
                 {page.landing?.hero.secondaryCta ? (
-                  <a href={`${base}${page.landing.hero.secondaryCta.path}`} className="btn-ghost !py-2 text-sm">
+                  <a href={`${webBase}${page.landing.hero.secondaryCta.path}`} className="btn-ghost !py-2 text-sm">
                     {page.landing.hero.secondaryCta.label} <Arrow />
                   </a>
                 ) : (
@@ -148,7 +149,7 @@ export default async function AppPage({ params }: Props) {
               {page.content.sections.map((s) => (
                 <li key={s.path}>
                   {/* Plain <a>: these pages are served by the app's own site, not this Next.js app. */}
-                  <a href={`${base}${s.path}`} className="group flex h-full flex-col rounded-3xl border border-ink/10 bg-white p-6 transition-shadow hover:shadow-[0_20px_50px_-25px_rgba(11,15,26,0.35)]">
+                  <a href={`${webBase}${s.path}`} className="group flex h-full flex-col rounded-3xl border border-ink/10 bg-white p-6 transition-shadow hover:shadow-[0_20px_50px_-25px_rgba(11,15,26,0.35)]">
                     <span className="flex items-center justify-between gap-3 text-lg font-bold">
                       {s.label}
                       <span className="text-ink-muted transition-transform group-hover:translate-x-0.5"><Arrow /></span>

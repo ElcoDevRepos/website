@@ -43,7 +43,7 @@ ${FAQS.map((f) => `### ${f.q}\n${f.a}`).join("\n\n")}
 
 - [All apps](${SITE.url}/apps)
 - [All work](${SITE.url}/work)
-- [Liturgical Living on the web](${SITE.url}/apps/liturgical-living/llms.txt): calendar, saints, novenas, prayers and apologetics
+- [Liturgical Living on the web](https://liturgicalliving.app/llms.txt): calendar, saints, novenas, prayers and apologetics
 - [Paddle Rack pickleball tools](${SITE.url}/apps/paddlerack/llms.txt): free round robin generator, schedules and guides
 - [Fairsky home and yard weather](${SITE.url}/apps/fairsky/llms.txt): live GO / WAIT / NO verdicts and 1991–2020 climate averages for home and yard jobs in 100 US metros
 - [King James Bible (KJV) from Scripted](${SITE.url}/apps/scripted/bible/llms.txt): every book, chapter and verse of the KJV, free to read
