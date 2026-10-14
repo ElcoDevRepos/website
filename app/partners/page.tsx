@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const PROGRAMS = [
-  { title: "Referral partner", body: "Earn a 10–20% commission on the first project for clients you refer who need software built.", points: ["No upfront cost", "Simple referral tracking"] },
+  { title: "Referral partner", body: "Earn a 10–20% commission on the first project for clients you refer who need software built.", points: ["No upfront cost", "Simple referral tracking", "Open to US citizens"] },
   { title: "Reseller partner", body: "Sell our development services under your brand while we handle the technical delivery.", points: ["White-label delivery", "Wholesale pricing", "Dedicated support"] },
   { title: "Integration partner", body: "Offer custom integrations and APIs for your software platform, built and maintained by us.", points: ["Custom API development", "Ongoing maintenance"] },
   { title: "Strategic alliance", body: "A long-term partnership to serve clients with complementary services.", points: ["Joint marketing", "Shared case studies"] },
@@ -19,6 +19,7 @@ const PROGRAMS = [
 
 const FAQS = [
   { q: "Who can become an Elco Dev partner?", a: "Established businesses in tech, consulting and adjacent fields: software companies, agencies, design firms and consultants whose clients need software built." },
+  { q: "Can I be a referral partner outside the US?", a: "Referral partners must be US citizens. The clients you refer can be anywhere, including Europe." },
   { q: "How much do referral partners earn?", a: "Referral partners earn a 10–20% commission on the first project for each client they refer." },
   { q: "Can you work under our brand?", a: "Yes. Reseller partners sell our development under their own brand while we handle delivery." },
 ];
