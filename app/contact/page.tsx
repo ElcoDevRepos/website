@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Calendly } from "@/components/Calendly";
 import { JsonLd } from "@/components/JsonLd";
+import { LeadForm } from "@/components/LeadForm";
 import { breadcrumbLd } from "@/lib/ld";
 import { SITE } from "@/lib/site";
 
@@ -34,7 +35,10 @@ export default function ContactPage() {
             <span className="block text-ink-muted">Nashville, Tennessee · Monday to Friday, 9am to 5pm Central</span>
           </address>
         </div>
-        <Calendly />
+        <div className="space-y-8">
+          <Calendly />
+          <LeadForm page="/contact" />
+        </div>
       </section>
     </>
   );

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Calendly } from "@/components/Calendly";
+import { LeadForm } from "@/components/LeadForm";
 import { Faq } from "@/components/Faq";
 import { JsonLd } from "@/components/JsonLd";
 import { Arrow } from "@/components/ui";
@@ -82,7 +83,10 @@ export default function MvpPage() {
             <p className="mt-4 text-lg text-ink-muted">A free 30-minute call. Bring the idea; we&apos;ll bring a plan, a timeline and a price.</p>
             <p className="mt-6 text-ink-soft">Prefer email? <a className="underline" href={`mailto:${SITE.email}`}>{SITE.email}</a></p>
           </div>
-          <Calendly />
+          <div className="space-y-8">
+            <Calendly />
+            <LeadForm page="/mvp" />
+          </div>
         </div>
       </section>
     </>

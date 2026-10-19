@@ -66,6 +66,11 @@ export default async function ProjectPage({ params }: Props) {
                     {p.links.site.replace(/^https:\/\/(www\.)?/, "")} <Arrow />
                   </a>
                 )}
+                {p.extraLinks?.map((l) => (
+                  <a key={l.href} href={l.href} target="_blank" rel="noopener" className="btn-ghost !py-2 text-sm">
+                    {l.label} <Arrow />
+                  </a>
+                ))}
                 {p.note && <span className="text-sm text-ink-muted">{p.note}</span>}
               </div>
             </div>
