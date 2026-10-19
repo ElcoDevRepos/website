@@ -346,15 +346,17 @@ export const APP_PAGES: AppPage[] = [
     slug: "spotted",
     storeName: "Spotted: Daily Photo Hunt",
     legal: {
-      updated: "October 4, 2026",
+      updated: "October 19, 2026",
       contact: CONTACT,
-      privacyIntro: "Spotted is made by Elco Dev, LLC (\"we\"). It has no account and no server of its own, and your photos never leave your phone. This policy explains what that means.",
+      privacyIntro: "Spotted is made by Elco Dev, LLC (\"we\"). It has no account, and your photos never leave your phone. The only things that leave it are anonymous usage counts, which you can turn off. This policy explains what that means.",
       privacy: studioPrivacy("Spotted", [
         { h: "Your photos stay on your phone", p: "Photos you take or pick for a hunt are downscaled and saved in the app's private storage on your device. They are never uploaded, and deleting the app deletes them." },
         { h: "Photo checking happens on the device", p: "Each photo is checked on the device by the phone's built-in image recognition (Apple's Vision framework on iPhone, Google's on-device ML Kit on Android) plus a simple colour check. No image or result leaves the phone." },
         { h: "Camera and photo library", p: "The camera is used only when you tap a prompt to snap a find; Spotted works without it. Picking a photo uses the system photo picker, which gives the app only the photo you choose. The app reads that photo's capture date to check it was taken today." },
         { h: "Hunt history and reminders", p: "Which prompts you found, your times and streaks are stored on your device. The optional daily reminder is scheduled on your device and only requested if you turn reminders on." },
-      ]),
+        { h: "Anonymous usage statistics", p: "Spotted sends small anonymous usage events, such as \"started a hunt\", \"checked a photo\" (with which of the day's shared prompts it was and whether it matched) or \"finished a hunt\" (with counts and the time taken), with the app version, platform and a random install ID created on your phone. They never include your photos, what the image recognition saw, anything you type or any device identifier, and they aren't linked to you, used for ads or shared. They go to our own Google Cloud Firestore database, which accepts new events and lets the app read nothing back. Turn them off any time in Settings › Privacy; the ID is shown there so you can ask us to delete its events. Google's automated test devices (Play pre-launch reports) send nothing." },
+        { h: "What the app doesn't do", list: ["No accounts, sign-in or contact details.", "No advertising, ad identifiers or third-party analytics.", "No location (only a photo's capture date is read), contacts or microphone access."] },
+      ], { usageStats: "Settings › Privacy", deleting: "Everything the app stores lives on your device; deleting the app deletes it. To have the usage events for your install ID deleted, or to ask RevenueCat to delete your purchase record, email us." }),
       support: [
         { h: "Get in touch", p: `Questions, bugs or ideas? Email ${CONTACT} and we'll get back to you, usually within a day or two.` },
         { h: "A find wasn't recognised", p: "Try again with the thing filling more of the frame and good light. If the checker still misses it, use \"Trust me\" (twice per hunt); honor finds show as yellow squares in your grid." },
@@ -369,16 +371,17 @@ export const APP_PAGES: AppPage[] = [
     slug: "blackout",
     storeName: "Blackout Daily: Found Poetry",
     legal: {
-      updated: "October 4, 2026",
+      updated: "October 19, 2026",
       contact: CONTACT,
-      privacyIntro: "Blackout Daily is made by Elco Dev, LLC (\"we\"). It works without an account, and your poems stay on your iPhone. This policy explains what that means.",
+      privacyIntro: "Blackout Daily is made by Elco Dev, LLC (\"we\"). It works without an account, and your poems stay on your iPhone. The only things that leave it are anonymous usage counts, which you can turn off. This policy explains what that means.",
       privacy: studioPrivacy("Blackout Daily", [
         { h: "Your poems stay on your device", p: "Finished poems, drafts, your streak and your style choices are stored in the app's private storage on your iPhone. They are not uploaded anywhere, deleting the app deletes them, and they are included in your own device backup like any app data." },
         { h: "Camera (optional, Plus \"Scan a page\")", p: "Used only when you tap Scan with camera, to photograph a book page. The image is read on the device by Apple's Vision text recognition; neither the photo nor the text leaves your iPhone, and the photo isn't kept after the text is read." },
         { h: "Photos (optional)", p: "Choose a photo uses the system photo picker, which gives the app only the photo you pick. If you save a share card or video, iOS asks for add-only permission to save it to your library." },
         { h: "Notifications (optional)", p: "Only if you turn on the morning reminder. Reminders are scheduled on your device; no push server is involved." },
-        { h: "Network use", p: "Only the App Store and RevenueCat purchase calls. The daily pages are bundled in the app." },
-      ]),
+        { h: "Anonymous usage statistics", p: "Blackout Daily sends small anonymous usage events, such as \"started a page\", \"finished a poem\" (with how many words you kept and the style, paper and ink) or \"shared a card\", with the app version, platform and a random install ID created on your phone. They never include your poems, the words you keep, scanned text, anything you type or any device identifier, and they aren't linked to you, used for ads or shared. They go to our own Google Cloud Firestore database, which accepts new events and lets the app read nothing back. Turn them off any time in Settings › Privacy; the ID is shown there so you can ask us to delete its events." },
+        { h: "Network use", p: "The App Store and RevenueCat purchase calls and the anonymous usage events above. The daily pages are bundled in the app." },
+      ], { usageStats: "Settings › Privacy", deleting: "Everything the app stores lives on your device; deleting the app deletes it. To have the usage events for your install ID deleted, or to ask RevenueCat to delete your purchase record, email us." }),
       support: [
         { h: "Get in touch", p: `Questions, bugs or ideas? Email ${CONTACT} and we'll get back to you, usually within a day or two.` },
         RESTORE,
@@ -392,15 +395,16 @@ export const APP_PAGES: AppPage[] = [
     slug: "rhinestoned",
     storeName: "Rhinestoned: Bedazzle Photos",
     legal: {
-      updated: "October 4, 2026",
+      updated: "October 19, 2026",
       contact: CONTACT,
-      privacyIntro: "Rhinestoned is made by Elco Dev, LLC (\"we\"). It has no accounts, no ads, no analytics and no tracking, and your photos never leave your iPhone.",
+      privacyIntro: "Rhinestoned is made by Elco Dev, LLC (\"we\"). It has no accounts, no ads and no tracking, and your photos never leave your iPhone. The only things that leave it are anonymous usage counts, which you can turn off.",
       privacy: studioPrivacy("Rhinestoned", [
         { h: "Your creations", p: "For each creation the app keeps a copy of the photo, the gem layout and a thumbnail in its private storage on your device. They are removed when you delete the creation or the app, and may be included in your own device backup. We never receive them. Exports are written to a temporary folder for sharing and saved to your photo library only when you tap Save to Photos." },
         { h: "Camera and photos", p: "The camera is used only when you tap Take a photo. Picking a photo uses Apple's system photo picker, which gives the app only the photo you choose. Add-only photo-library permission is requested only when you tap Save to Photos; the app can't read your library." },
         { h: "On-device processing and motion", p: "Object detection runs on the device with Apple's Vision framework; nothing is uploaded. Motion sensors are used only while you edit, to make the gems sparkle as you tilt, and motion data is never stored or sent. You can turn it off in Settings." },
-        { h: "Not collected", p: "No contact information, location, advertising identifiers, browsing history, diagnostics or analytics." },
-      ]),
+        { h: "Anonymous usage statistics", p: "Rhinestoned sends small anonymous usage events, such as \"picked a photo\" (camera, library or which bundled sample), \"added gems\" (the tool, gem style and how many gems) or \"exported an image\", with the app version, platform and a random install ID created on your phone. They never include your photos, your creations, anything you type or any device identifier, and they aren't linked to you, used for ads or shared. They go to our own Google Cloud Firestore database, which accepts new events and lets the app read nothing back. Turn them off any time in Settings › Privacy; the ID is shown there so you can ask us to delete its events." },
+        { h: "Not collected", p: "No contact information, location, advertising identifiers, browsing history, diagnostics or third-party analytics." },
+      ], { usageStats: "Settings › Privacy", deleting: "Everything the app stores lives on your device; deleting the app deletes it. To have the usage events for your install ID deleted, or to ask RevenueCat to delete your purchase record, email us." }),
       support: [
         { h: "Get in touch", p: `Questions, bugs or ideas? Email ${CONTACT} and we'll get back to you, usually within a day or two.` },
         RESTORE,
