@@ -45,6 +45,8 @@ export type Project = {
   icon?: string;
   /** Shown instead of store buttons while an app is on its way. */
   note?: string;
+  /** Extra outbound links shown next to the site link (e.g. pricing, docs). */
+  extraLinks?: { label: string; href: string }[];
   seoTitle: string;
 };
 
@@ -64,13 +66,13 @@ export const PROJECTS: Project[] = [
       "Craving SOS with a three-minute timer and an AI coach (Claude)",
       "Subscriptions with a free trial through RevenueCat, launched with Apple Search Ads",
     ],
-    platforms: ["iOS"],
+    platforms: ["iOS", "Android"],
     tech: ["React Native", "Expo", "Firebase", "RevenueCat", "Claude AI"],
-    links: { site: "https://nicdrop.app", appStore: "https://apps.apple.com/app/id6813736340" },
+    links: { site: "https://nicdrop.app", appStore: "https://apps.apple.com/app/id6813736340", googlePlay: "https://play.google.com/store/apps/details?id=com.elcodev.nicdrop" },
     image: "/portfolio/nicdrop.webp",
     phones: ["/apps/nicdrop-1.webp", "/apps/nicdrop-2.webp", "/apps/nicdrop-3.webp"],
     icon: "/icons/nicdrop.webp",
-    seoTitle: "NicDrop: quit-nicotine iPhone app built by Elco Dev",
+    seoTitle: "NicDrop: quit-nicotine app for iPhone and Android, built by Elco Dev",
   },
   {
     slug: "wisewallets",
@@ -348,15 +350,22 @@ export const PROJECTS: Project[] = [
     kind: "own",
     category: "API",
     year: "2026",
-    summary: "A live NFL and college football data API for developers.",
+    summary: "A live sports data API for developers: 29 leagues over REST, webhooks, WebSocket and MCP.",
     description:
-      "Realtime Sports API gives developers live NFL and college football data: scores, play-by-play, betting odds and webhooks, with a free tier, self-serve keys and documentation.",
-    highlights: ["Live scores, play-by-play and odds over REST", "Webhooks for game events", "Free tier and self-serve API keys", "Developer docs and examples"],
+      "Realtime Sports API gives developers live data for 29 leagues (NFL, college football, NBA, men's college basketball, MLB, NHL and 23 soccer competitions) through one key: scores, play-by-play, box scores, schedules, odds and injuries over REST, push delivery by webhooks and WebSocket, and a hosted MCP server so AI assistants like Claude and Cursor can query live games. It has a free tier, self-serve keys, public docs and tested example projects.",
+    highlights: [
+      "29 leagues: NFL, college football, NBA, men's college basketball, MLB, NHL and 23 soccer competitions",
+      "Scores, play-by-play, box scores, schedules and odds over REST",
+      "Push delivery with signed webhooks and a WebSocket stream",
+      "Hosted MCP server for Claude, Cursor and other AI assistants",
+      "Free tier, self-serve keys, usage-based billing and developer docs",
+    ],
     platforms: ["Web", "API"],
-    tech: ["Node.js", "Next.js", "Firebase", "Webhooks"],
-    links: { site: "https://realtimesportsapi.com" },
+    tech: ["Node.js", "Next.js", "Firebase", "Webhooks", "WebSocket", "MCP", "Stripe"],
+    links: { site: "https://www.realtimesportsapi.com" },
+    extraLinks: [{ label: "Pricing", href: "https://www.realtimesportsapi.com/pricing" }],
     image: "/portfolio/realtime-sports-api.webp",
-    seoTitle: "Realtime Sports API: live football data API by Elco Dev",
+    seoTitle: "Realtime Sports API: live sports data API for 29 leagues, by Elco Dev",
   },
   {
     slug: "clientping",

@@ -21,6 +21,16 @@ const host = (url: string) => url.replace(/^https:\/\/(www\.)?/, "").replace(/\/
 /** The app's own site, when it isn't this page (apps that keep a domain, or a web app). */
 const ownSite = (p: Project) => (p.links.site && !p.links.site.startsWith(`${SITE.url}/apps/`) ? p.links.site : undefined);
 
+/** "<name>: <summary>" kept under 70 chars without cutting a word (falls back to the clause before a colon). */
+function shortTitle(p: Project) {
+  const summary = p.summary.replace(/\.$/, "");
+  const full = `${p.name}: ${summary}`;
+  if (full.length <= 70) return full;
+  const clause = `${p.name}: ${summary.split(":")[0].trim()}`;
+  if (clause.length <= 70) return clause;
+  return full.slice(0, 70).replace(/\s+\S*$/, "").replace(/[,;:]$/, "");
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const e = appEntryBySlug((await params).slug);
   if (!e) return {};
@@ -34,7 +44,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   const where = p.category === "Web game" ? "free in your browser" : p.platforms.filter((x) => x === "iOS" || x === "Android").join(" and ");
   return {
-    title: `${p.name}: ${p.summary.replace(/\.$/, "")}`.slice(0, 70),
+    title: shortTitle(p),
     description: `${p.summary} ${p.name} is ${where ? `${where}, ` : ""}made by Elco Dev.`,
     alternates: { canonical: appPath(p.slug) },
     openGraph: { title: p.name, description: p.summary, url: appPath(p.slug), images: [{ url: p.phones?.[0] ?? p.image }] },

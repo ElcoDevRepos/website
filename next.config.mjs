@@ -16,6 +16,8 @@ const nextConfig = {
       { source: "/work/vantage", destination: "/work", permanent: true },
       { source: "/apps/vantage/:path*", destination: "/apps", permanent: true },
       { source: "/apps/vantage", destination: "/apps", permanent: true },
+      { source: "/apps/starterset", destination: "/apps/starter-set", permanent: true },
+      { source: "/apps/starterset/:path*", destination: "/apps/starter-set/:path*", permanent: true },
       // Liturgical Living's iOS paywall falls back to this address when its Info.plist has no privacy URL.
       { source: "/liturgical-living/privacy", destination: "/apps/liturgical-living/privacy", permanent: true },
       // Liturgical Living's web companion moved back to its own domain (Oct 13 2026). The portfolio page and its
