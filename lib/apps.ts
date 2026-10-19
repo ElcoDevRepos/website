@@ -183,7 +183,7 @@ export const APP_PAGES: AppPage[] = [
           "label": "See this week's verdict for your city",
           "path": "/projects"
         },
-        "note": "Free to download. No ads, ever. US and Canada."
+        "note": "Free to download. No ads, ever. Works worldwide; radar in the US and Canada."
       },
       "features": [
         {
@@ -200,7 +200,7 @@ export const APP_PAGES: AppPage[] = [
         },
         {
           "h": "The night before a freeze",
-          "p": "“Drip the faucets tonight. 17° by 5 AM.” Fairsky reminds you the evening before a hard freeze or frost, free, in the US and Canada."
+          "p": "“Drip the faucets tonight. 17° by 5 AM.” Fairsky reminds you the evening before a hard freeze or frost, free, wherever you are."
         },
         {
           "h": "On your home screen",
@@ -251,8 +251,8 @@ export const APP_PAGES: AppPage[] = [
           "a": "In the US, Fairsky shows National Weather Service warnings for your places, unaltered, with a link to weather.gov. It is not a substitute for official warnings or Wireless Emergency Alerts: keep those on and follow local officials."
         },
         {
-          "q": "Does it work in Canada?",
-          "a": "Yes, with forecasts in °C, freeze and frost reminders, and the latest radar image from Environment and Climate Change Canada. Animated radar, next-hour rain and the official warnings feed are US-only for now, and the app is in English."
+          "q": "Does it work outside the US?",
+          "a": "Yes. Forecasts, GO / WAIT / NO verdicts and freeze and frost reminders work anywhere, using MET Norway forecast data outside the US, in your units. Canada also gets the latest radar image from Environment and Climate Change Canada. Animated radar, next-hour rain and the official warnings feed are US-only for now, and the app is in English."
         },
         {
           "q": "Are there ads? Do you track my location?",
@@ -263,7 +263,7 @@ export const APP_PAGES: AppPage[] = [
           "a": "Fairsky launches on Google Play first; the iPhone version follows."
         }
       ],
-      "disclaimer": "Verdicts are guidance, not guarantees. Your product's label always wins. Fairsky is not a substitute for official warnings: follow the National Weather Service, Environment and Climate Change Canada and local officials. For warnings, go to weather.gov."
+      "disclaimer": "Verdicts are guidance, not guarantees. Your product's label always wins. Fairsky is not a substitute for official warnings: follow the National Weather Service, Environment and Climate Change Canada, your national weather service and local officials. For US warnings, go to weather.gov."
     },
     content: {
       origin: "https://elcodev-fairsky.vercel.app",
@@ -292,7 +292,7 @@ export const APP_PAGES: AppPage[] = [
             h: "Weather requests",
             list: [
               "United States: the app asks the U.S. National Weather Service (api.weather.gov) directly from your phone, sending a saved place's coordinates rounded to about 2 km (0.02°) to look up its forecast area. Alerts are requested by NWS zone and county code, with no coordinates; storm-based warning outlines are then matched against your exact place on the phone. Fairsky's server isn't involved.",
-              "Canada: the app asks Fairsky's own server (hosted on Vercel) for a MET Norway forecast, with the coordinates rounded to about 2 km (0.02°).",
+              "Outside the US (Canada included): the app asks Fairsky's own server (hosted on Vercel) for a MET Norway forecast and the place's time zone, with the coordinates rounded to about 2 km (0.02°).",
               "Next-hour rain (Plus): the app sends Fairsky's server coordinates rounded the same way plus its anonymous RevenueCat ID, which confirms you have Plus, and the server asks Apple WeatherKit for the next-hour forecast.",
               "Fairsky's server keeps no record of these requests beyond short-lived caches and the standard request logs of its hosting provider.",
             ],
