@@ -289,11 +289,15 @@ export const PROJECTS: Project[] = [
     ],
     platforms: ["Android"],
     tech: ["React Native", "Expo", "TypeScript", "RevenueCat", "NWS data"],
-    links: { site: "https://www.elcodev.com/apps/fairsky" },
+    links: {
+      site: "https://www.elcodev.com/apps/fairsky",
+      googlePlay:
+        "https://play.google.com/store/apps/details?id=com.elcodev.fairsky&utm_source=elcodev&utm_medium=web&utm_campaign=app_page&referrer=utm_source%3Delcodev%26utm_medium%3Dweb%26utm_campaign%3Dapp_page",
+    },
     image: "/apps/fairsky-1.webp",
     phones: ["/apps/fairsky-1.webp", "/apps/fairsky-2.webp", "/apps/fairsky-3.webp"],
     icon: "/icons/fairsky.webp",
-    note: "Coming soon to Google Play, iPhone later",
+    note: "On Google Play now, with the iPhone version coming soon",
     seoTitle: "Fairsky: local weather radar app built by Elco Dev",
   },
   {
