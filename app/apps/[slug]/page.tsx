@@ -28,7 +28,11 @@ function shortTitle(p: Project) {
   if (full.length <= 70) return full;
   const clause = `${p.name}: ${summary.split(":")[0].trim()}`;
   if (clause.length <= 70) return clause;
-  return full.slice(0, 70).replace(/\s+\S*$/, "").replace(/[,;:]$/, "");
+  return full
+    .slice(0, 70)
+    .replace(/\s+\S*$/, "")
+    .replace(/(\s+(a|an|and|the|of|for|to|or|with|in))+$/i, "")
+    .replace(/[,;:]$/, "");
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
