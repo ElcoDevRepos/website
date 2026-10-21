@@ -42,6 +42,10 @@ const nextConfig = {
         // including the landing page and its legal pages (Datenschutz, Impressum), so the bare path is routed too.
         { source: "/apps/jagdklar", destination: "https://elcodev-jagdklar.vercel.app/" },
         { source: "/apps/jagdklar/:path+", destination: "https://elcodev-jagdklar.vercel.app/:path+" },
+        // Deskbridge (~/dev/deskbridge/site, Vercel project elcodev-deskbridge) owns all of /apps/deskbridge:
+        // landing, thanks/recover/download, legal pages, /api/* (Stripe checkout + license keys) and /downloads/*.
+        { source: "/apps/deskbridge", destination: "https://elcodev-deskbridge.vercel.app/" },
+        { source: "/apps/deskbridge/:path+", destination: "https://elcodev-deskbridge.vercel.app/:path+" },
         // Scripted's free KJV Bible (~/dev/scripted-web, Vercel project scripted-bible) serves its pages and assets at /bible/… .
         { source: "/apps/scripted/bible", destination: "https://scripted-bible.vercel.app/bible" },
         { source: "/apps/scripted/bible/:path+", destination: "https://scripted-bible.vercel.app/bible/:path+" },
