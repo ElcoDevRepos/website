@@ -30,7 +30,7 @@ export type Project = {
   name: string;
   /** "own": built and run by Elco Dev. "client": built for a client. "partner": Elco Dev leads the technology as CTO. */
   kind: "own" | "client" | "partner";
-  category: "Mobile app" | "Web app & SaaS" | "API" | "Website" | "Web game";
+  category: "Mobile app" | "Desktop app" | "Web app & SaaS" | "API" | "Website" | "Web game";
   year: string;
   summary: string;
   description: string;
@@ -270,6 +270,29 @@ export const PROJECTS: Project[] = [
     icon: "/icons/paddlerack.webp",
     note: "On Google Play now, with the iPhone version coming soon",
     seoTitle: "Paddle Rack: pickleball open play and round robin organizer by Elco Dev",
+  },
+  {
+    slug: "deskbridge",
+    name: "Deskbridge",
+    kind: "own",
+    category: "Desktop app",
+    year: "2026",
+    summary: "Samsung DeX in a Mac window: plug in a Galaxy phone and its full desktop opens on the Mac, with calls, notifications and app windows.",
+    description:
+      "Samsung retired DeX for PC, and Macs never had it. Deskbridge is a menu-bar app that opens Samsung DeX in a Mac window the moment a Galaxy phone on One UI 8 or later is plugged in: the phone runs its own DeX desktop on a virtual display, driven by the Mac's keyboard, trackpad and speakers. It adds what a desk setup needs: landscape or phone-style portrait, Secure Blackout (the phone's screen goes dark and locks if anyone touches it), unlocking from the Mac, phone apps in their own Mac windows, incoming phone and WhatsApp calls with Answer and Decline, and notifications in Notification Center. No account and no cloud. $12 once, with a free trial.",
+    highlights: [
+      "Opens Samsung DeX automatically when the phone is plugged in; landscape or phone-style portrait",
+      "Secure Blackout keeps the phone dark and locks it the instant it is touched or unplugged",
+      "Any phone app in its own Mac window; phone and WhatsApp calls with Answer/Decline on the Mac",
+      "Signed, notarized and self-updating; offline Ed25519 license keys, so there is no account or server",
+      "Built on scrcpy and adb, with a tiny Android helper app for Blackout, calls and notifications",
+    ],
+    platforms: ["macOS"],
+    tech: ["Swift", "SwiftUI", "scrcpy", "adb", "Android (Java)", "Sparkle", "Stripe"],
+    links: { site: "https://www.elcodev.com/apps/deskbridge" },
+    image: "/apps/deskbridge-1.webp",
+    icon: "/icons/deskbridge.webp",
+    seoTitle: "Deskbridge: Samsung DeX for Mac, built by Elco Dev",
   },
   {
     slug: "fairsky",

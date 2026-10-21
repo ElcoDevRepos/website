@@ -84,7 +84,9 @@ export function projectLd(p: Project) {
     description: p.description,
     url: p.links.site ?? url,
     image: abs(p.image),
-    ...(p.category !== "Website" ? { applicationCategory: p.category === "Web game" ? "GameApplication" : "BusinessApplication", operatingSystem: "Web" } : {}),
+    ...(p.category === "Desktop app"
+      ? { applicationCategory: "UtilitiesApplication", operatingSystem: p.platforms.join(", ") }
+      : p.category !== "Website" ? { applicationCategory: p.category === "Web game" ? "GameApplication" : "BusinessApplication", operatingSystem: "Web" } : {}),
     ...(p.kind === "own" ? { publisher: { "@id": ORG_ID } } : { creator }),
   };
 }
