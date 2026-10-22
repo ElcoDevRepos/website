@@ -35,7 +35,7 @@ export default async function ProjectPage({ params }: Props) {
   if (!p) notFound();
   const crumbs = [{ name: "Home", path: "/" }, { name: "Work", path: "/work" }, { name: p.name, path: `/work/${p.slug}` }];
   const related = PROJECTS.filter((x) => x.slug !== p.slug && x.category === p.category).slice(0, 3);
-  const service = SERVICES.find((s) => s.work.includes(p.slug));
+  const services = SERVICES.filter((s) => s.work.includes(p.slug));
   const isApp = p.category === "Mobile app" && p.phones?.length;
   // Our own apps have a product page (store links, support, privacy) under /apps.
   const appPage = appEntryBySlug(p.slug) ? `/apps/${p.slug}` : null;
@@ -122,10 +122,14 @@ export default async function ProjectPage({ params }: Props) {
               <h2 className="text-sm font-semibold uppercase tracking-wider text-ink-muted">Category</h2>
               <p className="mt-2">{p.category}</p>
             </div>
-            {service && (
-              <Link href={`/services/${service.slug}`} className="flex items-center justify-between rounded-2xl bg-paper-deep p-4 text-sm font-semibold hover:bg-brand-soft">
-                {service.name} at Elco Dev <Arrow />
-              </Link>
+            {services.length > 0 && (
+              <div className="space-y-2">
+                {services.map((service) => (
+                  <Link key={service.slug} href={`/services/${service.slug}`} className="flex items-center justify-between rounded-2xl bg-paper-deep p-4 text-sm font-semibold hover:bg-brand-soft">
+                    {service.name} at Elco Dev <Arrow />
+                  </Link>
+                ))}
+              </div>
             )}
           </aside>
         </div>

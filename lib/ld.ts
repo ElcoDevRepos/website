@@ -25,10 +25,11 @@ export function organizationLd() {
     geo: { "@type": "GeoCoordinates", latitude: 36.1627, longitude: -86.7816 },
     areaServed: [{ "@type": "City", name: "Nashville" }, { "@type": "State", name: "Tennessee" }, { "@type": "Country", name: "United States" }],
     sameAs: [SITE.linkedin, SITE.github],
-    knowsAbout: ["Mobile app development", "iOS development", "Android development", "React Native", "Next.js", "SaaS development", "API development", "Website development", "App Store optimization", "In-app subscriptions"],
+    knowsAbout: ["Mobile app development", "iOS development", "Android development", "React Native", "Next.js", "SaaS development", "Custom CRM development", "Internal tools", "KPI dashboards", "API development", "Website development", "App Store optimization", "In-app subscriptions"],
     makesOffer: [
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Mobile app development", url: abs("/services/mobile-app-development") } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Web app and SaaS development", url: abs("/services/web-app-development") } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Custom CRM, internal tool and KPI dashboard development", url: abs("/services/custom-crm-dashboards") } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Website development", url: abs("/services/websites") } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "MVP development" }, priceSpecification: { "@type": "PriceSpecification", minPrice: 7000, priceCurrency: "USD" }, url: abs("/mvp") },
     ],

@@ -30,7 +30,7 @@ export default function Home() {
               We design, build and launch <span className="font-serif font-normal italic text-brand">web and mobile apps.</span>
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted sm:text-xl">
-              iOS and Android apps, SaaS platforms, APIs and websites for founders and growing businesses. We run apps of our own too, so the launch is part of the job.
+              iOS and Android apps, SaaS platforms, <Link href="/services/custom-crm-dashboards" className="underline decoration-brand/40 underline-offset-4 hover:text-ink">custom CRMs and KPI dashboards</Link>, APIs and websites for founders and growing businesses. We run apps of our own too, so the launch is part of the job.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/contact" className="btn-primary">Book a free call <Arrow /></Link>
@@ -146,7 +146,7 @@ export default function Home() {
           <SectionHead eyebrow="Services" title="What we build" lead="From a first MVP to a platform your business runs on, with the same small team from the first call to launch." />
           <div className="mt-12 grid gap-5 md:grid-cols-2">
             {SERVICES.map((s, i) => (
-              <Link key={s.slug} href={`/services/${s.slug}`} className="group card flex flex-col p-8 transition-colors hover:border-ink/30">
+              <Link key={s.slug} href={`/services/${s.slug}`} className={`group card flex flex-col p-8 transition-colors hover:border-ink/30 ${i === SERVICES.length - 1 && SERVICES.length % 2 ? "md:col-span-2" : ""}`}>
                 <span className="font-display text-sm font-bold text-brand">0{i + 1}</span>
                 <h3 className="mt-3 text-2xl font-bold">{s.name}</h3>
                 <p className="mt-2 text-ink-muted">{s.short}</p>

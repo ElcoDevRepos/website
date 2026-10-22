@@ -7,8 +7,8 @@ import { breadcrumbLd, serviceLd } from "@/lib/ld";
 import { SERVICES } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Services: Mobile Apps, Web Apps & SaaS, Websites",
-  description: "Elco Dev builds iOS and Android apps, web apps and SaaS platforms, APIs and websites, and adds experienced developers to existing teams. Nashville, TN.",
+  title: "Services: Mobile Apps, Web Apps & SaaS, Custom CRMs, Websites",
+  description: "Elco Dev builds iOS and Android apps, web apps and SaaS platforms, custom CRMs, internal tools and KPI dashboards, APIs and websites, and adds experienced developers to existing teams. Nashville, TN.",
   alternates: { canonical: "/services" },
 };
 
@@ -25,7 +25,7 @@ export default function ServicesPage() {
       </section>
       <section className="wrap grid gap-5 pb-10 md:grid-cols-2">
         {SERVICES.map((s, i) => (
-          <Link key={s.slug} href={`/services/${s.slug}`} className="group card flex flex-col p-8 transition-colors hover:border-ink/30">
+          <Link key={s.slug} href={`/services/${s.slug}`} className={`group card flex flex-col p-8 transition-colors hover:border-ink/30 ${i === SERVICES.length - 1 && SERVICES.length % 2 ? "md:col-span-2" : ""}`}>
             <span className="font-display text-sm font-bold text-brand">0{i + 1}</span>
             <h2 className="mt-3 text-3xl font-bold">{s.name}</h2>
             <p className="mt-3 text-lg text-ink-muted">{s.short}</p>

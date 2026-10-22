@@ -658,6 +658,34 @@ export const SERVICES: Service[] = [
     ],
   },
   {
+    slug: "custom-crm-dashboards",
+    name: "Custom CRMs & dashboards",
+    short: "CRMs, internal tools and KPI dashboards built around how your team works.",
+    title: "Custom CRM, Internal Tool & KPI Dashboard Development | Elco Dev",
+    metaDescription:
+      "Elco Dev builds custom CRMs, internal tools, client portals and KPI dashboards that replace spreadsheets and scattered apps, with field-service, billing and QuickBooks experience. Nashville, TN.",
+    intro:
+      "When the business runs on spreadsheets, text threads and three tools that don't talk to each other, we build the one system that fits: a CRM, an internal tool or a KPI dashboard shaped around how your team already works, so the office, the field and the owner see the same numbers.",
+    includes: [
+      "Custom CRMs: customers, sites, jobs, pipeline and follow-ups in one place",
+      "Internal tools and admin panels that replace spreadsheets and copy-paste",
+      "KPI dashboards and reports pulled from live data, not monthly exports",
+      "Field apps for crews, with check-ins, photos and proof of service",
+      "Customer and client portals",
+      "Integrations: QuickBooks Online, payments, email and SMS, Google Maps",
+    ],
+    stack: ["Next.js", "React", "TypeScript", "Firebase", "Flutter", "Angular", "QuickBooks Online", "Google Maps"],
+    work: ["ccs", "equidesk", "taskmerit", "laurel-crm"],
+    faqs: [
+      { q: "Why custom instead of Salesforce, HubSpot or an off-the-shelf tool?", a: "Off-the-shelf tools are a good start, and we'll tell you if one fits. Custom makes sense when your team keeps bending the tool to fit the work: workarounds, side spreadsheets, per-seat fees for features nobody uses. A custom system follows your workflow, and you own the code and the data." },
+      { q: "Can you move our spreadsheets and existing data over?", a: "Yes. We import your existing spreadsheets and exports as part of the build, so the team starts with real customers, sites and history instead of a blank screen." },
+      { q: "Can it connect to the tools we already use?", a: "Usually. We've connected QuickBooks Online, payment processors, transactional email, Google Maps and other APIs. If a tool has an API or an export, we can work with it." },
+      { q: "Will it work for people in the field?", a: "Yes. We build mobile-friendly web apps and native field apps, as we did for Community Concierge Services' crews, so work is recorded where it happens." },
+      { q: "How long does a first version take?", a: "It depends on scope, and we set an accurate timeline after the first call. A focused first version, one workflow done well, is scoped like our MVP builds, which typically take about 14 days. Then we add to it in short cycles once your team is using it." },
+      { q: "Who owns the software?", a: "You do. The code, the data and the hosting accounts are yours, and we can keep developing and supporting it for as long as you want." },
+    ],
+  },
+  {
     slug: "websites",
     name: "Websites",
     short: "Fast, search-ready websites that bring in leads.",
@@ -702,6 +730,121 @@ export const SERVICES: Service[] = [
 ];
 
 export const serviceBySlug = (slug: string) => SERVICES.find((s) => s.slug === slug);
+
+export type CrmCase = {
+  /** PROJECTS slug. */
+  project: string;
+  who: string;
+  what: string;
+  replaces: string[];
+  visible: string[];
+  /** Measured outcomes confirmed by the client. Shown only when present; never estimates. */
+  results?: { label: string; value: string }[];
+};
+
+/** Landing page content for the custom CRM / internal tools / KPI dashboards service (/services/custom-crm-dashboards). */
+export const CRM_PAGE = {
+  slug: "custom-crm-dashboards",
+  fit: [
+    "Run the business from spreadsheets that only one person really understands",
+    "Re-key the same job, customer or invoice into two or three tools",
+    "Have crews or staff in the field and an office that can't see what they did",
+    "Wait until month-end to find out how the month went",
+    "Pay per seat for a big CRM and still keep a side spreadsheet",
+  ],
+  problems: [
+    { title: "Spreadsheets as the system", body: "Versions emailed around, formulas that break, and no record of who changed what or when." },
+    { title: "The same data, typed twice", body: "Customer details in the CRM, the job in a scheduler, the invoice in QuickBooks, each one entered by hand." },
+    { title: "No view from the field", body: "Proof that the work was done lives in texts and photos on someone's phone, until a customer disputes it." },
+    { title: "Reports take a day", body: "Someone exports, cleans and pastes data every week just to answer \"how are we doing?\"" },
+    { title: "Tools that don't fit", body: "Off-the-shelf software forces your process into its screens, so people work around it instead of in it." },
+    { title: "Knowledge in one head", body: "How things get done lives with one person. When they're out, the work stalls." },
+  ],
+  builds: [
+    { title: "Custom CRM", body: "Customers, properties or sites, contacts, jobs and history in one record, with the fields and stages your business actually uses." },
+    { title: "Internal tools", body: "Admin panels, intake forms, scheduling and approval flows that replace the spreadsheet and the copy-paste." },
+    { title: "KPI dashboards", body: "The handful of numbers you run the business on, calculated from live data and shown by team, site, route or customer." },
+    { title: "Field apps", body: "Mobile apps for crews and staff: today's jobs, check-ins, photos and notes, recorded where the work happens." },
+    { title: "Client portals", body: "A place for your customers to see service history, requests and reports, so the office answers fewer calls." },
+    { title: "Integrations and automations", body: "QuickBooks Online, payments, email and text notifications, maps and routing, so data moves without being retyped." },
+  ],
+  // Outcome figures to request from each client before adding `results` are listed in the hand-over notes; leave them out until confirmed.
+  cases: [
+    {
+      project: "ccs",
+      who: "Apartment valet trash · admin, managers, porters and property managers",
+      what: "The operations platform behind a multifamily valet trash company: a web admin for the office, a mobile app for porters on their nightly shifts, a client portal for property managers, and phone and text intake.",
+      replaces: [
+        "Confirming who showed up, with check-in only within a set distance of the property, plus photo checklists",
+        "Building violation reports by hand: PDFs are generated and emailed to each property",
+        "Daily payroll entries, created automatically for each worker",
+        "Fielding phone and text requests: a Twilio menu turns them into support tickets and flags urgent ones in Slack",
+      ],
+      visible: [
+        "Weekly KPIs by property, market and region: on-time vs. late check-ins, properties serviced, labor paid",
+        "Each property's monthly budget against its scheduled labor cost",
+        "Open shifts, headcount, turnover and retention",
+        "Violations, complaints and service requests, for property managers in their own portal",
+      ],
+    },
+    {
+      project: "laurel-crm",
+      who: "Patient order workflow · office staff, teams and patients",
+      what: "An internal CRM for Laurel Medical's order workflow, built from the ground up: configurable order types and steps, patient records, appointments, chat and surveys, with a companion app where patients follow their orders.",
+      replaces: [
+        "Tracking each order's progress by hand, with order steps, approvals and time limits set up by the office",
+        "Chasing stalled orders: a daily alert flags steps that have run past their limit",
+        "Compiling status reports: daily, team, repair and mobility reports are emailed as spreadsheets",
+        "Status calls from patients, who see order updates and chat in the app",
+      ],
+      visible: [
+        "Which step every order is on, how many days it has sat there and the last note",
+        "Completed orders per report period",
+        "Each team's queue and to-do list",
+      ],
+    },
+    {
+      project: "taskmerit",
+      who: "Landscaping and snow removal · office, crews and customers",
+      what: "A property-first field-service CRM. Customers, properties, crews and the schedule live in one place, from estimate to invoice to payment. Elco Dev leads the technology as CTO partner.",
+      replaces: [
+        "Rebuilding the schedule by hand: repeating visits, bulk skip and move, and a rain-day reshuffle with a crew-capacity preview",
+        "Sending and chasing estimates: customers approve or decline online",
+        "Building invoices: they come from finished visits, in batches, with autopay and online payment",
+        "Re-keying into QuickBooks Online: customers, invoices and payments sync",
+      ],
+      visible: [
+        "Today's stops, property alerts and before/after photos for every crew",
+        "The jobs pipeline from request to estimate to completed work, with expected vs. actual",
+        "Accounts receivable aging, with reminders",
+      ],
+    },
+    {
+      project: "equidesk",
+      who: "Equestrian barns · managers, staff, owners, trainers and students",
+      what: "Barn operations software with a portal for each role: horses and health records, stalls and turnout, feed, tasks, staff schedules, lessons and billing.",
+      replaces: [
+        "Keeping up with vaccinations, Coggins, deworming, farrier and dental care: each horse's records are flagged when due",
+        "Passing along feed changes: requests go through the app, next to the barn's feed chart",
+        "Handing out daily chores: tasks are created from templates every day",
+        "Monthly billing: recurring invoices are generated on schedule, with online payment",
+      ],
+      visible: [
+        "Active horses, pending tasks and service requests on the manager's home screen",
+        "Overdue and due-soon health items across the barn",
+        "Feed use and inventory per horse",
+      ],
+    },
+  ] as CrmCase[],
+  process: [
+    { title: "Map the workflow", body: "A free call, then a working session where we walk through the spreadsheets, tools and handoffs your team uses today, and note where the hours go." },
+    { title: "Scope the first version", body: "One workflow done well, with a fixed quote and timeline. We agree up front which numbers to measure before and after." },
+    { title: "Build with your data", body: "Short cycles with working builds, loaded with your real customers and jobs, so the team tries it on actual work." },
+    { title: "Roll out and measure", body: "Training, a clean switch-over from the old way, then a look at the numbers and the next most useful thing to add." },
+  ],
+  pricing: (mvpPrice: string) =>
+    `A focused first version is scoped like our MVP product build, which starts at ${mvpPrice}. Larger systems, data migration and ongoing work are quoted after the workflow call, so you know the price before we start.`,
+};
 
 export const MVP_TIERS = [
   {

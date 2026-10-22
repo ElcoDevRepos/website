@@ -7,12 +7,13 @@ import { JsonLd } from "@/components/JsonLd";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Arrow, Breadcrumbs, Tag } from "@/components/ui";
 import { breadcrumbLd, faqLd, serviceLd } from "@/lib/ld";
-import { PROCESS, SERVICES, projectBySlug, serviceBySlug } from "@/lib/site";
+import { CRM_PAGE, PROCESS, SERVICES, projectBySlug, serviceBySlug } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return SERVICES.map((s) => ({ slug: s.slug }));
+  // The CRM service has its own page at app/services/custom-crm-dashboards.
+  return SERVICES.filter((s) => s.slug !== CRM_PAGE.slug).map((s) => ({ slug: s.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
