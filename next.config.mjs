@@ -46,6 +46,10 @@ const nextConfig = {
         // landing, thanks/recover/download, legal pages, /api/* (Stripe checkout + license keys) and /downloads/*.
         { source: "/apps/deskbridge", destination: "https://elcodev-deskbridge.vercel.app/" },
         { source: "/apps/deskbridge/:path+", destination: "https://elcodev-deskbridge.vercel.app/:path+" },
+        // SettleDate (~/dev/settledate, Vercel project elcodev-settledate) owns all of /apps/settledate: landing, docs,
+        // holiday pages, legal pages, the REST API (/apps/settledate/v1/…) and /api/* (keys, Stripe checkout/portal).
+        { source: "/apps/settledate", destination: "https://elcodev-settledate.vercel.app/apps/settledate" },
+        { source: "/apps/settledate/:path+", destination: "https://elcodev-settledate.vercel.app/apps/settledate/:path+" },
         // Scripted's free KJV Bible (~/dev/scripted-web, Vercel project scripted-bible) serves its pages and assets at /bible/… .
         { source: "/apps/scripted/bible", destination: "https://scripted-bible.vercel.app/bible" },
         { source: "/apps/scripted/bible/:path+", destination: "https://scripted-bible.vercel.app/bible/:path+" },
