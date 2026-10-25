@@ -7,13 +7,16 @@ import { PhoneFrame } from "@/components/PhoneFrame";
 import { Arrow } from "@/components/ui";
 import { APP_ENTRIES, appPath } from "@/lib/apps";
 import { breadcrumbLd } from "@/lib/ld";
-import { SITE } from "@/lib/site";
+import { PROJECTS, SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Our Apps: iPhone, Android and Web Apps by Elco Dev",
   description: "The apps Elco Dev builds and runs itself: Liturgical Living, Paddle Rack, NicDrop, Spotted, Homeshelf, Scripted, Crohn's Food Tracker and more, with store links, support and privacy for each.",
   alternates: { canonical: "/apps" },
 };
+
+// Desktop apps own their own paths (e.g. /apps/deskbridge is proxied to its own site), so they link out rather than to /apps/[slug].
+const DESKTOP_APPS = PROJECTS.filter((p) => p.kind === "own" && p.category === "Desktop app" && p.links.site);
 
 const storeLabel = (l: { appStore?: string; googlePlay?: string }) =>
   [l.appStore && "App Store", l.googlePlay && "Google Play"].filter(Boolean).join(" · ");
@@ -72,6 +75,30 @@ export default function AppsPage() {
           ))}
         </ul>
       </section>
+      {DESKTOP_APPS.length > 0 && (
+        <section className="wrap pb-12">
+          <h2 className="text-2xl font-bold">On the Mac</h2>
+          <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {DESKTOP_APPS.map((p) => (
+              <li key={p.slug}>
+                <article className="card relative flex h-full flex-col p-6 transition-shadow hover:shadow-[0_20px_50px_-25px_rgba(11,15,26,0.35)]">
+                  <div className="flex items-center gap-3">
+                    {p.icon && <Image src={p.icon} alt="" width={44} height={44} className="h-11 w-11 rounded-xl shadow-sm" />}
+                    <h3 className="text-xl font-bold">
+                      <a href={p.links.site} className="after:absolute after:inset-0">{p.name}</a>
+                    </h3>
+                  </div>
+                  <p className="mt-3 text-[15px] leading-relaxed text-ink-muted">{p.summary}</p>
+                  <p className="mt-auto flex items-center justify-between gap-3 pt-5 text-xs font-medium text-ink-soft">
+                    <span>macOS · free trial</span>
+                    <span className="text-ink-muted"><Arrow /></span>
+                  </p>
+                </article>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       <CtaBand title="Want an app of your own?" />
     </>
   );
