@@ -6,7 +6,7 @@ type Status = "idle" | "sending" | "sent" | "error";
 
 const FIELDS = "w-full rounded-2xl border border-ink/15 bg-white px-4 py-3 text-base outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/20";
 
-/** Partner applications, sent through EmailJS (same service and template as before). */
+/** Partner applications. Posts to /api/partner, which emails Austin. */
 export function PartnerForm() {
   const [status, setStatus] = useState<Status>("idle");
 
@@ -15,24 +15,9 @@ export function PartnerForm() {
     const form = e.currentTarget;
     const d = Object.fromEntries(new FormData(form)) as Record<string, string>;
     setStatus("sending");
-    const message = [
-      "Partnership Application Details:",
-      "-----------------------------",
-      `Contact Name: ${d.contact_name}`,
-      `Email: ${d.email}`,
-      `Phone: ${d.phone || "Not provided"}`,
-      `Company Name: ${d.company_name || "Not provided"}`,
-      `Website: ${d.website || "Not provided"}`,
-      `Partnership Type: ${d.partnership_type || "Not specified"}`,
-      `Company Type: ${d.company_type || "Not specified"}`,
-      `Primary Client Base: ${d.client_base || "Not specified"}`,
-      "",
-      "Additional Information:",
-      d.message || "No additional information provided",
-    ].join("\n");
     try {
-      const emailjs = (await import("@emailjs/browser")).default;
-      await emailjs.send("service_f7c31el", "template_e61tqnr", { to_name: "Elco Dev", from_name: d.contact_name, from_email: d.email, message }, "grOQweJjHjltztoaG");
+      const res = await fetch("/api/partner", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(d) });
+      if (!res.ok) throw new Error(String(res.status));
       setStatus("sent");
       form.reset();
     } catch {
@@ -85,6 +70,7 @@ export function PartnerForm() {
           <option value="mixed">Mixed</option>
         </select>
       </label>
+      <input type="text" name="fax" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
       <label className="grid gap-1.5 text-sm font-medium sm:col-span-2">Tell us about your business and goals
         <textarea name="message" rows={5} autoCapitalize="sentences" className={FIELDS} />
       </label>
