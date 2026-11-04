@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaBand } from "@/components/CtaBand";
 import { JsonLd } from "@/components/JsonLd";
+import { Faq } from "@/components/Faq";
 import { LeadForm } from "@/components/LeadForm";
 import { Arrow } from "@/components/ui";
-import { breadcrumbLd, serviceLd } from "@/lib/ld";
+import { breadcrumbLd, faqLd, serviceLd } from "@/lib/ld";
 import { PROCESS, SERVICES, SPECIALTIES } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -13,10 +14,19 @@ export const metadata: Metadata = {
   alternates: { canonical: "/services" },
 };
 
+/** Ranges come from real quotes Elco Dev sent over the past year; no client is named. */
+const PRICING_FAQS = [
+  { q: "How much does a project cost?", a: "Every project gets a fixed quote after a free call, but here are honest ranges from the quotes we've sent over the past year. Focused MVPs and design-to-code work start at $3,500 to $7,000. Small custom apps and websites have mostly landed between about $8,000 and $20,000. Larger custom systems (multi-milestone business apps, portals and integrations) have been quoted between about $50,000 and $60,000." },
+  { q: "Fixed price or hourly?", a: "Fixed price per project or per milestone, agreed before work starts, so you know the number up front. Larger builds are split into milestones (for example 25% at each of four milestones) so you pay as working software is delivered. If scope changes, we quote the change in writing before doing it." },
+  { q: "Can we start smaller?", a: "Yes, and we often recommend it. A paid discovery or a first milestone (one workflow done well) lets you see real software and a firm plan before committing to the whole build." },
+  { q: "What does it cost after launch?", a: "Hosting starts at $40 a month for sites we host. Apps need yearly App Store and Google Play updates and the occasional fix, which we cover with a monthly support plan sized to the app. Hosting, store and third-party fees are billed at cost, in accounts you own." },
+  { q: "Do you work with nonprofits and grant budgets?", a: "Yes. We can phase a project to match a grant period or a board approval, and quote each phase separately." },
+];
+
 export default function ServicesPage() {
   return (
     <>
-      <JsonLd data={[breadcrumbLd([{ name: "Home", path: "/" }, { name: "Services", path: "/services" }]), ...SERVICES.map(serviceLd)]} />
+      <JsonLd data={[breadcrumbLd([{ name: "Home", path: "/" }, { name: "Services", path: "/services" }]), ...SERVICES.map(serviceLd), faqLd(PRICING_FAQS)]} />
       <section className="wrap pb-10 pt-14 sm:pt-20">
         <p className="eyebrow">Services</p>
         <h1 className="mt-4 max-w-4xl text-5xl font-extrabold leading-[1.02] sm:text-6xl">
@@ -55,6 +65,14 @@ export default function ServicesPage() {
             </Link>
           ))}
         </div>
+      </section>
+      <section id="pricing" className="wrap grid gap-10 pb-20 lg:grid-cols-[0.8fr_1.2fr]">
+        <div>
+          <h2 className="text-3xl font-bold sm:text-4xl">How we price</h2>
+          <p className="mt-4 text-lg text-ink-muted">Fixed quotes before any work starts, paid by milestone. These ranges come from the quotes we&apos;ve actually sent this past year.</p>
+          <Link href="/mvp" className="btn-ghost mt-6">MVP pricing <Arrow /></Link>
+        </div>
+        <Faq items={PRICING_FAQS} />
       </section>
       <section className="bg-white py-20">
         <div className="wrap grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
