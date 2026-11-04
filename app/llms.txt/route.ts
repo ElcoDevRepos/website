@@ -1,6 +1,6 @@
 import { appEntryBySlug } from "@/lib/apps";
 import { CASE_STUDIES } from "@/lib/caseStudies";
-import { FAQS, MVP_TIERS, PROJECTS, SERVICES, SITE } from "@/lib/site";
+import { FAQS, MVP_TIERS, PROJECTS, SERVICES, SITE, SPECIALTIES } from "@/lib/site";
 
 export const dynamic = "force-static";
 
@@ -26,6 +26,7 @@ Contact: ${SITE.email}, ${SITE.phoneDisplay}. Free 30-minute consultation: ${SIT
 ## Services
 
 ${SERVICES.map((s) => `- [${s.name}](${SITE.url}/services/${s.slug}): ${s.short}`).join("\n")}
+${SPECIALTIES.map((s) => `- [${s.name}](${SITE.url}/services/${s.slug}): ${s.short}`).join("\n")}
 - [MVP development and pricing](${SITE.url}/mvp): ${MVP_TIERS.map((t) => `${t.name} ${t.price}${t.price.startsWith("$") ? " starting" : ""}`).join("; ")}. A focused MVP typically takes about 14 days.
 
 ## Apps and products built and run by Elco Dev

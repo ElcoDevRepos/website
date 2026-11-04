@@ -729,7 +729,92 @@ export const SERVICES: Service[] = [
   },
 ];
 
-export const serviceBySlug = (slug: string) => SERVICES.find((s) => s.slug === slug);
+/**
+ * Specialty pages: narrower services shown under "Specialties" on /services rather than in the main service grids.
+ * Every claim is limited to work Elco Dev has actually done.
+ */
+export const SPECIALTIES: Service[] = [
+  {
+    slug: "nonprofit-app-development",
+    name: "Apps and websites for nonprofits",
+    short: "Mobile apps, web apps and websites for nonprofits and mission-driven organizations, scoped to a real budget.",
+    title: "Nonprofit App & Website Development | Elco Dev",
+    metaDescription:
+      "Elco Dev builds mobile apps, web apps and accessible websites for nonprofits and mission-driven organizations: phased scopes, accessibility from day one, and code, data and accounts the organization owns.",
+    intro:
+      "Nonprofits need software that works for everyone they serve, on a budget that has to be justified to a board or a funder. We build apps and websites with accessibility and plain language from the start, scope the work in phases you can fund, and put everything in accounts your organization owns.",
+    includes: [
+      "Mobile apps for iOS and Android, plus a mobile web version for people who won't install an app",
+      "Accessible websites (WCAG 2.2 AA) that staff can update without a developer",
+      "Phased scopes: a focused first release, then additions as funding allows",
+      "Consent-based text messages, reminders and push notifications",
+      "Donation, newsletter and event integrations with the tools you already use",
+      "Code, data, domains and store listings owned by your organization, with no license fees from us",
+    ],
+    stack: ["React Native", "Expo", "Next.js", "WordPress", "Twilio", "Accessibility testing"],
+    work: ["liturgical-living", "crohns-food-tracker", "nicdrop"],
+    faqs: [
+      { q: "What have you built that's relevant to nonprofits?", a: "Our own apps serve communities more than customers. Liturgical Living is a free Catholic prayer app with no ads, native on iOS and Android, with a full accessibility overhaul (scalable text, VoiceOver and TalkBack) and a 700+ page website generated from the same content. Crohn's Food Tracker was built by an IBD patient for people managing a chronic illness, and it has been on the App Store since 2017." },
+      { q: "Can you work within a grant or a fixed budget?", a: "Yes. We quote a fixed price before work starts and can split a project into phases that match a grant period or a board approval, so you fund one release at a time." },
+      { q: "Will people with disabilities or older phones be able to use it?", a: "That's a requirement, not an extra. We design for large text, screen readers, high contrast and older Android phones, and test with VoiceOver and TalkBack before launch." },
+      { q: "Who owns the app and the data?", a: "Your organization. The code lives in your repository, the app is published under your App Store and Google Play accounts, and your data stays in accounts you control. Apple offers a developer fee waiver to eligible nonprofits, and we help with the application." },
+    ],
+  },
+  {
+    slug: "case-management-apps",
+    name: "Case management and service-navigation apps",
+    short: "Intake, referrals, client records, reminders and staff tools for organizations that guide people to services.",
+    title: "Case Management, Referral & Service-Navigation App Development | Elco Dev",
+    metaDescription:
+      "Elco Dev builds intake, referral and client-management tools, staff portals and SMS reminder workflows for organizations that connect people to services, with custom CRM and portal experience. Nashville, TN.",
+    intro:
+      "Workforce boards, social-service agencies and clinics share one problem: getting each person to the right program and keeping them moving. We build the tools for that: need-based navigation for the public, intake and referral forms, client records and follow-ups for staff, and reminders by text, all built around your workflow rather than a generic CRM.",
+    includes: [
+      "Guided \"what do you need?\" navigation that routes by need, not program name",
+      "Intake, referral and interest forms that land in the right team's queue",
+      "Client records, notes, follow-ups and role-based staff access",
+      "Two-way, consent-based texting for reminders and next steps",
+      "Staff dashboards and reports for funders and boards",
+      "Integrations with scheduling, forms and existing systems where an API is available",
+    ],
+    stack: ["Next.js", "React Native", "PostgreSQL", "Firebase", "Twilio", "Role-based access"],
+    work: ["laurel-crm", "md-virtual-care", "ccs", "taskmerit"],
+    faqs: [
+      { q: "Have you built for a workforce board or social-service agency before?", a: "Not a workforce board yet, and we'd rather say so. The closest work is custom CRMs built around a team's own workflow (LaurelCRM for Laurel Medical), a virtual-care platform with patient apps, secure records and messaging (MD Virtual Care), a field app and customer portal with proof of service (Community Concierge Services), and review-request and lead-routing automation for a multi-location service business." },
+      { q: "Can you connect to our state case-management system?", a: "Only with that system's approved API access and your written authorization, and we'll tell you early if a connection isn't realistic. Where there's no API, we design an export or notification hand-off so staff aren't typing things twice." },
+      { q: "How do you handle personal information?", a: "We collect only what each step needs, encrypt data in transit and at rest, give staff role-based access with an audit log, and set retention and deletion rules with you before launch." },
+      { q: "Why custom instead of an off-the-shelf case-management product?", a: "If an existing product fits, we'll say so. Custom makes sense when your programs, funders and reporting don't match a template, or when you need a public-facing app that a back-office product doesn't provide." },
+    ],
+  },
+  {
+    slug: "app-maintenance-support",
+    name: "App maintenance and support",
+    short: "Keep an existing iOS, Android or web app current: store deadlines, security updates, fixes and small improvements.",
+    title: "App Maintenance & Support | iOS, Android & Web | Elco Dev",
+    metaDescription:
+      "Elco Dev maintains existing iOS, Android and web apps: yearly App Store and Google Play SDK deadlines, security and dependency updates, bug fixes, monitoring and small improvements, on a monthly plan. We also take over apps other teams built.",
+    intro:
+      "Apps don't stay finished. Apple and Google raise their requirements every year, dependencies age, and a missed deadline can pull an app from the stores. We keep apps current on a monthly plan, and we take over apps that another developer built and left.",
+    includes: [
+      "Yearly Android target-API and iOS SDK updates, with store resubmission",
+      "Security patches and dependency updates, tested before release",
+      "Bug fixes, crash monitoring and uptime alerts",
+      "App Store Connect and Google Play Console upkeep: policies, data-safety forms, developer-account notices",
+      "A set number of hours each month for small improvements",
+      "Code takeovers: a review of what you have, then a plan to stabilize it",
+    ],
+    stack: ["React Native", "Expo", "Flutter", "Ionic", "Swift", "Kotlin", "Next.js", "Firebase"],
+    work: ["bookreverb", "ccs", "crohns-food-tracker", "liturgical-living"],
+    faqs: [
+      { q: "Why does an app need ongoing maintenance?", a: "Google Play requires apps to target a recent Android version every year, and Apple requires builds with a recent SDK. Apps that fall behind can't ship updates and can disappear from search in the store. Dependencies and backend services also need security updates." },
+      { q: "Can you take over an app another developer built?", a: "Yes. We took over BookReverb's existing codebase and now lead all of its development, and we've maintained apps built in React Native, Flutter, Ionic and native code. We start with a short review of the code, accounts and hosting, then tell you what we found." },
+      { q: "How is support priced?", a: "Monthly, with a set number of hours included and no long contract. The right plan depends on the app and how often it changes, so we quote after a short review." },
+      { q: "Do you maintain your own apps the same way?", a: "Yes. We run our own apps in the App Store and Google Play, including Crohn's Food Tracker, which has been in the stores since 2017. The yearly updates we do for clients are the ones we do for ourselves." },
+    ],
+  },
+];
+
+export const serviceBySlug = (slug: string) => [...SERVICES, ...SPECIALTIES].find((s) => s.slug === slug);
 
 export type CrmCase = {
   /** PROJECTS slug. */

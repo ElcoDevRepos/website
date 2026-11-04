@@ -5,7 +5,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { LeadForm } from "@/components/LeadForm";
 import { Arrow } from "@/components/ui";
 import { breadcrumbLd, serviceLd } from "@/lib/ld";
-import { PROCESS, SERVICES } from "@/lib/site";
+import { PROCESS, SERVICES, SPECIALTIES } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Services: Mobile Apps, Web Apps & SaaS, Custom CRMs, Websites",
@@ -43,6 +43,18 @@ export default function ServicesPage() {
             <span className="mt-8 inline-flex items-center gap-2 font-semibold text-brand">Learn more <Arrow /></span>
           </Link>
         ))}
+      </section>
+      <section className="wrap pb-16">
+        <h2 className="text-2xl font-bold sm:text-3xl">Specialties</h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {SPECIALTIES.map((s) => (
+            <Link key={s.slug} href={`/services/${s.slug}`} className="card flex flex-col p-6 transition-colors hover:border-ink/30">
+              <h3 className="text-xl font-bold">{s.name}</h3>
+              <p className="mt-2 text-ink-muted">{s.short}</p>
+              <span className="mt-4 inline-flex items-center gap-2 font-semibold text-brand">Learn more <Arrow /></span>
+            </Link>
+          ))}
+        </div>
       </section>
       <section className="bg-white py-20">
         <div className="wrap grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
