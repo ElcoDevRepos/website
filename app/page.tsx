@@ -36,6 +36,10 @@ export default function Home() {
               <Link href="/contact" className="btn-primary">Book a free call <Arrow /></Link>
               <Link href="/work" className="btn-ghost">See our work</Link>
             </div>
+            <p className="mt-4 text-sm text-ink-muted">
+              Fixed quotes before work starts · MVPs from $7,000 · 50+ projects since {SITE.founded} ·{" "}
+              <Link href="/services#pricing" className="underline decoration-brand/40 underline-offset-4 hover:text-ink">How we price</Link>
+            </p>
             <Link href="#our-apps" className="mt-10 inline-flex max-w-full items-center gap-4 rounded-2xl border border-ink/10 bg-white p-3 pr-5 transition-shadow hover:shadow-md">
               <span className="flex shrink-0 items-center -space-x-2">
                 {OWN_APPS.slice(0, 5).map((a) => (

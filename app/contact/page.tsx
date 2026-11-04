@@ -3,7 +3,7 @@ import { Calendly } from "@/components/Calendly";
 import { JsonLd } from "@/components/JsonLd";
 import { LeadForm } from "@/components/LeadForm";
 import { breadcrumbLd } from "@/lib/ld";
-import { SITE } from "@/lib/site";
+import { SITE, TESTIMONIALS } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact: Book a Free Consultation",
@@ -12,6 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const quote = TESTIMONIALS.find((t) => t.company === "Bevvo")!;
   return (
     <>
       <JsonLd data={[breadcrumbLd([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]), { "@context": "https://schema.org", "@type": "ContactPage", url: `${SITE.url}/contact`, about: { "@id": `${SITE.url}/#organization` } }]} />
@@ -34,6 +35,18 @@ export default function ContactPage() {
             <a href={`tel:${SITE.phone}`} className="block text-lg font-semibold hover:text-brand">{SITE.phoneDisplay}</a>
             <span className="block text-ink-muted">Nashville, Tennessee · Monday to Friday, 9am to 5pm Central</span>
           </address>
+          <div className="mt-10">
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-ink-muted">What happens next</h2>
+            <ol className="mt-3 space-y-2 text-ink-soft">
+              <li><strong>1.</strong> Austin replies within one business day, or you pick a call time above.</li>
+              <li><strong>2.</strong> A 30-minute call about what you&apos;re building. No prep needed.</li>
+              <li><strong>3.</strong> A written plan with a fixed price before any work starts.</li>
+            </ol>
+          </div>
+          <figure className="card mt-10 p-6">
+            <blockquote className="leading-relaxed text-ink-soft">&ldquo;{quote.quote}&rdquo;</blockquote>
+            <figcaption className="mt-3 text-sm"><strong>{quote.author}</strong> <span className="text-ink-muted">· {quote.company}</span></figcaption>
+          </figure>
         </div>
         <div className="space-y-8">
           <Calendly />
