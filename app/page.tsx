@@ -124,6 +124,24 @@ export default function Home() {
               </div>
             </div>
           </div>
+          {/* Our non-mobile products. Deskbridge had no link from the home page (only /apps), and its
+              pages were not yet indexed in Nov 2026; this passes it home-page link equity. */}
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            <a href="/apps/deskbridge" className="flex items-center gap-4 rounded-2xl bg-white/[0.06] p-5 ring-1 ring-white/10 transition hover:bg-white/[0.09]">
+              <Image src="/icons/deskbridge.webp" alt="" width={44} height={44} className="h-11 w-11 rounded-xl" />
+              <span>
+                <strong className="block font-semibold">Deskbridge: Samsung DeX for Mac</strong>
+                <span className="text-sm text-white/65">Our Mac app opens a Galaxy phone&apos;s DeX desktop in a Mac window. $12 once, free trial.</span>
+              </span>
+            </a>
+            <a href="https://www.realtimesportsapi.com" className="flex items-center gap-4 rounded-2xl bg-white/[0.06] p-5 ring-1 ring-white/10 transition hover:bg-white/[0.09]">
+              <span aria-hidden className="flex h-11 w-11 flex-none items-center justify-center rounded-xl bg-lime font-bold text-ink">API</span>
+              <span>
+                <strong className="block font-semibold">Realtime Sports API</strong>
+                <span className="text-sm text-white/65">Live scores, play-by-play and box scores for 29 leagues over REST, webhooks and WebSocket. Free tier.</span>
+              </span>
+            </a>
+          </div>
         </div>
       </section>
 
