@@ -1,5 +1,6 @@
 import { appEntryBySlug } from "@/lib/apps";
 import { CASE_STUDIES } from "@/lib/caseStudies";
+import { INSIGHTS, WORKSHEET } from "@/lib/insights";
 import { FAQS, MVP_TIERS, PROJECTS, SERVICES, SITE, SPECIALTIES } from "@/lib/site";
 
 export const dynamic = "force-static";
@@ -36,6 +37,11 @@ ${own.map(line).join("\n")}
 ## Case studies
 
 ${CASE_STUDIES.map((c) => `- [${c.headline}](${SITE.url}/work/${c.slug}#case-study): ${c.teaser}`).join("\n")}
+
+## Insights
+
+${INSIGHTS.map((a) => `- [${a.title}](${SITE.url}/insights/${a.slug}): ${a.description}`).join("\n")}
+- [${WORKSHEET.title} (free PDF)](${SITE.url}${WORKSHEET.href}): ${WORKSHEET.blurb}
 
 ## Client projects and partnerships
 

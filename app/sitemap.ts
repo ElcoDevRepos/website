@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { APP_ENTRIES, LEGAL_APPS } from "@/lib/apps";
+import { INSIGHTS } from "@/lib/insights";
 import { PROJECTS, SERVICES, SITE, SPECIALTIES } from "@/lib/site";
 
 export const dynamic = "force-static";
@@ -13,6 +14,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     page("/", 1),
     page("/work", 0.9),
     page("/case-studies", 0.8),
+    page("/insights", 0.7),
+    ...INSIGHTS.map((a) => page(`/insights/${a.slug}`, 0.7)),
     page("/apps", 0.9),
     ...APP_ENTRIES.map((e) => page(`/apps/${e.project.slug}`, 0.8)),
     ...LEGAL_APPS.flatMap((e) => ["support", "privacy", "terms"].map((k) => page(`/apps/${e.project.slug}/${k}`, 0.3))),
