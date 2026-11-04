@@ -5,6 +5,9 @@ const nextConfig = {
   async redirects() {
     // Old URLs from earlier versions of the site.
     return [
+      // SettleDate moved to its own domain (Nov 4 2026).
+      { source: "/apps/settledate", destination: "https://settledate.dev", permanent: true },
+      { source: "/apps/settledate/:path+", destination: "https://settledate.dev/:path+", permanent: true },
       { source: "/our-team", destination: "/", permanent: true },
       { source: "/about", destination: "/#about", permanent: true },
       { source: "/our-services", destination: "/services", permanent: true },
@@ -46,10 +49,6 @@ const nextConfig = {
         // landing, thanks/recover/download, legal pages, /api/* (Stripe checkout + license keys) and /downloads/*.
         { source: "/apps/deskbridge", destination: "https://elcodev-deskbridge.vercel.app/" },
         { source: "/apps/deskbridge/:path+", destination: "https://elcodev-deskbridge.vercel.app/:path+" },
-        // SettleDate (~/dev/settledate, Vercel project elcodev-settledate) owns all of /apps/settledate: landing, docs,
-        // holiday pages, legal pages, the REST API (/apps/settledate/v1/…) and /api/* (keys, Stripe checkout/portal).
-        { source: "/apps/settledate", destination: "https://elcodev-settledate.vercel.app/apps/settledate" },
-        { source: "/apps/settledate/:path+", destination: "https://elcodev-settledate.vercel.app/apps/settledate/:path+" },
         // Scripted's free KJV Bible (~/dev/scripted-web, Vercel project scripted-bible) serves its pages and assets at /bible/… .
         { source: "/apps/scripted/bible", destination: "https://scripted-bible.vercel.app/bible" },
         { source: "/apps/scripted/bible/:path+", destination: "https://scripted-bible.vercel.app/bible/:path+" },
