@@ -13,6 +13,9 @@ const FEATURED = ["taskmerit", "equidesk", "realtime-sports-api", "bookreverb", 
 
 export default function Home() {
   const featured = FEATURED.map((s) => PROJECTS.find((p) => p.slug === s)!).filter(Boolean);
+  // Released apps first; apps not yet in any store ("Coming soon") go to the end of the grid.
+  const comingSoon = (a: (typeof OWN_APPS)[number]) => /^coming soon/i.test(a.note ?? "");
+  const gridApps = [...OWN_APPS.filter((a) => !comingSoon(a)), ...OWN_APPS.filter(comingSoon)];
   return (
     <>
       <JsonLd data={faqLd(FAQS)} />
@@ -87,6 +90,22 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Work */}
+      <section className="py-24">
+        <div className="wrap">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <SectionHead eyebrow="Selected work" title="Platforms, APIs and websites" lead="SaaS for field-service and equestrian businesses, a live sports data API, marketplaces and lead-generating websites." />
+            <div className="flex shrink-0 flex-wrap gap-3">
+              <Link href="/case-studies" className="btn-ghost">Case studies</Link>
+              <Link href="/work" className="btn-ghost">All {PROJECTS.length} projects <Arrow /></Link>
+            </div>
+          </div>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {featured.map((p) => <ProjectCard key={p.slug} p={p} />)}
+          </div>
+        </div>
+      </section>
+
       {/* Our apps */}
       <section id="our-apps" className="bg-ink py-24 text-white">
         <div className="wrap">
@@ -97,7 +116,7 @@ export default function Home() {
             lead="Store listings, subscriptions, analytics, ads and updates: we do it all for our own apps, so yours gets a team that knows what happens after launch."
           />
           <div className="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {OWN_APPS.map((a) => (
+            {gridApps.map((a) => (
               <article key={a.slug} className="group relative flex flex-col overflow-hidden rounded-3xl bg-white/[0.06] ring-1 ring-white/10 transition hover:bg-white/[0.09]">
                 <div className="relative flex h-72 items-start justify-center overflow-hidden bg-gradient-to-b from-white/[0.07] to-transparent pt-8">
                   <PhoneFrame src={a.phones![0]} alt={`${a.name} app screenshot`} className="w-44 border-[5px] transition-transform duration-500 group-hover:-translate-y-2" sizes="176px" />
@@ -145,22 +164,6 @@ export default function Home() {
                 <span className="text-sm text-white/65">Live scores, play-by-play and box scores for 29 leagues over REST, webhooks and WebSocket. Free tier.</span>
               </span>
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Work */}
-      <section className="py-24">
-        <div className="wrap">
-          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <SectionHead eyebrow="Selected work" title="Platforms, APIs and websites" lead="SaaS for field-service and equestrian businesses, a live sports data API, marketplaces and lead-generating websites." />
-            <div className="flex shrink-0 flex-wrap gap-3">
-              <Link href="/case-studies" className="btn-ghost">Case studies</Link>
-              <Link href="/work" className="btn-ghost">All {PROJECTS.length} projects <Arrow /></Link>
-            </div>
-          </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {featured.map((p) => <ProjectCard key={p.slug} p={p} />)}
           </div>
         </div>
       </section>
