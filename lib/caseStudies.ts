@@ -47,7 +47,8 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Live on the App Store since 2017 and on Google Play",
       "More than 1,600 people tracking, as counted in the app (shown on crohnsfoodtracker.app)",
       "Monthly, semiannual, annual and lifetime plans, plus one-off doctor reports",
-      "Release notes shipped in 11 languages",
+      "Google Play listing in 16 languages; release notes in 11",
+      "Rated 5.0 on Google Play",
     ],
     facts: [
       { value: "2017", label: "On the App Store since" },
@@ -87,6 +88,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "700+ page website at liturgicalliving.app, generated from the app's content",
       "Eleven traditional novenas word for word from public-domain prayer books, each with its source",
       "Encrypted backups the user controls, with no account required",
+      "The full Catholic Bible offline, and a 5.0 rating on Google Play",
     ],
     facts: [
       { value: "2", label: "Native apps (Kotlin, Swift)" },
@@ -201,6 +203,7 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     outcome: [
       "Live at realtimesportsapi.com with a free tier and paid plans",
+      "More than 660 developer sign-ups, and about 70% of October sign-ups made a live API call",
       "REST, signed webhooks, WebSocket and a hosted MCP server",
       "Self-serve keys, docs, usage-based billing and plan changes",
     ],
@@ -208,7 +211,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { value: "29", label: "Leagues covered" },
       { value: "~1s", label: "Push after the source" },
       { value: "3", label: "Delivery methods" },
-      { value: "1,000", label: "Free calls to start" },
+      { value: "660+", label: "Developer sign-ups" },
     ],
     forClients:
       "If you are launching an API, a data product or anything with usage-based billing, we have built and operated the whole stack: data model, delivery, docs, keys and Stripe.",
