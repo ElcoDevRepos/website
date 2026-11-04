@@ -8,17 +8,12 @@ import { Arrow } from "@/components/ui";
 import { breadcrumbLd, faqLd } from "@/lib/ld";
 import { SITE } from "@/lib/site";
 
-/**
- * DRAFT (branch care-plans): prices are proposals waiting for Austin's approval.
- * The page is noindex and nothing links to it. Before launch: confirm prices and the
- * overage rate, remove `robots`, add it to the sitemap, header/footer and /services.
- */
+/** Care plans: prices approved by Austin on Nov 4 2026. Extra work is quoted first, not billed hourly. */
 export const metadata: Metadata = {
   title: "Care Plans: Website and App Maintenance, Monthly",
   description:
     "Monthly care plans from Elco Dev: hosting, security and dependency updates, uptime monitoring, yearly App Store and Google Play SDK updates, and included hours for changes. Month to month, cancel any time.",
   alternates: { canonical: "/care-plans" },
-  robots: { index: false, follow: false },
 };
 
 const TIERS = [

@@ -70,7 +70,10 @@ export default function ServicesPage() {
         <div>
           <h2 className="text-3xl font-bold sm:text-4xl">How we price</h2>
           <p className="mt-4 text-lg text-ink-muted">Fixed quotes before any work starts, paid by milestone. These ranges come from the quotes we&apos;ve actually sent this past year.</p>
-          <Link href="/mvp" className="btn-ghost mt-6">MVP pricing <Arrow /></Link>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/mvp" className="btn-ghost">MVP pricing <Arrow /></Link>
+            <Link href="/care-plans" className="btn-ghost">Monthly care plans <Arrow /></Link>
+          </div>
           {(() => {
             const q = TESTIMONIALS.find((t) => t.company === "Penalty Verdict");
             return q ? (
