@@ -150,7 +150,10 @@ export default function Home() {
         <div className="wrap">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <SectionHead eyebrow="Selected work" title="Platforms, APIs and websites" lead="SaaS for field-service and equestrian businesses, a live sports data API, marketplaces and lead-generating websites." />
-            <Link href="/work" className="btn-ghost shrink-0">All {PROJECTS.length} projects <Arrow /></Link>
+            <div className="flex shrink-0 flex-wrap gap-3">
+              <Link href="/case-studies" className="btn-ghost">Case studies</Link>
+              <Link href="/work" className="btn-ghost">All {PROJECTS.length} projects <Arrow /></Link>
+            </div>
           </div>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {featured.map((p) => <ProjectCard key={p.slug} p={p} />)}

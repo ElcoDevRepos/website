@@ -26,6 +26,7 @@ export default function ServicesPage() {
         <div className="mt-8 flex flex-wrap gap-3">
           <Link href="/contact" className="btn-primary">Book a free call <Arrow /></Link>
           <Link href="/mvp" className="btn-ghost">See MVP pricing</Link>
+          <Link href="/case-studies" className="btn-ghost">Read case studies</Link>
         </div>
       </section>
       <section className="wrap grid gap-5 pb-10 md:grid-cols-2">
