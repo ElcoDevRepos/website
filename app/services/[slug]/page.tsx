@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { CtaBand } from "@/components/CtaBand";
 import { Faq } from "@/components/Faq";
 import { JsonLd } from "@/components/JsonLd";
+import { LeadForm } from "@/components/LeadForm";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Arrow, Breadcrumbs, Tag } from "@/components/ui";
 import { breadcrumbLd, faqLd, serviceLd } from "@/lib/ld";
@@ -79,6 +80,13 @@ export default async function ServicePage({ params }: Props) {
       <section className="wrap grid gap-12 pb-8 lg:grid-cols-[0.8fr_1.2fr]">
         <h2 className="text-3xl font-bold sm:text-4xl">Common questions</h2>
         <Faq items={s.faqs} />
+      </section>
+      <section className="wrap grid gap-12 py-16 lg:grid-cols-[0.8fr_1.2fr]">
+        <div>
+          <h2 className="text-3xl font-bold sm:text-4xl">Tell us about your project</h2>
+          <p className="mt-4 text-lg text-ink-muted">Share a few details and you&apos;ll get a reply within one business day with next steps. Prefer to talk? <Link href="/contact" className="font-semibold text-brand hover:underline">Book a free 30-minute call</Link>.</p>
+        </div>
+        <LeadForm page={`/services/${s.slug}`} />
       </section>
       <CtaBand />
     </>

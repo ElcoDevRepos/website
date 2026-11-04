@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CtaBand } from "@/components/CtaBand";
 import { JsonLd } from "@/components/JsonLd";
+import { LeadForm } from "@/components/LeadForm";
 import { Arrow } from "@/components/ui";
 import { breadcrumbLd, serviceLd } from "@/lib/ld";
-import { SERVICES } from "@/lib/site";
+import { PROCESS, SERVICES } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Services: Mobile Apps, Web Apps & SaaS, Custom CRMs, Websites",
@@ -21,7 +22,11 @@ export default function ServicesPage() {
         <h1 className="mt-4 max-w-4xl text-5xl font-extrabold leading-[1.02] sm:text-6xl">
           Software for the way <span className="font-serif font-normal italic text-brand">your business works</span>
         </h1>
-        <p className="mt-6 max-w-2xl text-lg text-ink-muted">One small team from the first call to launch and beyond.</p>
+        <p className="mt-6 max-w-2xl text-lg text-ink-muted">One small team from the first call to launch and beyond. More than 50 projects delivered since 2019, and a clear quote before any work starts.</p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link href="/contact" className="btn-primary">Book a free call <Arrow /></Link>
+          <Link href="/mvp" className="btn-ghost">See MVP pricing</Link>
+        </div>
       </section>
       <section className="wrap grid gap-5 pb-10 md:grid-cols-2">
         {SERVICES.map((s, i) => (
@@ -37,6 +42,22 @@ export default function ServicesPage() {
             <span className="mt-8 inline-flex items-center gap-2 font-semibold text-brand">Learn more <Arrow /></span>
           </Link>
         ))}
+      </section>
+      <section className="bg-white py-20">
+        <div className="wrap grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <h2 className="text-3xl font-bold sm:text-4xl">How it works</h2>
+            <ol className="mt-8 space-y-5">
+              {PROCESS.map((p) => (
+                <li key={p.step} className="flex gap-4">
+                  <span className="font-display font-bold text-brand">{p.step}</span>
+                  <span><strong>{p.title}.</strong> <span className="text-ink-muted">{p.body}</span></span>
+                </li>
+              ))}
+            </ol>
+          </div>
+          <LeadForm page="/services" />
+        </div>
       </section>
       <CtaBand />
     </>

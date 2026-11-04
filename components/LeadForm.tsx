@@ -43,11 +43,14 @@ export function LeadForm({ page }: { page: string }) {
 
   return (
     <form onSubmit={submit} className="grid gap-4 rounded-3xl bg-white p-6 ring-1 ring-ink/10 sm:grid-cols-2 sm:p-8">
-      <p className="font-display text-xl font-bold sm:col-span-2">Not ready for a call? Send a few details.</p>
+      <div className="sm:col-span-2">
+        <p className="font-display text-xl font-bold">Not ready for a call? Tell us what you&apos;re building.</p>
+        <p className="mt-1.5 text-sm text-ink-muted">Austin reads every message himself and replies within one business day. A rough idea is plenty to start.</p>
+      </div>
       <label className="grid gap-1.5 text-sm font-medium">Your name *<input required name="name" maxLength={100} autoComplete="name" autoCapitalize="words" className={FIELDS} /></label>
       <label className="grid gap-1.5 text-sm font-medium">Email *<input required type="email" name="email" maxLength={200} autoComplete="email" className={FIELDS} /></label>
       <label className="grid gap-1.5 text-sm font-medium sm:col-span-2">What are you building? *
-        <textarea required name="building" rows={4} minLength={10} maxLength={3000} autoCapitalize="sentences" className={FIELDS} />
+        <textarea required name="building" rows={4} minLength={10} maxLength={3000} autoCapitalize="sentences" placeholder="For example: an app for our crews to log jobs and photos, with an office dashboard. Today it lives in spreadsheets and group texts." className={FIELDS} />
       </label>
       <label className="grid gap-1.5 text-sm font-medium">Budget *
         <select required name="budget" className={FIELDS} defaultValue="">
@@ -67,7 +70,7 @@ export function LeadForm({ page }: { page: string }) {
       </div>
       <div className="flex flex-wrap items-center gap-4 sm:col-span-2">
         <button type="submit" disabled={status === "sending"} className="btn-primary disabled:opacity-60">{status === "sending" ? "Sending…" : "Send details"}</button>
-        {status === "error" && <p role="alert" className="text-sm text-red-700">{error}</p>}
+        {status === "error" ? <p role="alert" className="text-sm text-red-700">{error}</p> : <p className="text-sm text-ink-muted">No mailing list. Your details go straight to Austin.</p>}
       </div>
     </form>
   );

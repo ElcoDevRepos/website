@@ -6,21 +6,22 @@ import { breadcrumbLd, faqLd } from "@/lib/ld";
 
 export const metadata: Metadata = {
   title: "Partner Program: Referral, White-Label and Integration",
-  description: "Partner with Elco Dev: earn 10–20% commission on referred projects, resell our development under your brand, or build integrations together.",
+  description: "Partner with Elco Dev: earn 10% of collected fees (15% on projects over $50k) on referred clients' first projects, resell our development under your brand, or build integrations together.",
   alternates: { canonical: "/partners" },
 };
 
 const PROGRAMS = [
-  { title: "Referral partner", body: "Earn a 10–20% commission on the first project for clients you refer who need software built.", points: ["No upfront cost", "Simple referral tracking", "Open to US citizens"] },
+  { title: "Referral partner", body: "Earn 10% of collected fees on the first project for each client you refer who needs software built, or 15% if that project is over $50k.", points: ["No upfront cost", "Paid within 15 days of each client payment", "Credit for 12 months from your intro email", "Open to US citizens only"] },
   { title: "Reseller partner", body: "Sell our development services under your brand while we handle the technical delivery.", points: ["White-label delivery", "Wholesale pricing", "Dedicated support"] },
   { title: "Integration partner", body: "Offer custom integrations and APIs for your software platform, built and maintained by us.", points: ["Custom API development", "Ongoing maintenance"] },
   { title: "Strategic alliance", body: "A long-term partnership to serve clients with complementary services.", points: ["Joint marketing", "Shared case studies"] },
 ];
 
 const FAQS = [
-  { q: "Who can become an Elco Dev partner?", a: "Established businesses in tech, consulting and adjacent fields: software companies, agencies, design firms and consultants whose clients need software built." },
+  { q: "Who can become an Elco Dev partner?", a: "Agencies, software companies, design firms, consultants and well-connected individuals whose clients or contacts need software built. Referral partners must be US citizens." },
   { q: "Can I be a referral partner outside the US?", a: "Referral partners must be US citizens. The clients you refer can be anywhere, including Europe." },
-  { q: "How much do referral partners earn?", a: "Referral partners earn a 10–20% commission on the first project for each client they refer." },
+  { q: "How much do referral partners earn?", a: "10% of the fees we collect on a referred client's first project, or 15% if that project is over $50,000 (the 15% applies to the whole project). Commissions are paid in USD within 15 days of each client payment, a paid commission is never clawed back, and we need a W-9 before the first payment." },
+  { q: "How do you know a referral came from me?", a: "Introduce the client to us by email (a cc intro is perfect). If they sign a first project with us within 12 months of that email, the referral is yours. The agreement is non-exclusive, and either side can end it with 30 days' notice." },
   { q: "Can you work under our brand?", a: "Yes. Reseller partners sell our development under their own brand while we handle delivery." },
 ];
 
