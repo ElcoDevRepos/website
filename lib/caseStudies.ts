@@ -47,7 +47,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Live on the App Store since 2017 and on Google Play",
       "More than 1,600 people tracking, as counted in the app (shown on crohnsfoodtracker.app)",
       "Monthly, semiannual, annual and lifetime plans, plus one-off doctor reports",
-      "Google Play listing in 16 languages; release notes in 11",
+      "Google Play listing in 10 languages; release notes in 11",
       "Rated 5.0 on Google Play",
     ],
     facts: [
