@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CaseStudySection } from "@/components/CaseStudySection";
 import { CtaBand } from "@/components/CtaBand";
 import { JsonLd } from "@/components/JsonLd";
 import { PhoneFrame } from "@/components/PhoneFrame";
@@ -9,6 +10,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { Arrow, Breadcrumbs, StoreButtons, Tag } from "@/components/ui";
 import { breadcrumbLd, projectLd } from "@/lib/ld";
 import { appEntryBySlug } from "@/lib/apps";
+import { caseStudyBySlug } from "@/lib/caseStudies";
 import { PROJECTS, SERVICES, projectBySlug } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -22,7 +24,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!p) return {};
   return {
     title: { absolute: p.seoTitle },
-    description: `${p.summary} ${p.kind === "own" ? "Designed, built and run by Elco Dev." : "Built by Elco Dev, a Nashville software studio."}`,
+    description: caseStudyBySlug(p.slug)
+      ? `${p.summary} Case study: ${caseStudyBySlug(p.slug)!.teaser}`
+      : `${p.summary} ${p.kind === "own" ? "Designed, built and run by Elco Dev." : "Built by Elco Dev, a Nashville software studio."}`,
     alternates: { canonical: `/work/${p.slug}` },
     openGraph: { title: p.seoTitle, images: [{ url: p.image }] },
   };
@@ -39,6 +43,7 @@ export default async function ProjectPage({ params }: Props) {
   const isApp = p.category === "Mobile app" && p.phones?.length;
   // Our own apps have a product page (store links, support, privacy) under /apps.
   const appPage = appEntryBySlug(p.slug) ? `/apps/${p.slug}` : null;
+  const caseStudy = caseStudyBySlug(p.slug);
 
   return (
     <>
@@ -71,6 +76,11 @@ export default async function ProjectPage({ params }: Props) {
                     {l.label} <Arrow />
                   </a>
                 ))}
+                {caseStudy && (
+                  <a href="#case-study" className="btn-ghost !py-2 text-sm">
+                    Read the case study <Arrow />
+                  </a>
+                )}
                 {p.note && <span className="text-sm text-ink-muted">{p.note}</span>}
               </div>
             </div>
@@ -133,6 +143,7 @@ export default async function ProjectPage({ params }: Props) {
             )}
           </aside>
         </div>
+        {caseStudy && <CaseStudySection c={caseStudy} />}
       </article>
 
       {related.length > 0 && (

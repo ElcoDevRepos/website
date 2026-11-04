@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     page("/", 1),
     page("/work", 0.9),
+    page("/case-studies", 0.8),
     page("/apps", 0.9),
     ...APP_ENTRIES.map((e) => page(`/apps/${e.project.slug}`, 0.8)),
     ...LEGAL_APPS.flatMap((e) => ["support", "privacy", "terms"].map((k) => page(`/apps/${e.project.slug}/${k}`, 0.3))),

@@ -1,4 +1,5 @@
 import { appEntryBySlug } from "@/lib/apps";
+import { CASE_STUDIES } from "@/lib/caseStudies";
 import { FAQS, MVP_TIERS, PROJECTS, SERVICES, SITE } from "@/lib/site";
 
 export const dynamic = "force-static";
@@ -31,6 +32,10 @@ ${SERVICES.map((s) => `- [${s.name}](${SITE.url}/services/${s.slug}): ${s.short}
 
 ${own.map(line).join("\n")}
 
+## Case studies
+
+${CASE_STUDIES.map((c) => `- [${c.headline}](${SITE.url}/work/${c.slug}#case-study): ${c.teaser}`).join("\n")}
+
 ## Client projects and partnerships
 
 ${others.map(line).join("\n")}
@@ -43,6 +48,7 @@ ${FAQS.map((f) => `### ${f.q}\n${f.a}`).join("\n\n")}
 
 - [All apps](${SITE.url}/apps)
 - [All work](${SITE.url}/work)
+- [Case studies](${SITE.url}/case-studies)
 - [Liturgical Living on the web](https://liturgicalliving.app/llms.txt): calendar, saints, novenas, prayers and apologetics
 - [Paddle Rack pickleball tools](${SITE.url}/apps/paddlerack/llms.txt): free round robin generator, schedules and guides
 - [Fairsky home and yard weather](${SITE.url}/apps/fairsky/llms.txt): live GO / WAIT / NO verdicts and 1991–2020 climate averages for home and yard jobs in 100 US metros

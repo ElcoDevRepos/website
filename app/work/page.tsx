@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CtaBand } from "@/components/CtaBand";
+import { Arrow } from "@/components/ui";
 import { JsonLd } from "@/components/JsonLd";
 import { ProjectCard } from "@/components/ProjectCard";
 import { breadcrumbLd } from "@/lib/ld";
@@ -41,6 +43,7 @@ export default function WorkPage() {
         <p className="mt-6 max-w-2xl text-lg text-ink-muted">
           {PROJECTS.length} projects, from our own apps in the App Store and Google Play to SaaS platforms, a developer API and client websites.
         </p>
+        <Link href="/case-studies" className="mt-6 inline-flex items-center gap-2 font-semibold text-brand">Read our case studies <Arrow /></Link>
       </section>
       {GROUPS.map((g) => {
         const items = PROJECTS.filter(g.filter);
