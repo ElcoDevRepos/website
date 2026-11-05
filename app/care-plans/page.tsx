@@ -139,7 +139,7 @@ export default function CarePlansPage() {
         <div>
           <h2 className="text-3xl font-bold sm:text-4xl">Questions</h2>
           <p className="mt-4 text-lg text-ink-muted">
-            We run our own apps in the App Store and Google Play every day, so store deadlines and dependency updates are routine for us. <Link href="/case-studies" className="underline">See our case studies</Link>.
+            We run our own apps in the App Store and Google Play every day, so store deadlines and dependency updates are routine for us. <Link href="/case-studies" className="underline">See our case studies</Link>, or <Link href="/case-studies/taking-over-an-app" className="underline">how we take over and run an existing app</Link>.
           </p>
         </div>
         <Faq items={FAQS} />

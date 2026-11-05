@@ -79,7 +79,7 @@ export default function CaseStudiesPage() {
       <section aria-labelledby="client-work" className="border-t border-ink/10 bg-white py-16">
         <div className="wrap">
           <h2 id="client-work" className="text-3xl font-bold sm:text-4xl">Client products we build and look after</h2>
-          <p className="mt-4 max-w-2xl text-lg text-ink-muted">The same habits carry over to client work, including products we inherited from other teams.</p>
+          <p className="mt-4 max-w-2xl text-lg text-ink-muted">The same habits carry over to client work, including products we inherited from other teams. <Link href="/case-studies/taking-over-an-app" className="underline">See how a takeover works</Link>.</p>
           <ul className="mt-8 grid gap-5 md:grid-cols-3">
             {CLIENT_WORK.map((w) => (
               <li key={w.slug} className="card relative p-6">
