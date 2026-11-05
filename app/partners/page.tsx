@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Faq } from "@/components/Faq";
 import { JsonLd } from "@/components/JsonLd";
 import { PartnerForm } from "@/components/PartnerForm";
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 
 const PROGRAMS = [
   { title: "Referral partner", body: "Earn 10% of collected fees on the first project for each client you refer who needs software built, or 15% if that project is over $50k.", points: ["No upfront cost", "Paid within 15 days of each client payment", "Credit for 12 months from your intro email", "Open to US citizens only"] },
-  { title: "Reseller partner", body: "Sell our development services under your brand while we handle the technical delivery.", points: ["White-label delivery", "Wholesale pricing", "Dedicated support"] },
+  { title: "Reseller partner", body: "Sell our development services under your brand while we handle the technical delivery.", points: ["White-label delivery", "Wholesale pricing", "A direct line to the lead developer"] },
   { title: "Integration partner", body: "Offer custom integrations and APIs for your software platform, built and maintained by us.", points: ["Custom API development", "Ongoing maintenance"] },
   { title: "Strategic alliance", body: "A long-term partnership to serve clients with complementary services.", points: ["Joint marketing", "Shared case studies"] },
 ];
@@ -35,6 +36,9 @@ export default function PartnersPage() {
           Grow with a development team <span className="font-serif font-normal italic text-brand">behind you</span>
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-ink-muted">For agencies, software companies and consultants whose clients need apps, platforms or websites built.</p>
+        <p className="mt-4 max-w-2xl text-ink-soft">
+          What your clients get: fixed quotes before work starts, MVPs from $7,000, and <Link href="/care-plans" className="underline decoration-brand/40 underline-offset-4 hover:text-ink">care plans from $129/month</Link> after launch. <Link href="/case-studies" className="underline decoration-brand/40 underline-offset-4 hover:text-ink">See the case studies</Link> you can share with them.
+        </p>
       </section>
       <section className="wrap grid gap-5 pb-20 md:grid-cols-2 lg:grid-cols-4">
         {PROGRAMS.map((p) => (
