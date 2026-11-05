@@ -478,6 +478,59 @@ export const INSIGHTS: Insight[] = [
       { label: "Monthly care plans", href: "/care-plans" },
     ],
   },
+
+  {
+    slug: "custom-crm-vs-off-the-shelf",
+    title: "Custom CRM or off-the-shelf? How to tell which one you need",
+    seoTitle: "Custom CRM vs Off-the-Shelf CRM: How to Decide (and What Custom Costs)",
+    description:
+      "Off-the-shelf CRMs fit most businesses. A custom CRM makes sense when your workflow is the product, when you're paying for five tools that don't talk, or when per-seat fees outgrow the value. Here's how to decide.",
+    published: "2026-11-05",
+    updated: "2026-11-05",
+    readMinutes: 6,
+    body: [
+      { p: "We build custom CRMs (LaurelCRM for Laurel Medical, built in 2023 and still being extended, and TaskMerit for landscaping and snow-removal companies), and we still tell most people to start with an off-the-shelf tool. Here's the honest way to decide." },
+      { h2: "Start off-the-shelf if…" },
+      {
+        ul: [
+          "Your sales process looks like most sales processes: leads, deals, follow-ups, a pipeline.",
+          "You have a handful of users, and per-seat pricing is a small line item.",
+          "You don't have someone who'll own the system, or a budget to maintain software.",
+          "You haven't run the process long enough to know exactly what you need.",
+        ],
+      },
+      { h2: "Consider custom when…" },
+      {
+        ul: [
+          "Your workflow is unusual and central to the business: properties instead of contacts, jobs and crews instead of deals, regulated records, field work.",
+          "The team lives in spreadsheets and text threads because the CRM doesn't fit, so the expensive tool is barely used.",
+          "You're paying for several tools that don't talk to each other, and someone re-types data between them every day.",
+          "Per-seat fees and add-ons have grown past what a system you own would cost to build and maintain.",
+          "You need customers or partners to log in (a portal) with exactly the access you decide.",
+        ],
+      },
+      { h2: "What custom actually costs" },
+      { p: "Every project is different, but from the quotes we've sent: small custom systems have mostly landed between about $8,000 and $20,000, and larger multi-milestone business systems with portals and integrations have been quoted around $50,000 to $60,000. After launch, budget for hosting and a monthly maintenance plan. Software you own still needs updates." },
+      { h2: "A middle path" },
+      { p: "Often the best answer is to keep the off-the-shelf CRM for what it does well and build a small custom piece around it: a dashboard that pulls from it, a portal for customers, or an integration that removes the re-typing. That's faster and cheaper than replacing everything." },
+      { h2: "Questions to answer before you build" },
+      {
+        ul: [
+          "Which three things do people do every day that the current tool makes painful?",
+          "Who owns the system after launch, and who decides what changes?",
+          "What data has to come across from the old tools, and who checks it?",
+          "Which integrations are must-haves (accounting, email, payments, maps)?",
+        ],
+      },
+      { h2: "How we work" },
+      { p: "We start with a free call, then a fixed quote paid by milestone, with the first milestone being one workflow done well. You own the code and the data, and we can maintain it afterwards on a monthly plan." },
+    ],
+    related: [
+      { label: "Custom CRMs and dashboards", href: "/services/custom-crm-dashboards" },
+      { label: "How much does a custom app cost?", href: "/insights/how-much-does-a-custom-app-cost" },
+      { label: "Monthly care plans", href: "/care-plans" },
+    ],
+  },
 ];
 
 export const insightBySlug = (slug: string) => INSIGHTS.find((i) => i.slug === slug);
