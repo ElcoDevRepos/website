@@ -72,6 +72,9 @@ const FAQS = [
   { q: "Do unused hours roll over?", a: "No. Included hours reset each month, which keeps the price low and the schedule predictable." },
   { q: "Why do apps need a care plan?", a: "Apple and Google raise their minimum SDK and target-API levels every year. Apps that miss the deadline stop getting updates or disappear from search in the store. Care Plus handles those updates and the resubmission for you." },
   { q: "Can you take over a site or app someone else built?", a: "Usually, yes. We start with a short review of the code and hosting, tell you what we found, and then move it onto a plan." },
+  { q: "When are you available?", a: "Weekdays, during US Central business hours. Uptime monitoring runs around the clock, but none of the plans include 24/7 or weekend on-call response. If you need that, ask and we'll tell you honestly whether we can cover it and what it costs." },
+  { q: "What isn't included?", a: "New features beyond the included hours (quoted first), content writing, customer support for your users, and third-party costs such as hosting upgrades, paid plugins, app store fees or API usage, which are billed to your own accounts at cost." },
+  { q: "Who does the work?", a: "Austin Hunter, Elco Dev's owner and lead developer, is your contact and is responsible for the work on your plan. A backup developer who knows our client systems covers when Austin is away, so fixes don't wait on one person." },
   { q: "How do I pay?", a: "By card or bank transfer through a monthly Stripe invoice that lists the service period. We can add a PO number or supplier ID if your accounts team needs one." },
 ];
 
