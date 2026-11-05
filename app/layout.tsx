@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import { Tracking } from "@/components/Tracking";
+import { WebStats } from "@/components/WebStats";
 import { organizationLd, websiteLd } from "@/lib/ld";
 import { SITE } from "@/lib/site";
 import "./globals.css";
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main id="main">{children}</main>
         <Footer />
         <Tracking />
+        <WebStats />
       </body>
     </html>
   );

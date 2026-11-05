@@ -43,7 +43,7 @@ export default function Home() {
               Fixed quotes before work starts · MVPs from $7,000 · 50+ projects since {SITE.founded} ·{" "}
               <Link href="/services#pricing" className="underline decoration-brand/40 underline-offset-4 hover:text-ink">How we price</Link>
             </p>
-            <Link href="#our-apps" className="mt-10 inline-flex max-w-full items-center gap-4 rounded-2xl border border-ink/10 bg-white p-3 pr-5 transition-shadow hover:shadow-md">
+            <Link href="#our-apps" className="mt-10 inline-flex max-w-full flex-col items-start gap-3 rounded-2xl border border-ink/10 bg-white p-3 pr-5 transition-shadow hover:shadow-md sm:flex-row sm:items-center sm:gap-4">
               <span className="flex shrink-0 items-center -space-x-2">
                 {OWN_APPS.slice(0, 5).map((a) => (
                   <Image key={a.slug} src={a.icon!} alt="" width={40} height={40} className="h-10 w-10 rounded-xl border-2 border-white" />
@@ -74,7 +74,7 @@ export default function Home() {
             <ul className="flex flex-wrap items-center gap-x-12 gap-y-6">
               {CLIENT_LOGOS.map((c) => (
                 <li key={c.name}>
-                  <Image src={c.logo} alt={c.name} width={140} height={56} className="h-10 w-auto object-contain opacity-80 grayscale" />
+                  <Image src={c.logo} alt={c.name} width={140} height={56} className="h-10 w-auto max-w-[120px] object-contain opacity-80 grayscale" />
                 </li>
               ))}
             </ul>

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { validateLead } from "@/lib/lead";
 import { SITE } from "@/lib/site";
+import { bumpStats, safeKey, sectionOf } from "@/lib/webStats";
 
 export const runtime = "nodejs";
 
@@ -70,5 +71,7 @@ export async function POST(req: Request) {
     console.error("lead email failed", res.status);
     return NextResponse.json({ error: "That didn't send. Please email austin@elcodev.com." }, { status: 502 });
   }
+  const src = body && typeof body === "object" && typeof (body as Record<string, unknown>).src === "string" ? safeKey((body as Record<string, string>).src) : "direct";
+  await bumpStats({ [`lead.${sectionOf(lead.page)}`]: 1, [`leadsrc.${src}`]: 1 });
   return NextResponse.json({ ok: true });
 }

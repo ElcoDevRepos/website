@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { BUDGETS, TIMELINES } from "@/lib/lead";
 import { trackConversion } from "@/lib/conversions";
+import { sessionSource } from "@/components/WebStats";
 
 type Status = "idle" | "sending" | "sent" | "error";
 
@@ -16,7 +17,7 @@ export function LeadForm({ page }: { page: string }) {
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
-    const data: Record<string, string> = { ...(Object.fromEntries(new FormData(form)) as Record<string, string>), page };
+    const data: Record<string, string> = { ...(Object.fromEntries(new FormData(form)) as Record<string, string>), page, src: sessionSource() };
     setStatus("sending");
     setError("");
     try {
