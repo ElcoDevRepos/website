@@ -301,6 +301,52 @@ export const INSIGHTS: Insight[] = [
       { label: "Your app developer disappeared: what to do next", href: "/insights/app-developer-disappeared" },
     ],
   },
+
+  {
+    slug: "wordpress-maintenance-checklist",
+    title: "WordPress maintenance: what a monthly plan should actually include",
+    seoTitle: "WordPress Maintenance Checklist: What a Monthly Plan Should Include",
+    description:
+      "A plain checklist for keeping a WordPress site safe and current: updates tested before they go live, backups you can restore, malware and uptime checks, and time for small edits. Plus what to ask before you pay for a plan.",
+    published: "2026-11-05",
+    updated: "2026-11-05",
+    readMinutes: 5,
+    body: [
+      { p: "Most small-business and nonprofit websites run on WordPress, and most of them are fine until the day they aren't: a plugin update breaks the layout, a form stops sending, or the site starts redirecting visitors somewhere unpleasant. Nearly all of that is preventable with a little routine work each month. Here's what that routine should cover, whoever does it." },
+      { h2: "Updates, tested before they go live" },
+      { p: "WordPress core, the theme and every plugin release updates often, and many of them are security fixes. Out-of-date plugins are the most common way WordPress sites get broken into. The catch is that updates sometimes conflict with each other, so good maintenance means updating on a schedule and checking the site afterwards (forms, menus, checkout if you have one) rather than switching on auto-update and hoping." },
+      { h2: "Backups you can actually restore" },
+      {
+        ul: [
+          "Daily backups of the database and files, stored somewhere other than the server itself.",
+          "Kept long enough to go back before a problem started (a few weeks, not a few days).",
+          "Restored into a test copy now and then, to prove they work.",
+        ],
+      },
+      { h2: "Security and uptime checks" },
+      { p: "A malware scan and an uptime monitor catch problems before your visitors do. Remove plugins and admin accounts nobody uses, and make sure every admin has a strong password. Those two steps close a surprising number of doors." },
+      { h2: "Time for small changes" },
+      { p: "Most sites need a trickle of edits: new photos, an updated price, a staff change, a new page for an event. A plan with a small block of included time each month is usually cheaper and faster than quoting each change separately." },
+      { h2: "Questions to ask before you pay for a plan" },
+      {
+        ul: [
+          "Are updates tested before they go live, or just applied automatically?",
+          "Where are backups stored, and when was one last restored?",
+          "How many hours of changes are included, and what happens if I need more?",
+          "How fast do you reply, and on which days?",
+          "Are the hosting, domain and admin accounts in my name?",
+          "Can I cancel any time?",
+        ],
+      },
+      { h2: "What we offer" },
+      { p: "Our Care plan covers all of the above for $129 a month: tested monthly updates, malware scanning and uptime monitoring, an hour a month of small changes, and replies within 2 business days. It's month to month, with accounts kept in your name. If you only need hosting, that starts at $40 a month." },
+    ],
+    related: [
+      { label: "Monthly care plans", href: "/care-plans" },
+      { label: "What app maintenance involves", href: "/insights/app-maintenance-costs" },
+      { label: "Your app developer disappeared: what to do next", href: "/insights/app-developer-disappeared" },
+    ],
+  },
 ];
 
 export const insightBySlug = (slug: string) => INSIGHTS.find((i) => i.slug === slug);
