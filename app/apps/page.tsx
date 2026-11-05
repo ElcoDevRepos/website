@@ -99,6 +99,25 @@ export default function AppsPage() {
           </ul>
         </section>
       )}
+      <section className="wrap pb-12">
+        <h2 className="text-2xl font-bold">For developers</h2>
+        <ul className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <li>
+            <article className="card relative flex h-full flex-col p-6 transition-shadow hover:shadow-[0_20px_50px_-25px_rgba(11,15,26,0.35)]">
+              <h3 className="text-xl font-bold">
+                <a href="/apps/console" className="after:absolute after:inset-0">Elco Console kit</a>
+              </h3>
+              <p className="mt-3 text-[15px] leading-relaxed text-ink-muted">
+                Run your Claude Code agents like a small team: named lanes with standing rules, a shared team log and task board, and one inbox for the decisions only you can make. Runs on your Mac. It&apos;s the setup we use to run our own studio.
+              </p>
+              <p className="mt-auto flex items-center justify-between gap-3 pt-5 text-xs font-medium text-ink-soft">
+                <span>macOS · self-hosted · $99 one-time</span>
+                <span className="text-ink-muted"><Arrow /></span>
+              </p>
+            </article>
+          </li>
+        </ul>
+      </section>
       <CtaBand title="Want an app of your own?" />
     </>
   );
