@@ -74,6 +74,7 @@ export default function ServicesPage() {
             <p className="mt-4 text-ink-muted">We took over BookReverb&apos;s existing codebase and now lead all of its development. We&apos;ve also maintained apps built in React Native, Flutter, Ionic and native iOS and Android code.</p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href="/case-studies/taking-over-an-app" className="btn-ghost">How a takeover works <Arrow /></Link>
+              <Link href="/services/production-health-check" className="btn-ghost">Production health check <Arrow /></Link>
               <Link href="/care-plans" className="btn-ghost">Monthly care plans <Arrow /></Link>
             </div>
           </div>

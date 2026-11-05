@@ -62,6 +62,7 @@ export default function TakeoverCaseStudyPage() {
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link href="/care-plans" className="btn-primary">See care plans <Arrow /></Link>
+          <Link href="/services/production-health-check" className="btn-ghost">Start with a health check</Link>
           <Link href="/contact" className="btn-ghost">Book a free call</Link>
         </div>
       </section>

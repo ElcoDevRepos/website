@@ -735,6 +735,35 @@ export const SERVICES: Service[] = [
  */
 export const SPECIALTIES: Service[] = [
   {
+    slug: "production-health-check",
+    name: "Production health check",
+    short: "A fixed-fee, read-only review of an app that's already live: what's risky, what's costing too much, and what to fix first.",
+    title: "Production Health Check for Live, Inherited or AI-Built Apps | Elco Dev",
+    metaDescription:
+      "A fixed-fee, read-only review of a live web or mobile app: data access rules, exposed secrets, payments, backups, monitoring, store requirements and running costs, with a ranked fix list and a fixed price for each fix.",
+    intro:
+      "Your app works and people are using it, but you're not sure what's underneath. Maybe the original developer moved on, or it was built quickly with AI tools. The health check is a short, read-only review that tells you plainly what's solid, what's risky and what's costing more than it should. Nothing in production changes while we look.",
+    includes: [
+      "Data access: can one user read or change another user's data? (database and server rules, not just the screens)",
+      "Secrets and keys: anything exposed in the app or website code, and spending limits on paid services",
+      "Payments: upgrades, failed renewals, refunds and webhooks checked against the provider's records",
+      "Backups: what's backed up, where, and whether a restore actually works",
+      "Monitoring: crash reporting, uptime alerts and logs, and who gets told when something breaks",
+      "Store and platform deadlines: App Store SDK, Google Play target API, dependency and security updates",
+      "Running costs: hosting, APIs and third-party services that aren't earning their keep",
+      "A written report: risks ranked by impact, and a fixed price for each fix we recommend",
+    ],
+    stack: ["Firebase", "Next.js", "React Native", "Stripe", "Vercel", "Code review"],
+    work: ["bookreverb", "taskmerit"],
+    faqs: [
+      { q: "Will you change anything in production?", a: "No. The health check is read-only. We need view access to the code, hosting and the main service accounts. Any fix happens afterwards, only if you approve it, at the fixed price in the report." },
+      { q: "How much does it cost?", a: "It's a fixed fee, agreed before we start, sized to the app after a short call. You'll know the number up front, and the review doesn't commit you to anything after it." },
+      { q: "How long does it take?", a: "Most reviews take about a week from the day we get access, and we walk you through the report on a call." },
+      { q: "What happens after the report?", a: "You can fix things yourself with the report, have us fix the items you choose at the quoted prices, or put the app on a monthly care plan so it stays healthy. It's your call." },
+      { q: "Is this only for apps built with AI tools?", a: "No. It fits any app that's live and that you didn't build yourself, or that hasn't had a careful look in a while, including apps from a developer or agency who has moved on." },
+    ],
+  },
+  {
     slug: "nonprofit-app-development",
     name: "Apps and websites for nonprofits",
     short: "Mobile apps, web apps and websites for nonprofits and mission-driven organizations, scoped to a real budget.",
