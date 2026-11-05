@@ -347,6 +347,57 @@ export const INSIGHTS: Insight[] = [
       { label: "Your app developer disappeared: what to do next", href: "/insights/app-developer-disappeared" },
     ],
   },
+
+  {
+    slug: "google-play-target-api-requirement",
+    title: "Google Play's target API rule: why your Android app can't be updated (2026)",
+    seoTitle: "Google Play Target API Level Requirement 2026: What App Owners Need to Do",
+    description:
+      "Since August 31, 2026, Google Play only accepts new apps and updates that target Android 16 (API level 36), and older apps lose visibility on newer phones. Here's what that means for your app and how it gets fixed.",
+    published: "2026-11-05",
+    updated: "2026-11-05",
+    readMinutes: 5,
+    body: [
+      { p: "Every year Google raises the minimum Android version that apps on Google Play must be built for, called the target API level. App owners usually find out when their developer can't upload a fix, or when a warning lands in Play Console. We update our own Android apps for this every year, so here's the plain version." },
+      { h2: "The 2026 rule" },
+      {
+        table: {
+          head: ["What", "Requirement (from Google Play's target API page)"],
+          rows: [
+            ["New apps and app updates (phones and tablets)", "Must target Android 16 (API level 36) or higher, from August 31, 2026"],
+            ["Existing apps", "Must target Android 15 (API level 35) or higher to stay available to new users on devices running a newer Android version"],
+          ],
+        },
+      },
+      { p: "Other form factors (Wear OS, Android TV, Automotive, XR) have their own, lower minimums. Google's official target API page is the source of truth, and Play Console shows the exact status for your app." },
+      { h2: "What happens if your app is behind" },
+      {
+        ul: [
+          "You can't publish updates, including bug fixes and security patches, until the app targets the required level.",
+          "If it's below the existing-app minimum, new users on newer phones can't find or install it. People who already have it can usually keep using it.",
+          "Each year you skip makes the next update bigger, because libraries and tools move on together.",
+        ],
+      },
+      { h2: "Why it isn't just a version number" },
+      { p: "Raising the target level changes how Android treats your app: permissions, notifications, background work, file access and screen layout rules all tighten. In practice that means updating the app's libraries, fixing whatever the new rules break, testing on real devices, and resubmitting. For a well-kept app it's usually a modest job. For an app nobody has touched in two or three years, it can be a small project." },
+      { h2: "What to do now" },
+      {
+        ul: [
+          "Open Play Console and check the app's target API status and any policy notices.",
+          "Make sure you (not only a former developer) have owner access to the Play Console account.",
+          "Get the current code. Without it, nobody can rebuild the app.",
+          "Have a developer estimate the update before starting, so there are no surprises.",
+        ],
+      },
+      { h2: "How we handle it" },
+      { p: "Our Care Plus plan includes the yearly Google Play target-API and Apple SDK updates, with store resubmission, so this stops being an annual scramble. If your app is already behind, we start with a short review and a fixed quote for getting it current." },
+    ],
+    related: [
+      { label: "Monthly care plans", href: "/care-plans" },
+      { label: "What app maintenance involves", href: "/insights/app-maintenance-costs" },
+      { label: "Production health check", href: "/services/production-health-check" },
+    ],
+  },
 ];
 
 export const insightBySlug = (slug: string) => INSIGHTS.find((i) => i.slug === slug);
