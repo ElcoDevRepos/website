@@ -735,6 +735,32 @@ export const SERVICES: Service[] = [
  */
 export const SPECIALTIES: Service[] = [
   {
+    slug: "nashville-app-development",
+    name: "App development in Nashville and Middle Tennessee",
+    short: "A Middle Tennessee studio building iOS and Android apps, web apps and websites, working remotely with clients here and across the US.",
+    title: "Nashville App Developer | iOS, Android & Web Apps | Elco Dev",
+    metaDescription:
+      "Elco Dev is a software studio based in Lebanon, Tennessee, just east of Nashville, building iOS and Android apps, web apps, custom CRMs and websites. We work remotely by video call, on Central time, with clients across Middle Tennessee and the US.",
+    intro:
+      "Elco Dev is based in Lebanon, Tennessee, just east of Nashville, and has been building software since 2019. We work remotely: calls by video, shared project boards, and regular demos you can click through yourself. You get a developer on Central time who replies within one business day.",
+    includes: [
+      "iOS and Android apps, built and published under your own store accounts",
+      "Web apps, customer portals and SaaS platforms",
+      "Custom CRMs, internal tools and dashboards",
+      "Websites (WordPress or custom) with hosting and monthly care plans",
+      "Taking over and maintaining apps another developer built",
+      "Fixed quotes before work starts, paid by milestone",
+    ],
+    stack: ["React Native", "Next.js", "Firebase", "WordPress", "Stripe", "Vercel"],
+    work: ["crohns-food-tracker", "liturgical-living", "peerless-development", "bookreverb"],
+    faqs: [
+      { q: "Do we meet in person?", a: "We work remotely, by video call and email, with clients in Middle Tennessee and across the US. Every project still gets regular live demos and a direct line to the developer doing the work." },
+      { q: "What hours do you work?", a: "Monday to Friday, 9am to 5pm Central, the same time zone as Nashville. Replies come within one business day." },
+      { q: "Do you only work with Tennessee businesses?", a: "No. Clients are all over the US. Being on Central time just makes it easy for businesses around Nashville." },
+      { q: "How much does an app cost?", a: "Every project gets a fixed quote after a free call. Focused MVPs start at $3,500 to $7,000, and small custom apps and websites have mostly landed between about $8,000 and $20,000. See our services page for the full ranges." },
+    ],
+  },
+  {
     slug: "production-health-check",
     name: "Production health check",
     short: "A $990 fixed-fee, read-only review of an app that's already live: what's risky, what's costing too much, and what to fix first.",
