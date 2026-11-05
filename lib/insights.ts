@@ -398,6 +398,86 @@ export const INSIGHTS: Insight[] = [
       { label: "Production health check", href: "/services/production-health-check" },
     ],
   },
+
+  {
+    slug: "apple-xcode-26-sdk-requirement",
+    title: "Apple's 2026 SDK rule: why your iPhone app update gets rejected at upload",
+    seoTitle: "Apple Xcode 26 / iOS 26 SDK Requirement (2026): What App Owners Need to Do",
+    description:
+      "Since late April 2026, App Store Connect only accepts builds made with Xcode 26 or later against the iOS 26 SDK. Here's what that means for an app that hasn't been updated in a while.",
+    published: "2026-11-05",
+    updated: "2026-11-05",
+    readMinutes: 4,
+    body: [
+      { p: "Apple, like Google, moves the floor every year. This year's rule, from Apple's \"upcoming requirements\" page: apps uploaded to App Store Connect must be built with Xcode 26 or later, using the iOS 26 SDK (or the matching iPadOS, tvOS, visionOS or watchOS 26 SDK). It has applied to uploads since late April 2026." },
+      { h2: "What it does, and what it doesn't" },
+      {
+        ul: [
+          "It controls the tools your app is built with, not which iPhones it supports. An app built with the iOS 26 SDK can still run on older iOS versions, if it's set up to.",
+          "It applies when a new build is uploaded. Your current version stays on the App Store, but you can't ship a fix or a new feature until the app builds with the new tools.",
+          "Builds made with older Xcode versions are refused at upload, before App Review ever sees them.",
+        ],
+      },
+      { h2: "Why an old app can take real work" },
+      { p: "Moving to a new Xcode and SDK usually pulls in newer versions of the app's libraries and frameworks (React Native, Expo, Flutter or native dependencies), and those updates can break things that have nothing to do with Apple. An app that's been updated every year usually has a modest job ahead. One that's two or three versions behind can need a proper upgrade project first." },
+      { h2: "What to check" },
+      {
+        ul: [
+          "Who has Account Holder or Admin access to your Apple Developer account and App Store Connect? If it's only a former developer, fix that first.",
+          "When was the last build uploaded, and with which Xcode version?",
+          "Do you have the current source code and signing setup?",
+          "Are there other notices waiting in App Store Connect, such as privacy details or agreements to accept?",
+        ],
+      },
+      { h2: "How we handle it" },
+      { p: "We keep our own apps current with Apple's SDK requirements every year, and our Care Plus plan includes this for client apps, with resubmission. If your app has fallen behind, we start with a short review and a fixed quote for bringing it up to date." },
+    ],
+    related: [
+      { label: "Google Play's 2026 target API rule", href: "/insights/google-play-target-api-requirement" },
+      { label: "Monthly care plans", href: "/care-plans" },
+      { label: "Production health check", href: "/services/production-health-check" },
+    ],
+  },
+  {
+    slug: "transfer-app-to-your-own-developer-account",
+    title: "How to move your app into your own Apple and Google accounts",
+    seoTitle: "How to Transfer an App to Your Own Apple or Google Play Developer Account",
+    description:
+      "If your iOS or Android app is published under a developer's or agency's account, you can move it to your own without losing the listing, reviews or users. Here's how the process works and what to prepare.",
+    published: "2026-11-05",
+    updated: "2026-11-05",
+    readMinutes: 5,
+    body: [
+      { p: "A lot of business apps are published under the developer's account instead of the owner's. That works until the developer moves on. Both Apple and Google have official ways to move an app to a different account while keeping its store listing, reviews and existing users, so you don't have to publish a new app and start over. The details change from time to time, so use each platform's official help page as the final word. This is the shape of it." },
+      { h2: "Before you start" },
+      {
+        ul: [
+          "Create your own developer accounts in your company's name: Apple Developer Program ($99 a year) and Google Play Console (a one-time $25 fee). Finish the verification and tax and banking details, which can take a few days.",
+          "Get the current source code and confirm someone can still build the app. A transferred app you can't update isn't worth much.",
+          "List the services attached to the app (sign-in, push notifications, payments, analytics), because some of them are tied to the developer account and need updating after the move.",
+        ],
+      },
+      { h2: "Apple (App Store Connect)" },
+      { p: "Apple calls this an App Transfer. The Account Holder of the current account starts it in App Store Connect and names the receiving account, and the Account Holder of the receiving account accepts it. Apple lists criteria an app must meet to be transferable, so check Apple's \"App transfer\" help page first. Ratings, reviews and the app's existing users move with it." },
+      { h2: "Google Play" },
+      { p: "Google supports moving apps between Play Console developer accounts too. Both accounts need to be active and in good standing, and the request is reviewed. Google's help page \"Transfer apps to a different developer account\" describes the current steps and what moves with the app." },
+      { h2: "After the move" },
+      {
+        ul: [
+          "Re-check in-app purchases and subscriptions, and update any purchase tools (for example RevenueCat) to the new account's credentials.",
+          "Update push notification keys, sign-in configuration and signing certificates where they were tied to the old account.",
+          "Make a small test release, so you know the new account can actually ship updates.",
+        ],
+      },
+      { h2: "We can do the legwork" },
+      { p: "We publish and maintain our own apps in both stores. If your app is stuck under someone else's account, we can plan the transfer, handle the technical clean-up afterwards, and keep it current on a care plan with every account in your name." },
+    ],
+    related: [
+      { label: "Your app developer disappeared: what to do next", href: "/insights/app-developer-disappeared" },
+      { label: "How we take over an existing app", href: "/case-studies/taking-over-an-app" },
+      { label: "Monthly care plans", href: "/care-plans" },
+    ],
+  },
 ];
 
 export const insightBySlug = (slug: string) => INSIGHTS.find((i) => i.slug === slug);
