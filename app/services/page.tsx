@@ -66,7 +66,25 @@ export default function ServicesPage() {
           ))}
         </div>
       </section>
-      <section id="pricing" className="wrap grid gap-10 pb-20 lg:grid-cols-[0.8fr_1.2fr]">
+      <section id="takeover" className="wrap pb-16">
+        <div className="card grid gap-8 p-8 lg:grid-cols-[1fr_1fr]">
+          <div>
+            <p className="eyebrow">Taking over an existing app</p>
+            <h2 className="mt-3 text-2xl font-bold sm:text-3xl">Your last developer moved on? We can pick it up.</h2>
+            <p className="mt-4 text-ink-muted">We took over BookReverb&apos;s existing codebase and now lead all of its development. We&apos;ve also maintained apps built in React Native, Flutter, Ionic and native iOS and Android code.</p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link href="/work/bookreverb" className="btn-ghost">See BookReverb <Arrow /></Link>
+              <Link href="/care-plans" className="btn-ghost">Monthly care plans <Arrow /></Link>
+            </div>
+          </div>
+          <ol className="space-y-4 text-ink-soft">
+            <li className="flex gap-3"><span className="font-display font-bold text-brand">1</span><span><strong>Review.</strong> <span className="text-ink-muted">A short look at the code, the hosting and the store and domain accounts, so we know what we&apos;re inheriting.</span></span></li>
+            <li className="flex gap-3"><span className="font-display font-bold text-brand">2</span><span><strong>Plain findings.</strong> <span className="text-ink-muted">We tell you what works, what&apos;s risky and what we&apos;d fix first, with a fixed quote for any fixes.</span></span></li>
+            <li className="flex gap-3"><span className="font-display font-bold text-brand">3</span><span><strong>Ongoing care.</strong> <span className="text-ink-muted">Store updates, fixes and small features on a monthly plan, with accounts kept in your name.</span></span></li>
+          </ol>
+        </div>
+      </section>
+      <section id="pricing"className="wrap grid gap-10 pb-20 lg:grid-cols-[0.8fr_1.2fr]">
         <div>
           <h2 className="text-3xl font-bold sm:text-4xl">How we price</h2>
           <p className="mt-4 text-lg text-ink-muted">Fixed quotes before any work starts, paid by milestone. These ranges come from the quotes we&apos;ve actually sent this past year.</p>
