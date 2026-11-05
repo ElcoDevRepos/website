@@ -49,6 +49,9 @@ const nextConfig = {
         // landing, thanks/recover/download, legal pages, /api/* (Stripe checkout + license keys) and /downloads/*.
         { source: "/apps/deskbridge", destination: "https://elcodev-deskbridge.vercel.app/" },
         { source: "/apps/deskbridge/:path+", destination: "https://elcodev-deskbridge.vercel.app/:path+" },
+        // Elco Console kit page + gated download (Nova; served by the Deskbridge project at /console). Not linked anywhere yet.
+        { source: "/apps/console", destination: "https://elcodev-deskbridge.vercel.app/console" },
+        { source: "/apps/console/:path+", destination: "https://elcodev-deskbridge.vercel.app/console/:path+" },
         // Scripted's free KJV Bible (~/dev/scripted-web, Vercel project scripted-bible) serves its pages and assets at /bible/… .
         { source: "/apps/scripted/bible", destination: "https://scripted-bible.vercel.app/bible" },
         { source: "/apps/scripted/bible/:path+", destination: "https://scripted-bible.vercel.app/bible/:path+" },
