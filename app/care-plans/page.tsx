@@ -27,6 +27,7 @@ const TIERS = [
   {
     name: "Care",
     price: 129,
+    buy: "https://buy.stripe.com/dRm5kEaHn0nh2jAf4Pe3e0c",
     for: "Marketing websites",
     blurb: "Your site kept current, safe and up to date, with time each month for small changes.",
     features: [
@@ -40,6 +41,7 @@ const TIERS = [
   },
   {
     name: "Care Plus",
+    buy: "https://buy.stripe.com/8x23cwcPv6LFaQ66yje3e0d",
     price: 349,
     for: "Mobile apps and web apps",
     blurb: "For apps in the App Store and Google Play, where the stores change the rules every year.",
@@ -127,7 +129,14 @@ export default function CarePlansPage() {
                     <li key={f} className="flex gap-2.5"><span aria-hidden="true" className={`mt-2 h-1.5 w-1.5 flex-none rounded-full ${t.featured ? "bg-ink" : "bg-lime"}`} />{f}</li>
                   ))}
                 </ul>
-                <Link href="#start" className={`btn mt-8 ${t.featured ? "bg-ink text-white hover:bg-brand" : "bg-white text-ink hover:bg-lime"}`}>Get started <Arrow /></Link>
+                {"buy" in t && t.buy ? (
+                  <>
+                    <a href={t.buy} className={`btn mt-8 ${t.featured ? "bg-ink text-white hover:bg-brand" : "bg-white text-ink hover:bg-lime"}`}>Start {t.name} <Arrow /></a>
+                    <p className={`mt-3 text-sm ${t.featured ? "text-ink-soft" : "text-white/60"}`}>Secure checkout by Stripe, cancel any time. <Link href="#start" className="underline">Questions first?</Link></p>
+                  </>
+                ) : (
+                  <Link href="#start" className={`btn mt-8 ${t.featured ? "bg-ink text-white hover:bg-brand" : "bg-white text-ink hover:bg-lime"}`}>Get started <Arrow /></Link>
+                )}
               </div>
             ))}
           </div>
