@@ -670,6 +670,187 @@ export const INSIGHTS: Insight[] = [
       { label: "Monthly care plans", href: "/care-plans" },
     ],
   },
+
+  {
+    slug: "firebase-bill-spike",
+    title: "Why your Firebase bill spiked, and how to keep it under control",
+    seoTitle: "Firebase Bill Spiked? Common Causes and How to Control Costs on Blaze",
+    description:
+      "On Firebase's pay-as-you-go Blaze plan, a budget alert tells you about spending but doesn't stop it. Here are the usual causes of surprise bills and the settings that keep costs predictable.",
+    published: "2026-11-05",
+    updated: "2026-11-05",
+    readMinutes: 5,
+    body: [
+      { p: "Firebase is cheap for most small apps until, one month, it isn't. We run several apps on Firebase and Google Cloud and keep budget and forecast alerts on every billed project, because surprises do happen. Here's what usually causes them and what actually limits them." },
+      { h2: "First, know what a budget does (and doesn't)" },
+      { p: "A Google Cloud budget on the Blaze plan sends alerts. On its own it doesn't stop spending. Firebase's documentation describes separate spend caps for a few services (Cloud Functions, App Hosting, Firebase AI Logic and Extensions), and anything beyond those needs either code that reacts to the alert or a person who acts on it quickly. Check Firebase's current \"spend caps\" and \"budget alerts\" pages for your project." },
+      { h2: "The usual causes" },
+      {
+        ul: [
+          "Database reads that grow with every user: screens that listen to a whole collection, or queries without limits, so each open app re-reads thousands of documents.",
+          "A loop: a Cloud Function that writes to the same data that triggers it, running over and over.",
+          "An API key used for something it shouldn't be. Keys shipped in an app can be copied, and if they're allowed to call paid APIs (AI models, maps) someone else can run up your bill.",
+          "Bots or scrapers hammering an unauthenticated endpoint.",
+          "Storage downloads of large images with no caching or resizing.",
+        ],
+      },
+      { h2: "Settings that keep it predictable" },
+      {
+        ul: [
+          "Budget and forecast alerts on every billed project, going to someone who will act on them.",
+          "Spend caps on the services that support them.",
+          "API key restrictions: limit each key to the specific APIs and apps it needs.",
+          "App Check, so only your real app can call your backend.",
+          "Query limits, pagination and caching in the app, so a busy day doesn't multiply reads.",
+          "A monthly look at the usage graphs, not just the invoice.",
+        ],
+      },
+      { h2: "If it's happening right now" },
+      { p: "Find the service and the day the spike started in the billing reports, restrict or rotate any key that might be misused, and fix the query or function causing it. If the cause was abuse of a leaked key, contact Google Cloud billing support about the charges." },
+      { h2: "A second pair of eyes" },
+      { p: "Our $990 Production health check reviews running costs, exposed keys and data access rules on a live app and gives you a ranked fix list with fixed prices." },
+    ],
+    related: [
+      { label: "Firebase security rules mistakes", href: "/insights/firebase-security-rules-mistakes" },
+      { label: "Production health check", href: "/services/production-health-check" },
+      { label: "Monthly care plans", href: "/care-plans" },
+    ],
+  },
+  {
+    slug: "apple-developer-membership-expired",
+    title: "Your Apple Developer membership expired. What happens to your app?",
+    seoTitle: "Apple Developer Program Membership Expired: What Happens to Your App",
+    description:
+      "When the Apple Developer Program membership behind your app lapses, the app comes off the App Store until it's renewed. Here's what stops, what keeps working and how to avoid it.",
+    published: "2026-11-05",
+    updated: "2026-11-05",
+    readMinutes: 4,
+    body: [
+      { p: "The Apple Developer Program costs $99 a year, and it renews against whoever's card is on the account. When a former developer's card expires or they let the account lapse, the business behind the app is often the last to know." },
+      { h2: "What happens when it lapses" },
+      {
+        ul: [
+          "The app is taken off the App Store, so new people can't find or download it.",
+          "People who already installed it can usually keep using it.",
+          "Nobody can upload an update or a fix until the membership is active again.",
+          "Access to certificates and developer tools stops, which can affect things like push notifications as certificates expire.",
+        ],
+      },
+      { h2: "Getting it back" },
+      { p: "The account's Account Holder renews it at developer.apple.com. In most cases the apps return once the membership and agreements in App Store Connect are active again, but developers regularly report hiccups: a missing renew button, or a status that stays \"expired\" after paying. If that happens, contact Apple Developer Support. If the Account Holder is a former developer you can't reach, that's the bigger problem to solve." },
+      { h2: "How to avoid it" },
+      {
+        ul: [
+          "Make sure the developer account is in your company's name, with you as Account Holder.",
+          "Put the renewal on a company card and a calendar reminder a month ahead.",
+          "If the app lives under someone else's account, move it to yours with Apple's App Transfer.",
+          "Do the same check for Google Play Console, domains and hosting.",
+        ],
+      },
+      { h2: "We can help" },
+      { p: "If your app's accounts aren't in your name, we can plan the move and keep the app current on a care plan with everything in your name." },
+    ],
+    related: [
+      { label: "Move your app into your own Apple and Google accounts", href: "/insights/transfer-app-to-your-own-developer-account" },
+      { label: "Your app developer disappeared: what to do next", href: "/insights/app-developer-disappeared" },
+      { label: "Monthly care plans", href: "/care-plans" },
+    ],
+  },
+  {
+    slug: "inherited-codebase-first-30-days",
+    title: "Inheriting someone else's codebase: what to do in the first 30 days",
+    seoTitle: "Inherited a Codebase? A First-30-Days Plan for a Live App",
+    description:
+      "Taking over an app another team built? The first month should be about understanding and making it safe, not rewriting. Here's the order we work in.",
+    published: "2026-11-05",
+    updated: "2026-11-05",
+    readMinutes: 6,
+    body: [
+      { p: "We've taken over live products built by other teams, and the temptation on day one is always the same: \"this would be easier to rewrite.\" Sometimes that's true, but you can't know until you understand what's there. This is the order we work in for the first month." },
+      { h2: "Week 1: access and inventory" },
+      {
+        ul: [
+          "Get admin access to the code repository, hosting, database, app stores, domain, payments and email services, in the owner's name.",
+          "Write down every service the app uses and what it costs each month.",
+          "Find out how the app is deployed today, and whether that can be done from a clean machine.",
+          "Make and test a backup before touching anything.",
+        ],
+      },
+      { h2: "Week 2: read before you write" },
+      {
+        ul: [
+          "Run the app locally and make a small, harmless change end to end, from code to a test deploy.",
+          "Map the data: what's stored where, and who can read and write it.",
+          "Read the error logs and support inbox for the last few months. That's where the real problems are.",
+          "List secrets and keys, and where each is stored.",
+        ],
+      },
+      { h2: "Week 3: make it safe" },
+      {
+        ul: [
+          "Add error reporting and uptime alerts if they're missing.",
+          "Fix anything that exposes data or money: open database rules, leaked keys, payment logic that trusts the app instead of the payment provider.",
+          "Clear any store or platform deadlines that are close.",
+        ],
+      },
+      { h2: "Week 4: plan, with the owner" },
+      { p: "Write up what works, what's risky and what to change first, each with an estimate. Then agree on a routine: how changes are reviewed, tested and released, and who approves production changes. Only now is it fair to talk about a rewrite, and usually the answer is to improve the parts that hurt and leave the rest." },
+      { h2: "How we do it for clients" },
+      { p: "Our $990 Production health check covers weeks one to three as a fixed-fee, read-only review with a ranked fix list. A care plan keeps it running afterwards." },
+    ],
+    related: [
+      { label: "How we take over an existing app", href: "/case-studies/taking-over-an-app" },
+      { label: "Production health check", href: "/services/production-health-check" },
+      { label: "Your app developer disappeared", href: "/insights/app-developer-disappeared" },
+    ],
+  },
+  {
+    slug: "old-react-native-expo-app-upgrade",
+    title: "Why an old React Native or Expo app won't build anymore (and what fixing it involves)",
+    seoTitle: "Old React Native or Expo App Won't Build? What an Upgrade Involves",
+    description:
+      "If your React Native or Expo app hasn't been touched in a year or two, it may not build with the tools the App Store and Google Play now require. Here's why, and what upgrading usually takes.",
+    published: "2026-11-05",
+    updated: "2026-11-05",
+    readMinutes: 5,
+    body: [
+      { p: "Many small business apps are built with React Native or Expo, and that's a good choice: one codebase for iPhone and Android. We build and maintain several apps this way. The catch is that these frameworks, and the stores, move every year. An app left alone for a year or two often can't be rebuilt as-is." },
+      { h2: "Why it stops building" },
+      {
+        ul: [
+          "The stores raise their minimums yearly. Apple now requires builds made with recent Xcode and SDK versions, and Google Play requires a recent Android target API level for updates.",
+          "Newer Xcode and Android tools drop support for older framework versions, so the old app's toolchain stops working.",
+          "Third-party libraries (maps, payments, notifications, analytics) release breaking changes or stop supporting old versions.",
+          "Build services retire old images over time.",
+        ],
+      },
+      { h2: "What an upgrade usually involves" },
+      {
+        ul: [
+          "Moving React Native or the Expo SDK forward, sometimes several versions, one step at a time.",
+          "Updating or replacing libraries that no longer fit.",
+          "Fixing what the new platform rules change: permissions, notifications, background tasks, screen sizes.",
+          "Testing on real current devices, then resubmitting to both stores.",
+        ],
+      },
+      { p: "For an app that's a version or two behind, this is usually a contained job. For one that's several years behind, it can be a small project, which is still almost always cheaper than a rewrite." },
+      { h2: "Watch out for" },
+      {
+        ul: [
+          "Release builds behaving differently from development builds. We've seen code shrinking on Android silently break notifications unless the right keep rules are added.",
+          "Push notification and sign-in keys that live in an account nobody can access anymore.",
+          "Store listings that need new privacy or data-safety answers before an update is accepted.",
+        ],
+      },
+      { h2: "How we help" },
+      { p: "We start with a short review and a fixed quote for getting the app current, then keep it current on our Care Plus plan, which includes the yearly store updates." },
+    ],
+    related: [
+      { label: "Google Play's 2026 target API rule", href: "/insights/google-play-target-api-requirement" },
+      { label: "Apple's 2026 SDK rule", href: "/insights/apple-xcode-26-sdk-requirement" },
+      { label: "Monthly care plans", href: "/care-plans" },
+    ],
+  },
 ];
 
 export const insightBySlug = (slug: string) => INSIGHTS.find((i) => i.slug === slug);
