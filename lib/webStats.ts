@@ -19,14 +19,26 @@ const SOURCES: [RegExp, string][] = [
   [/(^|\.)x\.com$|twitter\.com$|t\.co$/, "x"], [/github\.com$/, "github"], [/mail\.google\.com$|outlook\./, "email"],
 ];
 
+/** 'threads' / 'bluesky' from a utm_source value or a referrer host, else ''. */
+export function socialOf(utm: string, host = ""): string {
+  if (/threads/.test(utm) || /(^|\.)threads\.(net|com)$/.test(host)) return "threads";
+  if (/bluesky|bsky/.test(utm) || /(^|\.)bsky\.(app|social)$/.test(host)) return "bluesky";
+  return "";
+}
+
 export function sourceBucket(referrer: string, utmSource: string | null | undefined, ownHost: string): string {
   const utm = (utmSource || "").toLowerCase().trim();
+  // Nov 6 2026: Threads/Bluesky posts (utm_source=threads|bluesky) and their referrers share one key.
+  const social = socialOf(utm);
+  if (social) return social;
   if (utm) return utm.includes("chatgpt") || utm.includes("openai") ? "chatgpt" : "utm-" + safeKey(utm, 24);
   if (!referrer) return "direct";
   let host = "";
   try { host = new URL(referrer).hostname.toLowerCase().replace(/^www\./, ""); } catch { return "other"; }
   if (!host) return "direct";
   if (host === ownHost.replace(/^www\./, "")) return "";
+  const socialHost = socialOf("", host);
+  if (socialHost) return socialHost;
   for (const [re, name] of SOURCES) if (re.test(host)) return name;
   return "other";
 }
