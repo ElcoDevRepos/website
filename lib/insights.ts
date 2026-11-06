@@ -1553,6 +1553,99 @@ export const INSIGHTS: Insight[] = [
       { label: "How much does a custom app cost?", href: "/insights/how-much-does-a-custom-app-cost" },
     ],
   },
+  {
+    slug: "church-parish-website-checklist",
+    title: "What a church or parish website needs (and what it doesn't)",
+    seoTitle: "Church Website Checklist: What a Parish Website Really Needs",
+    description:
+      "A practical checklist for church and parish websites: the pages visitors actually look for, online giving, bulletins and calendars, accessibility, and how to keep it easy for volunteers to update.",
+    published: "2026-11-06",
+    updated: "2026-11-06",
+    readMinutes: 5,
+    body: [
+      { p: "Most people visit a church website for a handful of reasons: when is Mass or the service, where do I park, how do I give, and who do I call. A good parish site answers those in seconds on a phone, and stays easy for the office staff or a volunteer to keep current." },
+      { h2: "The pages visitors look for first" },
+      {
+        ul: [
+          "Service and Mass times, including holy days and holiday changes, on the home page.",
+          "Address, parking and accessibility information, with a map link.",
+          "Online giving that works on a phone in a few taps.",
+          "The weekly bulletin, easy to find and readable on a phone.",
+          "Sacraments and life events: baptism, weddings, funerals, confession times, with who to contact.",
+          "A short \"New here?\" page that says what to expect.",
+          "Staff and office contacts with office hours.",
+        ],
+      },
+      { h2: "What can usually wait" },
+      {
+        ul: [
+          "A custom app. A fast mobile website does most of what a parish app would, without App Store upkeep.",
+          "Long history pages and every ministry's sub-site on day one.",
+          "Complex member portals, unless the parish already has the staff to run them.",
+        ],
+      },
+      { h2: "Keep it easy to update" },
+      { p: "The best church website is one the office can update without calling anyone. Use a mainstream platform such as WordPress, give each editor their own login, and set up simple templates for announcements, events and the bulletin. One calendar that feeds the home page saves a lot of double entry." },
+      { h2: "Accessibility and trust" },
+      {
+        ul: [
+          "Readable text sizes and strong contrast for older parishioners.",
+          "Real text, not images of text, so screen readers and search engines can read it.",
+          "Captions on video homilies and livestream recordings where possible.",
+          "A privacy page and secure (https) giving, so people trust the site with their details.",
+        ],
+      },
+      { h2: "Who should own the accounts" },
+      { p: "Register the domain, hosting and giving accounts in the parish's name, not a volunteer's. Volunteers move on; the parish shouldn't lose its website when they do." },
+      { h2: "How we can help" },
+      { p: "We build and look after websites for small businesses and nonprofits, and we make Liturgical Living, a free Catholic calendar app and website. Our care plans keep a parish site updated, backed up and secure for a flat monthly fee." },
+    ],
+    related: [
+      { label: "What a small business or nonprofit website costs", href: "/insights/small-business-nonprofit-website-cost" },
+      { label: "Who should own your domain and accounts?", href: "/insights/own-your-domain-hosting-and-accounts" },
+      { label: "Care plans", href: "/care-plans" },
+    ],
+  },
+  {
+    slug: "how-to-protect-your-app-idea",
+    title: "How to protect your app idea before you talk to developers",
+    seoTitle: "How to Protect Your App Idea: NDAs, Code Ownership and What Actually Matters",
+    description:
+      "Worried a developer will steal your app idea? Here's what actually protects you: owning the code and accounts, a clear contract, and moving fast. Plus when an NDA helps and when it just slows things down.",
+    published: "2026-11-06",
+    updated: "2026-11-06",
+    readMinutes: 4,
+    body: [
+      { p: "It's natural to worry that sharing your idea means losing it. In practice, ideas are rarely what gets copied. What protects a new product is owning what gets built, a clear contract, and getting it in front of customers quickly. This isn't legal advice; for anything specific, talk to a lawyer." },
+      { h2: "What actually protects you" },
+      {
+        ul: [
+          "Owning the code: your contract should say the code and designs you pay for belong to you once paid.",
+          "Owning the accounts: domain, hosting, app store and code repository accounts in your name, with the developer invited in.",
+          "Confidentiality in the contract: a reasonable developer will agree not to share your business details.",
+          "Speed: the first working version, real users and their feedback are a bigger head start than any secret.",
+        ],
+      },
+      { h2: "When an NDA helps" },
+      { p: "An NDA makes sense when you're sharing genuinely confidential material: customer data, financials, a proprietary process or unreleased partnerships. For an early conversation about the idea itself, many developers will sign a short, mutual NDA, but some won't before a first call, simply because they hear many similar ideas. A better approach is to describe the problem and the users first, and save the sensitive details for after you've chosen who to work with." },
+      { h2: "Questions to ask any developer" },
+      {
+        ul: [
+          "Who owns the code and designs when the project is paid for?",
+          "Will the accounts be set up in my name?",
+          "Do you reuse code from other projects, and is any of it licensed differently?",
+          "Who else will work on my project, and are they bound by the same terms?",
+        ],
+      },
+      { h2: "How we work" },
+      { p: "With us, you own the code and designs you pay for, and accounts are set up in your name wherever we can. Start with a free call about the problem you're solving." },
+    ],
+    related: [
+      { label: "What to put in a software development contract", href: "/insights/software-development-contract-checklist" },
+      { label: "Who should own your domain and accounts?", href: "/insights/own-your-domain-hosting-and-accounts" },
+      { label: "What to send a developer before asking for a quote", href: "/insights/what-to-send-a-developer-before-a-quote" },
+    ],
+  },
 ];
 
 export const insightBySlug = (slug: string) => INSIGHTS.find((i) => i.slug === slug);
