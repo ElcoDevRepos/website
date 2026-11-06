@@ -5,7 +5,7 @@ export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-ink text-white/70">
-      <div className="wrap grid gap-12 py-16 md:grid-cols-4">
+      <div className="wrap grid gap-12 py-16 md:grid-cols-5">
         <div className="md:col-span-1">
           <p className="font-display text-2xl font-bold text-white">Elco Dev</p>
           <p className="mt-3 text-sm leading-relaxed">
@@ -33,6 +33,16 @@ export function Footer() {
               <li key={p.slug}><Link href={`/apps/${p.slug}`} className="hover:text-white">{p.name}</Link></li>
             ))}
             <li><Link href="/apps" className="hover:text-white">All apps</Link></li>
+          </ul>
+        </div>
+        <div>
+          <p className="text-sm font-semibold text-white">Products</p>
+          <ul className="mt-4 space-y-2 text-sm">
+            <li><a href="/apps/console" className="hover:text-white">Elco Console kit</a></li>
+            <li><a href="/apps/social-kit" className="hover:text-white">Agent Social Kit</a></li>
+            <li><a href="/apps/deskbridge" className="hover:text-white">Deskbridge</a></li>
+            <li><a href="/apps/downloads" className="hover:text-white">Printables</a></li>
+            <li><Link href="/services/production-health-check" className="hover:text-white">App health check</Link></li>
           </ul>
         </div>
         <div>

@@ -305,6 +305,7 @@ export const INSIGHTS: Insight[] = [
       { label: "How we take over an existing app", href: "/case-studies/taking-over-an-app" },
       { label: "Monthly care plans", href: "/care-plans" },
       { label: "Your app developer disappeared: what to do next", href: "/insights/app-developer-disappeared" },
+      { label: "Run Claude Code agents as a team: Elco Console", href: "/apps/console" },
     ],
   },
 
