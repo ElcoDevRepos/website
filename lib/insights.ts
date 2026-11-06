@@ -1410,6 +1410,149 @@ export const INSIGHTS: Insight[] = [
       { label: "Care plans", href: "/care-plans" },
     ],
   },
+  {
+    slug: "shopify-vs-custom-ecommerce",
+    title: "Shopify or a custom online store? How to decide",
+    seoTitle: "Shopify vs Custom E-commerce: Which Is Right for Your Business?",
+    description:
+      "Shopify is the right answer for most online stores, but not all. Here's how to tell when a hosted platform fits, when a custom build pays for itself, and the middle path most businesses miss.",
+    published: "2026-11-06",
+    updated: "2026-11-06",
+    readMinutes: 5,
+    body: [
+      { p: "If you sell products online, Shopify (or a similar hosted platform) is usually the right place to start. It handles checkout, payments, taxes, hosting and security for a monthly fee. A custom store only makes sense when your business doesn't fit the shape those platforms expect." },
+      { h2: "Shopify is usually right when" },
+      {
+        ul: [
+          "You sell physical or digital products at fixed prices, one cart, one checkout.",
+          "Your catalog, shipping and discounts work within the platform's settings or a well-supported app.",
+          "You want to launch in weeks and change things yourself without a developer.",
+          "Monthly platform and app fees are small next to what a developer would cost to maintain a custom store.",
+        ],
+      },
+      { h2: "A custom build starts to make sense when" },
+      {
+        ul: [
+          "Pricing is complex: quotes, contract or tiered pricing per customer, configure-to-order products, or dealer portals.",
+          "Ordering is tied into your own systems (inventory, ERP, scheduling, a CRM) in ways an off-the-shelf app can't handle cleanly.",
+          "The \"store\" is really a booking, membership or service workflow with a payment at the end.",
+          "App and transaction fees have grown large enough that owning the software is cheaper over a few years.",
+        ],
+      },
+      { h2: "The middle path" },
+      { p: "Most businesses don't need to choose all or nothing. Keep Shopify for the catalog and checkout, and add a small custom piece where you're different: a private app that syncs orders to your back office, a custom quote builder that creates draft orders, or a separate portal for wholesale customers. You keep the platform's reliability and only pay to build what's unique to you." },
+      { h2: "Questions to answer before you decide" },
+      {
+        ul: [
+          "What does your checkout need to do that a standard cart can't?",
+          "Which of your systems must the store talk to, and how often?",
+          "What are you paying each month in platform, app and transaction fees, and how fast is that growing?",
+          "Who will maintain a custom store after launch, and what will that cost per year?",
+        ],
+      },
+      { h2: "How we help" },
+      { p: "We'll tell you honestly if Shopify plus a few well-chosen apps is enough, which it often is. When it isn't, we build the custom piece, keep it in accounts you own, and look after it on a care plan. A free call is usually enough to know which way to go." },
+    ],
+    related: [
+      { label: "How much does a custom app cost?", href: "/insights/how-much-does-a-custom-app-cost" },
+      { label: "Custom CRM or off-the-shelf?", href: "/insights/custom-crm-vs-off-the-shelf" },
+      { label: "Care plans", href: "/care-plans" },
+    ],
+  },
+  {
+    slug: "how-long-does-it-take-to-build-an-app",
+    title: "How long does it take to build an app?",
+    seoTitle: "How Long Does It Take to Build an App in 2026? Realistic Timelines",
+    description:
+      "Realistic timelines for building an app or web app in 2026: what a focused first version takes, what stretches a project to months, and the steps (like app store review) people forget to plan for.",
+    published: "2026-11-06",
+    updated: "2026-11-06",
+    readMinutes: 5,
+    body: [
+      { p: "The honest answer is \"it depends on scope,\" but that isn't much use when you're planning a launch. Here's how the time actually breaks down, from a small studio that ships its own apps and builds them for clients." },
+      { h2: "Typical timelines" },
+      {
+        table: {
+          head: ["Project", "What it usually is", "Typical time to launch"],
+          rows: [
+            ["Focused MVP", "One core workflow, sign-in, payments if needed", "About 14 days of build time"],
+            ["First full version", "Several user types, admin screens, a few integrations", "A few weeks to a few months, in milestones"],
+            ["Larger business system", "Dashboards, documents, integrations with existing systems", "Several months, delivered in stages"],
+          ],
+        },
+      },
+      { p: "Those are build times once the scope is agreed. The calendar time around them is often what surprises people." },
+      { h2: "What adds time people forget" },
+      {
+        ul: [
+          "Decisions: waiting on feedback, content or approvals is the most common delay, and it's on the client side.",
+          "App store review: Apple and Google review new apps before release. A new Google Play developer account also has to run a closed test with real testers for 14 days before it can publish to everyone.",
+          "Developer accounts: setting up Apple and Google accounts in your organization's name can take days, sometimes longer for verification.",
+          "Integrations: getting access and test credentials for other systems (payments, accounting, an existing database) can take longer than the integration itself.",
+          "Content and data: writing copy, gathering photos and migrating old records.",
+        ],
+      },
+      { h2: "How to get to launch faster" },
+      {
+        ul: [
+          "Cut the first version to the one workflow that proves the idea. Everything else goes on a list for version two.",
+          "Name one person who can make decisions quickly.",
+          "Start developer-account and store paperwork on day one, in parallel with the build.",
+          "Prefer a web app or one cross-platform codebase over two native apps when the app doesn't need special device features.",
+        ],
+      },
+      { h2: "Getting a real estimate" },
+      { p: "A timeline is only as good as the scope behind it. Send us who the users are, the must-have features and your deadline, and we'll come back with a fixed price and a schedule we can stand behind." },
+    ],
+    related: [
+      { label: "MVP development", href: "/mvp" },
+      { label: "What to send a developer before asking for a quote", href: "/insights/what-to-send-a-developer-before-a-quote" },
+      { label: "Google Play's 12-tester rule", href: "/insights/google-play-12-testers-14-days" },
+    ],
+  },
+  {
+    slug: "what-to-cut-from-your-first-app",
+    title: "What to leave out of the first version of your app",
+    seoTitle: "MVP Scope: What to Leave Out of the First Version of Your App",
+    description:
+      "The fastest way to launch an app on budget is to decide what not to build yet. Here are the features small businesses most often add too early, and what to build instead.",
+    published: "2026-11-06",
+    updated: "2026-11-06",
+    readMinutes: 4,
+    body: [
+      { p: "Most first versions run over budget for the same reason: they try to be version three. A good first version does one job well for one kind of user, and teaches you what to build next." },
+      { h2: "Features that can usually wait" },
+      {
+        ul: [
+          "A full admin dashboard. Early on, a simple list view or a spreadsheet export often does the job.",
+          "Every sign-in option. Email or one social sign-in is plenty to start.",
+          "In-app chat and messaging. Email or SMS notifications cover most early needs.",
+          "Detailed analytics screens. A few tracked events and a weekly report tell you more at this stage.",
+          "Multiple languages, themes and fine-grained settings. Add them when real users ask.",
+          "Automating rare tasks. If it happens twice a month, someone can do it by hand for now.",
+        ],
+      },
+      { h2: "What the first version does need" },
+      {
+        ul: [
+          "The one workflow that proves the idea, start to finish.",
+          "Sign-in and data that's stored securely, with backups.",
+          "Payments, if charging is part of what you're testing.",
+          "A way to hear from users: a feedback link and basic usage tracking.",
+          "Accounts in your own name, so you own what you've paid for.",
+        ],
+      },
+      { h2: "A simple test for each feature" },
+      { p: "Ask: if this were missing on launch day, would the first users fail to get the main job done? If not, it goes on the list for later. You'll launch sooner, spend less, and make the next round of decisions with real usage instead of guesses." },
+      { h2: "How we scope a first version" },
+      { p: "On a free call we'll help you separate must-haves from later, then quote the first version as a fixed price. Focused MVPs typically take about 14 days to build." },
+    ],
+    related: [
+      { label: "MVP development", href: "/mvp" },
+      { label: "How long does it take to build an app?", href: "/insights/how-long-does-it-take-to-build-an-app" },
+      { label: "How much does a custom app cost?", href: "/insights/how-much-does-a-custom-app-cost" },
+    ],
+  },
 ];
 
 export const insightBySlug = (slug: string) => INSIGHTS.find((i) => i.slug === slug);
