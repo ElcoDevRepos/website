@@ -52,6 +52,9 @@ const nextConfig = {
         // Elco Console kit page + gated download (Nova; served by the Deskbridge project at /console). Not linked anywhere yet.
         { source: "/apps/console", destination: "https://elcodev-deskbridge.vercel.app/console" },
         { source: "/apps/console/:path+", destination: "https://elcodev-deskbridge.vercel.app/console/:path+" },
+        // Agent Social Kit page + gated download/owner form (Nova; served by the Deskbridge project at /social-kit).
+        { source: "/apps/social-kit", destination: "https://elcodev-deskbridge.vercel.app/social-kit" },
+        { source: "/apps/social-kit/:path+", destination: "https://elcodev-deskbridge.vercel.app/social-kit/:path+" },
         // Printables paid downloads (Nova; Stripe gate + shared thanks page served by the Deskbridge project at /printables).
         { source: "/apps/downloads", destination: "https://elcodev-deskbridge.vercel.app/printables" },
         { source: "/apps/downloads/:path+", destination: "https://elcodev-deskbridge.vercel.app/printables/:path+" },
