@@ -1208,6 +1208,104 @@ export const INSIGHTS: Insight[] = [
       { label: "WordPress maintenance checklist", href: "/insights/wordpress-maintenance-checklist" },
     ],
   },
+  {
+    slug: "web-app-vs-mobile-app",
+    title: "Web app or mobile app: which does your business need?",
+    seoTitle: "Web App vs Mobile App: Which Does Your Business Need?",
+    description:
+      "A web app runs in the browser on any device; a mobile app is installed from the App Store or Google Play. Here's how to choose between them, based on who uses it, where, and what it needs to do.",
+    published: "2026-11-05",
+    updated: "2026-11-05",
+    readMinutes: 4,
+    body: [
+      { p: "Many projects start with \"we need an app,\" but the right answer is often a web app, a mobile app, or a web app first with a mobile app later. The choice changes the cost, the timeline and how people find and use what you build." },
+      { h2: "The difference" },
+      { p: "A web app runs in the browser at a web address, on phones and computers alike. You update it once and everyone has the new version. A mobile app is installed from the App Store or Google Play, can use more of the phone (camera, notifications, offline storage, location in the background), and lives on the home screen, but each release goes through store review and users have to update." },
+      { h2: "A web app is usually right when" },
+      {
+        ul: [
+          "Most use happens at a desk: admin tools, dashboards, CRMs, portals, scheduling for staff.",
+          "Users visit occasionally (pay a bill, check a status, book once a month) and won't want to install anything.",
+          "You need it live quickly and want to change it often.",
+          "The budget covers one version, not two.",
+        ],
+      },
+      { h2: "A mobile app is usually right when" },
+      {
+        ul: [
+          "People use it daily or on the move: field crews, drivers, members, customers who come back often.",
+          "It needs the phone itself: the camera, reliable push notifications, offline use, barcode scanning, Bluetooth.",
+          "Being on the home screen and in the app stores matters for your customers.",
+        ],
+      },
+      { h2: "Often the answer is both, in order" },
+      { p: "A common path is a web app for staff or admins first, then a mobile app for the people in the field or your customers, both sharing the same backend and data. Modern cross-platform tools also let one codebase serve iPhone and Android, which keeps the second step affordable." },
+      { h2: "Questions to settle first" },
+      {
+        ul: [
+          "Who uses it, how often, and on what device?",
+          "Does it need to work without a signal?",
+          "Do you need notifications that reliably reach people?",
+          "Who will keep it updated each year? Mobile apps need yearly store updates.",
+        ],
+      },
+      { h2: "We build both" },
+      { p: "We build web apps, iPhone and Android apps, and the backends behind them, and we run our own apps in both stores. On a free call we'll tell you which we'd build first for your situation, and why." },
+    ],
+    related: [
+      { label: "How much does a custom app cost?", href: "/insights/how-much-does-a-custom-app-cost" },
+      { label: "Web app development", href: "/services/web-app-development" },
+      { label: "Mobile app development", href: "/services/mobile-app-development" },
+    ],
+  },
+  {
+    slug: "website-redesign-without-losing-seo",
+    title: "How to redesign your website without losing your Google rankings",
+    seoTitle: "Website Redesign SEO Checklist: Keep Your Google Rankings",
+    description:
+      "A redesign can wipe out years of search traffic if old pages disappear. Here's a plain checklist for keeping your rankings: inventory your URLs, redirect every old page, keep what works, and check after launch.",
+    published: "2026-11-05",
+    updated: "2026-11-05",
+    readMinutes: 5,
+    body: [
+      { p: "The most common way a new website loses traffic isn't the design. It's that old page addresses stop working, so the links and search results pointing to them lead nowhere. With a little planning, a redesign can keep, and often improve, the search traffic you already have." },
+      { h2: "Before you start" },
+      {
+        ul: [
+          "Make a list of every page on the current site. Your sitemap and Google Search Console's Pages report are good places to start.",
+          "Note which pages bring the most visitors and which have links from other sites. Those are the ones to protect most carefully.",
+          "Save a copy of the current page titles, descriptions and main text, so nothing important is lost by accident.",
+        ],
+      },
+      { h2: "During the build" },
+      {
+        ul: [
+          "Keep the same addresses where you can. If a URL has to change, map the old one to its closest new page.",
+          "Set up permanent (301) redirects from every old address to its new one. Don't send everything to the homepage.",
+          "Keep the content that ranks. Rewriting a page that does well is fine, but keep what it covers.",
+          "Give every page a clear title and description, and use real headings.",
+          "Keep the new site off search engines while it's being built (a staging address with indexing blocked), and remember to remove that block at launch.",
+        ],
+      },
+      { h2: "Launch day" },
+      {
+        ul: [
+          "Test the redirects: open a sample of old addresses and confirm they land on the right new pages.",
+          "Make sure the site can be indexed and the new sitemap is live, then submit it in Google Search Console and Bing Webmaster Tools.",
+          "Check that analytics is recording visits on the new site.",
+        ],
+      },
+      { h2: "The first few weeks" },
+      { p: "Watch Search Console for pages that return errors, and fix any missed redirects. Some movement in rankings right after a launch is normal; a steady drop on a particular page usually points to a missing redirect or missing content." },
+      { h2: "We can handle it" },
+      { p: "When we rebuild a website, we start with a URL inventory and a redirect map, and we check the search data after launch. If you're planning a redesign, we can review your current site first and tell you what to protect." },
+    ],
+    related: [
+      { label: "Website design and development", href: "/services/websites" },
+      { label: "How much does a small business or nonprofit website cost?", href: "/insights/small-business-nonprofit-website-cost" },
+      { label: "WordPress maintenance checklist", href: "/insights/wordpress-maintenance-checklist" },
+    ],
+  },
 ];
 
 export const insightBySlug = (slug: string) => INSIGHTS.find((i) => i.slug === slug);
