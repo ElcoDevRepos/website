@@ -2122,7 +2122,7 @@ export const INSIGHTS: Insight[] = [
     "related": [
       {
         "label": "Realtime Sports API",
-        "href": "/apps/realtime-sports-api"
+        "href": "https://www.realtimesportsapi.com"
       },
       {
         "label": "Free schedule pages",
