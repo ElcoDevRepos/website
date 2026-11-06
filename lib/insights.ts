@@ -531,6 +531,61 @@ export const INSIGHTS: Insight[] = [
       { label: "Monthly care plans", href: "/care-plans" },
     ],
   },
+
+  {
+    slug: "small-business-nonprofit-website-cost",
+    title: "What a small business or nonprofit website costs in 2026",
+    seoTitle: "How Much Does a Small Business or Nonprofit Website Cost in 2026?",
+    description:
+      "Honest ranges for a custom small business or nonprofit website, what drives the price up or down, and what it costs each month after launch, from a studio that builds and hosts them.",
+    published: "2026-11-05",
+    updated: "2026-11-05",
+    readMinutes: 5,
+    body: [
+      { p: "There are three very different things people call \"a website\": a do-it-yourself builder site you set up yourself, a template site a freelancer customizes, and a custom site designed and built around your organization. All three can be the right answer. Here's what each one involves and what we see custom sites actually cost." },
+      { h2: "The three options" },
+      {
+        table: {
+          head: ["Option", "Good for", "Watch out for"],
+          rows: [
+            ["DIY builder (a monthly subscription)", "A simple brochure site you're happy to update yourself", "Your time, design limits, and features that get locked behind higher tiers"],
+            ["Customized template", "A modest budget and a standard layout", "Plugin sprawl, and nobody responsible for updates afterwards"],
+            ["Custom design and build", "Organizations with real content, forms, donations or integrations, or accessibility requirements", "It costs more up front, so it needs a clear scope"],
+          ],
+        },
+      },
+      { h2: "What a custom site costs with us" },
+      { p: "From the quotes we've sent over the past year, small custom websites and apps have mostly landed between about $8,000 and $20,000, with a fixed quote agreed before work starts and payments split by milestone. Very small, focused projects can come in under that. Large sites with portals or complex integrations go above it." },
+      { h2: "What moves the price" },
+      {
+        ul: [
+          "How many distinct page types there are (not how many pages: ten news posts share one design).",
+          "Custom design versus adapting an existing look.",
+          "Integrations: donations, events, newsletters, CRM, payments, booking.",
+          "Accessibility to WCAG 2.2 AA, which nonprofits and public-facing organizations increasingly need. We build to it from the start rather than fixing it later.",
+          "Moving content from an old site, and who writes the new words.",
+          "How easily staff need to edit it without a developer.",
+        ],
+      },
+      { h2: "What it costs after launch" },
+      { p: "Every website needs hosting, security updates and the occasional change. With us, hosting starts at $40 a month, and the Care plan at $129 a month adds tested monthly updates, malware and uptime monitoring, and an hour of small changes each month. Domains and any paid plugins are billed at cost, in accounts you own." },
+      { h2: "How to get an accurate number" },
+      {
+        ul: [
+          "List the pages and the three or four things visitors most need to do.",
+          "Note the tools it must connect to.",
+          "Decide who will update it, and how often.",
+          "Ask every vendor for a fixed quote, what's excluded, and who owns the accounts.",
+        ],
+      },
+      { p: "If you'd like a fixed quote, book a free call. We'll tell you plainly if a builder site would serve you better." },
+    ],
+    related: [
+      { label: "Website design and development", href: "/services/websites" },
+      { label: "WordPress maintenance checklist", href: "/insights/wordpress-maintenance-checklist" },
+      { label: "Monthly care plans", href: "/care-plans" },
+    ],
+  },
 ];
 
 export const insightBySlug = (slug: string) => INSIGHTS.find((i) => i.slug === slug);
