@@ -19,6 +19,12 @@ export type Insight = {
   readMinutes: number;
   body: Block[];
   related: { label: string; href: string }[];
+  /** Optional short, direct answer shown first (what search and AI tools quote). */
+  answer?: string;
+  /** Optional FAQ, rendered with FAQPage markup. */
+  faq?: { q: string; a: string }[];
+  /** Optional product call to action; replaces the worksheet box. */
+  product?: { name: string; href: string; blurb: string; cta: string };
 };
 
 export const WORKSHEET = {
@@ -1645,6 +1651,604 @@ export const INSIGHTS: Insight[] = [
       { label: "Who should own your domain and accounts?", href: "/insights/own-your-domain-hosting-and-accounts" },
       { label: "What to send a developer before asking for a quote", href: "/insights/what-to-send-a-developer-before-a-quote" },
     ],
+  },
+  {
+    "slug": "printable-advent-planner-catholic-family",
+    "title": "A printable Advent planner for Catholic families (2026)",
+    "seoTitle": "Printable Advent Planner for Catholic Families 2026 (PDF)",
+    "description": "A 16-page printable Advent 2026 planner for Catholic families: wreath-lighting schedule, daily family checklist, Jesse tree and St Andrew Christmas Novena trackers, the O Antiphons and weekly planning pages.",
+    "published": "2026-11-06",
+    "updated": "2026-11-06",
+    "readMinutes": 4,
+    "answer": "Advent 2026 runs from Sunday, November 29 to December 24. The Liturgical Living Advent Family Planner is a 16-page printable PDF ($9) for Catholic families. It has a wreath-lighting schedule, a daily checklist, a Jesse tree tracker, the St Andrew Christmas Novena with a 25-day tracker, the O Antiphons for December 17–23 and weekly planning pages. You download it right after paying and print it at home.",
+    "body": [
+      {
+        "h2": "What families usually want from an Advent planner"
+      },
+      {
+        "ul": [
+          "Which wreath candle to light each Sunday, and who lights and reads.",
+          "A simple daily checklist the kids can tick off.",
+          "Somewhere to plan the feasts, Mass and confession times for each week.",
+          "A way to keep up with the Jesse tree and the St Andrew Christmas Novena without losing count."
+        ]
+      },
+      {
+        "h2": "What's in the Liturgical Living planner"
+      },
+      {
+        "ul": [
+          "Advent 2026 at a glance: all 26 days, the four Sundays, US feasts and holy days of obligation.",
+          "Wreath-lighting schedule with candle colors.",
+          "A two-page daily checklist: wreath, family prayer, Mass reading, good deed, Jesse ornament and St Andrew prayer tallies.",
+          "Four weekly planning pages for feasts, meals, Mass and confession times.",
+          "A Jesse tree tracker with an ornament theme and a Scripture reference for each day (references only).",
+          "The St Andrew Christmas Novena, word for word with its source, and a 25-day tracker.",
+          "The O Antiphons for December 17–23, from a public-domain source.",
+          "Pages for intentions, resolutions, gifts and charity, and your parish's Christmas Mass times."
+        ]
+      },
+      {
+        "h2": "Printing tips"
+      },
+      {
+        "p": "It's US Letter and prints on A4 with \"fit to page.\" The design uses light ink so it's friendly to home printers. Print the daily checklist once per child if you like."
+      }
+    ],
+    "faq": [
+      {
+        "q": "When does Advent 2026 start?",
+        "a": "The First Sunday of Advent is November 29, 2026, and Advent runs until Christmas Eve, December 24."
+      },
+      {
+        "q": "Is the planner a physical product?",
+        "a": "No. It's a PDF you download right after paying and print at home."
+      },
+      {
+        "q": "Does it include the full Scripture readings?",
+        "a": "No. Scripture appears as references only, so you can read from your own Bible or the Liturgical Living app. The St Andrew novena and the O Antiphons are printed from traditional public-domain sources."
+      },
+      {
+        "q": "Can I share it with my parish?",
+        "a": "It's licensed for personal and family use, so please don't share the file. Each family can buy its own copy."
+      }
+    ],
+    "product": {
+      "name": "Advent Family Planner 2026",
+      "href": "https://liturgicalliving.app/advent-planner",
+      "blurb": "16 printable pages for Catholic families, November 29 to December 24. $9, instant download.",
+      "cta": "See inside the planner"
+    },
+    "related": [
+      {
+        "label": "All printables",
+        "href": "/apps/downloads"
+      },
+      {
+        "label": "Liturgical Living",
+        "href": "/apps/liturgical-living"
+      }
+    ]
+  },
+  {
+    "slug": "printable-lent-planner-catholic-family",
+    "title": "A printable Lent planner for Catholic families (2027)",
+    "seoTitle": "Printable Lent Planner for Catholic Families 2027 (PDF)",
+    "description": "A 20-page printable Lent 2027 planner for Catholic families, Ash Wednesday (Feb 10) to Easter (Mar 28): fasting and abstinence days, Gospel references, a daily checklist, Stations of the Cross tracker and almsgiving jar.",
+    "published": "2026-11-06",
+    "updated": "2026-11-06",
+    "readMinutes": 4,
+    "answer": "Lent 2027 begins on Ash Wednesday, February 10, and Easter Sunday is March 28. The Liturgical Living Lent Family Planner is a 20-page printable PDF ($9). It covers the fasting and abstinence days with their sources, Sunday and Holy Week Gospel references, a daily family checklist, six weekly planning pages, a Stations of the Cross tracker and an almsgiving jar.",
+    "body": [
+      {
+        "h2": "What's inside"
+      },
+      {
+        "ul": [
+          "Lent 2027 at a glance: every day from Ash Wednesday to Easter, including Laetare Sunday, St Joseph and the Triduum.",
+          "The US fasting and abstinence rules stated plainly, with sources (USCCB; canons 1250–1253).",
+          "Sunday and Holy Week Gospel references (Lectionary Year B).",
+          "A four-page daily checklist and six weekly planning pages: prayer, promises, giving, kind deeds and meatless Friday meals.",
+          "A Stations of the Cross tracker for every Friday of Lent.",
+          "An almsgiving jar, Lenten promises, a confession plan and pages for your parish's Holy Week and Easter times."
+        ]
+      },
+      {
+        "h2": "Why plan Lent on paper"
+      },
+      {
+        "p": "A page on the fridge keeps the whole family on the same Lent: which days are fast days, what everyone gave up, and what's planned for each Friday. Paper also works for children who don't have phones."
+      }
+    ],
+    "faq": [
+      {
+        "q": "When does Lent 2027 start?",
+        "a": "Ash Wednesday is February 10, 2027, and Easter Sunday is March 28, 2027."
+      },
+      {
+        "q": "Does it include prayer texts?",
+        "a": "No. The planner names the readings and devotions so your family can pray them from your own books or the Liturgical Living app."
+      },
+      {
+        "q": "Will the dates match my diocese?",
+        "a": "Dates follow the US calendar. Check your diocese for any local differences."
+      },
+      {
+        "q": "What if the file won't open or print?",
+        "a": "Email support@elcodev.com and we'll fix it or refund you."
+      }
+    ],
+    "product": {
+      "name": "Lent Family Planner 2027",
+      "href": "https://liturgicalliving.app/lent-planner",
+      "blurb": "20 printable pages, Ash Wednesday to Easter. $9, instant download.",
+      "cta": "See inside the planner"
+    },
+    "related": [
+      {
+        "label": "Advent planner for Catholic families",
+        "href": "/insights/printable-advent-planner-catholic-family"
+      },
+      {
+        "label": "All printables",
+        "href": "/apps/downloads"
+      }
+    ]
+  },
+  {
+    "slug": "crohns-food-symptom-journal-printable",
+    "title": "A printable food and symptom journal for Crohn's and colitis",
+    "seoTitle": "Printable Crohn's Food & Symptom Journal (30-Day PDF with Bristol Scale)",
+    "description": "A 43-page printable 30-day food, symptom and Bristol stool journal for Crohn's disease, ulcerative colitis and other gut conditions, with weekly reviews and a one-page doctor-visit summary.",
+    "published": "2026-11-06",
+    "updated": "2026-11-06",
+    "readMinutes": 4,
+    "answer": "A food and symptom journal helps you and your care team spot patterns between what you eat and how you feel. The 30-Day Food, Symptom & Bristol Stool Journal from Crohn's Food Tracker is a 43-page printable PDF ($7). It has 30 daily logs, 4 weekly reviews, a medicines list, a 30-day calendar and a one-page summary to bring to your next appointment. It's for keeping a record, not medical advice.",
+    "body": [
+      {
+        "h2": "What to track each day"
+      },
+      {
+        "ul": [
+          "Meals, with a quick fine / meh / nope rating for how each one sat.",
+          "Symptoms and how severe they were.",
+          "Bowel movements, using the Bristol Stool Form Scale.",
+          "Medicines, stress, sleep, water and movement."
+        ]
+      },
+      {
+        "h2": "What's in the journal"
+      },
+      {
+        "ul": [
+          "30 daily log pages covering meals, 14 symptoms with severity, Bristol scale, medicines, stress, sleep, water and movement.",
+          "4 weekly reviews: the week at a glance, foods to discuss with your doctor, patterns and questions for your care team.",
+          "A medicines and supplements list with a changes log, allergies and care-team contacts.",
+          "A 30-days-at-a-glance calendar, a foods tally and a one-page doctor-visit summary.",
+          "A Bristol Stool Form Scale reference with plain descriptions."
+        ]
+      },
+      {
+        "h2": "Paper or app?"
+      },
+      {
+        "p": "Some people find paper easier on bad days; others prefer a phone. The journal's fields match the Crohn's Food Tracker app, so you can switch between them. There's also a free 7-day log on the Crohn's Food Tracker site if you want to try the format first."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is this medical advice?",
+        "a": "No. The journal is for keeping a record. Talk to your doctor or IBD care team about your diet and treatment."
+      },
+      {
+        "q": "Does it work for ulcerative colitis or IBS?",
+        "a": "Yes. It's designed for Crohn's disease, ulcerative colitis and other gut conditions."
+      },
+      {
+        "q": "How do I get it?",
+        "a": "Buy the PDF and download it right away. It's US Letter and prints on A4 with \"fit to page.\""
+      }
+    ],
+    "product": {
+      "name": "30-Day Food, Symptom & Bristol Stool Journal",
+      "href": "https://crohnsfoodtracker.app/printables/30-day-journal",
+      "blurb": "43 printable pages with weekly reviews and a doctor-visit summary. $7, instant download.",
+      "cta": "See inside the journal"
+    },
+    "related": [
+      {
+        "label": "Flare-day meal planner",
+        "href": "/insights/flare-day-meal-planner-printable"
+      },
+      {
+        "label": "Crohn's Food Tracker app",
+        "href": "/apps/crohns-food-tracker"
+      }
+    ]
+  },
+  {
+    "slug": "flare-day-meal-planner-printable",
+    "title": "A printable flare-day meal planner for Crohn's and colitis",
+    "seoTitle": "Flare-Day Meal Planner for Crohn's & Colitis (Printable PDF)",
+    "description": "A 16-page printable planner for Crohn's and colitis flare days: write down your care team's plan, list the foods that have sat fine for you, prepare simple go-to meals and log each flare day.",
+    "published": "2026-11-06",
+    "updated": "2026-11-06",
+    "readMinutes": 4,
+    "answer": "A flare-day meal plan is easiest to make before a flare, from your care team's guidance and the foods you know sit fine for you. The Flare-Day Meal Planner from Crohn's Food Tracker is a 16-page printable PDF ($6). It has pages for your care team's plan, your own safe-foods lists, four go-to meal cards, pantry and shopping lists, and seven flare-day logs. It doesn't tell you what to eat, and it isn't medical advice.",
+    "body": [
+      {
+        "h2": "Why plan ahead"
+      },
+      {
+        "p": "On a flare day you have little energy to decide what to eat. Writing down your care team's advice, your safe foods and a few simple meals in advance means you can follow your own plan instead of guessing."
+      },
+      {
+        "h2": "What's inside"
+      },
+      {
+        "ul": [
+          "My flare-day plan: who to call, and what your care team told you about eating, drinking and medicines, in their words.",
+          "Foods that sat fine for me: blank lists by meal, filled in from your own records.",
+          "Four go-to meal cards, a pantry and freezer list, and a shopping list.",
+          "Seven flare-day logs and a week review: what you ate and how it sat, drinks, 14 symptoms with severity, energy and questions for your care team."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Does the planner suggest foods?",
+        "a": "No. It helps you write down your own care team's guidance and the foods that have worked for you."
+      },
+      {
+        "q": "Is this medical advice?",
+        "a": "No. Talk to your doctor or IBD care team about what to eat during a flare. Seek urgent care for severe pain, persistent bleeding, a high fever or signs of obstruction."
+      },
+      {
+        "q": "Can I use it with the food journal?",
+        "a": "Yes. The 30-day food and symptom journal records your patterns; the flare-day planner turns them into a plan for hard days."
+      }
+    ],
+    "product": {
+      "name": "Flare-Day Meal Planner",
+      "href": "https://crohnsfoodtracker.app/printables/flare-day-meal-planner",
+      "blurb": "16 printable pages for planning and logging flare days. $6, instant download.",
+      "cta": "See inside the planner"
+    },
+    "related": [
+      {
+        "label": "30-day food and symptom journal",
+        "href": "/insights/crohns-food-symptom-journal-printable"
+      },
+      {
+        "label": "All printables",
+        "href": "/apps/downloads"
+      }
+    ]
+  },
+  {
+    "slug": "claude-code-multi-agent-dashboard",
+    "title": "How to run several Claude Code agents with one dashboard",
+    "seoTitle": "Claude Code Multi-Agent Dashboard: Run Agents as a Team on Your Mac",
+    "description": "How to run several Claude Code sessions as a small team on a Mac: separate lanes and rules, a shared log and task board, scheduled workdays, and one inbox for the decisions only you can make.",
+    "published": "2026-11-06",
+    "updated": "2026-11-06",
+    "readMinutes": 5,
+    "answer": "To run several Claude Code agents without babysitting each terminal, give each agent its own lane (a working folder, a persona and standing rules), put shared state in a team log and task board, start them on a schedule, and route their questions to a single inbox you can answer from your phone. Elco Console is a self-hosted kit for Mac ($99 one-time) that does this using your own Claude plan.",
+    "body": [
+      {
+        "h2": "The problems with many terminals"
+      },
+      {
+        "ul": [
+          "You can't tell which agent is waiting on you.",
+          "Agents step on each other's files and work.",
+          "Nothing runs unless you're at the keyboard to start it.",
+          "Context is lost between days."
+        ]
+      },
+      {
+        "h2": "What a multi-agent setup needs"
+      },
+      {
+        "ul": [
+          "Lanes: each agent gets a folder, a persona and rules such as \"drafts only, never send\" or \"never push to main.\"",
+          "A shared team log and a per-day task board so agents can hand work to each other.",
+          "A schedule: agents start at the hour you set, continue between tasks, respect a daily cap and write a handoff at the end of the day.",
+          "One inbox: each agent's question becomes a one-line item with Yes/No or option buttons, and your answer goes back to the agent that asked."
+        ]
+      },
+      {
+        "h2": "How Elco Console does it"
+      },
+      {
+        "p": "Elco Console runs the official claude command you've already signed in to, as named lanes on your Mac. It ships with three starter personas (coordinator, builder, reviewer), a standing-rules template, the elco-msg and elco-task command-line tools, and a setup guide, including an optional recipe for reaching it from your phone through your own authenticated tunnel. We run our own business on it every day."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Do I need an Anthropic API key?",
+        "a": "No. Elco Console runs the official claude command on your own Claude plan and never sees or stores your credentials."
+      },
+      {
+        "q": "Does my code leave my Mac?",
+        "a": "No. Everything runs and is stored on your Mac; there's no Elco Dev server in the loop."
+      },
+      {
+        "q": "Will it use up my plan's limits?",
+        "a": "Running several agents uses more of your plan. You choose how many agents run and each one's daily cap."
+      },
+      {
+        "q": "Is it made by Anthropic?",
+        "a": "No. It's an independent tool by Elco Dev that runs Claude Code, and isn't affiliated with or endorsed by Anthropic."
+      }
+    ],
+    "product": {
+      "name": "Elco Console kit",
+      "href": "/apps/console",
+      "blurb": "Run your Claude Code agents like a small team, with one inbox for your decisions. $99 one-time, Mac only.",
+      "cta": "See Elco Console"
+    },
+    "related": [
+      {
+        "label": "Elco Console docs and guides",
+        "href": "/apps/console"
+      },
+      {
+        "label": "Built your app with AI tools? Check these first",
+        "href": "/insights/ai-built-app-checklist"
+      }
+    ]
+  },
+  {
+    "slug": "record-samsung-dex-on-mac",
+    "title": "How to record Samsung DeX on a Mac",
+    "seoTitle": "How to Record Samsung DeX on a Mac (Screen Recording to MP4)",
+    "description": "How to record your Samsung DeX desktop on a Mac as an MP4 for tutorials, demos and bug reports, using Deskbridge Pro's one-click recording.",
+    "published": "2026-11-06",
+    "updated": "2026-11-06",
+    "readMinutes": 3,
+    "answer": "With Deskbridge, Samsung DeX opens in a window on your Mac. Deskbridge Pro ($5 a year, on top of the $12 Deskbridge license) adds one-click recording: choose Start Recording in the Deskbridge menu or press ⌥⇧⌘R, and the MP4 is saved to Movies › Deskbridge when you stop.",
+    "body": [
+      {
+        "h2": "Steps"
+      },
+      {
+        "ul": [
+          "Install Deskbridge (1.5 or later) and connect your Galaxy phone so DeX opens in a Mac window.",
+          "Add Deskbridge Pro and activate the key in Deskbridge.",
+          "Choose Start Recording in the Deskbridge menu, or press ⌥⇧⌘R.",
+          "Use DeX as normal; a small bar shows the recording time.",
+          "Choose Stop Recording. The MP4 is in your Movies › Deskbridge folder."
+        ]
+      },
+      {
+        "h2": "What it's good for"
+      },
+      {
+        "p": "Tutorials and how-to videos, demos of Android apps running in DeX, and bug reports you can send to a developer. DeX keeps running while you record."
+      },
+      {
+        "h2": "Without Pro"
+      },
+      {
+        "p": "Deskbridge's $12 license keeps every core feature without Pro: DeX in a Mac window, your Mac's keyboard and trackpad, notifications, calls and more. Pro is an optional add-on for extra tools like recording and more display sizes."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Which phones work?",
+        "a": "Samsung Galaxy phones with One UI 8 or later, on a Mac running macOS 13 or later (Apple silicon or Intel)."
+      },
+      {
+        "q": "How much is Deskbridge Pro?",
+        "a": "$5 a year, renewing until you cancel. It needs a $12 Deskbridge license."
+      },
+      {
+        "q": "Can I try Deskbridge first?",
+        "a": "Yes. There's a free 7-day trial with every feature, no card or sign-up."
+      }
+    ],
+    "product": {
+      "name": "Deskbridge Pro",
+      "href": "/apps/deskbridge/pro",
+      "blurb": "One-click recording of your phone desktop to MP4, plus extra display sizes. $5/year add-on to Deskbridge.",
+      "cta": "See Deskbridge Pro"
+    },
+    "related": [
+      {
+        "label": "Deskbridge: Samsung DeX on your Mac",
+        "href": "/apps/deskbridge"
+      },
+      {
+        "label": "Deskbridge guides",
+        "href": "/apps/deskbridge/guides"
+      }
+    ]
+  },
+  {
+    "slug": "sports-schedule-csv-download",
+    "title": "Where to download full sports schedules as CSV",
+    "seoTitle": "Download NFL, NBA, NHL, MLB & Soccer Schedules as CSV or JSON",
+    "description": "How to get full-season sports schedules (NFL, college football, NBA, NHL, MLB, college basketball and soccer) as CSV or JSON for spreadsheets, apps and sites, free per week or as one file per league.",
+    "published": "2026-11-06",
+    "updated": "2026-11-06",
+    "readMinutes": 4,
+    "answer": "Realtime Sports API publishes free schedule pages by week, date and team, each with a CSV and JSON download. For every game of the season in one file per league, its season export covers 13 leagues (NFL, college football, NBA, NHL, MLB, men's college basketball and seven soccer leagues) as CSV and JSON, rebuilt daily, for $49 once with re-downloads for 365 days.",
+    "body": [
+      {
+        "h2": "Free: one week, date or team"
+      },
+      {
+        "p": "The schedule pages show games with start times in US Eastern, TV, venue and final scores, and every page has a CSV and JSON download for that view. That's enough if you only need your team or this week."
+      },
+      {
+        "h2": "The full-season export"
+      },
+      {
+        "ul": [
+          "One row per game: game id, start time in UTC and US Eastern, week where the league has weeks, status, both teams with abbreviations and scores once played, venue, city and TV networks where published.",
+          "13 leagues, each as its own CSV and JSON file.",
+          "Rebuilt every day, so reschedules and final scores show up when you re-download.",
+          "Licensed for use in your own apps, sites, sheets and products; you can't resell the files as a dataset."
+        ]
+      },
+      {
+        "h2": "Need live updates in code?"
+      },
+      {
+        "p": "If you need scores as games happen, the Realtime Sports API itself has a free tier, with webhooks and WebSocket push on paid plans."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is the schedule download free?",
+        "a": "Single weeks, dates and teams are free on the schedule pages. The full-season export of every game is $49 once."
+      },
+      {
+        "q": "Can I use it commercially?",
+        "a": "Yes, in your own apps, sites, sheets and products. Don't resell the raw files as a dataset."
+      },
+      {
+        "q": "Do I need an API key?",
+        "a": "No. The export is a one-time purchase with no account."
+      }
+    ],
+    "product": {
+      "name": "Season schedule export",
+      "href": "https://www.realtimesportsapi.com/schedule-export",
+      "blurb": "Every game of the season for 13 leagues, CSV and JSON, rebuilt daily. $49 once.",
+      "cta": "See the season export"
+    },
+    "related": [
+      {
+        "label": "Realtime Sports API",
+        "href": "/apps/realtime-sports-api"
+      },
+      {
+        "label": "Free schedule pages",
+        "href": "https://www.realtimesportsapi.com/schedules"
+      }
+    ]
+  },
+  {
+    "slug": "market-holiday-settlement-date-api",
+    "title": "How to check market holidays and settlement dates in code",
+    "seoTitle": "Market Holiday & Settlement Date API: Is the Market Open? When Does It Settle?",
+    "description": "How to answer \"is the market open?\" and \"when does this trade settle?\" in code for 29 exchanges, including early closes and the EU/UK move to T+1 in October 2027, with SettleDate's free tier.",
+    "published": "2026-11-06",
+    "updated": "2026-11-06",
+    "readMinutes": 4,
+    "answer": "SettleDate is a JSON API for exchange holidays, trading hours and settlement dates across 29 exchanges, 52 countries and the US, euro and UK payment calendars, 2020 to 2030. Its free plan covers 5,000 calls a month, and free calendars answer 60 keyless calls an hour. It also builds in the EU move to T+1 settlement on 11 October 2027.",
+    "body": [
+      {
+        "h2": "The questions it answers"
+      },
+      {
+        "ul": [
+          "Is a given day a trading day, and is the market open right now (or on lunch break)?",
+          "What's the next or previous trading day, or the date N trading days from now?",
+          "When does a trade settle (T+1, T+2), using the market calendar and the cash-leg calendar together?",
+          "What are the session hours, including early closes, in local time and UTC?"
+        ]
+      },
+      {
+        "h2": "Why settlement dates are tricky"
+      },
+      {
+        "p": "A US trade can't settle on a day the Fed is closed, even when the NYSE is open (Columbus Day and Veterans Day). From 11 October 2027, EU trades move from T+2 to T+1, so trades on Friday the 8th and Monday the 11th both settle on Tuesday the 12th. SettleDate joins the right calendars and picks the cycle by trade date."
+      },
+      {
+        "h2": "Where the data comes from"
+      },
+      {
+        "p": "Exchange sessions come from the open-source exchange_calendars project, country holidays from python-holidays, and the Fed calendar from the Federal Reserve's published rule. Core exchanges are checked against the exchange's own holiday notices, and every calendar lists its source."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is there a free tier?",
+        "a": "Yes. 5,000 calls a month with all country calendars plus NYSE, Nasdaq, LSE, Xetra, Tokyo and the US Fed, TARGET2 and UK payment calendars. Free calendars also answer 60 keyless calls an hour."
+      },
+      {
+        "q": "What happens at my limit?",
+        "a": "The API returns 429 until the 1st of the month. Nothing is billed automatically beyond your plan."
+      },
+      {
+        "q": "Can I get it through RapidAPI?",
+        "a": "SettleDate is also listed on RapidAPI if you already bill through it, or you can get a free key directly on settledate.dev."
+      }
+    ],
+    "product": {
+      "name": "SettleDate",
+      "href": "https://settledate.dev",
+      "blurb": "Exchange holidays, trading hours and settlement dates in one JSON API. Free key, no card.",
+      "cta": "Get a free key"
+    },
+    "related": [
+      {
+        "label": "T+1 settlement in 2027",
+        "href": "https://settledate.dev/t1-settlement-2027"
+      },
+      {
+        "label": "Exchange holiday calendars",
+        "href": "https://settledate.dev/holidays"
+      }
+    ]
+  },
+  {
+    "slug": "pickleball-round-robin-printable",
+    "title": "Printable pickleball round-robin sheets for open play",
+    "seoTitle": "Printable Pickleball Round Robin & Open-Play Sheets (4–12 Courts)",
+    "description": "Printable sign-in sheets, checked round-robin rotations for 4 to 12 courts, a court board, scorecards, a ladder and standings for running pickleball open play or a league night.",
+    "published": "2026-11-06",
+    "updated": "2026-11-06",
+    "readMinutes": 3,
+    "answer": "For pickleball open play, you need a sign-in sheet, a fair rotation so everyone plays with and against different people, and a way to track scores. The Paddle Rack Pickleball Open-Play & League Organizer Kit is a 22-page printable PDF ($9) with sign-in sheets, checked round-robin rotations for 4 to 12 courts, a court board, scorecards, a ladder and standings.",
+    "body": [
+      {
+        "h2": "What's in the kit"
+      },
+      {
+        "ul": [
+          "Sign-in sheets for open play.",
+          "Checked round-robin rotations for 4 to 12 courts.",
+          "A court board to post who's on which court.",
+          "Scorecards, a ladder and standings sheets for league nights."
+        ]
+      },
+      {
+        "h2": "Paper or phone?"
+      },
+      {
+        "p": "Paper is easiest when the venue has poor signal or organizers rotate. If you'd rather run rotations on a phone, Paddle Rack is a free open-play organizer app for one court and eight players, with a Club upgrade for more."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is it a digital download?",
+        "a": "Yes. Pay once, download right away and print at home."
+      },
+      {
+        "q": "How many courts does it support?",
+        "a": "The checked rotations cover 4 to 12 courts."
+      }
+    ],
+    "product": {
+      "name": "Pickleball Open-Play & League Organizer Kit",
+      "href": "/apps/paddlerack/organizer-kit",
+      "blurb": "22 printable pages for open play and league nights. $9, instant download.",
+      "cta": "See the kit"
+    },
+    "related": [
+      {
+        "label": "Paddle Rack app",
+        "href": "/apps/paddlerack"
+      },
+      {
+        "label": "All printables",
+        "href": "/apps/downloads"
+      }
+    ]
   },
 ];
 

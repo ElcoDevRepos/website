@@ -17,11 +17,11 @@ const serif = Instrument_Serif({ subsets: ["latin"], variable: "--font-serif", d
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "Elco Dev | Web & Mobile App Development in Nashville",
+    default: "Elco Dev | Mobile App & Web Development in Nashville",
     template: "%s | Elco Dev",
   },
   description:
-    "Elco Dev is a Nashville software studio that designs and builds iOS and Android apps, web apps and SaaS, APIs and websites, and ships apps of its own to the App Store and Google Play.",
+    "Mobile app and web development from a Nashville studio: fixed quotes before work starts, MVPs in about 14 days from $7,000, and apps of our own live on the App Store and Google Play.",
   applicationName: SITE.name,
   authors: [{ name: SITE.founder }],
   alternates: { canonical: "/" },

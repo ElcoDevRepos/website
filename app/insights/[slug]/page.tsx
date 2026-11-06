@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CtaBand } from "@/components/CtaBand";
+import { Faq } from "@/components/Faq";
 import { JsonLd } from "@/components/JsonLd";
 import { Arrow, Breadcrumbs } from "@/components/ui";
 import { INSIGHTS, WORKSHEET, insightBySlug, type Block } from "@/lib/insights";
-import { breadcrumbLd } from "@/lib/ld";
+import { breadcrumbLd, faqLd } from "@/lib/ld";
 import { SITE } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -76,6 +77,7 @@ export default async function InsightPage({ params }: Props) {
             publisher: { "@id": `${SITE.url}/#organization` },
             image: `${SITE.url}/og-image.png`,
           },
+          ...(a.faq?.length ? [faqLd(a.faq)] : []),
         ]}
       />
       <article className="wrap max-w-3xl pb-10 pt-10 sm:pt-14">
@@ -85,13 +87,34 @@ export default async function InsightPage({ params }: Props) {
         <p className="mt-4 text-sm text-ink-muted">
           By {SITE.founder} · <time dateTime={a.updated}>{new Date(a.updated + "T12:00:00Z").toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</time>
         </p>
+        {a.answer ? (
+          <div className="mt-8 rounded-2xl border border-ink/10 bg-white p-6">
+            <p className="text-sm font-semibold uppercase tracking-wider text-ink-muted">Short answer</p>
+            <p className="mt-2 text-lg leading-relaxed">{a.answer}</p>
+          </div>
+        ) : null}
         {a.body.map(render)}
 
-        <aside className="mt-14 rounded-3xl bg-brand-soft p-7">
-          <h2 className="text-xl font-bold">Free: {WORKSHEET.title}</h2>
-          <p className="mt-2 text-ink-soft">{WORKSHEET.blurb}</p>
-          <a href={WORKSHEET.href} download className="btn-primary mt-5">Download the worksheet (PDF) <Arrow /></a>
-        </aside>
+        {a.faq?.length ? (
+          <section className="mt-14">
+            <h2 className="text-2xl font-bold sm:text-3xl">Questions</h2>
+            <div className="mt-6"><Faq items={a.faq} /></div>
+          </section>
+        ) : null}
+
+        {a.product ? (
+          <aside className="mt-14 rounded-3xl bg-brand-soft p-7">
+            <h2 className="text-xl font-bold">{a.product.name}</h2>
+            <p className="mt-2 text-ink-soft">{a.product.blurb}</p>
+            <a href={a.product.href} className="btn-primary mt-5">{a.product.cta} <Arrow /></a>
+          </aside>
+        ) : (
+          <aside className="mt-14 rounded-3xl bg-brand-soft p-7">
+            <h2 className="text-xl font-bold">Free: {WORKSHEET.title}</h2>
+            <p className="mt-2 text-ink-soft">{WORKSHEET.blurb}</p>
+            <a href={WORKSHEET.href} download className="btn-primary mt-5">Download the worksheet (PDF) <Arrow /></a>
+          </aside>
+        )}
 
         <nav aria-label="Related" className="mt-12">
           <h2 className="text-sm font-semibold uppercase tracking-wider text-ink-muted">Related</h2>
