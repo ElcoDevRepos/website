@@ -102,5 +102,18 @@ export function serviceLd(s: Service) {
     url: `${SITE.url}/services/${s.slug}`,
     provider: { "@id": ORG_ID },
     areaServed: { "@type": "Country", name: "United States" },
+    ...(s.slug === "production-health-check"
+      ? {
+          offers: {
+            "@type": "Offer",
+            name: "Production health check",
+            description: "One-week, read-only review of a live web or mobile app with a ranked fix list and a fixed price for each fix.",
+            price: 990,
+            priceCurrency: "USD",
+            priceSpecification: { "@type": "PriceSpecification", price: 990, priceCurrency: "USD" },
+            url: `${SITE.url}/services/${s.slug}`,
+          },
+        }
+      : {}),
   };
 }
