@@ -586,6 +586,90 @@ export const INSIGHTS: Insight[] = [
       { label: "Monthly care plans", href: "/care-plans" },
     ],
   },
+
+  {
+    slug: "firebase-security-rules-mistakes",
+    title: "Firebase security rules: the mistakes we keep finding in live apps",
+    seoTitle: "Firebase Security Rules Mistakes in Live Apps (and How to Fix Them)",
+    description:
+      "Firestore and Firebase Storage rules are the only thing standing between your users' data and anyone with your app's config. These are the mistakes we see most often in apps built quickly, and how to check yours.",
+    published: "2026-11-05",
+    updated: "2026-11-05",
+    readMinutes: 6,
+    body: [
+      { p: "Firebase is a great way to ship fast. We run several of our own apps on it, and we've taken over client apps built on it. But with Firebase, the app talks to the database directly, so the security rules are the only lock on the door. The config values in your app aren't secret. Anyone can read them and call your database. Here's what we check first." },
+      { h2: "1. Rules left in test mode" },
+      { p: "Projects often start with rules that allow all reads and writes, sometimes with an expiry date someone extends rather than fixes. If your rules contain something like allow read, write: if true; (or a date check that keeps getting pushed back), every record is public." },
+      { h2: "2. \"Signed in\" treated as \"allowed\"" },
+      { p: "A rule that only checks request.auth != null lets any signed-up user read every other user's data. Most apps need the rule to compare the signed-in user's ID with the owner of the document (or their team or organization), not just check that someone is signed in." },
+      { h2: "3. Users can edit fields they shouldn't" },
+      { p: "If a user can update their own profile document, can they also change their role, plan, credits or isAdmin flag? Rules should limit which fields a user may change, and anything tied to payments or permissions should only be written by your server." },
+      { h2: "4. Storage rules forgotten" },
+      { p: "Firestore gets attention and Cloud Storage doesn't. Uploaded files (documents, photos, exports) often sit under rules that let any signed-in user read any path. Mirror your Firestore ownership checks in Storage." },
+      { h2: "5. Server-only collections readable by the app" },
+      { p: "Payment records, admin notes, internal logs and API keys stored in Firestore for a server function should be closed to the app entirely. Only the Admin SDK on your server should touch them." },
+      { h2: "How to check your app" },
+      {
+        ul: [
+          "Read the rules file line by line, together with a list of every collection and storage path the app uses.",
+          "Test from a second account: try to read and write another user's documents and files.",
+          "Use the Firebase emulator and rules unit tests so a later change can't quietly reopen a hole.",
+          "Turn on budget alerts and App Check, which makes abuse with your config harder and noisier.",
+        ],
+      },
+      { h2: "Want a second pair of eyes?" },
+      { p: "Our Production health check is a one-week, read-only review for a fixed $990. Data access rules are the first thing on the list, followed by exposed keys, payments, backups and monitoring. You get a ranked fix list with a fixed price for each fix." },
+    ],
+    related: [
+      { label: "Production health check", href: "/services/production-health-check" },
+      { label: "Built your app with AI tools? What to check", href: "/insights/ai-built-app-checklist" },
+      { label: "Monthly care plans", href: "/care-plans" },
+    ],
+  },
+  {
+    slug: "stripe-subscription-failed-payments",
+    title: "Stripe subscriptions: handling failed payments without losing customers",
+    seoTitle: "Stripe Subscriptions: How to Handle Failed Payments and Webhooks Properly",
+    description:
+      "Failed renewals quietly cost subscription businesses customers. Here's how to set up Stripe so access, retries and emails follow what actually happened to the payment, from a studio that runs paid subscriptions itself.",
+    published: "2026-11-05",
+    updated: "2026-11-05",
+    readMinutes: 6,
+    body: [
+      { p: "We run our own paid subscription products on Stripe and build billing for clients, and the same problems come up again and again. Cards expire, banks decline renewals, and the app either cuts people off too early or lets them use it unpaid for months. Most of it comes down to one rule." },
+      { h2: "The rule: Stripe is the source of truth" },
+      { p: "Your app shouldn't decide on its own who has paid. It should react to Stripe's webhooks (events like a subscription being created, updated or deleted, or an invoice being paid or failing) and store the result. The checkout page saying \"success\" isn't enough: payments can still fail, be disputed or be refunded later." },
+      { h2: "Get the webhooks right" },
+      {
+        ul: [
+          "Verify every webhook's signature, so nobody can fake a \"paid\" event.",
+          "Handle events more than once safely (Stripe retries), and in any order.",
+          "Store the subscription status, the current period's end and the plan on your user record, and grant access from that.",
+          "Log every event you receive, so support can answer \"why was I cut off?\" in a minute.",
+        ],
+      },
+      { h2: "Let Stripe retry before you cut access" },
+      { p: "Stripe can retry failed renewals automatically over several days, and it can email customers to update their card. Turn those on, and decide how your app behaves while a payment is past due: usually keep access for a short grace period with a clear in-app banner, then restrict it. Cutting people off on the first failed charge loses customers whose card simply expired." },
+      { h2: "Make updating a card easy" },
+      { p: "Stripe's hosted customer portal lets customers update their card, change plans or cancel without you building any of it. Link to it from your app's billing page and from your failed-payment emails." },
+      { h2: "Check the edge cases" },
+      {
+        ul: [
+          "Upgrades and downgrades in the middle of a billing period (proration).",
+          "Free trials that end without a card on file.",
+          "Refunds and disputes: does access change, and should it?",
+          "Usage-based charges with a monthly cap, if you meter usage.",
+        ],
+      },
+      { h2: "How we can help" },
+      { p: "If your billing logic was built quickly, our Production health check reviews payments alongside data access, backups and monitoring for a fixed $990, and gives you a fixed price to fix what's wrong." },
+    ],
+    related: [
+      { label: "Production health check", href: "/services/production-health-check" },
+      { label: "Web apps and SaaS", href: "/services" },
+      { label: "Monthly care plans", href: "/care-plans" },
+    ],
+  },
 ];
 
 export const insightBySlug = (slug: string) => INSIGHTS.find((i) => i.slug === slug);
