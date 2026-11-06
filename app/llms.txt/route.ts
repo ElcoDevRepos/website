@@ -37,6 +37,7 @@ ${own.map(line).join("\n")}
 ## Kits, downloads and add-ons you can buy today
 
 - [Elco Console kit](${SITE.url}/apps/console): self-hosted Mac console that runs your own Claude Code agents as a scheduled team with one inbox for your decisions. $99 one-time; uses your own Claude plan; 14-day refund.
+- [Agent Social Kit](${SITE.url}/apps/social-kit): self-hosted Mac kit that posts queued, guardrail-checked posts to Threads, Bluesky and Mastodon and crossposts guides to Dev.to and Hashnode with canonical links. $49 one-time ($29 for Elco Console owners, $129 bundle with Console); 14-day refund.
 - [Printable planners and logs](${SITE.url}/apps/downloads): Advent Family Planner 2026 ($9), Lent Family Planner 2027 ($9), 30-Day Food, Symptom & Bristol Stool Journal ($7), Flare-Day Meal Planner ($6), Pickleball Open-Play & League Organizer Kit ($9). Instant PDF downloads.
 - [Deskbridge](${SITE.url}/apps/deskbridge): Samsung DeX (and Pixel desktop mode) in a Mac window. $12 once, 7-day free trial. [Deskbridge Pro](${SITE.url}/apps/deskbridge/pro) adds one-click MP4 recording, $5/year.
 - [Full-season sports schedule export](https://www.realtimesportsapi.com/schedule-export): every game for 13 leagues as CSV and JSON, rebuilt daily. $49 once.

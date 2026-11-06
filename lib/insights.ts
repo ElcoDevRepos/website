@@ -2364,6 +2364,82 @@ export const INSIGHTS: Insight[] = [
       }
     ]
   },
+  {
+    "slug": "automate-social-posts-for-your-product",
+    "title": "How to keep your product's social accounts posting, safely, with AI agents",
+    "seoTitle": "Automate Threads, Bluesky & Mastodon Posts With AI Agents (With Guardrails)",
+    "description": "How to let AI agents keep your product's Threads, Bluesky and Mastodon accounts active without posting something you'd regret: a queue file per account, guardrails before anything posts, natural scheduling, and official APIs only.",
+    "published": "2026-11-06",
+    "updated": "2026-11-06",
+    "readMinutes": 4,
+    "answer": "The safe way to automate social posts with AI agents is to separate writing from posting. Agents write two weeks of posts into a queue file per account. A scheduler publishes them at natural times through each platform's official API, and every post passes guardrails first: your never-list, contact details, secrets and length limits. The Agent Social Kit is a self-hosted Mac kit ($49 one-time) that does this for Threads, Bluesky and Mastodon, and crossposts guides to Dev.to and Hashnode.",
+    "body": [
+      {
+        "h2": "Why not let the agent post directly?"
+      },
+      {
+        "p": "An agent writing and publishing in one step leaves no point where a mistake gets caught: a client's name, a wrong price, a link posted five times in a row. Writing into a queue first gives you a file you can read, lint and dry-run before anything goes out."
+      },
+      {
+        "h2": "The setup that works"
+      },
+      {
+        "ul": [
+          "One queue file per account, filled two weeks ahead by an agent or by you.",
+          "A scheduler that posts 1–3 times a day at varied times inside a window you choose, never twice within 75 minutes, and holds dated posts until their date.",
+          "No repeats: the same text never twice, and the same link not twice in three days.",
+          "Guardrails on every post: your never-list (client names, competitors, anything you add), plus email addresses, phone numbers, secret-looking strings and posts over each platform's length limit.",
+          "A dry run first, a kill-switch file that stops everything, and a daily report of what went out."
+        ]
+      },
+      {
+        "h2": "Crossposting guides without hurting SEO"
+      },
+      {
+        "p": "Crossposting your articles to Dev.to and Hashnode can bring readers, as long as each copy sets canonical_url to your own page so search engines credit your site. The kit converts existing HTML guides to Markdown, keeps links absolute and publishes one article a day."
+      },
+      {
+        "h2": "Stay within platform rules"
+      },
+      {
+        "p": "Use official APIs only (Meta's Threads API with your own app, Bluesky app passwords, Mastodon accounts marked as automated), keep daily limits conservative, and don't send automated replies to people. Check each platform's current rules for your use, especially for health, finance or other regulated topics."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Do I need Elco Console?",
+        "a": "No. The Agent Social Kit runs on its own on any Mac with Python 3 and launchd. If you use Elco Console, one setting sends the daily post report into its team log."
+      },
+      {
+        "q": "Which platforms does it post to?",
+        "a": "Threads, Bluesky and Mastodon for scheduled posts, and Dev.to and Hashnode for crossposting your own articles with canonical links."
+      },
+      {
+        "q": "Where are my tokens stored?",
+        "a": "In one private file on your Mac. Nothing is sent to Elco Dev."
+      },
+      {
+        "q": "How much does it cost?",
+        "a": "$49 one-time, or $29 if you already own Elco Console, or $129 for both kits. Email within 14 days for a full refund if it doesn't work for you."
+      }
+    ],
+    "product": {
+      "name": "Agent Social Kit",
+      "href": "/apps/social-kit",
+      "blurb": "Let your agents keep your product's social accounts alive, with guardrails. $49 one-time, Mac.",
+      "cta": "See the Agent Social Kit"
+    },
+    "related": [
+      {
+        "label": "How to run several Claude Code agents with one dashboard",
+        "href": "/insights/claude-code-multi-agent-dashboard"
+      },
+      {
+        "label": "Elco Console",
+        "href": "/apps/console"
+      }
+    ]
+  },
 ];
 
 export const insightBySlug = (slug: string) => INSIGHTS.find((i) => i.slug === slug);
