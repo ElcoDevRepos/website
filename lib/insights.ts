@@ -2250,6 +2250,120 @@ export const INSIGHTS: Insight[] = [
       }
     ]
   },
+  {
+    "slug": "custom-erp-small-business",
+    "title": "Custom ERP for a small or mid-sized business: when it makes sense",
+    "seoTitle": "Custom ERP Development for Small Businesses: When It Makes Sense (Tennessee & Remote)",
+    "description": "When a small or mid-sized business should build a custom ERP or operations system instead of buying NetSuite, Odoo or another package: the signs, the usual middle path, what drives cost, and how to start small.",
+    "published": "2026-11-06",
+    "updated": "2026-11-06",
+    "readMinutes": 5,
+    "answer": "Most small businesses shouldn't build a full ERP from scratch. Start with accounting software you already trust (QuickBooks, Xero) and build a custom operations system around it: jobs, inventory, scheduling, field work and dashboards, synced to accounting. That gets the fit of custom software without rebuilding the parts packages already do well.",
+    "body": [
+      {
+        "h2": "Signs your business has outgrown off-the-shelf tools"
+      },
+      {
+        "ul": [
+          "The same order, job or customer gets typed into two or three systems.",
+          "One person's spreadsheet is the only place the real numbers live.",
+          "You pay per-seat fees for an ERP module nobody uses, and still work around it.",
+          "The office can't see what crews or the warehouse did until someone calls.",
+          "Month-end is the first time you find out how the month went."
+        ]
+      },
+      {
+        "h2": "Buy, build, or both"
+      },
+      {
+        "table": {
+          "head": [
+            "Option",
+            "Good when",
+            "Watch out for"
+          ],
+          "rows": [
+            [
+              "Packaged ERP (NetSuite, Odoo, Acumatica and others)",
+              "Your processes are fairly standard and you can adapt to the software",
+              "Implementation partners, per-user fees and customizations that are hard to change later"
+            ],
+            [
+              "Custom system on top of your accounting",
+              "Your operations are what makes you different, and accounting is standard",
+              "You need someone to maintain it; plan for a care plan from day one"
+            ],
+            [
+              "Fully custom ERP",
+              "Rarely the right first step for a small business",
+              "Rebuilding accounting, tax and payroll is costly and risky"
+            ]
+          ]
+        }
+      },
+      {
+        "h2": "What drives the cost"
+      },
+      {
+        "ul": [
+          "How many kinds of users (office, field, warehouse, customers) need their own screens and permissions.",
+          "Which systems it must connect to: accounting, payments, e-commerce, shipping, existing databases.",
+          "How much historical data needs to move over.",
+          "Whether it starts as one workflow or tries to replace everything at once."
+        ]
+      },
+      {
+        "h2": "Start small"
+      },
+      {
+        "p": "The projects that go well pick the one workflow that causes the most re-keying, build that first in a few milestones, and connect it to accounting. Once that's in daily use, the next module is easier to scope and cheaper to build."
+      },
+      {
+        "h2": "How we work"
+      },
+      {
+        "p": "We're a small studio in Lebanon, Tennessee, working with clients remotely across the US. We build custom CRMs, internal tools, field apps and dashboards, quote a fixed price per milestone, and set everything up in accounts you own."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Is custom ERP more expensive than buying one?",
+        "a": "Up front it often is; over a few years it can be cheaper if per-seat fees and workarounds are high. The cheapest path for most small businesses is a custom operations layer connected to standard accounting software."
+      },
+      {
+        "q": "Can a custom system connect to QuickBooks?",
+        "a": "Usually yes. QuickBooks Online and Xero both have APIs for syncing customers, invoices and payments."
+      },
+      {
+        "q": "Do you work with businesses outside Tennessee?",
+        "a": "Yes. We're based near Nashville and work remotely with clients across the US."
+      },
+      {
+        "q": "Who owns the software?",
+        "a": "You do: the code, the data and the hosting accounts."
+      }
+    ],
+    "product": {
+      "name": "Custom CRMs, internal tools and dashboards",
+      "href": "/services/custom-crm-dashboards",
+      "blurb": "One system shaped around how your team works, connected to the tools you already use. Fixed quotes before work starts.",
+      "cta": "See how we build them"
+    },
+    "related": [
+      {
+        "label": "Custom CRM or off-the-shelf?",
+        "href": "/insights/custom-crm-vs-off-the-shelf"
+      },
+      {
+        "label": "How much does a custom app cost?",
+        "href": "/insights/how-much-does-a-custom-app-cost"
+      },
+      {
+        "label": "Who should own your software accounts?",
+        "href": "/insights/own-your-domain-hosting-and-accounts"
+      }
+    ]
+  },
 ];
 
 export const insightBySlug = (slug: string) => INSIGHTS.find((i) => i.slug === slug);
