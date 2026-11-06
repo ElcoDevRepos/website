@@ -939,6 +939,101 @@ export const INSIGHTS: Insight[] = [
       { label: "Monthly care plans", href: "/care-plans" },
     ],
   },
+
+  {
+    slug: "how-to-write-a-website-rfp",
+    title: "How to write a website or app RFP that gets good bids",
+    seoTitle: "How to Write a Website or App RFP That Gets Good Bids (Nonprofits & Public Bodies)",
+    description:
+      "From a studio that reads and answers RFPs every week: what to put in a website or app RFP, what quietly scares good small vendors away, and how to get quotes you can actually compare.",
+    published: "2026-11-05",
+    updated: "2026-11-05",
+    readMinutes: 6,
+    body: [
+      { p: "We read a lot of requests for proposals from nonprofits, workforce boards, libraries and public bodies, and we answer the ones that fit. The best ones get several strong, comparable bids. Others accidentally filter out the small, capable teams they'd probably like to hire. Here's what makes the difference." },
+      { h2: "Say what the site or app is for" },
+      {
+        ul: [
+          "Who uses it, and the three to five things they most need to do.",
+          "What exists today (current platform, integrations, rough page count, traffic), plus a link.",
+          "What success looks like a year after launch.",
+        ],
+      },
+      { h2: "Give a budget range" },
+      { p: "Even a wide range (\"$30,000 to $60,000 for the build\") saves everyone time and gets you proposals sized to what you can actually fund. Without one, quotes swing by a factor of five and are hard to compare." },
+      { h2: "Ask for prices in a structure you can compare" },
+      { p: "List the lines you want priced separately: design and build, migration, hosting, maintenance, training, optional extras. Ask vendors to answer each requirement as Included, Additional Cost or Exception. The best RFPs we've seen do exactly this." },
+      { h2: "Be careful with paperwork that doesn't serve the project" },
+      {
+        ul: [
+          "Insurance: requiring proof of high liability limits just to submit a bid rules out many small studios. If cover is needed, consider requiring it at contract, sized to the project.",
+          "Signed reference letters, notarized forms and mandatory in-person pre-bid meetings all add cost for vendors and narrow your pool. Use them only where they truly matter.",
+          "Paid document downloads and paid portal registration discourage bidders without improving quality.",
+        ],
+      },
+      { h2: "Be realistic about service levels" },
+      { p: "Round-the-clock staffed support costs real money. Many organizations are well served by 24/7 automated monitoring plus business-hours support. If you need true 24/7 response, say so and expect to pay for it. Inviting exceptions lets vendors be honest instead of overpromising." },
+      { h2: "Make it easy to ask questions" },
+      { p: "Publish a questions deadline and an answers date, and share answers with all bidders. A clear process gets you better-informed proposals." },
+      { h2: "Ask for proof, not adjectives" },
+      { p: "Ask for live examples, a short description of how the team works, who exactly will do the work, and references you can call. Weight accessibility, security and ongoing support, not just design." },
+      { h2: "Need a second opinion on your RFP?" },
+      { p: "If you're preparing a website or app RFP and want a sanity check on scope or budget before it goes out, we're happy to give honest feedback on a free call." },
+    ],
+    related: [
+      { label: "Choosing an app developer for a nonprofit: a checklist", href: "/insights/nonprofit-app-developer-checklist" },
+      { label: "What a small business or nonprofit website costs", href: "/insights/small-business-nonprofit-website-cost" },
+      { label: "Website accessibility (WCAG) for small organizations", href: "/insights/wcag-accessibility-small-organizations" },
+    ],
+  },
+  {
+    slug: "freelancer-vs-agency-vs-small-studio",
+    title: "Freelancer, agency or small studio: who should build your app?",
+    seoTitle: "Freelancer vs Agency vs Small Studio: Who Should Build Your App or Website?",
+    description:
+      "An honest comparison of hiring a freelancer, a large agency or a small studio to build and run your app or website: cost, continuity, who actually does the work, and what happens after launch.",
+    published: "2026-11-05",
+    updated: "2026-11-05",
+    readMinutes: 5,
+    body: [
+      { p: "We're a small studio, so we have a bias, and we'll say so. But we've also taken over projects from freelancers and agencies, and each option is genuinely right for some projects. Here's how they compare." },
+      {
+        table: {
+          head: ["", "Freelancer", "Large agency", "Small studio"],
+          rows: [
+            ["Typical cost", "Lowest", "Highest", "In between"],
+            ["Who does the work", "The person you hired", "Often a rotating team; seniors in the pitch, juniors on the build", "The senior people you talk to"],
+            ["Range of skills", "Usually one specialty", "Broad: design, dev, marketing, strategy", "Focused: design and development, sometimes more"],
+            ["Continuity after launch", "Depends on one person's availability", "Strong process, but you're one of many accounts", "Usually long-term, with a monthly plan"],
+            ["Process and paperwork", "Light", "Heavy", "Light but written down"],
+          ],
+        },
+      },
+      { h2: "When a freelancer makes sense" },
+      { p: "A small, well-defined job (a landing page, a feature on an existing app) with someone whose past work you've seen. Protect yourself: make sure code, accounts and hosting are in your name from day one, and have a plan for if they become unavailable." },
+      { h2: "When an agency makes sense" },
+      { p: "A large program that needs many disciplines at once (brand, content, marketing, development) and a budget to match. Ask who will actually do the work, and meet them before signing." },
+      { h2: "When a small studio makes sense" },
+      { p: "A custom app, web app or website that has to keep running after launch, where you want direct access to the people building it and a predictable monthly plan afterwards. Ask how they handle vacations and emergencies, and who the backup is." },
+      { h2: "Questions to ask any of them" },
+      {
+        ul: [
+          "Who exactly will build this, and who covers when they're away?",
+          "Will the code, app store accounts, domain and hosting be in my name?",
+          "What does it cost per month after launch, and what does that include?",
+          "Can I talk to a client whose project you've run for more than a year?",
+          "What happens if we part ways? How do I get everything back?",
+        ],
+      },
+      { h2: "How we work" },
+      { p: "Elco Dev is a small studio near Nashville: fixed quotes paid by milestone, the developer you talk to does the work, everything in your name, and monthly care plans after launch. If that sounds like a fit, book a free call." },
+    ],
+    related: [
+      { label: "How much does a custom app cost?", href: "/insights/how-much-does-a-custom-app-cost" },
+      { label: "Your app developer disappeared: what to do next", href: "/insights/app-developer-disappeared" },
+      { label: "Monthly care plans", href: "/care-plans" },
+    ],
+  },
 ];
 
 export const insightBySlug = (slug: string) => INSIGHTS.find((i) => i.slug === slug);
