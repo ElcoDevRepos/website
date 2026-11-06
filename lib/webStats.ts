@@ -13,6 +13,7 @@ export function safeKey(s: string, max = 32): string {
 }
 
 const SOURCES: [RegExp, string][] = [
+  [/gemini\.google\.com$/, "gemini"], [/copilot\.microsoft\.com$/, "copilot"], // before google (Nov 6, Max)
   [/(^|\.)google\./, "google"], [/(^|\.)bing\.com$/, "bing"], [/duckduckgo\.com$/, "duckduckgo"], [/(^|\.)yahoo\./, "yahoo"],
   [/chatgpt\.com$|openai\.com$/, "chatgpt"], [/perplexity\.ai$/, "perplexity"], [/claude\.ai$/, "claude"], [/facebook\.com$|fb\.com$/, "facebook"],
   [/instagram\.com$/, "instagram"], [/reddit\.com$/, "reddit"], [/linkedin\.com$|lnkd\.in$/, "linkedin"], [/clutch\.co$/, "clutch"],
@@ -50,12 +51,26 @@ export function sectionOf(path: string): string {
 const BOT = /bot|crawl|spider|slurp|preview|fetch|monitor|curl|wget|python|node-fetch|headless|lighthouse|vercel|facebookexternalhit|embedly|axios|go-http/i;
 export const isBotUA = (ua: string) => !ua || BOT.test(ua);
 
+/** "apps-console", "services-production-health-check", ... for product pages; "" otherwise. */
+export function productOf(path: string): string {
+  const parts = (path || "/").split("?")[0].split("/").filter(Boolean);
+  if ((parts[0] === "apps" || parts[0] === "services") && parts[1]) return safeKey(`${parts[0]}-${parts[1]}`, 40);
+  return "";
+}
+
 export function incrementsFor(b: { kind: "v" | "p"; path: string; src: string }): Record<string, number> {
   const section = sectionOf(b.path);
   const src = b.src ? safeKey(b.src) : "direct";
   const inc: Record<string, number> = {};
   if (b.kind === "v") { inc.visits = 1; inc[`src.${src}`] = 1; inc[`land.${section}`] = 1; }
   if (KEY_SECTIONS.has(section)) { inc[`pv.${section}`] = 1; inc[`srcpv.${src}__${section}`] = 1; }
+  // Per-product views (Nov 6, Max): /apps/<slug> and /services/<slug> also count as e.g. apps-console, alongside "apps".
+  const product = productOf(b.path);
+  if (product) {
+    if (b.kind === "v") inc[`land.${product}`] = 1;
+    inc[`pv.${product}`] = 1;
+    inc[`srcpv.${src}__${product}`] = 1;
+  }
   return inc;
 }
 
