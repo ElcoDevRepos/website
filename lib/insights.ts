@@ -851,6 +851,94 @@ export const INSIGHTS: Insight[] = [
       { label: "Monthly care plans", href: "/care-plans" },
     ],
   },
+
+  {
+    slug: "app-store-rejection-reasons",
+    title: "Why Apple rejects apps: the guidelines small app owners run into most",
+    seoTitle: "Why Apple Rejected Your App: Common App Store Review Guidelines Explained",
+    description:
+      "An App Store rejection names a guideline number. Here's what the ones small businesses hit most often (2.1, 2.3, 3.1.1, 4.2, 4.3 and 5.1.1) usually mean in practice, from a studio that has been on the receiving end.",
+    published: "2026-11-05",
+    updated: "2026-11-05",
+    readMinutes: 6,
+    body: [
+      { p: "We've had our own apps rejected, including for missing in-app purchases and for being too similar to other apps, so this list comes from experience as much as from Apple's App Review Guidelines. The rejection message always names a guideline. Here's what the common ones usually mean." },
+      { h2: "2.1 App Completeness" },
+      { p: "Apple found something unfinished or broken: a crash, a placeholder screen, a login reviewers can't get past, or in-app purchases that weren't submitted for review with the build. Give reviewers a working demo account in the review notes, and make sure every purchase product is attached to the version you submit." },
+      { h2: "2.3 Accurate Metadata" },
+      { p: "The listing doesn't match the app: screenshots of features that aren't there, a description that promises too much, or mentions of other platforms in the iOS listing. Keep the listing literal." },
+      { h2: "3.1.1 In-App Purchase" },
+      { p: "Digital goods and subscriptions used inside the app generally have to be sold through Apple's in-app purchase. Linking out to a web checkout for digital content is the classic trigger. Physical goods and real-world services are different." },
+      { h2: "4.2 Minimum Functionality" },
+      { p: "The app is too thin: essentially a website in a wrapper, or a single feature that doesn't need to be an app. Add native value such as offline use, notifications or device features, or reconsider whether a website is the better product." },
+      { h2: "4.3 Spam" },
+      { p: "The app looks too similar to others, including apps from the same developer, or to a saturated category. It's hard to argue your way out of. Real differentiation helps more than appeals do, and repeated rejections here can put a developer account at risk, so pace resubmissions carefully." },
+      { h2: "5.1.1 Data Collection and Storage" },
+      { p: "Privacy problems: asking for permissions without a clear reason, requiring an account for features that don't need one, no way to delete an account, or a privacy policy that doesn't match what the app collects." },
+      { h2: "How to respond" },
+      {
+        ul: [
+          "Read the full message in App Store Connect, including any attached screenshots.",
+          "Fix the actual issue, then explain the change briefly in the reply or review notes.",
+          "Use the reply thread to ask for clarification if the reason is unclear. Polite, specific questions get answers.",
+          "Don't resubmit the same build hoping for a different reviewer.",
+        ],
+      },
+      { h2: "We can help" },
+      { p: "If an update keeps getting rejected, we can review the app and the rejection history and get it through properly. Our Care Plus plan includes store submissions." },
+    ],
+    related: [
+      { label: "Apple's 2026 SDK rule", href: "/insights/apple-xcode-26-sdk-requirement" },
+      { label: "Monthly care plans", href: "/care-plans" },
+      { label: "Production health check", href: "/services/production-health-check" },
+    ],
+  },
+  {
+    slug: "wcag-accessibility-small-organizations",
+    title: "Website accessibility (WCAG) for small organizations: what it means and where to start",
+    seoTitle: "WCAG Website Accessibility for Small Businesses and Nonprofits: Where to Start",
+    description:
+      "What WCAG 2.1 and 2.2 AA ask of a website in plain terms, who has a legal deadline, and the practical fixes that matter most for small businesses, nonprofits and public bodies.",
+    published: "2026-11-05",
+    updated: "2026-11-05",
+    readMinutes: 6,
+    body: [
+      { p: "Accessibility means people using screen readers, keyboards, magnification or captions can use your site. The common yardstick is WCAG (the Web Content Accessibility Guidelines), at Level AA. We build to WCAG 2.2 AA from the start, and we've worked on sites with automated accessibility tests in their build pipeline. Here's the practical version." },
+      { h2: "Who has a deadline" },
+      { p: "State and local government bodies in the US are covered by the Justice Department's ADA Title II rule, which adopts WCAG 2.1 AA. After a 2026 extension, the compliance date for larger entities (serving 50,000 people or more) is April 26, 2027, and smaller ones have later dates. Check the rule for your situation. Private businesses and nonprofits don't have that specific deadline, but accessibility complaints and lawsuits under the ADA are common, and many grants and public contracts now ask for WCAG conformance." },
+      { h2: "What WCAG asks, in plain terms" },
+      {
+        ul: [
+          "Text alternatives: images that carry meaning have useful alt text.",
+          "Keyboard access: everything works without a mouse, with a visible focus outline.",
+          "Contrast and resizing: text is readable at normal contrast and when zoomed to 200%.",
+          "Structure: real headings, lists and labels, so screen readers can navigate.",
+          "Forms: each field has a label, and errors say what's wrong and how to fix it.",
+          "Media: videos have captions; nothing flashes or auto-plays with sound.",
+          "WCAG 2.2 adds things like large enough tap targets, focus that isn't hidden behind sticky headers, and logins that don't require solving puzzles or remembering codes.",
+        ],
+      },
+      { h2: "Where to start" },
+      {
+        ul: [
+          "Run a free automated checker on your key pages. It catches many common issues, but not all of them.",
+          "Try your site with only a keyboard, then with your phone's screen reader.",
+          "Fix the templates (header, navigation, forms, footer) first, since every page inherits them.",
+          "Add an accessibility statement with a way to report problems.",
+          "Make accessibility part of every update, not a one-off project.",
+        ],
+      },
+      { h2: "A note on overlay widgets" },
+      { p: "Plugins that promise instant compliance by adding a toolbar don't fix the underlying code, and they aren't a substitute for an accessible site." },
+      { h2: "How we help" },
+      { p: "We build new sites to WCAG 2.2 AA, can review an existing site, and keep it accessible on a monthly care plan." },
+    ],
+    related: [
+      { label: "Website design and development", href: "/services/websites" },
+      { label: "What a small business or nonprofit website costs", href: "/insights/small-business-nonprofit-website-cost" },
+      { label: "Monthly care plans", href: "/care-plans" },
+    ],
+  },
 ];
 
 export const insightBySlug = (slug: string) => INSIGHTS.find((i) => i.slug === slug);
