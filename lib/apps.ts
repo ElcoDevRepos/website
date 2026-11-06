@@ -173,12 +173,12 @@ export const APP_PAGES: AppPage[] = [
     storeName: "Fairsky: Local Weather Radar",
     // Copy from marketing (studio apps/fairsky/store/marketing/web/copy.json); 47 = the engine's PACKS.length.
     landing: {
-      "title": "Fairsky: local weather radar that answers “Can I ___ today?”",
-      "meta": "Can I stain the deck today? Fairsky answers GO, WAIT or NO for 47 activities, with the reason, the next window and full radar. No ads.",
+      "title": "Fairsky: weather radar with plain answers for your day",
+      "meta": "A full weather and radar app that answers GO, WAIT or NO for 47 activities: mow, stain the deck, golf, fish, grill, stargaze. With the reason. No ads.",
       "hero": {
-        "kicker": "Local weather radar",
+        "kicker": "Weather that answers",
         "h1": "Can I ___ today?",
-        "lead": "Most weather apps tell you it'll be 58° and breezy. Fairsky tells you whether to stain the deck, and why: “Good today from 10 AM to 4 PM. Wood's dry, wind's light, and rain holds off until Monday.”",
+        "lead": "Fairsky is a full weather app (hour by hour, 10 days, radar, warnings) that also answers the question you actually have, for 47 activities from mowing the lawn to stargazing: “Mow the lawn: good until sunset. Dry grass, no rain for days.”",
         "secondaryCta": {
           "label": "See this week's verdict for your city",
           "path": "/projects"
@@ -187,52 +187,52 @@ export const APP_PAGES: AppPage[] = [
       },
       "features": [
         {
-          "h": "Answers first, numbers one tap away",
-          "p": "Pick what you're doing, from staining the deck, pouring concrete and spraying weeds to hanging the holiday lights, grilling out, a round of golf or flight weather: 47 activities in all. Each gets a GO, WAIT or NO and the next good window."
+          "h": "A full weather app first",
+          "p": "Hour by hour and up to 10 days from National Weather Service data in the US. Wind and gusts, feels-like, humidity and dew point, UV index (estimated), sunrise, sunset and moon phase, pressure trend and visibility. Animated radar and severe weather warnings in the Weather Service's own words; lightning and next-hour rain with Plus."
+        },
+        {
+          "h": "47 activities, one plain answer each",
+          "p": "Around the yard (mow, seed, fertilize, water, aerate, spray weeds, pre-emergent, plant, mulch, harvest, frost covers), home exterior (deck stain, paint, concrete, driveway sealing, pressure-washing, gutters, roof, caulking, sod, garage epoxy, holiday lights, pipe freezes), outdoor life (grill, campfire, brush burning, parties, picnics, laundry on the line, car wash, dog walks, playground), sports and recreation (run, ride, hike, golf, fishing, boating and kayaking, the beach, stargazing, golden-hour photos, drones, kites) and getting around (commute, moving day, flight-day weather)."
         },
         {
           "h": "Every verdict shows its work",
-          "p": "Tap a verdict and see the hours behind it: temperature, dew-point gap, rain chance and wind, with the hour that broke the rule. The thresholds come from product data sheets, ACI cold-weather concreting guidance and university extension advice, and each is cited. For paints, stains and lawn treatments, you can enter your product's own instructions."
-        },
-        {
-          "h": "A real weather app underneath",
-          "p": "Current conditions, the next 24 hours and 7 days from National Weather Service data, animated radar, severe weather warnings in the Weather Service's own words, and (with Plus) lightning and next-hour rain."
+          "p": "Tap a verdict to see the hours behind it and the one that broke the rule. Published thresholds (paint and stain data sheets, ACI concreting guidance, university extension advice) are cited; anything else is marked as Fairsky's own default. Your product's label always wins."
         },
         {
           "h": "The night before a freeze",
-          "p": "“Drip the faucets tonight. 17° by 5 AM.” Fairsky reminds you the evening before a hard freeze or frost, free, wherever you are."
+          "p": "“Drip the faucets tonight. 17° by 5 AM.” A reminder the evening before a hard freeze or frost, free, wherever you are."
         },
         {
-          "h": "On your home screen",
-          "p": "A verdict widget is free. Plus adds the board widget (temperature, three verdicts, the next 12 hours) and a rain-safe timer that counts down after you stain, paint or spray."
+          "h": "Eight widgets",
+          "p": "Current conditions, hourly, 10-day, next rain, sun and moon, radar, a single verdict, or a board of three verdicts with the next 12 hours. Your first widget is free, whichever you pick; Plus unlocks the rest and a rain-safe timer for stain, paint and concrete."
         },
         {
-          "h": "Built for crews too",
-          "p": "Fairsky Pro tracks up to 25 job sites, every site's verdict on one board, for painters, concrete crews, sealcoaters and lawn pros."
+          "h": "Every place you care about",
+          "p": "Home, the cabin, Mom's house, the lake: with Plus, keep up to 10 places and see each one's verdicts side by side."
         }
       ],
       "plans": [
         {
           "name": "Free",
-          "text": "The full forecast, radar, severe weather warnings, freeze reminders, 2 activities, 1 place and 1 widget. No ads, ever."
+          "text": "The full forecast, radar, severe weather warnings, freeze reminders, 2 activities, 1 place and 1 widget of your choice. No ads, ever."
         },
         {
           "name": "Plus",
-          "text": "Every activity and widget, the rain-safe timer, next-hour rain, lightning, a two-hour radar loop, heads-up alerts and up to 10 places. Yearly with a free trial, monthly, or once for life."
-        },
-        {
-          "name": "Pro",
-          "text": "Everything in Plus for up to 25 job sites."
+          "text": "All 47 activities, every widget, the rain-safe timer, next-hour rain, lightning, a two-hour radar loop, heads-up alerts and up to 10 places. Yearly with a free trial, monthly, or once for life."
         }
       ],
       "faq": [
         {
           "q": "Is Fairsky more accurate than other weather apps?",
-          "a": "We don't claim that. In the US, Fairsky uses the National Weather Service forecast, the same public data many apps start from. What's different is what we do with it: we turn the hours into a plain answer for what you want to do and show our working."
+          "a": "We don't claim that. In the US, Fairsky uses the National Weather Service forecast, the same public data many apps start from. What's different is what we do with it: we turn the hours into a plain answer for what you're doing and show our working."
         },
         {
           "q": "Where do the thresholds come from?",
           "a": "From published sources: paint and stain technical data sheets, ACI 306 cold-weather concreting guidance, sealcoat manufacturer instructions, and university extension advice on spray drift and lawn timing. Each verdict cites its sources in the app. If your product's label says something different, enter its numbers; the label always wins."
+        },
+        {
+          "q": "What can Fairsky answer?",
+          "a": "47 activities in five groups: around the yard, home exterior, outdoor life, sports and recreation, and getting around. Star the ones you do and they sit on your Today screen, under the forecast."
         },
         {
           "q": "Is it too windy to spray today?",
@@ -245,6 +245,14 @@ export const APP_PAGES: AppPage[] = [
         {
           "q": "When can I stain my deck after rain?",
           "a": "Stain makers typically ask for two to three dry days so the wood dries out, temperatures of roughly 50 to 90°F, and no rain for 24 hours after. Fairsky checks all three and names the next window that fits."
+        },
+        {
+          "q": "Is it too windy to golf or fly a drone?",
+          "a": "Fairsky checks the hourly wind and gusts (plus rain, heat and daylight) against the limits for each activity and tells you when it settles. For drones, boating and flights, also follow official aviation and marine forecasts and local rules."
+        },
+        {
+          "q": "Is tonight clear enough for stargazing?",
+          "a": "The stargazing verdict looks at cloud cover after dark and the moon phase, and names the next clear window."
         },
         {
           "q": "Does Fairsky send severe weather warnings?",
@@ -263,7 +271,7 @@ export const APP_PAGES: AppPage[] = [
           "a": "Fairsky launches on Google Play first; the iPhone version follows."
         }
       ],
-      "disclaimer": "Verdicts are guidance, not guarantees. Your product's label always wins. Fairsky is not a substitute for official warnings: follow the National Weather Service, Environment and Climate Change Canada, your national weather service and local officials. For US warnings, go to weather.gov."
+      "disclaimer": "Verdicts are guidance, not guarantees. Your product's label always wins. Fairsky is not a substitute for official warnings: follow the National Weather Service, Environment and Climate Change Canada, your national weather service and local officials."
     },
     content: {
       origin: "https://elcodev-fairsky.vercel.app",
@@ -339,7 +347,7 @@ export const APP_PAGES: AppPage[] = [
         REFUNDS,
       ],
       purchases:
-        "Fairsky is free with full forecasts, radar, alerts and two activity verdicts. Fairsky Plus is an auto-renewing monthly or yearly subscription (7-day free trial on yearly) or a one-time lifetime purchase; Fairsky Pro for contractors is a monthly or yearly subscription.",
+        "Fairsky is free with full forecasts, radar, alerts and two activity verdicts. Fairsky Plus is an auto-renewing monthly or yearly subscription (7-day free trial on yearly) or a one-time lifetime purchase.",
     },
   },
   {
