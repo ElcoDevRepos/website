@@ -1306,6 +1306,110 @@ export const INSIGHTS: Insight[] = [
       { label: "WordPress maintenance checklist", href: "/insights/wordpress-maintenance-checklist" },
     ],
   },
+  {
+    slug: "own-your-domain-hosting-and-accounts",
+    title: "Who should own your domain, hosting and app accounts? (You should)",
+    seoTitle: "Own Your Domain, Hosting and Accounts: A Checklist for Business Owners",
+    description:
+      "If your developer or agency holds your domain, hosting or app store accounts, you can lose your website or app the day the relationship ends. Here's what you should own, how to check, and how to move it safely.",
+    published: "2026-11-06",
+    updated: "2026-11-06",
+    readMinutes: 5,
+    body: [
+      { p: "Many small businesses and nonprofits find out who really controls their website only when something goes wrong: the developer stops answering, the agency closes, or a renewal lapses. If the accounts are in someone else's name, getting them back can take weeks. Owning them from the start costs almost nothing." },
+      { h2: "What you should own" },
+      {
+        ul: [
+          "Your domain name, registered in your organization's name with an email address you control.",
+          "Your DNS: whoever controls DNS controls where your website and email point.",
+          "Your hosting account, or at least an owner-level login to it.",
+          "Your email service (Google Workspace, Microsoft 365 or similar).",
+          "Your Apple Developer and Google Play accounts, if you have an app.",
+          "Your code repository (GitHub, GitLab or Bitbucket), with the developer added as a collaborator.",
+          "Payment, analytics and other third-party accounts your site or app depends on (Stripe, Google Analytics, Search Console, Firebase and so on).",
+        ],
+      },
+      { h2: "How to check in ten minutes" },
+      {
+        ul: [
+          "Look up your domain at your registrar, or ask your developer which registrar it's with and whose account it's in.",
+          "Search your inbox for renewal notices for the domain and hosting. If you never get them, they go to someone else.",
+          "Ask for a list of every account the project uses and who the owner is on each.",
+          "Confirm you can log in to each one yourself, with two-factor authentication on your own device.",
+        ],
+      },
+      { h2: "How to move accounts into your name" },
+      { p: "Most of this is routine and doesn't touch the live site. Domains can be pushed to your own account at the same registrar, or transferred to a new registrar with an authorization code. Hosting, analytics and code repositories usually let the current owner add you as an owner and then step down. App store accounts have formal transfer processes; we've written a separate guide for those." },
+      {
+        ul: [
+          "Do one account at a time, and write down each login in a password manager your organization controls.",
+          "Don't change DNS settings during a transfer unless you know what each record does; email often breaks this way.",
+          "Turn on auto-renew for the domain and keep a payment card on file that won't expire soon.",
+        ],
+      },
+      { h2: "A fair setup with your developer" },
+      { p: "You own the accounts; your developer gets their own login with the access they need. That keeps changes traceable, lets you remove access when the work ends, and means no one person's inbox stands between you and your website. A good developer will welcome this." },
+      { h2: "How we work" },
+      { p: "Wherever we can, we set accounts up in the client's name and use our own logins inside them. If you've inherited a site or app and aren't sure who owns what, we can do the inventory with you on a free call." },
+    ],
+    related: [
+      { label: "How to move your app into your own Apple and Google accounts", href: "/insights/transfer-app-to-your-own-developer-account" },
+      { label: "What to do if your app developer disappeared", href: "/insights/app-developer-disappeared" },
+      { label: "Care plans", href: "/care-plans" },
+    ],
+  },
+  {
+    slug: "choosing-website-hosting",
+    title: "Shared, managed or VPS: how to choose website hosting",
+    seoTitle: "Shared vs Managed vs VPS Hosting: How to Choose for a Small Business Website",
+    description:
+      "A plain guide to the main kinds of website hosting (shared, managed WordPress, VPS and cloud platforms), what each is good for, what it really costs to run, and the questions to ask before you pick one.",
+    published: "2026-11-06",
+    updated: "2026-11-06",
+    readMinutes: 5,
+    body: [
+      { p: "Hosting is the computer your website runs on. The cheapest plan is fine for some sites and a real risk for others. What matters is how much traffic you get, what the site does, and who will look after it." },
+      { h2: "The main options" },
+      {
+        table: {
+          head: ["Type", "Good for", "Watch out for"],
+          rows: [
+            ["Shared hosting", "Small brochure sites with modest traffic", "Your site shares a server with many others; slowdowns and security issues next door can affect you"],
+            ["Managed WordPress", "WordPress sites where you want updates, backups and caching handled", "Plugin and visit limits on lower tiers; check what \"managed\" actually covers"],
+            ["VPS (virtual private server)", "Busier sites, custom apps, or anything that needs its own isolated server", "Someone has to patch, monitor and back it up; that's ongoing work, not a one-time setup"],
+            ["Cloud platforms (Vercel, Netlify, Firebase and similar)", "Modern web apps and fast static sites", "Usage-based bills can grow with traffic; set budget alerts"],
+          ],
+        },
+      },
+      { h2: "What actually matters more than the plan" },
+      {
+        ul: [
+          "Backups you've tested: a backup you've never restored from is a hope, not a plan.",
+          "Updates: an out-of-date site on great hosting is still the easiest target.",
+          "A content delivery network (CDN) in front of the site, which speeds it up and absorbs traffic spikes.",
+          "Uptime monitoring, so someone knows the site is down before your customers tell you.",
+          "Owning the account yourself, so the site doesn't leave with your developer.",
+        ],
+      },
+      { h2: "Questions to ask before you choose" },
+      {
+        ul: [
+          "Roughly how many visitors do we get a month, and do we have busy seasons?",
+          "Does the site take payments, logins or forms with personal information?",
+          "Who installs updates and checks backups, and how often?",
+          "What happens, and what does it cost, if traffic doubles?",
+          "How do we get our site and data out if we leave this host?",
+        ],
+      },
+      { h2: "What we use" },
+      { p: "For client WordPress sites we typically use Hostinger, choosing between its managed plans and a VPS depending on traffic and requirements, with a CDN in front. Modern web apps often run on Vercel or Firebase. Hosting can be included in a care plan, or run in your own account with any upgrades billed at cost, and our care plans cover the updates, backups and monitoring that keep it healthy." },
+    ],
+    related: [
+      { label: "WordPress maintenance checklist", href: "/insights/wordpress-maintenance-checklist" },
+      { label: "How much does a small business website cost?", href: "/insights/small-business-nonprofit-website-cost" },
+      { label: "Care plans", href: "/care-plans" },
+    ],
+  },
 ];
 
 export const insightBySlug = (slug: string) => INSIGHTS.find((i) => i.slug === slug);
