@@ -154,6 +154,23 @@ export default function CarePlansPage() {
         <Faq items={FAQS} />
       </section>
 
+      <section className="wrap pb-20">
+        <h2 className="text-2xl font-bold sm:text-3xl">Guides for app and website owners</h2>
+        <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+          {[
+            ["What app maintenance actually involves", "/insights/app-maintenance-costs"],
+            ["WordPress maintenance: what a monthly plan should include", "/insights/wordpress-maintenance-checklist"],
+            ["Google Play's 2026 target API rule", "/insights/google-play-target-api-requirement"],
+            ["Apple's 2026 SDK rule", "/insights/apple-xcode-26-sdk-requirement"],
+            ["Your Apple Developer membership expired: what happens", "/insights/apple-developer-membership-expired"],
+            ["Your app developer disappeared: what to do next", "/insights/app-developer-disappeared"],
+            ["Why your Firebase bill spiked", "/insights/firebase-bill-spike"],
+            ["Why an old React Native or Expo app won't build", "/insights/old-react-native-expo-app-upgrade"],
+          ].map(([label, href]) => (
+            <li key={href}><Link href={href} className="card block p-4 font-semibold transition-colors hover:border-ink/30">{label} <Arrow /></Link></li>
+          ))}
+        </ul>
+      </section>
       <section id="start" className="bg-white py-20">
         <div className="wrap grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
