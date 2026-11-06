@@ -34,6 +34,16 @@ ${SPECIALTIES.map((s) => `- [${s.name}](${SITE.url}/services/${s.slug}): ${s.sho
 
 ${own.map(line).join("\n")}
 
+## Kits, downloads and add-ons you can buy today
+
+- [Elco Console kit](${SITE.url}/apps/console): self-hosted Mac console that runs your own Claude Code agents as a scheduled team with one inbox for your decisions. $99 one-time; uses your own Claude plan; 14-day refund.
+- [Printable planners and logs](${SITE.url}/apps/downloads): Advent Family Planner 2026 ($9), Lent Family Planner 2027 ($9), 30-Day Food, Symptom & Bristol Stool Journal ($7), Flare-Day Meal Planner ($6), Pickleball Open-Play & League Organizer Kit ($9). Instant PDF downloads.
+- [Deskbridge](${SITE.url}/apps/deskbridge): Samsung DeX (and Pixel desktop mode) in a Mac window. $12 once, 7-day free trial. [Deskbridge Pro](${SITE.url}/apps/deskbridge/pro) adds one-click MP4 recording, $5/year.
+- [Full-season sports schedule export](https://www.realtimesportsapi.com/schedule-export): every game for 13 leagues as CSV and JSON, rebuilt daily. $49 once.
+- [SettleDate](https://settledate.dev): exchange holidays, trading hours and settlement dates API for 29 exchanges. Free key (5,000 calls/month).
+- [Care plans](${SITE.url}/care-plans): monthly hosting, updates and support for websites and apps, from $40/month.
+- [Production health check](${SITE.url}/services/production-health-check): a one-week, read-only review of an existing app's code, hosting and security, $990 fixed.
+
 ## Case studies
 
 ${CASE_STUDIES.map((c) => `- [${c.headline}](${SITE.url}/work/${c.slug}#case-study): ${c.teaser}`).join("\n")}
