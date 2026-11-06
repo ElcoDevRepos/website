@@ -1034,6 +1034,48 @@ export const INSIGHTS: Insight[] = [
       { label: "Monthly care plans", href: "/care-plans" },
     ],
   },
+  {
+    slug: "google-play-12-testers-14-days",
+    title: "Google Play's 12-tester rule: what it means for your first Android app",
+    seoTitle: "Google Play 12 Testers for 14 Days: The Closed Testing Rule Explained",
+    description:
+      "New personal Google Play developer accounts must run a closed test with at least 12 testers opted in for 14 straight days before an app can go to production. Here's how the rule works and how to plan your launch around it.",
+    published: "2026-11-05",
+    updated: "2026-11-05",
+    readMinutes: 4,
+    body: [
+      { p: "If you open a new personal Google Play developer account and try to publish your first app, you'll find you can't go straight to production. Google requires a closed test first. Plan for it, because it adds at least two weeks to a first launch. This is how the rule works as of November 2026; Google's help page \"App testing requirements for new personal developer accounts\" is the final word." },
+      { h2: "The rule in one paragraph" },
+      { p: "Personal developer accounts created after November 13, 2023 must run a closed test with at least 12 testers who have been opted in continuously for at least 14 days. Only then can you apply for production access from the Play Console dashboard. Google says the review of that application usually takes seven days or less." },
+      { h2: "The details that trip people up" },
+      {
+        ul: [
+          "The 14 days must be continuous. A tester who opts in, leaves before 14 days and comes back later doesn't count until they've been in for 14 consecutive days.",
+          "Invites aren't testers. Someone only counts once they've actually opted in to the test.",
+          "Engagement matters. If testers barely use the app, Google can ask you to keep testing before it grants production access.",
+          "The application asks real questions: how you recruited testers, how they used the app, what feedback you got, what you changed because of it, and how you decided the app was ready.",
+        ],
+      },
+      { h2: "How to plan a launch around it" },
+      {
+        ul: [
+          "Start the closed test as soon as you have a usable build, not the week you want to launch. Budget about three weeks: 14 days of testing plus the application review.",
+          "Recruit testers who will really use it: staff, existing customers, members or volunteers. Ask for 15 to 20, so a couple of drop-outs don't reset your clock.",
+          "Collect feedback in one place (a short form works) and keep notes on what you fixed. You'll need both for the production application.",
+          "Keep shipping fixes to the closed track during the test. That's what it's for.",
+        ],
+      },
+      { h2: "Does it apply to my business?" },
+      { p: "The requirement is written for personal accounts. If you're publishing for a company or nonprofit, look at Google's account types before you register: organization accounts are verified differently and have their own requirements, including a D-U-N-S number. Whichever you choose, put the account in your organization's name, not your developer's." },
+      { h2: "We can run it for you" },
+      { p: "We publish and maintain our own apps on Google Play. For client launches we set up the closed test, help recruit and brief testers, track the feedback, and prepare the production application, so your 14 days aren't wasted." },
+    ],
+    related: [
+      { label: "How to move your app into your own Apple and Google accounts", href: "/insights/transfer-app-to-your-own-developer-account" },
+      { label: "Google Play's target API requirement", href: "/insights/google-play-target-api-requirement" },
+      { label: "Mobile app development", href: "/services/mobile-app-development" },
+    ],
+  },
 ];
 
 export const insightBySlug = (slug: string) => INSIGHTS.find((i) => i.slug === slug);
