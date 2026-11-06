@@ -59,12 +59,37 @@ export function incrementsFor(b: { kind: "v" | "p"; path: string; src: string })
   return inc;
 }
 
-/** Writes counters to today's hash. Never throws; a stats failure must not break a request. */
-export async function bumpStats(inc: Record<string, number>): Promise<void> {
+/**
+ * Proxied app sites that have no counter store of their own post to this /api/t (same origin under elcodev.com).
+ * Their counters go to their own hash web:<site>:{date}, so elcodev's visits stay elcodev's (Nov 6 2026).
+ */
+export const SUB_SITES: Record<string, string> = { paddlerack: "/apps/paddlerack" };
+
+/** "paddlerack" for /apps/paddlerack/..., else "". */
+export function subSiteOf(path: string): string {
+  const p = (path || "").split("?")[0];
+  for (const [site, prefix] of Object.entries(SUB_SITES)) if (p === prefix || p.startsWith(prefix + "/")) return site;
+  return "";
+}
+
+/** Counters for a sub-site beacon: v = session start, s = store tap (st ios|android). Sections are relative to the app path. */
+export function subSiteIncrementsFor(site: string, b: { kind: "v" | "s"; path: string; src: string; store?: string }): Record<string, number> {
+  const section = sectionOf((b.path || "/").slice(SUB_SITES[site].length) || "/");
+  const src = b.src ? safeKey(b.src) : "direct";
+  const inc: Record<string, number> = {};
+  if (b.kind === "v") { inc.visits = 1; inc[`src.${src}`] = 1; inc[`land.${section}`] = 1; }
+  if (b.kind === "s" && (b.store === "ios" || b.store === "android")) {
+    inc[`store.${b.store}`] = 1; inc[`storesrc.${src}__${b.store}`] = 1; inc[`storeland.${section}__${b.store}`] = 1;
+  }
+  return inc;
+}
+
+/** Writes counters to today's hash (web:elcodev:{date}, or web:<site>:{date} for a sub-site). Never throws. */
+export async function bumpStats(inc: Record<string, number>, site = "elcodev"): Promise<void> {
   const url = process.env.KV_REST_API_URL, token = process.env.KV_REST_API_TOKEN;
   const fields = Object.keys(inc);
   if (!url || !token || !fields.length) return;
-  const key = `web:elcodev:${new Date().toISOString().slice(0, 10)}`;
+  const key = `web:${site}:${new Date().toISOString().slice(0, 10)}`;
   const commands = [...fields.map((f) => ["HINCRBY", key, f, String(inc[f])]), ["EXPIRE", key, String(400 * 86400)]];
   try {
     await fetch(`${url}/pipeline`, {
